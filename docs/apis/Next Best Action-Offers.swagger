@@ -1,0 +1,774 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "Next Best Action-Offers"
+  description: |
+    This the especific description for the API for a centralized Next Best Offer and Next Best Action, this documentation is in swagger-2.0 specification. 
+    
+    The objective of this API is to deliver the information of the following actions or offers that are proposed for a user from commercial or retention offers.
+    
+    This solution is to be used in all countries, each country will be indentified in the path. This solution It covers the requirement to request information about the offers that a user has calculated according to their behavior.
+    The information that will be used for these use cases is obtained directly from the calculation of a supplier (<a href="https://www.exacaster.com/">Exacaster</a>) that will deliver through an API service. This model is intended to be the data model that we want to show to users. 
+    
+    In the cases of the countries where exacaster has not been implemented, a static database will be used that the country must feed daily and a service with the same design proposed here should be presented.
+    
+    In the case that (<a href="https://www.exacaster.com/">Exacaster</a>) don't have the implemented the project is going to use a static database that the country must feed daily and a service with the same design proposed here should be presented.
+    
+    The API Proxy will group all the fulfillment methods a country offers, and will be named <b>v1_tigo_{businessunit}_{country}</b>
+    
+    So the base for each proxy wiil be: 
+    
+    <b>`/v1/tigo/{businessunit}/{country}`</b>
+    
+    And then the path will include the business unit and product type:
+
+    Suggested Examples:
+    * `/v1/tigo/mobile/gt/catalog/`
+    * `/v1/tigo/home/sv/catalog/`
+    * `/v1/tigo/mobile/co/customer/`
+    
+    The methods are designed for each business unit mobile and home, in this proposal are defined call by subscribers (MSISDN) for mobile and account id for home. in the case that the business unit is not especified.
+
+  contact:
+    name: Armando Umerez
+    email: armando.umerez@millicom.com
+    url: http://www.millicom.com
+  license:
+    name: MIT
+    url: https://github.com/apiaryio/polls-api/blob/master/LICENSE
+host: polls.apiblueprint.org
+basePath: /v1/tigo/mobile/{country}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+
+#bulbhead ascii art
+# ____   __   ____  _   _ 
+#(  _ \ /__\ (_  _)( )_( )
+# )___//(__)\  )(   ) _ ( 
+#(__) (__)(__)(__) (_) (_)
+
+paths:
+
+#   _  ___    __   ____   __    __    _____  ___ 
+#  / )/ __)  /__\ (_  _) /__\  (  )  (  _  )/ __)
+# / /( (__  /(__)\  )(  /(__)\  )(__  )(_)(( (_-.
+#(_/  \___)(__)(__)(__)(__)(__)(____)(_____)\___/
+
+  /catalog/subscribers/{MSISDN}/recomendedplans/:
+      get:
+        summary: Get Available Plans by MSISDN
+        description: Obtain a Catalog of available plans by MSISDN that the client can select. Plans can be filtered by planType.
+        operationId: GetAvailablePlansbyMSISDN
+        parameters:
+          - name: MSISDN
+            in: path
+            description: International Identifiable mobile phone number
+            required: true
+            type: string
+          - name: planType
+            in: query
+            description: Apply a filter to returned plans, for example Upgrades, Downgrades, Retention, Additional. If ommited, all plans in the Catalog are returned.
+            required: false
+            type: string
+            enum:
+              - upsell
+              - sugested
+              - upgrade
+              - downgrades
+              - retention
+              - additional
+              - new  
+        responses:
+          200:
+            description: Requested Upgrade Information was found
+            schema:
+              $ref: '#/definitions/PlanList'
+          403:
+            description: Forbidden. Check `error.message` for details
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: the specified `Available Plans` was not found
+            schema:
+              $ref: '#/definitions/errorBody'            
+          default:
+            description: unexpected error
+            schema:
+              $ref: '#/definitions/errorBody'  
+
+  # /catalog/subscribers/{MSISDN}/upgrades/:
+  #   get:
+  #     summary: Get Available Plans Upgrades by MSISDN
+  #     description: |
+  #       Retrieve Available Plans that the customer can upgrade to the specified MSISDN.
+  #       This is specific use case of the "Get Available Plans by MSISDN" method.
+  #     operationId: GetAvailablePlansUpgradesbyMSISDN
+  #     parameters:
+  #       - name: MSISDN
+  #         in: path
+  #         description: International Identifiable mobile phone number
+  #         required: true
+  #         type: string
+  #     responses:
+  #       200:
+  #         description: Requested Upgrade Information was found
+  #         schema:
+  #           $ref: '#/definitions/PlanList'
+  #       403:
+  #         description: Forbidden. Check `error.message` for details
+  #         schema:
+  #           $ref: '#/definitions/errorBody'
+  #       404:
+  #         description: the specified `Available Plans` was not found
+  #         schema:
+  #           $ref: '#/definitions/errorBody'            
+  #       default:
+  #         description: unexpected error
+  #         schema:
+  #           $ref: '#/definitions/errorBody'
+  
+  /catalog/subscribers/{MSISDN}/currentplan:
+    get:
+      summary: Get Current Plan Details by MSISDN
+      description: Retrieve Current Plan Details for the provided Customer
+      operationId: GetCurrentPlanDetailsbyMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Current Plan Information was found
+          schema:
+            $ref: '#/definitions/Plan'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `Favorites Number List` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    put:
+      summary: Update Current Plan by MSISDN
+      description: Update the current plan for the MSISDN to the PlanId provided
+      operationId: UpdateCurrentPlanByMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/PlanUpgrate'
+      responses:
+        200:
+          description: Offer was successfully acquired
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `request plan upgrate` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'  
+
+
+#   _  ___  __  __  ___  ____  _____  __  __  ____  ____  
+#  / )/ __)(  )(  )/ __)(_  _)(  _  )(  \/  )( ___)(  _ \
+# / /( (__  )(__)( \__ \  )(   )(_)(  )    (  )__)  )   / 
+#(_/  \___)(______)(___/ (__) (_____)(_/\/\_)(____)(_)\_)
+
+
+  /customer/subscribers/{MSISDN}/insights:
+    get:
+      summary: Get Insights Customer by id
+      description: Retrieve the insight calculated about Customer
+      operationId: GetInsightsCurrentPlanDetailsbyId
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Current Plan Information was found
+          schema:
+            $ref: '#/definitions/Insights'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `Favorites Number List` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+            
+  /customer/contracts/{contractId}/contactinformation:
+    get:
+      summary: Get ContactInformation by contractId
+      description: |
+        Return information the contact that matches the provided contractId
+      operationId: GetContactInformationByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string          
+      responses:
+        200:
+          description: Customer contact Info for the provided customerId were found
+          schema:
+            $ref: '#/definitions/CustomerDetailInfo'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+
+  /plans/subscribers/{MSISDN}/phonelease/:
+    get:
+      summary: Get Phone Lease Details by MSISDN
+      description: Retrieve details of leased phone
+      operationId: GetPhoneLeaseDetailsbyMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested phone lease Information was found
+          schema:
+            $ref: '#/definitions/PhoneLeaseInfo'
+            #$ref: '#/definitions/ContractDetails'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `phonelease` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+
+# ____  ____  ____  ____  _  _  ____  ____  ____  _____  _  _  ___ 
+#(  _ \( ___)( ___)(_  _)( \( )(_  _)(_  _)(_  _)(  _  )( \( )/ __)
+# )(_) ))__)  )__)  _)(_  )  (  _)(_   )(   _)(_  )(_)(  )  ( \__ \
+#(____/(____)(__)  (____)(_)\_)(____) (__) (____)(_____)(_)\_)(___/
+
+definitions:
+
+  PlanList:
+    type: array
+    items:
+      $ref: "#/definitions/Plan"
+
+  Plan:
+    type: object
+    required:
+      - planId
+      - planName
+      - monthlyAmount
+    properties:
+      planId:
+        type: string
+        description: Unique Id of the plan
+        example: "862"
+        #idPlan
+      planName:
+        type: string
+        description: Short name for the plan
+        example: "Todo Sin Limites $99.99 Mixto"
+        #planDescription
+      monthlyAmount:
+        type: number
+        description: Monthly base amount that customer pays for this plan
+        example: 99.99
+        #amount
+      planDataInMB:
+        type: number
+        description: | 
+          Monthly megabytes included in this plan. 
+          This value is also included in the ProdutOffering array but must be reflected in this value so megabytes can be compared,
+          charted and better communicated to the customer.
+        example: 99.99
+      currencyId:
+        type: string
+        description: This is the ISO Id of the currency
+        example: "USD"
+        #currency
+      status:
+        type: string
+        description: Status of this plan, may help build the UX
+        example: "ACTIVE"
+        #status        
+      CategoryName:
+        type: string
+        description: The name of main category of this plan
+        example: "Plan Sin Limite Hibrido"
+        #planType   
+      rank:
+        type: number
+        description: This value is used to present the offers in a sorted order.
+        example: 0
+        #
+      # campaignPriority:
+      #   type: number
+      #   description: The priority of the campigns the is going to get in the screen.
+      #   example: 0
+      #   #
+      # campaignTag:
+      #   type: string
+      #   description: This is the campaign tag with the name or identifier.
+      #   example: 0
+      #   #
+      productOfferingList:
+        type: array
+        items:
+          $ref: "#/definitions/ProductOffering"
+        description: An array of offering details grouped by category  
+
+  Insights:
+    type: object
+    required:
+      - churnRiskCategory
+      - churnRiskValue
+      - monthsAsCustomer
+      - resourcesConsumptions
+      - contractEndDate
+      - lifeCycleSegment
+      - dataUsage
+    properties:
+      churnRiskCategory:
+        type: string
+        description: This is the risk of churn of user categorized
+        enum: [LOW, HIGH]
+        example: "Low / High"
+        #churnRiskCategory
+      churnRiskValue:
+        type: number
+        description: This is the risk of churn of user in the exact
+        example: 0.3
+        #churnRiskValue
+      monthsAsCustomer:
+        type: number
+        description: The time in month that user have Tigo service
+        example: 47
+        #lifeTime
+      dataAverageConsumptionInMB:
+        type: number
+        description: The data average usage in MB of the determined period
+        example: 47
+        #lifeTime
+      amountAverageConsumption:
+        type: number
+        description: The amount in money that the user spent in the period
+        example: 80
+        #lifeTime
+      lifeCycleSegment:
+        type: string
+        description: This data is the 
+        example: "ACTIVE"
+        #lifeCycleSegment        
+      contractEndDate:
+        type: string
+        description: The expiration date of the contractin in ISO 8601 format
+        example: "1985-04-12T23:20:50.52Z"
+        #contractEndDate
+      dataUsage:
+        type: string
+        description: Is the state calculated in exacaster, this is an Enum
+        enum: [OVER-CONSUME, RIGHT-SIZE, UNDER-CONSUME]
+        example: "Over User"
+        #dataUsage
+      recomendedAction:
+        type: string
+        description: The category of the recomended action in this moment only can be Retention, Mantenimiento and Upsell
+        enum: [RETAIN, MAINTAIN, UPSELL]
+        example: "Retention"
+        #recomendedAction
+      resourceConsumptionList:
+        $ref: "#/definitions/resourceConsumptionList"
+
+  PlanUpgrate:
+    type: object
+    required:
+      - planId
+      
+    properties:
+      name:
+        type: string
+        description:  Full Name of the Customer
+        example: "Karen Aguilar"
+        #subscribernamer
+      email:
+        type: string
+        description:  Email of the Customer
+        example: "host@tigo.com.hn"
+        #email
+      planId:
+        type: string
+        description: Unique Id of the NEW plan
+        example: "236"
+        #plancode
+      planName:
+        type: string
+        description: Short name for the NEW plan
+        example: "Mas Internet 5GB"
+        #planname
+      monthlyAmount:
+        type: number
+        description: Monthly base amount that customer pays for the NEW plan
+        example: 65.23
+        #price
+      currencyId:
+        type: string
+        description: This is the ISO Id of the currency
+        example: "USD"
+        #currency
+      categoryName:
+        type: string
+        description: The name of main category of the NEW plan
+        example: "Plan Sin Limite Hibrido"
+        #planType
+      fromPlan:
+        type: string
+        description: Source or Id of the OLD plan
+        example: "TigoApp"
+        #from
+          
+  resourceConsumptionList:
+    type: array
+    description: An array of the resources consumption in the period of months
+    items:
+      $ref: "#/definitions/resourceConsumption"
+    
+  resourceConsumption:   
+    type: object
+    required:
+      - dataInPlan
+      - dataUsed
+      - dataAdded
+      - amountInPlan
+      - amountUsed
+      - amountAdded
+    properties:
+      period:
+        type: string
+        description:  The month of the period of billing system
+        example: "January"
+        #period
+      dataInPlan:
+        type: number
+        description: The total of MegaBytes in the actual plan
+        example: 2.5
+        #dataActualPlan
+      dataUsed:
+        type: number
+        description: The total of MegaBytes the user use in these period
+        example: 2.3
+        #dataSpent
+      dataAdded:
+        type: number
+        description: The total of MegaBytes is data in the actual plan plus the topups in the month
+        example: 3.5
+        #dataPurchased
+      amountInPlan:
+        type: number
+        description: The price of the plan that user use in the period
+        example: 3.5
+        #dataPurchased
+      amountUsed:
+        type: number
+        description: The amount in money that the user spent in the period
+        example: 3.5
+        #dataPurchased
+      amountAdded:
+        type: number
+        description: The total of the balance purchased in the period sumatory of the plan price and topups
+        example: 3.5
+                  
+  NameValuePair:
+    type: object
+    properties:
+      name:
+        type: string
+        description: This is the name of the of data
+      value:
+        type: string
+        description: this is the value
+
+  ProductOffering:
+    type: object
+    properties:
+      offeringCategory:
+        type: string
+        description: This is the category that defines the type of offering
+        enum: [voice, data, sms, bundle, other]
+      offeringId:
+        type: string
+        description: This is the id of that type of offering
+        example: "Voz Ilimitado"
+      offeringDetailList:
+        type: array
+        items:
+          $ref: "#/definitions/NameValuePair"
+        description: An array of Name and Value pair for additional services     
+
+  Address:
+    type: object
+    required:
+      - streetAddress
+    example:
+      streetAddress: 10542 NW 51 ST
+    properties:
+      streetAddress:
+        type: string
+        description: the main street address
+      streetAddressLine2:
+        type: string
+        description: optional additional information about address like suite or floor number
+      stateId:
+        type: string
+        description: Unique Identifier for State, Province or Department of the address. Numeric or two letter depending on each database.
+      stateName:
+        type: string
+        description: Name of the State, Province or Department of the address
+      districtId:
+        type: integer
+        description: Unique Identifier for County, Municipality, Town, District, Sector or Neighborhood        
+      districtName:
+        type: string
+        description: Name of the County, Municipality, Town, District, Sector or Neighborhood
+      cityId:
+        type: integer
+        description: Unique Identifier for City associated with the address        
+      cityName:
+        type: string
+        description: Name of the City associated with the address
+      countryId:
+        type: string
+        description: Unique Identifier for Name of the country using ISO Alpha-2        
+      countryName:
+        type: string
+        description: Name of the country
+      zoneId:
+        type: integer
+        description: Identifier for the internal zone
+      stratumId:
+        type: integer
+        description: Identifier for social stratum
+
+  CustomerInfo:
+    type: object
+    required:
+      - customerId
+    properties:
+      customerId:
+        type: string
+        description: Customer unique identifier, usually national identification number or company tax payer number
+      documentType:
+        type: string
+        description: Defines if customerId es a National Id, Tax Payer Number, Passport, etc.
+      name:
+        type: string
+        description: First Name, Comapny Name or Full Name of the Customer
+      lastName:
+        type: string
+        description: Last Name of the Custoemr
+      email:
+        type: string
+        description: Email of the customer
+      phoneNumber:
+        type: string
+        description: Preferred contact phone number for the customer
+      checksum:
+        type: string
+        description: Some countries may have an additional digit for validating integrity of the customerId.
+        
+  CustomerDetailInfo:
+      type: object
+      required:
+        - customerId
+      properties:
+        
+        name:
+          type: string
+          description: First Name, Comapny Name or Full Name of the Customer
+        lastName:
+          type: string
+          description: Last Name of the Customer
+        Address:
+          $ref: "#/definitions/Address"  
+        checksum:
+          type: string
+          description: Some countries may have an additional digit for validating integrity of the customerId.
+        customerEmailList:
+          $ref: "#/definitions/CustomerEmailList"
+        customerPhoneList:
+          $ref: "#/definitions/CustomerPhoneList"          
+        customerIdentificationList:
+          type: array
+          items:
+            $ref: "#/definitions/CustomerIdentification"
+
+  CustomerEmailList:
+    type: array
+    items:
+      $ref: "#/definitions/CustomerEmail"    
+
+  CustomerPhoneList:
+    type: array
+    items:
+      $ref: "#/definitions/CustomerPhone"    
+       
+  CustomerIdentification:
+    type: object
+    properties:    
+        documentType:
+          type: string
+          description: Defines if customerId is a National Id, Tax Payer Number, Passport, etc.
+        customerId:
+          type: string
+          description: Customer unique identifier, usually national identification number or company tax payer number
+  
+  CustomerEmail:
+    type: object
+    properties:    
+        email:
+          type: string
+          description: Emails of customer.
+        validated:
+          type: boolean
+          description: True if the email was validated. False is not validated yet.          
+  
+  CustomerPhone:
+    type: object
+    properties:    
+        phoneType:
+          type: string
+          description: Defines if the phone is a home phone, work phone,mobile, etc.
+        phone:
+          type: string
+          description: Customer telephone
+        validated:
+          type: boolean
+          description: True if the phone number was validated. False is not validated yet.   
+
+  PhoneLeaseInfo:
+    type: object
+    required:
+      - lastBillingDate
+      - nextRenewalDate
+      
+    properties:
+      clauseId:
+        type: string
+        description: Identifier that legacy uses for that permanency clause
+        example: "1668"
+        #clauseId
+      lastBillingDate:
+        type: string
+        format: date 
+        description: Last billing of the contract with equipment
+        example: "2017-05-12"
+        #lastBillingDate
+      nextRenewalDate:
+        type: string
+        format: date 
+        description: Next renewal of the contract with equipment
+        example: "2018-11-12"
+        #nextRenewalDate
+      typeClauseId:
+        type: string
+        description: Type of permanency clause
+        example: " "
+        #typeClauseId
+      imei:
+        type: string
+        description: International Mobile Station Equipment Identity
+        example: "357975075748204"
+        #imei
+      gama:
+        type: string
+        description: Equipment gama
+        example: " "
+        #gama  
+      brand:
+        type: string
+        description: Equipment brand
+        example: "LG G5 LTE"
+        #brand
+      model:
+        type: string
+        description: Equipment model
+        example: "LGT286"
+        #model
+      insurance:
+        type: string
+        description: Confirmation if the equipment is or is not insured
+        example: "No"
+        #insurance
+      status:
+        type: string
+        description: Status of the comodato
+        example: "ACTIVE"
+        #state   
+
+  errorBody:
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+        
+  successBody:
+    type: object
+    properties:
+      response:
+        type: string
+        description: Generic response from platform. May be ommited.
+      message:
+        type: string
+        description: Success Message from platform. May be ommited.

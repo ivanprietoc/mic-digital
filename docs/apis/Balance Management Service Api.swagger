@@ -1,0 +1,136 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Balance Management Service Api
+  description: | 
+    This is the standard API for Balance Management for Tigo. 
+    We use swagger-2.0 specification
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Jose Colman
+    email: jose.colman@edge.com.py
+    url: https://edge.com.py/
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: qa.api.tigo.com
+basePath: /v1/tigo/mobile/bo/balance_management
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+
+
+  
+paths:
+
+  /{creditMsisdn}/transfer:
+    post:
+      summary: Transfer credit balance from a debtMsisdn to a creditMsisdn
+      description: Transfer credit balance from a debtMsisdn to a creditMsisdn
+      operationId: TransferCredit
+      parameters:
+        - name: creditMsisdn
+          in: path
+          description: Unique identifier for the customer
+          required: true
+          type: string
+
+        - name: body
+          in: body
+          description: body
+          required: true
+          schema:
+            $ref: '#/definitions/request'
+            
+      responses:
+        200:
+          description: Successfull Transfer
+          schema:
+            $ref: '#/definitions/success'
+        400:
+          description: Invalid Parameters
+          schema:
+            $ref: '#/definitions/error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/error'
+        500:
+          description: Server Error
+          schema:
+            $ref: '#/definitions/error'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+  /{creditMsisdn}/topup:
+    post:
+      summary: Buy credit for the creditMsisdn balance
+      description: Buy credit for the creditMsisdn balance
+      operationId: BuyCredit
+      parameters:
+        - name: creditMsisdn
+          in: path
+          description: Unique identifier for the customer
+          required: true
+          type: string
+
+        - name: body
+          in: body
+          description: body
+          required: true
+          schema:
+            $ref: '#/definitions/request'
+        
+      responses:
+        200:
+          description: Successfull Transfer
+          schema:
+            $ref: '#/definitions/success'
+        400:
+          description: Invalid Parameters
+          schema:
+            $ref: '#/definitions/error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/error'
+        500:
+          description: Server Error
+          schema:
+            $ref: '#/definitions/error'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+definitions:
+
+  success:
+    properties:
+      estado:
+        type: string
+
+  error:
+    properties:
+      statusCode:
+        type: integer
+        format: int32
+      message:
+        type: string
+      developerMessage:
+        type: string
+
+  request:
+    type: object
+    properties:
+      debtAccount:
+        type: string
+      amount:
+        type: string
+      action:
+        type: string

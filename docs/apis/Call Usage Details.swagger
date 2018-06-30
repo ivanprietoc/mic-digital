@@ -1,0 +1,124 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Call Usage Details
+  description: | 
+    This is the standard API for Call Usage Details for Tigo. 
+    We use swagger-2.0 specification
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Jose Colman
+    email: jose.colman@edge.com.py
+    url: https://edge.com.py/
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: qa.api.tigo.com
+basePath: /v2/tigo/mobile/bo/billing
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+  
+paths:
+
+  /subscribers/{msisdn}/usage/voice:
+    get:
+      summary: Obtain a detailed list of voice call usage.
+      description: Obtain a detailed list of voice call usage.
+      operationId: UsageVoice
+      parameters:
+        - name: msisdn
+          in: path
+          description: Unique identifier for the customer
+          required: true
+          type: string
+        - name: startDate 
+          in: query
+          description: "(optional, ISO8601 datetime) Start date for query period."
+          required: false
+          type: string  
+        - name: endDate 
+          in: query
+          description: "(optional, ISO8601 datetime) End Date for query period."
+          required: false
+          type: string
+        - name: limit 
+          in: query
+          description: ""
+          required: false
+          type: number  
+        - name: offset 
+          in: query
+          description: ""
+          required: false
+          type: number 
+
+            
+      responses:
+        200:
+          description: Successfull
+          schema:
+            $ref: '#/definitions/voiceDetailList'
+        400:
+          description: Invalid Parameters
+          schema:
+            $ref: '#/definitions/error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/error'
+        500:
+          description: Server Error
+          schema:
+            $ref: '#/definitions/error'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+definitions:
+
+  voiceDetailList:
+    type: array
+    items:
+      $ref: "#/definitions/voiceDetail"
+
+  voiceDetail:
+    type: object
+    properties:
+      targetNumber:
+        type: string
+        description: ""
+      targetCompany:
+        type: string
+        description: ""
+      originNumber:
+        type: string
+        description: ""
+      eventType:
+        type: string
+        description: ""
+      DateTime:
+        type: string
+        description: ""
+      eventDuration:
+        type: number
+        description: ""
+      cost:
+        type: number
+        description: ""
+
+  error:
+    properties:
+      statusCode:
+        type: integer
+        format: int32
+      code:
+        type: string
+      message:
+        type: string
+      developerMessage:
+        type: string

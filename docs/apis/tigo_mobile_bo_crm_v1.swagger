@@ -1,0 +1,334 @@
+swagger: '2.0'
+info:
+    version: '2.0.0'
+    title: tigo_mobile_bo_crm_v1
+    description: |
+     This is an api that is responsible for prepaid postpaid service activations and migration from prepaid to postpaid service to BO CRM
+    termsOfService: http://swagger.io/terms/
+    contact:
+        name: Andrea Forneron
+        email: andrea.forneron@edge.com.py
+        url: https://edge.com.py
+    license:
+        name: MIT
+        url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: test.api.tigo.com
+basePath: /v1/tigo/mobile/bo/crm
+schemes:
+    - https
+consumes:
+    - application/json
+produces:
+    - application/json
+securityDefinitions:
+    application:
+        type: oauth2
+        tokenUrl: https://test.api.tigo.com/oauth/client_credential/accesstoken?grant_type=client_credentials
+        flow: application
+        scopes:
+            read: Customer CRM 
+security:
+  - application:
+    - read    
+#                        /$$     /$$
+#                       | $$    | $$
+#   /$$$$$$   /$$$$$$  /$$$$$$  | $$$$$$$   /$$$$$$$
+#  /$$__  $$ |____  $$|_  $$_/  | $$__  $$ /$$_____/
+# | $$  \ $$  /$$$$$$$  | $$    | $$  \ $$|  $$$$$$
+# | $$  | $$ /$$__  $$  | $$ /$$| $$  | $$ \____  $$
+# | $$$$$$$/|  $$$$$$$  |  $$$$/| $$  | $$ /$$$$$$$/
+# | $$____/  \_______/   \___/  |__/  |__/|_______/
+# | $$
+# | $$
+# |__/
+
+paths:
+
+#  /$$$$$$$   /$$$$$$ 
+#| $$__  $$ /$$__  $$
+#| $$  \ $$| $$  \ $$
+#| $$$$$$$ | $$  | $$
+#| $$__  $$| $$  | $$
+#| $$  \ $$| $$  | $$
+#| $$$$$$$/|  $$$$$$/
+#|_______/  \______/ 
+
+#/$$$$$$$   /$$$$$$                      /$$$$$$$$ /$$$$$$  /$$$$$$$ 
+#| $$__  $$ /$$__  $$                    |_____ $$//$$__  $$| $$____/ 
+#| $$  \ $$| $$  \ $$                         /$$/| $$  \ $$| $$      
+#| $$  | $$| $$$$$$$$       /$$$$$$          /$$/ |  $$$$$$$| $$$$$$$ 
+#| $$  | $$| $$__  $$      |______/         /$$/   \____  $$|_____  $$
+#| $$  | $$| $$  | $$                      /$$/    /$$  \ $$ /$$  \ $$
+#| $$$$$$$/| $$  | $$                     /$$/    |  $$$$$$/|  $$$$$$/
+#|_______/ |__/  |__/                    |__/      \______/  \______/ 
+
+  #postPaidActivationServices
+  /lines/{msisdn}/postpaid/activation:
+    post:
+      summary: Performs the activation of the postpaid service taking as initial parameters the customer data.
+      description: Taking as initial parameters the data of the client performs the activation of the postpaid service.
+      operationId: postPaidActivationServices
+      tags:
+        - lines
+      parameters:
+        - $ref: "#/parameters/msisdn"
+        - $ref: "#/parameters/postpaid"
+        - $ref: "#/parameters/authorization"
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/activationList'
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/errorBody'
+        401:
+          description: Unauthorized.
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: Not Found.
+          schema:
+            $ref: '#/definitions/errorBody'
+        default:
+          description: Unhandled resource
+          schema:
+            $ref: '#/definitions/errorBody'
+   #prePaidActivationServices
+  /lines/{msisdn}/prepaid/activation:
+    post:
+      summary: Performs the activation of the prepaid service taking as initial parameters the customer data.
+      description: Taking as initial parameters the data of the client performs the activation of the prepaid service.
+      operationId: prePaidActivationServices
+      parameters:
+        - $ref: "#/parameters/msisdn"
+        - $ref: "#/parameters/prepaid"
+        - $ref: "#/parameters/authorization"
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/activationList'
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/errorBody'
+        401:
+          description: Unauthorized.
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: Not Found.
+          schema:
+            $ref: '#/definitions/errorBody'
+        default:
+          description: Unhandled resource
+          schema:
+            $ref: '#/definitions/errorBody'
+  #migrationPrepaidToPostpaidServices
+  /lines/{msisdn}/prepaid/migration:
+    post:
+      summary: Performs the migration of the prepaid service to postpaid taking as initial parameters the customer data.
+      description: Taking as initial parameters the data of the client performs the migration of the prepaid service to postpaid.
+      operationId: migrationPrepaidToPostpaidServices
+      parameters:
+        - $ref: "#/parameters/msisdn"
+        - $ref: "#/parameters/postpaid"
+        - $ref: "#/parameters/authorization"
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/migrationList'
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/errorBody'
+        401:
+          description: Unauthorized.
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: Not Found.
+          schema:
+            $ref: '#/definitions/errorBody'
+        default:
+          description: Unhandled resource
+          schema:
+            $ref: '#/definitions/errorBody'
+#                                                                  /$$                                  
+#                                                                 | $$                                  
+#  /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$   /$$$$$$$
+# /$$__  $$ |____  $$ /$$__  $$|____  $$| $$_  $$_  $$ /$$__  $$|_  $$_/   /$$__  $$ /$$__  $$ /$$_____/
+#| $$  \ $$  /$$$$$$$| $$  \__/ /$$$$$$$| $$ \ $$ \ $$| $$$$$$$$  | $$    | $$$$$$$$| $$  \__/|  $$$$$$ 
+#| $$  | $$ /$$__  $$| $$      /$$__  $$| $$ | $$ | $$| $$_____/  | $$ /$$| $$_____/| $$       \____  $$
+#| $$$$$$$/|  $$$$$$$| $$     |  $$$$$$$| $$ | $$ | $$|  $$$$$$$  |  $$$$/|  $$$$$$$| $$       /$$$$$$$/
+#| $$____/  \_______/|__/      \_______/|__/ |__/ |__/ \_______/   \___/   \_______/|__/      |_______/ 
+#| $$                                                                                                   
+#| $$                                                                                                   
+#|__/
+
+parameters:
+  msisdn:
+    name: msisdn
+    in: path
+    required: true
+    type: integer
+    description: Is the msisdn number.
+  postpaid: 
+    name: postpaid
+    in: body
+    required: true
+    schema: 
+      $ref: '#/definitions/postpaid'
+    description: "Parameters necessary to perform the activation of the postpaid service and migration from the prepaid service to postpaid"
+  prepaid: 
+    name: prepaid
+    in: body
+    required: true
+    schema: 
+      $ref: '#/definitions/prepaid'
+    description: "Parameters necessary to perform the activation of the prepaid service"
+  authorization:
+    name: Authorization
+    in: header
+    required: true
+    type: string
+    description: 'Access Token provided by the Authorization Url'
+
+#        /$$            /$$$$$$  /$$           /$$   /$$     /$$
+#       | $$           /$$__  $$|__/          |__/  | $$    |__/
+#   /$$$$$$$  /$$$$$$ | $$  \__/ /$$ /$$$$$$$  /$$ /$$$$$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$$
+#  /$$__  $$ /$$__  $$| $$$$    | $$| $$__  $$| $$|_  $$_/  | $$ /$$__  $$| $$__  $$ /$$_____/
+# | $$  | $$| $$$$$$$$| $$_/    | $$| $$  \ $$| $$  | $$    | $$| $$  \ $$| $$  \ $$|  $$$$$$
+# | $$  | $$| $$_____/| $$      | $$| $$  | $$| $$  | $$ /$$| $$| $$  | $$| $$  | $$ \____  $$
+# |  $$$$$$$|  $$$$$$$| $$      | $$| $$  | $$| $$  |  $$$$/| $$|  $$$$$$/| $$  | $$ /$$$$$$$/
+#  \_______/ \_______/|__/      |__/|__/  |__/|__/   \___/  |__/ \______/ |__/  |__/|_______/
+
+definitions:
+  postpaid:
+    properties:
+      vendorId:
+        type: integer
+      vendorRegister:
+        type: integer
+      eh:
+        type: integer
+      operationId:
+        type: string
+      documentType:
+        type: integer
+      documentNumber:
+        type: integer
+      name:
+        type: string
+      surname:
+        type: string
+      civilStatus:
+        type: string
+      birthDate:
+        type: string
+        format: date
+      gender:
+        type: string
+      saleType:
+        type: integer
+      applyPortability:
+        type: integer
+      planId: 
+        type: integer
+      branchOffice: 
+        type: integer
+      nationality: 
+        type: string
+      location: 
+        type: integer
+      iccid: 
+        type: integer
+      supportInside: 
+        type: string
+      amountIncome:
+        type: integer
+      backupDate:
+        type: string
+        format: date
+  prepaid:
+    properties:
+      vendorId:
+        type: integer
+      vendorRegister:
+        type: integer
+      eh:
+        type: integer
+      operationId:
+        type: string
+      documentType:
+        type: integer
+      documentNumber:
+        type: integer
+      name:
+        type: string
+      surname:
+        type: string
+      civilStatus:
+        type: string
+      birthDate:
+        type: string
+        format: date
+      gender:
+        type: string
+      saleType:
+        type: integer
+      applyPortability:
+        type: integer
+      planId: 
+        type: integer
+      branchOffice: 
+        type: integer
+      nationality: 
+        type: string
+      location: 
+        type: integer
+      iccid: 
+        type: integer
+  activationList:
+    properties:
+      correlationID:
+        type: integer
+      message:
+        type: string
+  migrationList:
+    properties:
+      correlationID:
+        type: integer
+      message:
+        type: string
+      referenceId: 
+        type: string
+      
+  # Error Response
+  errorBody:
+    properties:
+      error:
+        required:
+          - statusCode
+          - message
+        type: object
+        properties:
+          statusCode:
+            type: string
+            description: Http Status Code
+            example: "401"
+          code:
+            type: string
+            description: Same as the http status code
+            example: "401"
+          message:
+            type: string
+            description: General message for the error
+            example: "Not Authorized"
+          developerMessage:
+            type: string
+            description: More precise info about the error
+            example: "Access token was not provided or is invalid"

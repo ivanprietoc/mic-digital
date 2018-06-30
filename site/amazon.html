@@ -1,0 +1,320 @@
+<h1 id="amazon">AMAZON</h1>
+<h2 id="journey">Journey</h2>
+<ul class="incremental">
+<li>Audience: B2C end customer</li>
+<li>Journey: Subscription - Mobile + Home</li>
+<li>Type: Partners and OTTs</li>
+</ul>
+<h2 id="description">Description</h2>
+<p>Add-On for mobile and fixed services. Products: Prime Video and Prime Music.</p>
+<p>Commercialization: - Hard bundle (included in your plan, cost 0) - Add-on (user can activate and pay x$/month until deactivation, like HBO)</p>
+<h2 id="goals-and-kpis">Goals and KPIs</h2>
+<ul class="incremental">
+<li>Activations by product/country
+<ul class="incremental">
+<li>hard bundle</li>
+<li>add-on</li>
+</ul></li>
+<li>Deactivations by product/country
+<ul class="incremental">
+<li>hard bundle</li>
+<li>add-on</li>
+</ul></li>
+</ul>
+<h2 id="features">Features</h2>
+<ul class="incremental">
+<li>Self-service (using mitigo b2c)
+<ul class="incremental">
+<li>MOBILE Add-ons
+<ul class="incremental">
+<li>Get add-on offers (catalog)</li>
+<li>Get current add-ons by msisdn</li>
+<li>Add add-on (subscription)</li>
+<li>Terminate add-on (unsubscribe)</li>
+</ul></li>
+<li>HOME Add-ons
+<ul class="incremental">
+<li>Get add-on offers (catalog)</li>
+<li>Get current add-ons by homeid</li>
+<li>Add add-on (subscription)</li>
+<li>Terminate add-on (unsubscribe)</li>
+</ul></li>
+</ul></li>
+<li>By Agent (using mitigo-agent or CRM and Docomo reports)
+<ul class="incremental">
+<li>MOBILE Add-ons
+<ul class="incremental">
+<li>Get add-on offers (catalog)</li>
+<li>Get current add-ons by msisdnd</li>
+<li>Add add-on (subscription)</li>
+<li>Terminate add-on (unsubscribe)</li>
+</ul></li>
+<li>HOME Add-ons
+<ul class="incremental">
+<li>Get add-on offers (catalog)</li>
+<li>Get current add-ons by homeid</li>
+<li>Add add-on (subscription)</li>
+<li>Terminate add-on (unsubscribe)</li>
+</ul></li>
+<li>See amazon subscription status w/ Docomo</li>
+<li>Reconciliation reports (docomo)</li>
+</ul></li>
+<li>Care &amp; Recommendation
+<ul class="incremental">
+<li>FAQ pages with:
+<ul class="incremental">
+<li>terms and conditions</li>
+<li>pricing</li>
+<li>what to do when problems arise</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="basic-architecture">Basic architecture</h2>
+<pre class="mermaid"><code>graph TD
+
+subgraph Mitigo
+    mitigo[Mi tigo B2C]
+    appbackend[Web Backend]
+    fapi[API Proxy]
+    mitigo---appbackend
+    appbackend---fapi
+end
+
+subgraph Docomo
+    docomo[Docomo/Amazon Backend]
+end
+
+subgraph Digital Backend
+    backend[Apigee]
+    fapi--&gt;backend
+    docomo---backend
+
+    segment
+    analytics
+    tableau
+    new_relic
+    waf
+end
+
+subgraph Country
+    bss[Core BSS - OSB]
+    mobile[Mobile]
+    fixed[Fixed]
+    backend--&gt;bss
+    bss--&gt;fixed
+    bss--&gt;mobile
+end
+subgraph Mobile Domain
+    customer[customer mobile]
+    CBS[Convergent billing system]
+    mobile--&gt;customer
+end
+
+subgraph fixed Domain
+    customerfixed[customer fixed]
+    CBS2[Convergent billing system]
+    fixed--&gt;customerfixed
+end
+</code></pre>
+<h2 id="flows">Flows</h2>
+<p>More information on flows from <a href="https://drive.google.com/file/d/1PPU5YNCoKs31-29OGS2GZd_URpw9F4px/view?usp=sharing">docomo apis</a> and <a href="https://drive.google.com/file/d/1h9PCTQkJamHGTKkX2VSPYL7ek_EFqJ1m/view?usp=sharing">docomo flows</a>.</p>
+<p><img src="amz-mockup.png" /></p>
+<h3 id="activation">Activation</h3>
+<pre class="sequencediagram"><code>title Amazon &amp; Tigo integration - ACTIVATION FLOW 
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Identification
+
+END_USER-&gt;MITIGO: login w/ mobile or fixed account (email+passw)
+MITIGO-&gt;END_USER: ok
+END_USER-&gt;MITIGO: open add-Ons section
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Elegibility
+MITIGO-&gt;TIGO_BCK: getAddOnOffers()
+TIGO_BCK-&gt;MITIGO: Amazon Prime Video
+END_USER-&gt;MITIGO: Click on Buy/Add addOn:Amz Video
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Subscribe
+
+MITIGO-&gt;DOCOMO: subscribe
+DOCOMO-&gt;AMZ: subscribe
+AMZ-&gt;DOCOMO: ok
+DOCOMO-&gt;MITIGO: OK, redirectUrl to activate
+MITIGO-&gt;END_USER: redirect to landing
+MITIGO-&gt;END_USER: sms or email to complete the flow later
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Association journey + Activation
+END_USER-&gt;DOCOMO: click on ACTIVATE, go to redirectUrl
+AMZ-&gt;AMZ: sign in/sign up
+AMZ-&gt;DOCOMO: deactivation successful
+DOCOMO-&gt;TIGO_BCK: activation successful alias=123
+
+TIGO_BCK-&gt;TIGO_BCK: POST AddOn(tigo_account, product_id) 
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: end of flow</code></pre>
+<h3 id="termination">Termination</h3>
+<pre class="sequencediagram"><code>title Amazon &amp; Tigo integration - DEACTIVATION FLOW 
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Identification
+
+END_USER-&gt;MITIGO: login w/ mobile or fixed account (email+passw)
+MITIGO-&gt;END_USER: ok
+END_USER-&gt;MITIGO: open addOns
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Add-on Status
+MITIGO-&gt;TIGO_BCK: getAddOns(user_id)
+TIGO_BCK-&gt;MITIGO: User_id has: Amazon Prime Video, HBO, ETC.
+END_USER-&gt;MITIGO: Click on Deactivate addOn:Amz Video
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Deactivate
+
+MITIGO-&gt;DOCOMO: deactivate user_id, amz_video
+DOCOMO-&gt;AMZ: deactivate 
+MITIGO-&gt;TIGO_BCK: DELETE addon(tigo_account, product_id) 
+MITIGO-&gt;END_USER: your subscription has been deactivated
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: end of flow</code></pre>
+<h2 id="implementation-details">Implementation Details</h2>
+<p>Refer to <a href="mitigo.md">mitigo</a> for details. Here only specific services/details for AMZ.</p>
+<h3 id="exposure-layer">Exposure layer</h3>
+<ul class="incremental">
+<li>apigee
+<ul class="incremental">
+<li>tigo_home_xx_portfolio_vx</li>
+<li>tigo_mobile_xx_plans_vx</li>
+<li>zendesk_tickets_v1</li>
+<li>docomo_amz_v1</li>
+</ul></li>
+<li>Country API Details:
+<ul class="incremental">
+<li><a href="https://homeselfcareapi.docs.apiary.io/#reference/0/v1tigohomecountryportfoliocontractscontractidproductsproductidavailableoffers/get-available-offers-by-contractid-and-productid">Home Get Offerings</a></li>
+<li><a href="https://homeselfcareapi.docs.apiary.io/#reference/0/v1tigohomecountryportfoliocontractscontractidproductsproductid/add-offering-by-contractid-and-productid">Home Add offering</a></li>
+<li><a href="https://homeselfcareapi.docs.apiary.io/#reference/0/v1tigohomecountryportfoliocontractscontractidproductsproductid/get-product-by-contractid-and-productid">Home Get add-ons by homeid</a></li>
+<li><a href="https://homeselfcareapi.docs.apiary.io/#reference/0/v1tigohomecountryportfoliocontractscontractidproductsproductid/delete-offering-by-contractid-and-productid">Home Delete add-on by homeid</a></li>
+<li><a href="https://mobileselfcareapi.docs.apiary.io/#reference/0/v2tigomobilecountryplanssubscribersmsisdnavailableoffers">Mobile Get Offering</a></li>
+<li><a href="https://mobileselfcareapi.docs.apiary.io/#reference/0/v2tigomobilecountryplanssubscribersmsisdnacquiredoffersofferid/purchase-offer-by-msisdn-and-offerid">Mobile Add offering</a></li>
+<li><a href="https://mobileselfcareapi.docs.apiary.io/#reference/0/v2tigomobilecountryplanssubscribersmsisdnacquiredoffersofferid/delete-offer-by-msisdn-and-offerid">Mobile Delete offering</a></li>
+</ul></li>
+<li>Docomo API details: Based on <a href="https://drive.google.com/file/d/1PPU5YNCoKs31-29OGS2GZd_URpw9F4px/view?usp=sharing">docomo documentation</a>
+<ul class="incremental">
+<li>Subscribe flow - chapter 13 state machine (SUBSCRIBE &gt; CONFIRM)</li>
+<li>Subscription deactivation API - chapter 12</li>
+<li>GetAll API - chapter 14</li>
+</ul></li>
+<li>zendesk
+<ul class="incremental">
+<li><a href="https://developer.zendesk.com/rest_api/docs/core/tickets#create-ticket">Create ticket</a></li>
+</ul></li>
+</ul>
+<h3 id="engines-enablers">Engines / Enablers</h3>
+<ul class="incremental">
+<li>zendesk
+<ul class="incremental">
+<li>FAQ</li>
+<li>backoffice queues for activation/deactivation</li>
+</ul></li>
+</ul>
+<h3 id="marketing-tools">Marketing tools</h3>
+<ul class="incremental">
+<li>kannel</li>
+<li>yourls</li>
+<li>outbound/hubspot?</li>
+</ul>
+<h3 id="repositories">Repositories</h3>
+<ul class="incremental">
+<li>Docomo SFTP/activations: layout defined on <a href="https://drive.google.com/file/d/1PPU5YNCoKs31-29OGS2GZd_URpw9F4px/view?usp=sharing">docomo documentation</a> chapter 15</li>
+</ul>
+<p>Example:</p>
+<pre><code>&quot;countryCode&quot;,&quot;siteCode&quot;,&quot;productName&quot;,&quot;subscriptionCode&quot;,&quot;msisdn&quot;,&quot;alias&quot;,&quot;telcoCode&quot;,
+&quot;dateCreated&quot;,&quot;dateActive&quot;,&quot;datePendingUnsubscription&quot;,&quot;dateUnsubscribed&quot;,
+&quot;unsubscriptionSource&quot;
+&quot;XX&quot;,&quot;amazon&quot;,&quot;plan123&quot;,&quot;5b23765be4b06e7171d79c7d&quot;,&quot;+1234567890&quot;,,&quot;OPERATOR1&quot;,
+&quot;2018-05-22T15:31:06Z&quot;,&quot;2018-05-22T15:45:31Z&quot;,,&quot;2018-06-29T15:45:31Z &quot;,
+&quot;TELCO&quot;</code></pre>
+<ul class="incremental">
+<li>Country/add-ons: report on manual activations on siebel to</li>
+</ul>
+<h3 id="other-tools">Other tools</h3>
+<ul class="incremental">
+<li>segment</li>
+<li>new relic</li>
+<li>tableau, dashboard amazon
+<ul class="incremental">
+<li>activations, deactivations by product/country</li>
+</ul></li>
+<li>analytics
+<ul class="incremental">
+<li>mixpanel (by mitigo)</li>
+</ul></li>
+</ul>
+<h1 id="tasks-and-timeplan">Tasks and timeplan</h1>
+<h2 id="on-country">On country</h2>
+<ul class="incremental">
+<li>Add-on creation (new SKUs) with different price point for hard-bundles and add-ons
+<ul class="incremental">
+<li>mobile</li>
+<li>home</li>
+</ul></li>
+<li>Plan mapping configurations using these SKUs</li>
+<li>APIs for:
+<ul class="incremental">
+<li>MOBILE Add-ons
+<ul class="incremental">
+<li>Get add-on offers (catalog)</li>
+<li>Get current add-ons by msisdn</li>
+<li>Charge add-on (subscription)</li>
+<li>Terminate add-on (unsubscribe)</li>
+</ul></li>
+<li>HOME Add-ons
+<ul class="incremental">
+<li>Get add-on offers (catalog)</li>
+<li>Get current add-ons by homeid</li>
+<li>Charge add-on (subscription)</li>
+<li>Terminate add-on (unsubscribe)</li>
+</ul></li>
+</ul></li>
+<li>Processes for:
+<ul class="incremental">
+<li>Queues for activations/deactivations on zendesk (in case activate/deactivate api is not available)</li>
+<li>Reconciliation</li>
+</ul></li>
+</ul>
+<p>More information on API Details <a href="https://docs.google.com/spreadsheets/d/1If44LgO5MjK2zj51elfwepbGLaLprfejUq0JrjXjSXg/edit#gid=0">here</a></p>
+<h2 id="on-digital">On Digital</h2>
+<ul class="incremental">
+<li>PRD. Ivan</li>
+<li>UX experience. Nemo
+<ul class="incremental">
+<li>Mobile</li>
+<li>Home</li>
+</ul></li>
+<li>API mapping &amp; exposure in apigee. Beni + Edge
+<ul class="incremental">
+<li>Country API Details:
+<ul class="incremental">
+<li>Home Get add-ons offers</li>
+<li>Home Add add-ons</li>
+<li>Home Get add-ons by homeid</li>
+<li>Home Delete add-on by homeid</li>
+<li>Mobile Get add-ons Offering</li>
+<li>Mobile Add add-ons by msisdn</li>
+<li>Mobile Delete add-ons by msisdn</li>
+<li>Mobile Get add-ons by msisdn</li>
+</ul></li>
+<li>Docomo API details:
+<ul class="incremental">
+<li>Subscribe flow - chapter 13 state machine (SUBSCRIBE &gt; CONFIRM)</li>
+<li>Subscription deactivation API - chapter 12</li>
+<li>GetAll API - chapter 14</li>
+</ul></li>
+<li>zendesk
+<ul class="incremental">
+<li>Create ticket</li>
+</ul></li>
+</ul></li>
+<li>Zendesk: workflow and reports</li>
+<li>Segment: update instrumentation plan</li>
+<li>tableau: build dashboard for amazon</li>
+<li>Unit testing</li>
+<li>Integral testing</li>
+<li>Deploy</li>
+</ul>

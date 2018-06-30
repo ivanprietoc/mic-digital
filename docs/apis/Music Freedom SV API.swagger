@@ -1,0 +1,243 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Music Freedom SV API 
+  description: | 
+    This is the standard API for Music Freedom related functions, get customer status, subscribe and unsubscribe to the Music Freedom service. 
+    We use swagger-2.0 specification
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Jose Colman
+    email: jose.colman@edge.com.py
+    url: https://edge.com.py/
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: qa.api.tigo.com
+basePath: /v1/tigo/musicfreedom/{country}
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+  
+
+
+paths:
+
+  /subscribers/{msisdn}/status/:
+    get:
+      summary: Get subscriber status by msisdn
+      description: Returns a list of provider plans.
+      operationId: Get Status 
+      parameters:
+        - name: msisdn
+          in: path
+          description: Subscriber MSISDN
+          required: true
+          type: string
+      responses:
+        200:
+          description: Provider plans associated with provided MSISDN were found
+          schema:
+            $ref: '#/definitions/providerPlans'
+        400:
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/error'
+        404:
+          description: the plans for the specified `MSISDN` was not found
+          schema:
+            $ref: '#/definitions/error'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+  /subscribers/{msisdn}:
+    post:
+      summary: Subscribe a customer to a provider plan 
+      description: Subscribe a customer to a provider plan
+      operationId: Subscribe
+      parameters:
+        - name: msisdn
+          in: path
+          description: Subscriber MSISDN
+          required: true
+          type: string
+        
+        - name: body
+          in: body
+          description: body
+          required: true
+          schema:
+            $ref: '#/definitions/SubscribeRequest'
+            
+      responses:
+        201:
+          description: Subscription was successful 
+          schema:
+            $ref: '#/definitions/SubscribeResponse'
+        400:
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/error'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/error'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+    delete:
+      summary: Unsubscribe a customer from a provider plan 
+      description: Unsubscribe a customer from a provider plan
+      operationId: Unsubscribe
+      parameters:
+        - name: msisdn
+          in: path
+          description: Subscriber MSISDN
+          required: true
+          type: string
+        
+        - name: body
+          in: body
+          description: body
+          required: true
+          schema:
+            $ref: '#/definitions/UnsubscribeRequest'
+            
+      responses:
+        201:
+          description: Subscription was successful 
+          schema:
+            $ref: '#/definitions/UnsubscribeResponse'
+        400:
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/error'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/error'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+            
+
+
+#####...######..######..######..##..##..######..######..######...####...##..##...####..
+##..##..##......##........##....###.##....##......##......##....##..##..###.##..##.....
+##..##..####....####......##....##.###....##......##......##....##..##..##.###...####..
+##..##..##......##........##....##..##....##......##......##....##..##..##..##......##.
+#####...######..##......######..##..##..######....##....######...####...##..##...####..
+
+definitions:
+
+
+  providerPlans:
+    type: array
+    items:
+      $ref: "#/definitions/plan"
+  plan:
+    type: object
+    properties:
+      status:
+        type: string
+        description: ""
+      id:
+        type: string
+        description: ""
+      description:
+        type: string
+        description: ""
+      startDate:
+        type: string
+        description: ""
+      endDate:
+        type: string
+        description: ""
+      responseCode:
+        type: string
+        description: ""
+      responseMessage:
+        type: string
+        description: ""
+
+  error:
+    properties:
+      errorType:
+        type: string
+      code:
+        type: integer
+        format: int32
+      description:
+        type: string
+      reason:
+        type: string
+
+  SubscribeRequest:
+    type: object
+    required:
+      - providerPlan
+    properties:
+      providerPlan:
+        type: string
+        description: ""
+      startDate:
+        type: string
+        description: ""
+      externalTransactionId:
+        type: string
+        description: ""
+
+  SubscribeResponse:
+    type: object
+    properties:
+      responseCode:
+        type: string
+        description: ""
+      responseMessage:
+        type: string
+        description: ""
+      transactionId:
+        type: string
+        description: ""
+        
+  UnsubscribeRequest:
+    type: object
+    required:
+      - providerPlan
+    properties:
+      providerPlan:
+        type: string
+        description: ""
+      startDate:
+        type: string
+        description: ""
+      externalTransactionId:
+        type: string
+        description: ""
+        
+  UnsubscribeResponse:
+    type: object
+    properties:
+      responseCode:
+        type: string
+        description: ""
+      responseMessage:
+        type: string
+        description: ""
+      transactionId:
+        type: string
+        description: ""

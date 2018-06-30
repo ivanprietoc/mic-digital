@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ivan Prieto">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Mi tigo B2B - Millicom</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">Millicom</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../catalog/">Catalogo</a>
+</li>
+                            
+<li >
+    <a href="../amazon/">Amazon</a>
+</li>
+                            
+<li >
+    <a href="../tigoshop/">Shop</a>
+</li>
+                            
+<li >
+    <a href="../mitigo/">Mi Tigo</a>
+</li>
+                            
+<li >
+    <a href="../bot/">Bot</a>
+</li>
+                            
+<li >
+    <a href="../mfs/">MFS</a>
+</li>
+                            
+<li >
+    <a href="../mitigo-agent/">Mi Tigo Agent</a>
+</li>
+                            
+<li >
+    <a href="../payment-gtw/">Payment Gateway</a>
+</li>
+                            
+<li >
+    <a href="../pos/">Distribution</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Mi tigo B2B</a>
+</li>
+                            
+<li >
+    <a href="../usa/">Tigo USA</a>
+</li>
+                            
+<li >
+    <a href="../sports/">Tigo Sports</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">APIs <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../apiMobileSelfCare2.0/">API Mobile Selfcare 2.0</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Procesess <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../processes/devBestPractices/">How we work</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../pos/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../usa/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#mi-tigo-b2b-tbo">Mi Tigo B2B (TBO)</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#basic-architecture">Basic architecture</a></li>
+            <li><a href="#implementation-details">Implementation Details</a></li>
+            <li><a href="#south-architecture-country">SOUTH ARCHITECTURE (COUNTRY)</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="mi-tigo-b2b-tbo">Mi Tigo B2B (TBO)</h1>
+<p><strong>Journey</strong></p>
+<p>Subscription B2B - Mobile + Home, USE
+Audience: SMBs</p>
+<p><strong>Description</strong></p>
+<p>video tutorial CO june 2018: https://vimeo.com/comunicacionestigoune/review/273877003/984d184e8d</p>
+<p><strong>Goals and KPIs</strong>
+- active users
+- active companies
+- invoices: pay
+- nps</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Autocreate user</li>
+<li>Manage accounts: mobile+fixed accounts</li>
+<li>Discovery<ul>
+<li>Banner</li>
+</ul>
+</li>
+<li>Use &amp; Self-service<ul>
+<li>See Balances &amp; Quota</li>
+<li>Call History</li>
+<li>Sms History</li>
+<li>Internet details </li>
+<li>Balance Transfer</li>
+<li>Renovations</li>
+<li>Upgrade plans</li>
+<li>Invoices</li>
+<li>Pay multiple invoices with CC</li>
+<li>Enable electronic bill (eco bill)<ul>
+<li>Invoice History</li>
+<li>Download last invoice</li>
+</ul>
+</li>
+<li>Wifi self-service<ul>
+<li>change wifi password</li>
+<li>change wifi name</li>
+<li>reset modem</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Care &amp; Recommendation<ul>
+<li>NPS</li>
+<li>Help<ul>
+<li>chat</li>
+<li>faq</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="basic-architecture">Basic architecture</h2>
+<pre><code class="mermaid">graph TD
+
+subgraph Channel web
+    web[web - Angular]
+    drupal[drupal]
+    web--&gt;drupal
+end
+
+subgraph Digital Backend
+    backend[Apigee]
+    drupal--&gt;backend
+
+    segment
+    newrelic
+    payment_gateway
+    tigoid
+end
+
+subgraph Country
+    bss[Core BSS - OSB]
+    mobile[Mobile]
+    fixed[Fixed]
+    backend--&gt;bss
+    bss--&gt;fixed
+    bss--&gt;mobile
+end
+subgraph Mobile Domain
+    customer[customer]
+    products[product catalog]
+    fulfillment[fulfillment]
+    dpi[dpi]
+    ticketsMob[ticket management]
+    mobile--&gt;customer
+end
+
+subgraph fixed Domain
+    customerfixed[customer fixed]
+    productsfixed[product catalog]
+    fulfillmentfixed[order management]
+    ticketsFix[ticket management]
+    fixed--&gt;customerfixed
+end
+
+</code></pre>
+
+<h2 id="implementation-details">Implementation Details</h2>
+<h3 id="authentication">Authentication</h3>
+<ul>
+<li>tigo id<ul>
+<li>TigoID Public</li>
+</ul>
+</li>
+</ul>
+<h3 id="exposure-layer">Exposure layer</h3>
+<ul>
+<li>apigee<ul>
+<li>Home Selfcare </li>
+<li>Kannel SMS    </li>
+<li>Payment Domiciliation </li>
+<li>Selfcare API v2   </li>
+<li>TBO-mobile self care  </li>
+<li>Tigo BO Lend APIs </li>
+<li>Tigo Business Online BO   </li>
+<li>Tigo Business Online CO   </li>
+<li>Tigo Business Online GT   </li>
+<li>Tigo Business Online HN   </li>
+<li>Tigo Business Online SV   </li>
+<li>Tigo Customer Support </li>
+<li>Tigo Mobile Product Fulfillment   </li>
+<li>Tigo Mobile UpSelling Info    </li>
+<li>Tigo Mobile Usage Balance </li>
+<li>Tigo SelfCare (LV1)   </li>
+</ul>
+</li>
+</ul>
+<h3 id="engines-enablers">Engines / Enablers</h3>
+<ul>
+<li>payment gateway</li>
+<li>zendesk</li>
+</ul>
+<h3 id="marketing-tools">Marketing tools</h3>
+<ul>
+<li>kannel</li>
+</ul>
+<h3 id="repositories">Repositories</h3>
+<ul>
+<li>S3</li>
+</ul>
+<h3 id="other-tools">Other tools</h3>
+<ul>
+<li>segment</li>
+<li>new relic</li>
+<li>tableau<ul>
+<li>dashboard tigo shop</li>
+<li>active users</li>
+</ul>
+</li>
+<li>analytics<ul>
+<li>mixpanel</li>
+</ul>
+</li>
+</ul>
+<h2 id="south-architecture-country">SOUTH ARCHITECTURE (COUNTRY)</h2></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

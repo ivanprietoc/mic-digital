@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ivan Prieto">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Amazon - Millicom</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">Millicom</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../catalog/">Catalogo</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Amazon</a>
+</li>
+                            
+<li >
+    <a href="../tigoshop/">Shop</a>
+</li>
+                            
+<li >
+    <a href="../mitigo/">Mi Tigo</a>
+</li>
+                            
+<li >
+    <a href="../bot/">Bot</a>
+</li>
+                            
+<li >
+    <a href="../mfs/">MFS</a>
+</li>
+                            
+<li >
+    <a href="../mitigo-agent/">Mi Tigo Agent</a>
+</li>
+                            
+<li >
+    <a href="../payment-gtw/">Payment Gateway</a>
+</li>
+                            
+<li >
+    <a href="../pos/">Distribution</a>
+</li>
+                            
+<li >
+    <a href="../tbo/">Mi tigo B2B</a>
+</li>
+                            
+<li >
+    <a href="../usa/">Tigo USA</a>
+</li>
+                            
+<li >
+    <a href="../sports/">Tigo Sports</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">APIs <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../apiMobileSelfCare2.0/">API Mobile Selfcare 2.0</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Procesess <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../processes/devBestPractices/">How we work</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../catalog/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../tigoshop/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#amazon">AMAZON</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#description">Description</a></li>
+            <li><a href="#goals-and-kpis">Goals and KPIs</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#basic-architecture">Basic architecture</a></li>
+            <li><a href="#flows">Flows</a></li>
+            <li><a href="#implementation-details">Implementation Details</a></li>
+        <li class="main "><a href="#tasks-and-timeplan">Tasks and timeplan</a></li>
+            <li><a href="#on-country">On country</a></li>
+            <li><a href="#on-digital">On Digital</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="amazon">AMAZON</h1>
+<h2 id="journey">Journey</h2>
+<ul>
+<li>Audience: B2C end customer</li>
+<li>Journey: Subscription - Mobile + Home</li>
+<li>Type: Partners and OTTs</li>
+</ul>
+<h2 id="description">Description</h2>
+<p>Add-On for mobile and fixed services.
+Products: Prime Video and Prime Music.</p>
+<p>Commercialization: 
+- Hard bundle (included in your plan, cost 0)
+- Add-on (user can activate and pay x$/month until deactivation, like HBO)</p>
+<h2 id="goals-and-kpis">Goals and KPIs</h2>
+<p>In order to track success of the campaign we shall review on a monthly basis the following KPIs:</p>
+<ul>
+<li>Sales (# of customers agreeing to buy Amazon)</li>
+<li>number of associations made by customers and % of agreed sales</li>
+<li>number of subscribers with Amazon add-ons:<ul>
+<li>in 3 month free period</li>
+<li>Paying for the add-on</li>
+</ul>
+</li>
+<li>Penetration of postpaid base</li>
+</ul>
+<h2 id="features">Features</h2>
+<ul>
+<li>Self-service (using mitigo b2c)<ul>
+<li>MOBILE Add-ons<ul>
+<li>Get add-on offers (catalog)</li>
+<li>Get current add-ons by msisdn</li>
+<li>Add add-on (subscription)</li>
+<li>Terminate add-on (unsubscribe)</li>
+</ul>
+</li>
+<li>HOME Add-ons<ul>
+<li>Get add-on offers (catalog)</li>
+<li>Get current add-ons by homeid</li>
+<li>Add add-on (subscription)</li>
+<li>Terminate add-on (unsubscribe)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>By Agent (using mitigo-agent or CRM and Docomo reports)</p>
+<ul>
+<li>MOBILE Add-ons<ul>
+<li>Get add-on offers (catalog)</li>
+<li>Get current add-ons by msisdnd</li>
+<li>Add add-on (subscription)</li>
+<li>Terminate add-on (unsubscribe)</li>
+</ul>
+</li>
+<li>HOME Add-ons<ul>
+<li>Get add-on offers (catalog)</li>
+<li>Get current add-ons by homeid</li>
+<li>Add add-on (subscription)</li>
+<li>Terminate add-on (unsubscribe)</li>
+</ul>
+</li>
+<li>See amazon subscription status w/ Docomo</li>
+<li>Reconciliation reports (docomo)</li>
+</ul>
+</li>
+<li>
+<p>Care &amp; Recommendation</p>
+<ul>
+<li>FAQ pages with:<ul>
+<li>terms and conditions</li>
+<li>pricing</li>
+<li>what to do when problems arise</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="basic-architecture">Basic architecture</h2>
+<pre><code class="mermaid">graph TD
+
+subgraph Mitigo
+    mitigo[Mi tigo B2C]
+    appbackend[Web Backend]
+    fapi[API Proxy]
+    mitigo---appbackend
+    appbackend---fapi
+end
+
+subgraph Docomo
+    docomo[Docomo/Amazon Backend]
+end
+
+subgraph Digital Backend
+    backend[Apigee]
+    fapi--&gt;backend
+    docomo---backend
+
+    segment
+    analytics
+    tableau
+    new_relic
+    waf
+end
+
+subgraph Country
+    bss[Core BSS - OSB]
+    mobile[Mobile]
+    fixed[Fixed]
+    backend--&gt;bss
+    bss--&gt;fixed
+    bss--&gt;mobile
+end
+subgraph Mobile Domain
+    customer[customer mobile]
+    CBS[Convergent billing system]
+    mobile--&gt;customer
+end
+
+subgraph fixed Domain
+    customerfixed[customer fixed]
+    CBS2[Convergent billing system]
+    fixed--&gt;customerfixed
+end
+
+</code></pre>
+
+<h2 id="flows">Flows</h2>
+<p>More information on flows from <a href="https://drive.google.com/file/d/1PPU5YNCoKs31-29OGS2GZd_URpw9F4px/view?usp=sharing">docomo apis</a> and <a href="https://drive.google.com/file/d/1h9PCTQkJamHGTKkX2VSPYL7ek_EFqJ1m/view?usp=sharing">docomo flows</a>.</p>
+<p>Mi tigo mockups: https://projects.invisionapp.com/share/9C8H21I3R
+Tigo activation flow: https://invis.io/65LX4R9NE7S</p>
+<h3 id="activation">Activation</h3>
+<pre><code class="sequenceDiagram">title Amazon &amp; Tigo integration - ACTIVATION FLOW 
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Identification
+
+END_USER-&gt;MITIGO: login w/ mobile or fixed account (email+passw)
+MITIGO-&gt;END_USER: ok
+END_USER-&gt;MITIGO: open add-Ons section
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Elegibility
+MITIGO-&gt;TIGO_BCK: getAddOnOffers()
+TIGO_BCK-&gt;MITIGO: Amazon Prime Video
+END_USER-&gt;MITIGO: Click on Buy/Add addOn:Amz Video
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Subscribe
+
+MITIGO-&gt;DOCOMO: subscribe
+DOCOMO-&gt;AMZ: subscribe
+AMZ-&gt;DOCOMO: ok
+DOCOMO-&gt;MITIGO: OK, redirectUrl to activate
+MITIGO-&gt;END_USER: redirect to landing
+MITIGO-&gt;END_USER: sms or email to complete the flow later
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Association journey + Activation
+END_USER-&gt;DOCOMO: click on ACTIVATE, go to redirectUrl
+AMZ-&gt;AMZ: sign in/sign up
+AMZ-&gt;DOCOMO: deactivation successful
+DOCOMO-&gt;TIGO_BCK: activation successful alias=123
+
+TIGO_BCK-&gt;TIGO_BCK: POST AddOn(tigo_account, product_id) 
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: end of flow
+</code></pre>
+
+<h3 id="termination">Termination</h3>
+<p>This flow can begin on:
+- end user
+- agent
+- amazon</p>
+<p>Here we describe the flow from the end_user.
+Agents may use mitigo-agent.
+Amazon flow doesn't require user interaction.
+On plan migration or change number user will be disconected thru APIs and needs to begin the association flow again with the new number. This process will be manage by the country.</p>
+<p>Tigo deactivation flow: https://invis.io/65LX4R9NE7S</p>
+<pre><code class="sequenceDiagram">title Amazon &amp; Tigo integration - DEACTIVATION FLOW 
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Identification
+
+END_USER-&gt;MITIGO: login w/ mobile or fixed account (email+passw)
+MITIGO-&gt;END_USER: ok
+END_USER-&gt;MITIGO: open addOns
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Add-on Status
+MITIGO-&gt;TIGO_BCK: getAddOns(user_id)
+TIGO_BCK-&gt;MITIGO: User_id has: Amazon Prime Video, HBO, ETC.
+END_USER-&gt;MITIGO: Click on Deactivate addOn:Amz Video
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Deactivate
+
+MITIGO-&gt;DOCOMO: deactivate user_id, amz_video
+DOCOMO-&gt;AMZ: deactivate 
+MITIGO-&gt;TIGO_BCK: DELETE addon(tigo_account, product_id) 
+MITIGO-&gt;END_USER: your subscription has been deactivated
+
+note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: end of flow
+</code></pre>
+
+<h2 id="implementation-details">Implementation Details</h2>
+<p>Refer to <a href="../mitigo/">mitigo</a> for details. Here only specific services/details for AMZ.</p>
+<h3 id="exposure-layer">Exposure layer</h3>
+<ul>
+<li>
+<p>apigee</p>
+<ul>
+<li>tigo_home_xx_portfolio_vx</li>
+<li>tigo_mobile_xx_plans_vx</li>
+<li>zendesk_tickets_v1</li>
+<li>docomo_amz_v1 </li>
+</ul>
+</li>
+<li>
+<p>Country API Details:</p>
+<ul>
+<li><a href="https://homeselfcareapi.docs.apiary.io/#reference/0/v1tigohomecountryportfoliocontractscontractidproductsproductidavailableoffers/get-available-offers-by-contractid-and-productid">Home Get Offerings</a></li>
+<li><a href="https://homeselfcareapi.docs.apiary.io/#reference/0/v1tigohomecountryportfoliocontractscontractidproductsproductid/add-offering-by-contractid-and-productid">Home Add offering</a></li>
+<li><a href="https://homeselfcareapi.docs.apiary.io/#reference/0/v1tigohomecountryportfoliocontractscontractidproductsproductid/get-product-by-contractid-and-productid">Home Get add-ons by homeid</a></li>
+<li><a href="https://homeselfcareapi.docs.apiary.io/#reference/0/v1tigohomecountryportfoliocontractscontractidproductsproductid/delete-offering-by-contractid-and-productid">Home Delete add-on by homeid</a></li>
+<li><a href="https://mobileselfcareapi.docs.apiary.io/#reference/0/v2tigomobilecountryplanssubscribersmsisdnavailableoffers">Mobile Get Offering</a></li>
+<li><a href="https://mobileselfcareapi.docs.apiary.io/#reference/0/v2tigomobilecountryplanssubscribersmsisdnacquiredoffersofferid/purchase-offer-by-msisdn-and-offerid">Mobile Add offering</a></li>
+<li><a href="https://mobileselfcareapi.docs.apiary.io/#reference/0/v2tigomobilecountryplanssubscribersmsisdnacquiredoffersofferid/delete-offer-by-msisdn-and-offerid">Mobile Delete offering</a></li>
+</ul>
+</li>
+<li>
+<p>Docomo API details:
+Based on <a href="https://drive.google.com/file/d/1PPU5YNCoKs31-29OGS2GZd_URpw9F4px/view?usp=sharing">docomo documentation</a></p>
+<ul>
+<li>Subscribe flow - chapter 13 state machine (SUBSCRIBE &gt; CONFIRM)</li>
+<li>Subscription deactivation API - chapter 12</li>
+<li>GetAll API - chapter 14</li>
+</ul>
+</li>
+<li>
+<p>zendesk  </p>
+<ul>
+<li><a href="https://developer.zendesk.com/rest_api/docs/core/tickets#create-ticket">Create ticket</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="engines-enablers">Engines / Enablers</h3>
+<ul>
+<li>zendesk<ul>
+<li>FAQ</li>
+<li>backoffice queues for activation/deactivation</li>
+</ul>
+</li>
+</ul>
+<h3 id="marketing-tools">Marketing tools</h3>
+<ul>
+<li>outbound/hubspot?</li>
+</ul>
+<h3 id="repositories">Repositories</h3>
+<ul>
+<li>Docomo SFTP/activations: layout defined on <a href="https://drive.google.com/file/d/1PPU5YNCoKs31-29OGS2GZd_URpw9F4px/view?usp=sharing">docomo documentation</a> chapter 15</li>
+</ul>
+<p>Example:</p>
+<pre><code>&quot;countryCode&quot;,&quot;siteCode&quot;,&quot;productName&quot;,&quot;subscriptionCode&quot;,&quot;msisdn&quot;,&quot;alias&quot;,&quot;telcoCode&quot;,
+&quot;dateCreated&quot;,&quot;dateActive&quot;,&quot;datePendingUnsubscription&quot;,&quot;dateUnsubscribed&quot;,
+&quot;unsubscriptionSource&quot;
+&quot;XX&quot;,&quot;amazon&quot;,&quot;plan123&quot;,&quot;5b23765be4b06e7171d79c7d&quot;,&quot;+1234567890&quot;,,&quot;OPERATOR1&quot;,
+&quot;2018-05-22T15:31:06Z&quot;,&quot;2018-05-22T15:45:31Z&quot;,,&quot;2018-06-29T15:45:31Z &quot;,
+&quot;TELCO&quot;
+</code></pre>
+
+<ul>
+<li>Country/add-ons: report on manual activations on siebel. </li>
+</ul>
+<h3 id="other-tools">Other tools</h3>
+<ul>
+<li>segment</li>
+<li>new relic</li>
+<li>tableau, dashboard amazon<ul>
+<li>activations, deactivations by product/country</li>
+</ul>
+</li>
+<li>analytics<ul>
+<li>mixpanel (by mitigo)</li>
+</ul>
+</li>
+</ul>
+<h1 id="tasks-and-timeplan">Tasks and timeplan</h1>
+<h2 id="on-country">On country</h2>
+<ul>
+<li>Add-on creation (new SKUs) with different price point for hard-bundles and add-ons<ul>
+<li>mobile 2 skus: cost 0, cost x$</li>
+<li>home 2 skus: cost 0, cost x$</li>
+</ul>
+</li>
+<li>Plan mapping configurations using these SKUs</li>
+<li>APIs for:<ul>
+<li>MOBILE Add-ons<ul>
+<li>Get add-on offers (catalog)</li>
+<li>Get current add-ons by msisdn</li>
+<li>Charge add-on (subscription)</li>
+<li>Terminate add-on (unsubscribe)</li>
+</ul>
+</li>
+<li>HOME Add-ons<ul>
+<li>Get add-on offers (catalog)</li>
+<li>Get current add-ons by homeid</li>
+<li>Charge add-on (subscription)</li>
+<li>Terminate add-on (unsubscribe)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>File: Subscription Eligibility file-based interface (docomo chp 7)</li>
+<li>Processes for:<ul>
+<li>Queues for activations/deactivations on zendesk (in case activate/deactivate api is not available)</li>
+<li>Reconciliation</li>
+<li>Marketing plan details</li>
+<li>Troubleshooting</li>
+<li>Scalation matrix</li>
+</ul>
+</li>
+</ul>
+<p>More information on API Details <a href="https://docs.google.com/spreadsheets/d/1If44LgO5MjK2zj51elfwepbGLaLprfejUq0JrjXjSXg/edit#gid=0">here</a></p>
+<h2 id="on-digital">On Digital</h2>
+<ul>
+<li>PRD. Ivan </li>
+<li>UX experience. Nemo<ul>
+<li>Mobile</li>
+<li>Home</li>
+</ul>
+</li>
+<li>API mapping &amp; exposure in apigee. Beni + Edge<ul>
+<li>Country API Details:<ul>
+<li>Home Get add-ons offers</li>
+<li>Home Add add-ons</li>
+<li>Home Get add-ons by homeid</li>
+<li>Home Delete add-on by homeid</li>
+<li>Mobile Get add-ons Offering</li>
+<li>Mobile Add add-ons by msisdn</li>
+<li>Mobile Delete add-ons by msisdn</li>
+<li>Mobile Get add-ons by msisdn</li>
+</ul>
+</li>
+<li>Docomo API details:<ul>
+<li>Subscribe flow - chapter 13 state machine (SUBSCRIBE &gt; CONFIRM)</li>
+<li>Subscription deactivation API - chapter 12</li>
+<li>GetAll API - chapter 14</li>
+</ul>
+</li>
+<li>zendesk  <ul>
+<li>Create ticket</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Zendesk: workflow and reports</li>
+<li>Segment: update instrumentation plan</li>
+<li>tableau: build dashboard for amazon</li>
+<li>Unit testing</li>
+<li>Integral testing</li>
+<li>Deploy</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

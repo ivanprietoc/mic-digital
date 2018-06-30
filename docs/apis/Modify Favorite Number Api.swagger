@@ -1,0 +1,90 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Modify Favorite Number Api
+  description: | 
+    This is the standard API for Self Care functions to modify favorite number for Tigo. 
+    We use swagger-2.0 specification
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Jose Colman
+    email: jose.colman@edge.com.py
+    url: https://edge.com.py/
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: qa.api.tigo.com
+basePath: /v3/tigo/mobile/gt/atpa/favorites
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+
+
+  
+paths:
+
+  /{msisdn}/favoritePlans/{favoritePlan}/favoriteNumbers:
+    put:
+      summary: Modify a favorite number 
+      description: Modify a favorite number
+      operationId: ModifyFavoriteNumber
+      parameters:
+        - name: msisdn
+          in: path
+          description: Unique identifier for the customer
+          required: true
+          type: string
+        - name: favoritePlan
+          in: path
+          description: Unique identifier for the favorite plan
+          required: true
+          type: string
+        
+      responses:
+        200:
+          description: Successfull Favorite Number Modification
+          schema:
+            $ref: '#/definitions/success'
+        400:
+          description: Invalid Parameters
+          schema:
+            $ref: '#/definitions/proxyError' 
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+definitions:
+
+  success:
+    type: object
+    properties:
+      result:
+        type: string
+      resultCode:
+        type: string
+
+  error:
+    properties:
+      errorType:
+        type: string
+      code:
+        type: integer
+        format: int32
+      description:
+        type: string
+      reason:
+        type: string
+
+  proxyError:
+    properties:
+      statusCode:
+        type: integer
+        format: int32
+      message:
+        type: string
+      developerMessage:
+        type: string

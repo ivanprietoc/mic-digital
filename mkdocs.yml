@@ -1,0 +1,22 @@
+site_name: Millicom Digital
+site_author: Ivan Prieto
+pages:
+- Home: 'index.md'
+- Products:
+    - 'Catalogo': 'catalog.md'
+    - 'Amazon': 'amazon.md'
+    - 'Shop': 'tigoshop.md'
+    - 'Mi Tigo': 'mitigo.md'
+    - 'Bot': 'bot.md'
+    - 'MFS': 'mfs.md'
+    - 'Mi Tigo Agent': 'mitigo-agent.md'
+    - 'Payment Gateway': 'payment-gtw.md'
+    - 'Distribution': 'pos.md'
+    - 'Mi tigo B2B': 'tbo.md'
+    - 'Tigo USA': 'usa.md'
+    - 'Tigo Sports': 'sports.md'
+- APIs:
+    - 'API Mobile Selfcare 2.0': 'apiMobileSelfCare2.0.md'
+- Procesess:
+    - 'How we work': 'processes/devBestPractices.md'
+dev_addr: 127.0.0.1:8001

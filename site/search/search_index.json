@@ -1,0 +1,1009 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to Millicom\n\n\nThe Digital Team\n\n\n\n\nOur tools\n\n\n\n\nJIRA: https://jira.tigo.com.hn/\n\n\nSlack: micproddev.Slack.com\n\n\nGit:\n\n\nTo edit any of these pages contact: robert.ferrer@millicom.com\n\n\n\n\nWhere to start\n\n\nSome markdown editors that you may need:\n\n\n\n\nVS Code\n\n\neditor.md\n\n\nswagger to markdown\n\n\nPandoc - document converteer - markdown to pdf or html\n\n\n\n\nProject layout\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # this page\n    catalog.md    # product catalog\n    img/    #images\n    processes/  # our processes\n    apis/   # our swaggers", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#welcome-to-millicom", 
+            "text": "", 
+            "title": "Welcome to Millicom"
+        }, 
+        {
+            "location": "/#the-digital-team", 
+            "text": "", 
+            "title": "The Digital Team"
+        }, 
+        {
+            "location": "/#our-tools", 
+            "text": "JIRA: https://jira.tigo.com.hn/  Slack: micproddev.Slack.com  Git:  To edit any of these pages contact: robert.ferrer@millicom.com", 
+            "title": "Our tools"
+        }, 
+        {
+            "location": "/#where-to-start", 
+            "text": "Some markdown editors that you may need:   VS Code  editor.md  swagger to markdown  Pandoc - document converteer - markdown to pdf or html", 
+            "title": "Where to start"
+        }, 
+        {
+            "location": "/#project-layout", 
+            "text": "For full documentation visit  mkdocs.org .  mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # this page\n    catalog.md    # product catalog\n    img/    #images\n    processes/  # our processes\n    apis/   # our swaggers", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/catalog/", 
+            "text": "Digital Catalog\n\n\nDIRECT CHANNELS\n\n\n\n\ntigo shop\n\n\nmi tigo\n\n\nmi tigo b2b (tbo)\n\n\nbot\n\n\nmfs app\n\n\nsmartapps\n\n\nwww\n\n\nsports\n\n\nmusic\n\n\nngtv\n\n\necommerce\n\n\ntigo usa\n\n\n\n\nINDIRECT CHANNELS\n\n\n\n\nzendesk-ui\n\n\nmi tigo agent (recommender nba/nbo)\n\n\nPoS app\n\n\nconvergent-db\n\n\nnps\n\n\nhome activator\n\n\n\n\nOTT/PARTNERS\n\n\n\n\nyoutube\n\n\nfacebook\n\n\namazon\n\n\nnetflix\n\n\nmicrosoft\n\n\ndeezer\n\n\nquello\n\n\npasa la pagina\n\n\nmcafee\n\n\nasistencia hogar\n\n\nsmartbooks\n\n\nbookmate\n\n\n\n\nNORTH ARCHITECTURE (DIGITAL)\n\n\nAuthentication\n\n\n\n\ntigo id\n\n\n\n\nExposure layer\n\n\n\n\napigee\n\n\nkinesis\n\n\napache flume\n\n\n\n\nEngines / Enablers\n\n\n\n\npayment gateway\n\n\nsubscription engine\n\n\nevam\n\n\nzendesk\n\n\n\n\nMarketing tools\n\n\n\n\ndigital turbine\n\n\nhubspot\n\n\npush notifications\n\n\nkannel\n\n\nyourls\n\n\nsendgrid\n\n\ntune\n\n\n\n\nRepositories\n\n\n\n\nredshift\n\n\nBaaS\n\n\nConvergent DB\n\n\nS3\n\n\n\n\nOther tools\n\n\n\n\nsegment\n\n\nnew relic\n\n\ntableau\n\n\nmixpanel\n\n\ngoogle analytics\n\n\nfacebook analytics\n\n\n\n\nSOUTH ARCHITECTURE (COUNTRY)\n\n\nData services\n\n\n\n\nexacaster", 
+            "title": "Catalogo"
+        }, 
+        {
+            "location": "/catalog/#digital-catalog", 
+            "text": "", 
+            "title": "Digital Catalog"
+        }, 
+        {
+            "location": "/catalog/#direct-channels", 
+            "text": "tigo shop  mi tigo  mi tigo b2b (tbo)  bot  mfs app  smartapps  www  sports  music  ngtv  ecommerce  tigo usa", 
+            "title": "DIRECT CHANNELS"
+        }, 
+        {
+            "location": "/catalog/#indirect-channels", 
+            "text": "zendesk-ui  mi tigo agent (recommender nba/nbo)  PoS app  convergent-db  nps  home activator", 
+            "title": "INDIRECT CHANNELS"
+        }, 
+        {
+            "location": "/catalog/#ottpartners", 
+            "text": "youtube  facebook  amazon  netflix  microsoft  deezer  quello  pasa la pagina  mcafee  asistencia hogar  smartbooks  bookmate", 
+            "title": "OTT/PARTNERS"
+        }, 
+        {
+            "location": "/catalog/#north-architecture-digital", 
+            "text": "", 
+            "title": "NORTH ARCHITECTURE (DIGITAL)"
+        }, 
+        {
+            "location": "/catalog/#authentication", 
+            "text": "tigo id", 
+            "title": "Authentication"
+        }, 
+        {
+            "location": "/catalog/#exposure-layer", 
+            "text": "apigee  kinesis  apache flume", 
+            "title": "Exposure layer"
+        }, 
+        {
+            "location": "/catalog/#engines-enablers", 
+            "text": "payment gateway  subscription engine  evam  zendesk", 
+            "title": "Engines / Enablers"
+        }, 
+        {
+            "location": "/catalog/#marketing-tools", 
+            "text": "digital turbine  hubspot  push notifications  kannel  yourls  sendgrid  tune", 
+            "title": "Marketing tools"
+        }, 
+        {
+            "location": "/catalog/#repositories", 
+            "text": "redshift  BaaS  Convergent DB  S3", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/catalog/#other-tools", 
+            "text": "segment  new relic  tableau  mixpanel  google analytics  facebook analytics", 
+            "title": "Other tools"
+        }, 
+        {
+            "location": "/catalog/#south-architecture-country", 
+            "text": "", 
+            "title": "SOUTH ARCHITECTURE (COUNTRY)"
+        }, 
+        {
+            "location": "/catalog/#data-services", 
+            "text": "exacaster", 
+            "title": "Data services"
+        }, 
+        {
+            "location": "/amazon/", 
+            "text": "AMAZON\n\n\nJourney\n\n\n\n\nAudience: B2C end customer\n\n\nJourney: Subscription - Mobile + Home\n\n\nType: Partners and OTTs\n\n\n\n\nDescription\n\n\nAdd-On for mobile and fixed services.\nProducts: Prime Video and Prime Music.\n\n\nCommercialization: \n- Hard bundle (included in your plan, cost 0)\n- Add-on (user can activate and pay x$/month until deactivation, like HBO)\n\n\nGoals and KPIs\n\n\nIn order to track success of the campaign we shall review on a monthly basis the following KPIs:\n\n\n\n\nSales (# of customers agreeing to buy Amazon)\n\n\nnumber of associations made by customers and % of agreed sales\n\n\nnumber of subscribers with Amazon add-ons:\n\n\nin 3 month free period\n\n\nPaying for the add-on\n\n\n\n\n\n\nPenetration of postpaid base\n\n\n\n\nFeatures\n\n\n\n\nSelf-service (using mitigo b2c)\n\n\nMOBILE Add-ons\n\n\nGet add-on offers (catalog)\n\n\nGet current add-ons by msisdn\n\n\nAdd add-on (subscription)\n\n\nTerminate add-on (unsubscribe)\n\n\n\n\n\n\nHOME Add-ons\n\n\nGet add-on offers (catalog)\n\n\nGet current add-ons by homeid\n\n\nAdd add-on (subscription)\n\n\nTerminate add-on (unsubscribe)\n\n\n\n\n\n\n\n\n\n\n\n\nBy Agent (using mitigo-agent or CRM and Docomo reports)\n\n\n\n\nMOBILE Add-ons\n\n\nGet add-on offers (catalog)\n\n\nGet current add-ons by msisdnd\n\n\nAdd add-on (subscription)\n\n\nTerminate add-on (unsubscribe)\n\n\n\n\n\n\nHOME Add-ons\n\n\nGet add-on offers (catalog)\n\n\nGet current add-ons by homeid\n\n\nAdd add-on (subscription)\n\n\nTerminate add-on (unsubscribe)\n\n\n\n\n\n\nSee amazon subscription status w/ Docomo\n\n\nReconciliation reports (docomo)\n\n\n\n\n\n\n\n\nCare \n Recommendation\n\n\n\n\nFAQ pages with:\n\n\nterms and conditions\n\n\npricing\n\n\nwhat to do when problems arise\n\n\n\n\n\n\n\n\n\n\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Mitigo\n    mitigo[Mi tigo B2C]\n    appbackend[Web Backend]\n    fapi[API Proxy]\n    mitigo---appbackend\n    appbackend---fapi\nend\n\nsubgraph Docomo\n    docomo[Docomo/Amazon Backend]\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi--\nbackend\n    docomo---backend\n\n    segment\n    analytics\n    tableau\n    new_relic\n    waf\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend--\nbss\n    bss--\nfixed\n    bss--\nmobile\nend\nsubgraph Mobile Domain\n    customer[customer mobile]\n    CBS[Convergent billing system]\n    mobile--\ncustomer\nend\n\nsubgraph fixed Domain\n    customerfixed[customer fixed]\n    CBS2[Convergent billing system]\n    fixed--\ncustomerfixed\nend\n\n\n\n\n\nFlows\n\n\nMore information on flows from \ndocomo apis\n and \ndocomo flows\n.\n\n\nMi tigo mockups: https://projects.invisionapp.com/share/9C8H21I3R\nTigo activation flow: https://invis.io/65LX4R9NE7S\n\n\nActivation\n\n\ntitle Amazon \n Tigo integration - ACTIVATION FLOW \n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Identification\n\nEND_USER-\nMITIGO: login w/ mobile or fixed account (email+passw)\nMITIGO-\nEND_USER: ok\nEND_USER-\nMITIGO: open add-Ons section\n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Elegibility\nMITIGO-\nTIGO_BCK: getAddOnOffers()\nTIGO_BCK-\nMITIGO: Amazon Prime Video\nEND_USER-\nMITIGO: Click on Buy/Add addOn:Amz Video\n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Subscribe\n\nMITIGO-\nDOCOMO: subscribe\nDOCOMO-\nAMZ: subscribe\nAMZ-\nDOCOMO: ok\nDOCOMO-\nMITIGO: OK, redirectUrl to activate\nMITIGO-\nEND_USER: redirect to landing\nMITIGO-\nEND_USER: sms or email to complete the flow later\n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Association journey + Activation\nEND_USER-\nDOCOMO: click on ACTIVATE, go to redirectUrl\nAMZ-\nAMZ: sign in/sign up\nAMZ-\nDOCOMO: deactivation successful\nDOCOMO-\nTIGO_BCK: activation successful alias=123\n\nTIGO_BCK-\nTIGO_BCK: POST AddOn(tigo_account, product_id) \n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: end of flow\n\n\n\n\nTermination\n\n\nThis flow can begin on:\n- end user\n- agent\n- amazon\n\n\nHere we describe the flow from the end_user.\nAgents may use mitigo-agent.\nAmazon flow doesn't require user interaction.\nOn plan migration or change number user will be disconected thru APIs and needs to begin the association flow again with the new number. This process will be manage by the country.\n\n\nTigo deactivation flow: https://invis.io/65LX4R9NE7S\n\n\ntitle Amazon \n Tigo integration - DEACTIVATION FLOW \n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Identification\n\nEND_USER-\nMITIGO: login w/ mobile or fixed account (email+passw)\nMITIGO-\nEND_USER: ok\nEND_USER-\nMITIGO: open addOns\n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Add-on Status\nMITIGO-\nTIGO_BCK: getAddOns(user_id)\nTIGO_BCK-\nMITIGO: User_id has: Amazon Prime Video, HBO, ETC.\nEND_USER-\nMITIGO: Click on Deactivate addOn:Amz Video\n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Deactivate\n\nMITIGO-\nDOCOMO: deactivate user_id, amz_video\nDOCOMO-\nAMZ: deactivate \nMITIGO-\nTIGO_BCK: DELETE addon(tigo_account, product_id) \nMITIGO-\nEND_USER: your subscription has been deactivated\n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: end of flow\n\n\n\n\nImplementation Details\n\n\nRefer to \nmitigo\n for details. Here only specific services/details for AMZ.\n\n\nExposure layer\n\n\n\n\n\n\napigee\n\n\n\n\ntigo_home_xx_portfolio_vx\n\n\ntigo_mobile_xx_plans_vx\n\n\nzendesk_tickets_v1\n\n\ndocomo_amz_v1 \n\n\n\n\n\n\n\n\nCountry API Details:\n\n\n\n\nHome Get Offerings\n\n\nHome Add offering\n\n\nHome Get add-ons by homeid\n\n\nHome Delete add-on by homeid\n\n\nMobile Get Offering\n\n\nMobile Add offering\n\n\nMobile Delete offering\n\n\n\n\n\n\n\n\nDocomo API details:\nBased on \ndocomo documentation\n\n\n\n\nSubscribe flow - chapter 13 state machine (SUBSCRIBE \n CONFIRM)\n\n\nSubscription deactivation API - chapter 12\n\n\nGetAll API - chapter 14\n\n\n\n\n\n\n\n\nzendesk  \n\n\n\n\nCreate ticket\n\n\n\n\n\n\n\n\nEngines / Enablers\n\n\n\n\nzendesk\n\n\nFAQ\n\n\nbackoffice queues for activation/deactivation\n\n\n\n\n\n\n\n\nMarketing tools\n\n\n\n\noutbound/hubspot?\n\n\n\n\nRepositories\n\n\n\n\nDocomo SFTP/activations: layout defined on \ndocomo documentation\n chapter 15\n\n\n\n\nExample:\n\n\ncountryCode\n,\nsiteCode\n,\nproductName\n,\nsubscriptionCode\n,\nmsisdn\n,\nalias\n,\ntelcoCode\n,\n\ndateCreated\n,\ndateActive\n,\ndatePendingUnsubscription\n,\ndateUnsubscribed\n,\n\nunsubscriptionSource\n\n\nXX\n,\namazon\n,\nplan123\n,\n5b23765be4b06e7171d79c7d\n,\n+1234567890\n,,\nOPERATOR1\n,\n\n2018-05-22T15:31:06Z\n,\n2018-05-22T15:45:31Z\n,,\n2018-06-29T15:45:31Z \n,\n\nTELCO\n\n\n\n\n\n\n\nCountry/add-ons: report on manual activations on siebel. \n\n\n\n\nOther tools\n\n\n\n\nsegment\n\n\nnew relic\n\n\ntableau, dashboard amazon\n\n\nactivations, deactivations by product/country\n\n\n\n\n\n\nanalytics\n\n\nmixpanel (by mitigo)\n\n\n\n\n\n\n\n\nTasks and timeplan\n\n\nOn country\n\n\n\n\nAdd-on creation (new SKUs) with different price point for hard-bundles and add-ons\n\n\nmobile 2 skus: cost 0, cost x$\n\n\nhome 2 skus: cost 0, cost x$\n\n\n\n\n\n\nPlan mapping configurations using these SKUs\n\n\nAPIs for:\n\n\nMOBILE Add-ons\n\n\nGet add-on offers (catalog)\n\n\nGet current add-ons by msisdn\n\n\nCharge add-on (subscription)\n\n\nTerminate add-on (unsubscribe)\n\n\n\n\n\n\nHOME Add-ons\n\n\nGet add-on offers (catalog)\n\n\nGet current add-ons by homeid\n\n\nCharge add-on (subscription)\n\n\nTerminate add-on (unsubscribe)\n\n\n\n\n\n\n\n\n\n\nFile: Subscription Eligibility file-based interface (docomo chp 7)\n\n\nProcesses for:\n\n\nQueues for activations/deactivations on zendesk (in case activate/deactivate api is not available)\n\n\nReconciliation\n\n\nMarketing plan details\n\n\nTroubleshooting\n\n\nScalation matrix\n\n\n\n\n\n\n\n\nMore information on API Details \nhere\n\n\nOn Digital\n\n\n\n\nPRD. Ivan \n\n\nUX experience. Nemo\n\n\nMobile\n\n\nHome\n\n\n\n\n\n\nAPI mapping \n exposure in apigee. Beni + Edge\n\n\nCountry API Details:\n\n\nHome Get add-ons offers\n\n\nHome Add add-ons\n\n\nHome Get add-ons by homeid\n\n\nHome Delete add-on by homeid\n\n\nMobile Get add-ons Offering\n\n\nMobile Add add-ons by msisdn\n\n\nMobile Delete add-ons by msisdn\n\n\nMobile Get add-ons by msisdn\n\n\n\n\n\n\nDocomo API details:\n\n\nSubscribe flow - chapter 13 state machine (SUBSCRIBE \n CONFIRM)\n\n\nSubscription deactivation API - chapter 12\n\n\nGetAll API - chapter 14\n\n\n\n\n\n\nzendesk  \n\n\nCreate ticket\n\n\n\n\n\n\n\n\n\n\nZendesk: workflow and reports\n\n\nSegment: update instrumentation plan\n\n\ntableau: build dashboard for amazon\n\n\nUnit testing\n\n\nIntegral testing\n\n\nDeploy", 
+            "title": "Amazon"
+        }, 
+        {
+            "location": "/amazon/#amazon", 
+            "text": "", 
+            "title": "AMAZON"
+        }, 
+        {
+            "location": "/amazon/#journey", 
+            "text": "Audience: B2C end customer  Journey: Subscription - Mobile + Home  Type: Partners and OTTs", 
+            "title": "Journey"
+        }, 
+        {
+            "location": "/amazon/#description", 
+            "text": "Add-On for mobile and fixed services.\nProducts: Prime Video and Prime Music.  Commercialization: \n- Hard bundle (included in your plan, cost 0)\n- Add-on (user can activate and pay x$/month until deactivation, like HBO)", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/amazon/#goals-and-kpis", 
+            "text": "In order to track success of the campaign we shall review on a monthly basis the following KPIs:   Sales (# of customers agreeing to buy Amazon)  number of associations made by customers and % of agreed sales  number of subscribers with Amazon add-ons:  in 3 month free period  Paying for the add-on    Penetration of postpaid base", 
+            "title": "Goals and KPIs"
+        }, 
+        {
+            "location": "/amazon/#features", 
+            "text": "Self-service (using mitigo b2c)  MOBILE Add-ons  Get add-on offers (catalog)  Get current add-ons by msisdn  Add add-on (subscription)  Terminate add-on (unsubscribe)    HOME Add-ons  Get add-on offers (catalog)  Get current add-ons by homeid  Add add-on (subscription)  Terminate add-on (unsubscribe)       By Agent (using mitigo-agent or CRM and Docomo reports)   MOBILE Add-ons  Get add-on offers (catalog)  Get current add-ons by msisdnd  Add add-on (subscription)  Terminate add-on (unsubscribe)    HOME Add-ons  Get add-on offers (catalog)  Get current add-ons by homeid  Add add-on (subscription)  Terminate add-on (unsubscribe)    See amazon subscription status w/ Docomo  Reconciliation reports (docomo)     Care   Recommendation   FAQ pages with:  terms and conditions  pricing  what to do when problems arise", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/amazon/#basic-architecture", 
+            "text": "graph TD\n\nsubgraph Mitigo\n    mitigo[Mi tigo B2C]\n    appbackend[Web Backend]\n    fapi[API Proxy]\n    mitigo---appbackend\n    appbackend---fapi\nend\n\nsubgraph Docomo\n    docomo[Docomo/Amazon Backend]\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi-- backend\n    docomo---backend\n\n    segment\n    analytics\n    tableau\n    new_relic\n    waf\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend-- bss\n    bss-- fixed\n    bss-- mobile\nend\nsubgraph Mobile Domain\n    customer[customer mobile]\n    CBS[Convergent billing system]\n    mobile-- customer\nend\n\nsubgraph fixed Domain\n    customerfixed[customer fixed]\n    CBS2[Convergent billing system]\n    fixed-- customerfixed\nend", 
+            "title": "Basic architecture"
+        }, 
+        {
+            "location": "/amazon/#flows", 
+            "text": "More information on flows from  docomo apis  and  docomo flows .  Mi tigo mockups: https://projects.invisionapp.com/share/9C8H21I3R\nTigo activation flow: https://invis.io/65LX4R9NE7S", 
+            "title": "Flows"
+        }, 
+        {
+            "location": "/amazon/#activation", 
+            "text": "title Amazon   Tigo integration - ACTIVATION FLOW \n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Identification\n\nEND_USER- MITIGO: login w/ mobile or fixed account (email+passw)\nMITIGO- END_USER: ok\nEND_USER- MITIGO: open add-Ons section\n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Elegibility\nMITIGO- TIGO_BCK: getAddOnOffers()\nTIGO_BCK- MITIGO: Amazon Prime Video\nEND_USER- MITIGO: Click on Buy/Add addOn:Amz Video\n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Subscribe\n\nMITIGO- DOCOMO: subscribe\nDOCOMO- AMZ: subscribe\nAMZ- DOCOMO: ok\nDOCOMO- MITIGO: OK, redirectUrl to activate\nMITIGO- END_USER: redirect to landing\nMITIGO- END_USER: sms or email to complete the flow later\n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Association journey + Activation\nEND_USER- DOCOMO: click on ACTIVATE, go to redirectUrl\nAMZ- AMZ: sign in/sign up\nAMZ- DOCOMO: deactivation successful\nDOCOMO- TIGO_BCK: activation successful alias=123\n\nTIGO_BCK- TIGO_BCK: POST AddOn(tigo_account, product_id) \n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: end of flow", 
+            "title": "Activation"
+        }, 
+        {
+            "location": "/amazon/#termination", 
+            "text": "This flow can begin on:\n- end user\n- agent\n- amazon  Here we describe the flow from the end_user.\nAgents may use mitigo-agent.\nAmazon flow doesn't require user interaction.\nOn plan migration or change number user will be disconected thru APIs and needs to begin the association flow again with the new number. This process will be manage by the country.  Tigo deactivation flow: https://invis.io/65LX4R9NE7S  title Amazon   Tigo integration - DEACTIVATION FLOW \n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Identification\n\nEND_USER- MITIGO: login w/ mobile or fixed account (email+passw)\nMITIGO- END_USER: ok\nEND_USER- MITIGO: open addOns\n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Add-on Status\nMITIGO- TIGO_BCK: getAddOns(user_id)\nTIGO_BCK- MITIGO: User_id has: Amazon Prime Video, HBO, ETC.\nEND_USER- MITIGO: Click on Deactivate addOn:Amz Video\n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Deactivate\n\nMITIGO- DOCOMO: deactivate user_id, amz_video\nDOCOMO- AMZ: deactivate \nMITIGO- TIGO_BCK: DELETE addon(tigo_account, product_id) \nMITIGO- END_USER: your subscription has been deactivated\n\nnote over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: end of flow", 
+            "title": "Termination"
+        }, 
+        {
+            "location": "/amazon/#implementation-details", 
+            "text": "Refer to  mitigo  for details. Here only specific services/details for AMZ.", 
+            "title": "Implementation Details"
+        }, 
+        {
+            "location": "/amazon/#exposure-layer", 
+            "text": "apigee   tigo_home_xx_portfolio_vx  tigo_mobile_xx_plans_vx  zendesk_tickets_v1  docomo_amz_v1      Country API Details:   Home Get Offerings  Home Add offering  Home Get add-ons by homeid  Home Delete add-on by homeid  Mobile Get Offering  Mobile Add offering  Mobile Delete offering     Docomo API details:\nBased on  docomo documentation   Subscribe flow - chapter 13 state machine (SUBSCRIBE   CONFIRM)  Subscription deactivation API - chapter 12  GetAll API - chapter 14     zendesk     Create ticket", 
+            "title": "Exposure layer"
+        }, 
+        {
+            "location": "/amazon/#engines-enablers", 
+            "text": "zendesk  FAQ  backoffice queues for activation/deactivation", 
+            "title": "Engines / Enablers"
+        }, 
+        {
+            "location": "/amazon/#marketing-tools", 
+            "text": "outbound/hubspot?", 
+            "title": "Marketing tools"
+        }, 
+        {
+            "location": "/amazon/#repositories", 
+            "text": "Docomo SFTP/activations: layout defined on  docomo documentation  chapter 15   Example:  countryCode , siteCode , productName , subscriptionCode , msisdn , alias , telcoCode , dateCreated , dateActive , datePendingUnsubscription , dateUnsubscribed , unsubscriptionSource  XX , amazon , plan123 , 5b23765be4b06e7171d79c7d , +1234567890 ,, OPERATOR1 , 2018-05-22T15:31:06Z , 2018-05-22T15:45:31Z ,, 2018-06-29T15:45:31Z  , TELCO    Country/add-ons: report on manual activations on siebel.", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/amazon/#other-tools", 
+            "text": "segment  new relic  tableau, dashboard amazon  activations, deactivations by product/country    analytics  mixpanel (by mitigo)", 
+            "title": "Other tools"
+        }, 
+        {
+            "location": "/amazon/#tasks-and-timeplan", 
+            "text": "", 
+            "title": "Tasks and timeplan"
+        }, 
+        {
+            "location": "/amazon/#on-country", 
+            "text": "Add-on creation (new SKUs) with different price point for hard-bundles and add-ons  mobile 2 skus: cost 0, cost x$  home 2 skus: cost 0, cost x$    Plan mapping configurations using these SKUs  APIs for:  MOBILE Add-ons  Get add-on offers (catalog)  Get current add-ons by msisdn  Charge add-on (subscription)  Terminate add-on (unsubscribe)    HOME Add-ons  Get add-on offers (catalog)  Get current add-ons by homeid  Charge add-on (subscription)  Terminate add-on (unsubscribe)      File: Subscription Eligibility file-based interface (docomo chp 7)  Processes for:  Queues for activations/deactivations on zendesk (in case activate/deactivate api is not available)  Reconciliation  Marketing plan details  Troubleshooting  Scalation matrix     More information on API Details  here", 
+            "title": "On country"
+        }, 
+        {
+            "location": "/amazon/#on-digital", 
+            "text": "PRD. Ivan   UX experience. Nemo  Mobile  Home    API mapping   exposure in apigee. Beni + Edge  Country API Details:  Home Get add-ons offers  Home Add add-ons  Home Get add-ons by homeid  Home Delete add-on by homeid  Mobile Get add-ons Offering  Mobile Add add-ons by msisdn  Mobile Delete add-ons by msisdn  Mobile Get add-ons by msisdn    Docomo API details:  Subscribe flow - chapter 13 state machine (SUBSCRIBE   CONFIRM)  Subscription deactivation API - chapter 12  GetAll API - chapter 14    zendesk    Create ticket      Zendesk: workflow and reports  Segment: update instrumentation plan  tableau: build dashboard for amazon  Unit testing  Integral testing  Deploy", 
+            "title": "On Digital"
+        }, 
+        {
+            "location": "/tigoshop/", 
+            "text": "Tigo Shop\n\n\nJourney\n\n\nJourney: Transactional - Mobile\nAudience: B2C transactional customers\n\n\nDescription\n\n\nblab llbalb abala \n\n\nGoals and KPIs\n\n- active users\n- purchases\n- loans\n- nps\n\n\nFeatures\n\n\n\n\nDiscovery\n\n\nBanner\n\n\nPush notifications\n\n\nProduct catalog\n\n\n\n\n\n\nUse \n Self-service\n\n\nBuy Pack\n\n\ncore balance\n\n\nmfs\n\n\n\n\n\n\nLoans\n\n\ncurrent debt \n credit limit\n\n\nloan balance\n\n\nloan packs\n\n\n\n\n\n\nTop-up\n\n\ncredit card\n\n\nmfs\n\n\n\n\n\n\nSee Balances\n\n\nSee Quota\n\n\nManage subscriptions\n\n\nInternet details\n\n\n\n\n\n\nCare \n Recommendation\n\n\nNPS\n\n\nHelp\n\n\nchat\n\n\nfaq\n\n\n\n\n\n\n\n\n\n\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Channel\n    android[Android]\n    ios[ios]\n    web[web]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    android---appbackend\n    ios---appbackend\n    web---appbackend\n    appbackend---fapi\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi---backend\n\n    segment\n    newrelic\n    payment_gateway\n    tigoid\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    bss---mobile\n    backend---bss\nend\n\nsubgraph Mobile Domain\n    customer[customer]\n    products[product catalog]\n    lend[lending]\n    fulfillment[fulfillment]\n    mfs[mfs]\n    dpi[dpi]\n    mobile---customer\nend\n\n\n\n\n\nImplementation Details\n\n\nAuthentication\n\n\n\n\ntigo id\n\n\nTigoID Public\n\n\n\n\n\n\n\n\nExposure layer\n\n\n\n\napigee\n\n\nTigo Mobile Upselling Info\n\n\nTigo Lend APIs\n\n\nTigo Mobile Product Fulfillment\n\n\nTigoMoney Payment\n\n\nTigoMoney AccountStatusService\n\n\nSelfcare Api V2\n\n\nBSS Product\n\n\n\n\n\n\nkinesis\n\n\n\n\nEngines / Enablers\n\n\n\n\npayment gateway\n\n\nevam\n\n\nlifecycle campaigns\n\n\nbroadcast\n\n\nupselling (exacaster)\n\n\n\n\n\n\nzendesk\n\n\n\n\nMarketing tools\n\n\n\n\ndigital turbine\n\n\npush notifications\n\n\npushwoosh\n\n\n\n\n\n\nkannel\n\n\nyourls\n\n\nattribution tools\n\n\ntune\n\n\nappflyer\n\n\n\n\n\n\n\n\nRepositories\n\n\n\n\nredshift\n\n\nBaaS\n\n\nConvergent DB\n\n\nS3\n\n\n\n\nOther tools\n\n\n\n\n\n\nsegment\n\n\n\n\n\n\nnew relic\n\n\n\n\ntableau\n\n\ndashboard tigo shop\n\n\nactive users\n\n\n\n\n\n\nanalytics\n\n\nmixpanel\n\n\ngoogle analytics\n\n\nfacebook analytics\n\n\n\n\n\n\n\n\nSOUTH ARCHITECTURE (COUNTRY)\n\n\nData services\n\n\n\n\nexacaster\n\n\nnbo prepaid\n\n\nnbo pospaid", 
+            "title": "Shop"
+        }, 
+        {
+            "location": "/tigoshop/#tigo-shop", 
+            "text": "Journey  Journey: Transactional - Mobile\nAudience: B2C transactional customers  Description  blab llbalb abala   Goals and KPIs \n- active users\n- purchases\n- loans\n- nps", 
+            "title": "Tigo Shop"
+        }, 
+        {
+            "location": "/tigoshop/#features", 
+            "text": "Discovery  Banner  Push notifications  Product catalog    Use   Self-service  Buy Pack  core balance  mfs    Loans  current debt   credit limit  loan balance  loan packs    Top-up  credit card  mfs    See Balances  See Quota  Manage subscriptions  Internet details    Care   Recommendation  NPS  Help  chat  faq", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/tigoshop/#basic-architecture", 
+            "text": "graph TD\n\nsubgraph Channel\n    android[Android]\n    ios[ios]\n    web[web]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    android---appbackend\n    ios---appbackend\n    web---appbackend\n    appbackend---fapi\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi---backend\n\n    segment\n    newrelic\n    payment_gateway\n    tigoid\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    bss---mobile\n    backend---bss\nend\n\nsubgraph Mobile Domain\n    customer[customer]\n    products[product catalog]\n    lend[lending]\n    fulfillment[fulfillment]\n    mfs[mfs]\n    dpi[dpi]\n    mobile---customer\nend", 
+            "title": "Basic architecture"
+        }, 
+        {
+            "location": "/tigoshop/#implementation-details", 
+            "text": "", 
+            "title": "Implementation Details"
+        }, 
+        {
+            "location": "/tigoshop/#authentication", 
+            "text": "tigo id  TigoID Public", 
+            "title": "Authentication"
+        }, 
+        {
+            "location": "/tigoshop/#exposure-layer", 
+            "text": "apigee  Tigo Mobile Upselling Info  Tigo Lend APIs  Tigo Mobile Product Fulfillment  TigoMoney Payment  TigoMoney AccountStatusService  Selfcare Api V2  BSS Product    kinesis", 
+            "title": "Exposure layer"
+        }, 
+        {
+            "location": "/tigoshop/#engines-enablers", 
+            "text": "payment gateway  evam  lifecycle campaigns  broadcast  upselling (exacaster)    zendesk", 
+            "title": "Engines / Enablers"
+        }, 
+        {
+            "location": "/tigoshop/#marketing-tools", 
+            "text": "digital turbine  push notifications  pushwoosh    kannel  yourls  attribution tools  tune  appflyer", 
+            "title": "Marketing tools"
+        }, 
+        {
+            "location": "/tigoshop/#repositories", 
+            "text": "redshift  BaaS  Convergent DB  S3", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/tigoshop/#other-tools", 
+            "text": "segment    new relic   tableau  dashboard tigo shop  active users    analytics  mixpanel  google analytics  facebook analytics", 
+            "title": "Other tools"
+        }, 
+        {
+            "location": "/tigoshop/#south-architecture-country", 
+            "text": "", 
+            "title": "SOUTH ARCHITECTURE (COUNTRY)"
+        }, 
+        {
+            "location": "/tigoshop/#data-services", 
+            "text": "exacaster  nbo prepaid  nbo pospaid", 
+            "title": "Data services"
+        }, 
+        {
+            "location": "/mitigo/", 
+            "text": "Mi Tigo B2C\n\n\nJourney\n\n\nSubscription - Mobile + Home\nAudience: b2c end customers\n\n\nDescription\n\n\nblab llbalb abala \n\n\nGoals and KPIs\n\n- active users\n- invoices: pay\n- invoices: electronic invoices activated\n- nps\n\n\nFeatures\n\n\n\n\nLogin with email: mobile+fixed accounts\n\n\nLogin with HE. limited view + switch to email\n\n\nDiscovery\n\n\nBanner\n\n\nPush notifications\n\n\n\n\n\n\nUse \n Self-service\n\n\nSee Balances\n\n\nSee Quota\n\n\nCall History\n\n\nSms History\n\n\nInternet details \n\n\nBuy Add-Ons\n\n\ncore balance\n\n\nmfs\n\n\n\n\n\n\nLoans\n\n\nInvoices\n\n\nPay invoice\n\n\nCC/DC\n\n\ntokenization\n\n\nRecurrent payment\n\n\nWith TM\n\n\n\n\n\n\nInvoice History\n\n\nDownload last invoice\n\n\nLoans\n\n\ncurrent debt \n credit limit\n\n\nloan balance\n\n\nloan packs\n\n\n\n\n\n\nHome self-service\n\n\nchange wifi password\n\n\nchange wifi name\n\n\nreset modem\n\n\n\n\n\n\n\n\n\n\nCare \n Recommendation\n\n\nNPS\n\n\nHelp\n\n\nchat\n\n\nfaq\n\n\n\n\n\n\n\n\n\n\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Channel Juvo\n    android[Android]\n    ios[ios]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    android---appbackend\n    ios---appbackend\n    appbackend---fapi\nend\n\nsubgraph Channel Bits\n    web[web - Angular]\n    drupal[drupal]\n    web--\ndrupal\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi--\nbackend\n    drupal--\nbackend\n\n    segment\n    newrelic\n    payment_gateway\n    tigoid\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend--\nbss\n    bss--\nfixed\n    bss--\nmobile\nend\nsubgraph Mobile Domain\n    customer[customer]\n    products[product catalog]\n    lend[lending]\n    fulfillment[fulfillment]\n    mfs[mfs]\n    dpi[dpi]\n    mobile--\ncustomer\nend\n\nsubgraph fixed Domain\n    customerfixed[customer fixed]\n    productsfixed[product catalog]\n    fulfillmentfixed[order management]\n    fixed--\ncustomerfixed\n\nend\n\n\n\n\n\nImplementation Details\n\n\nAuthentication\n\n\n\n\ntigo id\n\n\nTigoID Public\n\n\n\n\n\n\n\n\nExposure layer\n\n\n\n\napigee\n\n\nTigo Mobile Upselling Info\n\n\nTigo Lend APIs\n\n\nTigo Mobile Product Fulfillment\n\n\nTigoMoney Payment\n\n\nTigoMoney AccountStatusService\n\n\nSelfcare Api V2\n\n\nBSS Product\n\n\n\n\n\n\nkinesis\n\n\n\n\nEngines / Enablers\n\n\n\n\npayment gateway\n\n\nevam\n\n\nlifecycle campaigns\n\n\nbroadcast\n\n\nupselling (exacaster)\n\n\n\n\n\n\nzendesk\n\n\n\n\nMarketing tools\n\n\n\n\ndigital turbine\n\n\npush notifications\n\n\npushwoosh\n\n\n\n\n\n\nkannel\n\n\nyourls\n\n\nattribution tools\n\n\ntune\n\n\nappflyer\n\n\n\n\n\n\n\n\nRepositories\n\n\n\n\nredshift\n\n\nBaaS\n\n\nConvergent DB\n\n\nS3\n\n\n\n\nOther tools\n\n\n\n\nsegment\n\n\nnew relic\n\n\ntableau\n\n\ndashboard tigo shop\n\n\nactive users\n\n\n\n\n\n\nanalytics\n\n\nmixpanel\n\n\ngoogle analytics\n\n\nfacebook analytics\n\n\n\n\n\n\n\n\nSOUTH ARCHITECTURE (COUNTRY)\n\n\nData services\n\n\n\n\nexacaster\n\n\nnbo prepaid\n\n\nnbo pospaid", 
+            "title": "Mi Tigo"
+        }, 
+        {
+            "location": "/mitigo/#mi-tigo-b2c", 
+            "text": "Journey  Subscription - Mobile + Home\nAudience: b2c end customers  Description  blab llbalb abala   Goals and KPIs \n- active users\n- invoices: pay\n- invoices: electronic invoices activated\n- nps", 
+            "title": "Mi Tigo B2C"
+        }, 
+        {
+            "location": "/mitigo/#features", 
+            "text": "Login with email: mobile+fixed accounts  Login with HE. limited view + switch to email  Discovery  Banner  Push notifications    Use   Self-service  See Balances  See Quota  Call History  Sms History  Internet details   Buy Add-Ons  core balance  mfs    Loans  Invoices  Pay invoice  CC/DC  tokenization  Recurrent payment  With TM    Invoice History  Download last invoice  Loans  current debt   credit limit  loan balance  loan packs    Home self-service  change wifi password  change wifi name  reset modem      Care   Recommendation  NPS  Help  chat  faq", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/mitigo/#basic-architecture", 
+            "text": "graph TD\n\nsubgraph Channel Juvo\n    android[Android]\n    ios[ios]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    android---appbackend\n    ios---appbackend\n    appbackend---fapi\nend\n\nsubgraph Channel Bits\n    web[web - Angular]\n    drupal[drupal]\n    web-- drupal\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi-- backend\n    drupal-- backend\n\n    segment\n    newrelic\n    payment_gateway\n    tigoid\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend-- bss\n    bss-- fixed\n    bss-- mobile\nend\nsubgraph Mobile Domain\n    customer[customer]\n    products[product catalog]\n    lend[lending]\n    fulfillment[fulfillment]\n    mfs[mfs]\n    dpi[dpi]\n    mobile-- customer\nend\n\nsubgraph fixed Domain\n    customerfixed[customer fixed]\n    productsfixed[product catalog]\n    fulfillmentfixed[order management]\n    fixed-- customerfixed\n\nend", 
+            "title": "Basic architecture"
+        }, 
+        {
+            "location": "/mitigo/#implementation-details", 
+            "text": "", 
+            "title": "Implementation Details"
+        }, 
+        {
+            "location": "/mitigo/#authentication", 
+            "text": "tigo id  TigoID Public", 
+            "title": "Authentication"
+        }, 
+        {
+            "location": "/mitigo/#exposure-layer", 
+            "text": "apigee  Tigo Mobile Upselling Info  Tigo Lend APIs  Tigo Mobile Product Fulfillment  TigoMoney Payment  TigoMoney AccountStatusService  Selfcare Api V2  BSS Product    kinesis", 
+            "title": "Exposure layer"
+        }, 
+        {
+            "location": "/mitigo/#engines-enablers", 
+            "text": "payment gateway  evam  lifecycle campaigns  broadcast  upselling (exacaster)    zendesk", 
+            "title": "Engines / Enablers"
+        }, 
+        {
+            "location": "/mitigo/#marketing-tools", 
+            "text": "digital turbine  push notifications  pushwoosh    kannel  yourls  attribution tools  tune  appflyer", 
+            "title": "Marketing tools"
+        }, 
+        {
+            "location": "/mitigo/#repositories", 
+            "text": "redshift  BaaS  Convergent DB  S3", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/mitigo/#other-tools", 
+            "text": "segment  new relic  tableau  dashboard tigo shop  active users    analytics  mixpanel  google analytics  facebook analytics", 
+            "title": "Other tools"
+        }, 
+        {
+            "location": "/mitigo/#south-architecture-country", 
+            "text": "", 
+            "title": "SOUTH ARCHITECTURE (COUNTRY)"
+        }, 
+        {
+            "location": "/mitigo/#data-services", 
+            "text": "exacaster  nbo prepaid  nbo pospaid", 
+            "title": "Data services"
+        }, 
+        {
+            "location": "/bot/", 
+            "text": "BOT\n\n\nJourney\n\nAudience: b2c end customer\nTransaction \n Subscription - Mobile + Home\n\n\nDescription\n\n\nticket deflection\n\n\nGoals and KPIs\n\n- active users\n- ticket deflection\n- satisfaction (nps)\n\n\nFeatures\n\n\n\n\nmobile Login sms otp, change msisdn\n\n\nhome login contrato y documento\n\n\nUse \n Self-service\n\n\nSee Balances\n\n\nSee Quota\n\n\nTop-up\n\n\nShow current plan\n\n\nLocations\n\n\nBuy Pack\n\n\nLoans\n\n\ncurrent debt \n credit limit\n\n\nloan balance\n\n\nloan packs\n\n\n\n\n\n\nView/Buy Subscriptions (Add-Ons)\n\n\ncore balance\n\n\nmfs\n\n\n\n\n\n\nLast Invoices\n\n\nPay invoice\n\n\nCC/DC\n\n\n\n\n\n\n\n\n\n\nCare \n Recommendation\n\n\nZendesk FAQ integration\n\n\nNPS\n\n\nHelp\n\n\ncreate ticket to zendesk\n\n\nbot on zendesk\n\n\n\n\n\n\n\n\n\n\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Channel Messenger\n    fb[Facebook Messenger]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    fb---appbackend\n    appbackend---fapi\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi--\nbackend\n    drupal--\nbackend\n\n    segment\n    newrelic\n    payment_gateway\n    tigoid\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend--\nbss\n    bss--\nfixed\n    bss--\nmobile\nend\nsubgraph Mobile Domain\n    customer[customer]\n    products[product catalog]\n    lend[lending]\n    fulfillment[fulfillment]\n    mfs[mfs]\n    dpi[dpi]\n    mobile--\ncustomer\nend\n\nsubgraph fixed Domain\n    customerfixed[customer fixed]\n    productsfixed[product catalog]\n    fulfillmentfixed[order management]\n    fixed--\ncustomerfixed\n\nend\n\n\n\n\n\nImplementation Details\n\n\nAuthentication\n\n\n\n\ntigo id\n\n\nTigoID Public\n\n\n\n\n\n\n\n\nExposure layer\n\n\n\n\napigee\n\n\nTigo Mobile Upselling Info\n\n\nTigo Lend APIs\n\n\nTigo Mobile Product Fulfillment\n\n\nTigoMoney Payment\n\n\nTigoMoney AccountStatusService\n\n\nSelfcare Api V2\n\n\nBSS Product\n\n\n\n\n\n\nkinesis\n\n\n\n\nEngines / Enablers\n\n\n\n\npayment gateway\n\n\nevam\n\n\nlifecycle campaigns\n\n\nbroadcast\n\n\nupselling (exacaster)\n\n\n\n\n\n\nzendesk\n\n\n\n\nMarketing tools\n\n\n\n\ndigital turbine\n\n\npush notifications\n\n\npushwoosh\n\n\n\n\n\n\nkannel\n\n\nyourls\n\n\nattribution tools\n\n\ntune\n\n\nappflyer\n\n\n\n\n\n\n\n\nRepositories\n\n\n\n\nredshift\n\n\nBaaS\n\n\nConvergent DB\n\n\nS3\n\n\n\n\nOther tools\n\n\n\n\nsegment\n\n\nnew relic\n\n\ntableau\n\n\ndashboard tigo shop\n\n\nactive users\n\n\n\n\n\n\nanalytics\n\n\nmixpanel\n\n\ngoogle analytics\n\n\nfacebook analytics\n\n\n\n\n\n\n\n\nSOUTH ARCHITECTURE (COUNTRY)\n\n\nData services\n\n\n\n\nexacaster\n\n\nnbo prepaid\n\n\nnbo pospaid", 
+            "title": "Bot"
+        }, 
+        {
+            "location": "/bot/#bot", 
+            "text": "Journey \nAudience: b2c end customer\nTransaction   Subscription - Mobile + Home  Description  ticket deflection  Goals and KPIs \n- active users\n- ticket deflection\n- satisfaction (nps)", 
+            "title": "BOT"
+        }, 
+        {
+            "location": "/bot/#features", 
+            "text": "mobile Login sms otp, change msisdn  home login contrato y documento  Use   Self-service  See Balances  See Quota  Top-up  Show current plan  Locations  Buy Pack  Loans  current debt   credit limit  loan balance  loan packs    View/Buy Subscriptions (Add-Ons)  core balance  mfs    Last Invoices  Pay invoice  CC/DC      Care   Recommendation  Zendesk FAQ integration  NPS  Help  create ticket to zendesk  bot on zendesk", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/bot/#basic-architecture", 
+            "text": "graph TD\n\nsubgraph Channel Messenger\n    fb[Facebook Messenger]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    fb---appbackend\n    appbackend---fapi\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi-- backend\n    drupal-- backend\n\n    segment\n    newrelic\n    payment_gateway\n    tigoid\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend-- bss\n    bss-- fixed\n    bss-- mobile\nend\nsubgraph Mobile Domain\n    customer[customer]\n    products[product catalog]\n    lend[lending]\n    fulfillment[fulfillment]\n    mfs[mfs]\n    dpi[dpi]\n    mobile-- customer\nend\n\nsubgraph fixed Domain\n    customerfixed[customer fixed]\n    productsfixed[product catalog]\n    fulfillmentfixed[order management]\n    fixed-- customerfixed\n\nend", 
+            "title": "Basic architecture"
+        }, 
+        {
+            "location": "/bot/#implementation-details", 
+            "text": "", 
+            "title": "Implementation Details"
+        }, 
+        {
+            "location": "/bot/#authentication", 
+            "text": "tigo id  TigoID Public", 
+            "title": "Authentication"
+        }, 
+        {
+            "location": "/bot/#exposure-layer", 
+            "text": "apigee  Tigo Mobile Upselling Info  Tigo Lend APIs  Tigo Mobile Product Fulfillment  TigoMoney Payment  TigoMoney AccountStatusService  Selfcare Api V2  BSS Product    kinesis", 
+            "title": "Exposure layer"
+        }, 
+        {
+            "location": "/bot/#engines-enablers", 
+            "text": "payment gateway  evam  lifecycle campaigns  broadcast  upselling (exacaster)    zendesk", 
+            "title": "Engines / Enablers"
+        }, 
+        {
+            "location": "/bot/#marketing-tools", 
+            "text": "digital turbine  push notifications  pushwoosh    kannel  yourls  attribution tools  tune  appflyer", 
+            "title": "Marketing tools"
+        }, 
+        {
+            "location": "/bot/#repositories", 
+            "text": "redshift  BaaS  Convergent DB  S3", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/bot/#other-tools", 
+            "text": "segment  new relic  tableau  dashboard tigo shop  active users    analytics  mixpanel  google analytics  facebook analytics", 
+            "title": "Other tools"
+        }, 
+        {
+            "location": "/bot/#south-architecture-country", 
+            "text": "", 
+            "title": "SOUTH ARCHITECTURE (COUNTRY)"
+        }, 
+        {
+            "location": "/bot/#data-services", 
+            "text": "exacaster  nbo prepaid  nbo pospaid", 
+            "title": "Data services"
+        }, 
+        {
+            "location": "/mfs/", 
+            "text": "MFS App\n\n\nJourney\n\n\nJourney: Transactional - Mobile\nAudience: B2C transactional customers with MFS wallet\n\n\nDescription\n\n\nGoals and KPIs\n\n- active users\n- transactors\n\n\nFeatures\n\n\n\n\nDiscovery\n\n\nBanner\n\n\nPush notifications\n\n\nProduct catalog\n\n\n\n\n\n\nUse \n Self-service\n\n\nBuy Pack\n\n\ncore balance\n\n\nmfs\n\n\n\n\n\n\nLoans\n\n\ncurrent debt \n credit limit\n\n\nloan balance\n\n\nloan packs\n\n\n\n\n\n\nTop-up\n\n\ncredit card\n\n\nmfs\n\n\n\n\n\n\nSee Balances\n\n\nSee Quota\n\n\nManage subscriptions\n\n\nInternet details\n\n\n\n\n\n\nCare \n Recommendation\n\n\nNPS\n\n\nHelp\n\n\nchat\n\n\nfaq\n\n\n\n\n\n\n\n\n\n\n\n\nBanners\nFeature products\nProduct Catalog\nTop-up Self/Others\nBill Payments\nRemesas Internacionales\nSend/Request Money\nPuntos Tigo Money\nCambio de Pin\nHistory of transactions\nRegistration\nAuthorize transactions\nLink/Unlink Bank Account\nRecharge Self/Others\nPay Tigo/Non Tigo Bills\nSend/Request Money\nCash in with\nMoneyGram and Wester Union\nCash in with Bank Acct\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Channel\n    android[Android]\n    web[web]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    android---appbackend\n    web---appbackend\n    appbackend---fapi\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi---backend\n\n    segment\n    payment_gateway\n    tigoid\n    contentful\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    bss---mobile\n    backend---bss\nend\n\nsubgraph Mobile Domain\n    customer[customer]\n    mfs[mfs]\n    mobile---customer\nend\n\n\n\n\n\nImplementation Details\n\n\nAuthentication\n\n\n\n\ntigo id\n\n\nTigoID Public\n\n\n\n\n\n\n\n\nExposure layer\n\n\n\n\napigee\n\n\n\n\nEngines / Enablers\n\n\n\n\nevam\n\n\nlifecycle campaigns\n\n\nbroadcast\n\n\nupselling (exacaster)\n\n\n\n\n\n\nzendesk\n\n\n\n\nMarketing tools\n\n\n\n\ndigital turbine\n\n\npush notifications\n\n\npushwoosh\n\n\n\n\n\n\nkannel\n\n\nyourls\n\n\nattribution tools\n\n\ntune\n\n\nappflyer\n\n\n\n\n\n\n\n\nRepositories\n\n\n\n\nS3\n\n\n\n\nOther tools\n\n\n\n\n\n\nsegment\n\n\n\n\n\n\nnew relic\n\n\n\n\ntableau\n\n\ndashboard tigo shop\n\n\nactive users\n\n\n\n\n\n\nanalytics\n\n\nmixpanel\n\n\ngoogle analytics\n\n\nfacebook analytics\n\n\n\n\n\n\n\n\nSOUTH ARCHITECTURE (COUNTRY)", 
+            "title": "MFS"
+        }, 
+        {
+            "location": "/mfs/#mfs-app", 
+            "text": "Journey  Journey: Transactional - Mobile\nAudience: B2C transactional customers with MFS wallet  Description  Goals and KPIs \n- active users\n- transactors", 
+            "title": "MFS App"
+        }, 
+        {
+            "location": "/mfs/#features", 
+            "text": "Discovery  Banner  Push notifications  Product catalog    Use   Self-service  Buy Pack  core balance  mfs    Loans  current debt   credit limit  loan balance  loan packs    Top-up  credit card  mfs    See Balances  See Quota  Manage subscriptions  Internet details    Care   Recommendation  NPS  Help  chat  faq       Banners\nFeature products\nProduct Catalog\nTop-up Self/Others\nBill Payments\nRemesas Internacionales\nSend/Request Money\nPuntos Tigo Money\nCambio de Pin\nHistory of transactions\nRegistration\nAuthorize transactions\nLink/Unlink Bank Account\nRecharge Self/Others\nPay Tigo/Non Tigo Bills\nSend/Request Money\nCash in with\nMoneyGram and Wester Union\nCash in with Bank Acct", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/mfs/#basic-architecture", 
+            "text": "graph TD\n\nsubgraph Channel\n    android[Android]\n    web[web]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    android---appbackend\n    web---appbackend\n    appbackend---fapi\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi---backend\n\n    segment\n    payment_gateway\n    tigoid\n    contentful\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    bss---mobile\n    backend---bss\nend\n\nsubgraph Mobile Domain\n    customer[customer]\n    mfs[mfs]\n    mobile---customer\nend", 
+            "title": "Basic architecture"
+        }, 
+        {
+            "location": "/mfs/#implementation-details", 
+            "text": "", 
+            "title": "Implementation Details"
+        }, 
+        {
+            "location": "/mfs/#authentication", 
+            "text": "tigo id  TigoID Public", 
+            "title": "Authentication"
+        }, 
+        {
+            "location": "/mfs/#exposure-layer", 
+            "text": "apigee", 
+            "title": "Exposure layer"
+        }, 
+        {
+            "location": "/mfs/#engines-enablers", 
+            "text": "evam  lifecycle campaigns  broadcast  upselling (exacaster)    zendesk", 
+            "title": "Engines / Enablers"
+        }, 
+        {
+            "location": "/mfs/#marketing-tools", 
+            "text": "digital turbine  push notifications  pushwoosh    kannel  yourls  attribution tools  tune  appflyer", 
+            "title": "Marketing tools"
+        }, 
+        {
+            "location": "/mfs/#repositories", 
+            "text": "S3", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/mfs/#other-tools", 
+            "text": "segment    new relic   tableau  dashboard tigo shop  active users    analytics  mixpanel  google analytics  facebook analytics", 
+            "title": "Other tools"
+        }, 
+        {
+            "location": "/mfs/#south-architecture-country", 
+            "text": "", 
+            "title": "SOUTH ARCHITECTURE (COUNTRY)"
+        }, 
+        {
+            "location": "/mitigo-agent/", 
+            "text": "Mi Tigo B2C\n\n\nJourney\n\n\nJourney: Subscription, Use - Mobile + Home\nAudience: agents\n\n\nDescription\n\n\nSame as Mitigo B2C but some additional cards for Agents that users may not see\n\n\nGoals and KPIs\n\n- agents performance\n- transactions (upsell/retention) amount and money\n\n\nFeatures\n\n\nOnly differences from Mi Tigo\n\n\n\n\nLogin from Zendesk\n\n\nLogin from Siebel\n\n\n\n\nLogin with LDAP\n\n\n\n\n\n\nCustomer Profile\n\n\n\n\nProduct Catalog\n\n\nCustomer Consumption\n\n\nInsights\n\n\nUpsell\n\n\nRetention\n\n\nRenewal\n\n\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Channel Bits\n    web[web - Angular]\n    drupal[drupal]\n    web--\ndrupal\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi--\nbackend\n    drupal--\nbackend\n\n    segment\n    newrelic\n    payment_gateway\n    zendesk\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend--\nbss\n    bss--\nfixed\n    bss--\nmobile\nend\nsubgraph Mobile Domain\n    customer[customer]\n    products[product catalog]\n    lend[lending]\n    fulfillment[fulfillment]\n    mfs[mfs]\n    dpi[dpi]\n    mobile--\ncustomer\nend\n\nsubgraph fixed Domain\n    customerfixed[customer fixed]\n    productsfixed[product catalog]\n    fulfillmentfixed[order management]\n    fixed--\ncustomerfixed\n\nend\n\n\n\n\n\nImplementation Details\n\n\nAuthentication\n\n\n\n\ntigo id\n\n\nTigoID Public\n\n\n\n\n\n\n\n\nExposure layer\n\n\n\n\napigee\n\n\nTigo Mobile Upselling Info\n\n\nTigo Lend APIs\n\n\nTigo Mobile Product Fulfillment\n\n\nTigoMoney Payment\n\n\nTigoMoney AccountStatusService\n\n\nSelfcare Api V2\n\n\nBSS Product\n\n\n\n\n\n\nkinesis\n\n\n\n\nEngines / Enablers\n\n\n\n\npayment gateway\n\n\nevam\n\n\nlifecycle campaigns\n\n\nbroadcast\n\n\nupselling (exacaster)\n\n\n\n\n\n\nzendesk\n\n\n\n\nMarketing tools\n\n\n\n\ndigital turbine\n\n\npush notifications\n\n\npushwoosh\n\n\n\n\n\n\nkannel\n\n\nyourls\n\n\nattribution tools\n\n\ntune\n\n\nappflyer\n\n\n\n\n\n\n\n\nRepositories\n\n\n\n\nredshift\n\n\nBaaS\n\n\nConvergent DB\n\n\nS3\n\n\n\n\nOther tools\n\n\n\n\nsegment\n\n\nnew relic\n\n\ntableau\n\n\ndashboard tigo shop\n\n\nactive users\n\n\n\n\n\n\nanalytics\n\n\nmixpanel\n\n\ngoogle analytics\n\n\nfacebook analytics\n\n\n\n\n\n\n\n\nSOUTH ARCHITECTURE (COUNTRY)\n\n\nData services\n\n\n\n\nexacaster\n\n\nnbo prepaid\n\n\nnbo pospaid", 
+            "title": "Mi Tigo Agent"
+        }, 
+        {
+            "location": "/mitigo-agent/#mi-tigo-b2c", 
+            "text": "Journey  Journey: Subscription, Use - Mobile + Home\nAudience: agents  Description  Same as Mitigo B2C but some additional cards for Agents that users may not see  Goals and KPIs \n- agents performance\n- transactions (upsell/retention) amount and money", 
+            "title": "Mi Tigo B2C"
+        }, 
+        {
+            "location": "/mitigo-agent/#features", 
+            "text": "Only differences from Mi Tigo   Login from Zendesk  Login from Siebel   Login with LDAP    Customer Profile   Product Catalog  Customer Consumption  Insights  Upsell  Retention  Renewal", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/mitigo-agent/#basic-architecture", 
+            "text": "graph TD\n\nsubgraph Channel Bits\n    web[web - Angular]\n    drupal[drupal]\n    web-- drupal\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi-- backend\n    drupal-- backend\n\n    segment\n    newrelic\n    payment_gateway\n    zendesk\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend-- bss\n    bss-- fixed\n    bss-- mobile\nend\nsubgraph Mobile Domain\n    customer[customer]\n    products[product catalog]\n    lend[lending]\n    fulfillment[fulfillment]\n    mfs[mfs]\n    dpi[dpi]\n    mobile-- customer\nend\n\nsubgraph fixed Domain\n    customerfixed[customer fixed]\n    productsfixed[product catalog]\n    fulfillmentfixed[order management]\n    fixed-- customerfixed\n\nend", 
+            "title": "Basic architecture"
+        }, 
+        {
+            "location": "/mitigo-agent/#implementation-details", 
+            "text": "", 
+            "title": "Implementation Details"
+        }, 
+        {
+            "location": "/mitigo-agent/#authentication", 
+            "text": "tigo id  TigoID Public", 
+            "title": "Authentication"
+        }, 
+        {
+            "location": "/mitigo-agent/#exposure-layer", 
+            "text": "apigee  Tigo Mobile Upselling Info  Tigo Lend APIs  Tigo Mobile Product Fulfillment  TigoMoney Payment  TigoMoney AccountStatusService  Selfcare Api V2  BSS Product    kinesis", 
+            "title": "Exposure layer"
+        }, 
+        {
+            "location": "/mitigo-agent/#engines-enablers", 
+            "text": "payment gateway  evam  lifecycle campaigns  broadcast  upselling (exacaster)    zendesk", 
+            "title": "Engines / Enablers"
+        }, 
+        {
+            "location": "/mitigo-agent/#marketing-tools", 
+            "text": "digital turbine  push notifications  pushwoosh    kannel  yourls  attribution tools  tune  appflyer", 
+            "title": "Marketing tools"
+        }, 
+        {
+            "location": "/mitigo-agent/#repositories", 
+            "text": "redshift  BaaS  Convergent DB  S3", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/mitigo-agent/#other-tools", 
+            "text": "segment  new relic  tableau  dashboard tigo shop  active users    analytics  mixpanel  google analytics  facebook analytics", 
+            "title": "Other tools"
+        }, 
+        {
+            "location": "/mitigo-agent/#south-architecture-country", 
+            "text": "", 
+            "title": "SOUTH ARCHITECTURE (COUNTRY)"
+        }, 
+        {
+            "location": "/mitigo-agent/#data-services", 
+            "text": "exacaster  nbo prepaid  nbo pospaid", 
+            "title": "Data services"
+        }, 
+        {
+            "location": "/payment-gtw/", 
+            "text": "Payment Gateway\n\n\nJourney\n\n\nEnabler - Mobile + Home\naudience: developers\n\n\nDescription\n\n\nAllow payments with Credit / Debit Cards\nFulfillment\n\n\nGoals and KPIs\n\n\n\n\nCredit Card Payments (#)\n\n\nDebit Card Payments (#)\n\n\nTokenized Card (#)\n\n\nAccounts Paid\n\n\n\n\nFeatures\n\n\nPayments\n- Pay on Demand (no fulfilment)\n- Pay + fulfillment\n- Tokenization\n- Pre Authorizations\n- Use of html helpers\n- Autopay\n\n\nFulfillment\n- Pay Tigo Bills\n- Top-up Tigo (recharge)\n- Pay On Demand\n\n\nManagement\n- Transactions and reconciliation Reports\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Presentation\n    clientApp[Client Application]\n    trxReports[Transactions and Reconciliation]\nend\n\nsubgraph Digital Backend\n    paygtw[Payment Gateway]\n    backend[Apigee]\n    clientApp--\npaygtw\n    paygtw--\nbackend\n    trxReports--\npaygtw\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend--\nbss\n    bss--\nfixed\n    bss--\nmobile\nend\nsubgraph Mobile Domain\n    fulfillment[fulfillment]\n    cbs[invoices]\n    mobile--\ncbs\n    mobile--\nfulfillment\nend\n\nsubgraph fixed Domain\n    cbsFixed[invoices]\n    fixed--\ncbsFixed\n\nend\n\n\n\n\n\nImplementation Details", 
+            "title": "Payment Gateway"
+        }, 
+        {
+            "location": "/payment-gtw/#payment-gateway", 
+            "text": "", 
+            "title": "Payment Gateway"
+        }, 
+        {
+            "location": "/payment-gtw/#journey", 
+            "text": "Enabler - Mobile + Home\naudience: developers", 
+            "title": "Journey"
+        }, 
+        {
+            "location": "/payment-gtw/#description", 
+            "text": "Allow payments with Credit / Debit Cards\nFulfillment", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/payment-gtw/#goals-and-kpis", 
+            "text": "Credit Card Payments (#)  Debit Card Payments (#)  Tokenized Card (#)  Accounts Paid", 
+            "title": "Goals and KPIs"
+        }, 
+        {
+            "location": "/payment-gtw/#features", 
+            "text": "Payments\n- Pay on Demand (no fulfilment)\n- Pay + fulfillment\n- Tokenization\n- Pre Authorizations\n- Use of html helpers\n- Autopay  Fulfillment\n- Pay Tigo Bills\n- Top-up Tigo (recharge)\n- Pay On Demand  Management\n- Transactions and reconciliation Reports", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/payment-gtw/#basic-architecture", 
+            "text": "graph TD\n\nsubgraph Presentation\n    clientApp[Client Application]\n    trxReports[Transactions and Reconciliation]\nend\n\nsubgraph Digital Backend\n    paygtw[Payment Gateway]\n    backend[Apigee]\n    clientApp-- paygtw\n    paygtw-- backend\n    trxReports-- paygtw\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend-- bss\n    bss-- fixed\n    bss-- mobile\nend\nsubgraph Mobile Domain\n    fulfillment[fulfillment]\n    cbs[invoices]\n    mobile-- cbs\n    mobile-- fulfillment\nend\n\nsubgraph fixed Domain\n    cbsFixed[invoices]\n    fixed-- cbsFixed\n\nend", 
+            "title": "Basic architecture"
+        }, 
+        {
+            "location": "/payment-gtw/#implementation-details", 
+            "text": "", 
+            "title": "Implementation Details"
+        }, 
+        {
+            "location": "/pos/", 
+            "text": "Point of Sale App (Distribution)\n\n\nJourney\n\n\nJourney: Transactional - Mobile\nAudience: agents and retail\n\n\nDescription\n\nPoint of sale tool for agents/retail\nrecharge\nbuy pack\nactivate simcard\nreports\n\n\nGoals and KPIs\n\n- active users\n- transactors\n\n\nFeatures\n\n\n\n\nDiscovery\n\n\nBanner\n\n\nPush notifications\n\n\nProduct catalog\n\n\n\n\n\n\nUse \n Self-service\n\n\nBuy Pack\n\n\ncore balance\n\n\nmfs\n\n\n\n\n\n\nLoans\n\n\ncurrent debt \n credit limit\n\n\nloan balance\n\n\nloan packs\n\n\n\n\n\n\nTop-up\n\n\ncredit card\n\n\nmfs\n\n\n\n\n\n\nSee Balances\n\n\nSee Quota\n\n\nManage subscriptions\n\n\nInternet details\n\n\n\n\n\n\nCare \n Recommendation\n\n\nNPS\n\n\nHelp\n\n\nchat\n\n\nfaq\n\n\n\n\n\n\n\n\n\n\n\n\nPromos\nFeature products\nProduct Catalog\nCross links web app\nButton in Tigo En Linea (GT)\nLogin\nView Promotions\nTop-Ups\nCall Contact\nRecharge/Auto-recharge\nRecharge Acct Balance\nTop-up Others\nCalls\nCustomer Care Support\nFAQs\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Channel\n    android[Android]\n    web[web]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    android---appbackend\n    web---appbackend\n    appbackend---fapi\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi---backend\n\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    bss---mobile\n    backend---bss\nend\n\nsubgraph Mobile Domain\n    customer[customer]\n    ePIN[ePIN]\n    mobile---customer\nend\n\n\n\n\n\nImplementation Details\n\n\nSOUTH ARCHITECTURE (COUNTRY)", 
+            "title": "Distribution"
+        }, 
+        {
+            "location": "/pos/#point-of-sale-app-distribution", 
+            "text": "Journey  Journey: Transactional - Mobile\nAudience: agents and retail  Description \nPoint of sale tool for agents/retail\nrecharge\nbuy pack\nactivate simcard\nreports  Goals and KPIs \n- active users\n- transactors", 
+            "title": "Point of Sale App (Distribution)"
+        }, 
+        {
+            "location": "/pos/#features", 
+            "text": "Discovery  Banner  Push notifications  Product catalog    Use   Self-service  Buy Pack  core balance  mfs    Loans  current debt   credit limit  loan balance  loan packs    Top-up  credit card  mfs    See Balances  See Quota  Manage subscriptions  Internet details    Care   Recommendation  NPS  Help  chat  faq       Promos\nFeature products\nProduct Catalog\nCross links web app\nButton in Tigo En Linea (GT)\nLogin\nView Promotions\nTop-Ups\nCall Contact\nRecharge/Auto-recharge\nRecharge Acct Balance\nTop-up Others\nCalls\nCustomer Care Support\nFAQs", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/pos/#basic-architecture", 
+            "text": "graph TD\n\nsubgraph Channel\n    android[Android]\n    web[web]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    android---appbackend\n    web---appbackend\n    appbackend---fapi\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi---backend\n\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    bss---mobile\n    backend---bss\nend\n\nsubgraph Mobile Domain\n    customer[customer]\n    ePIN[ePIN]\n    mobile---customer\nend", 
+            "title": "Basic architecture"
+        }, 
+        {
+            "location": "/pos/#implementation-details", 
+            "text": "", 
+            "title": "Implementation Details"
+        }, 
+        {
+            "location": "/pos/#south-architecture-country", 
+            "text": "", 
+            "title": "SOUTH ARCHITECTURE (COUNTRY)"
+        }, 
+        {
+            "location": "/tbo/", 
+            "text": "Mi Tigo B2B (TBO)\n\n\nJourney\n\n\nSubscription B2B - Mobile + Home, USE\nAudience: SMBs\n\n\nDescription\n\n\nvideo tutorial CO june 2018: https://vimeo.com/comunicacionestigoune/review/273877003/984d184e8d\n\n\nGoals and KPIs\n\n- active users\n- active companies\n- invoices: pay\n- nps\n\n\nFeatures\n\n\n\n\nAutocreate user\n\n\nManage accounts: mobile+fixed accounts\n\n\nDiscovery\n\n\nBanner\n\n\n\n\n\n\nUse \n Self-service\n\n\nSee Balances \n Quota\n\n\nCall History\n\n\nSms History\n\n\nInternet details \n\n\nBalance Transfer\n\n\nRenovations\n\n\nUpgrade plans\n\n\nInvoices\n\n\nPay multiple invoices with CC\n\n\nEnable electronic bill (eco bill)\n\n\nInvoice History\n\n\nDownload last invoice\n\n\n\n\n\n\nWifi self-service\n\n\nchange wifi password\n\n\nchange wifi name\n\n\nreset modem\n\n\n\n\n\n\n\n\n\n\nCare \n Recommendation\n\n\nNPS\n\n\nHelp\n\n\nchat\n\n\nfaq\n\n\n\n\n\n\n\n\n\n\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Channel web\n    web[web - Angular]\n    drupal[drupal]\n    web--\ndrupal\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    drupal--\nbackend\n\n    segment\n    newrelic\n    payment_gateway\n    tigoid\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend--\nbss\n    bss--\nfixed\n    bss--\nmobile\nend\nsubgraph Mobile Domain\n    customer[customer]\n    products[product catalog]\n    fulfillment[fulfillment]\n    dpi[dpi]\n    ticketsMob[ticket management]\n    mobile--\ncustomer\nend\n\nsubgraph fixed Domain\n    customerfixed[customer fixed]\n    productsfixed[product catalog]\n    fulfillmentfixed[order management]\n    ticketsFix[ticket management]\n    fixed--\ncustomerfixed\nend\n\n\n\n\n\nImplementation Details\n\n\nAuthentication\n\n\n\n\ntigo id\n\n\nTigoID Public\n\n\n\n\n\n\n\n\nExposure layer\n\n\n\n\napigee\n\n\nHome Selfcare \n\n\nKannel SMS    \n\n\nPayment Domiciliation \n\n\nSelfcare API v2   \n\n\nTBO-mobile self care  \n\n\nTigo BO Lend APIs \n\n\nTigo Business Online BO   \n\n\nTigo Business Online CO   \n\n\nTigo Business Online GT   \n\n\nTigo Business Online HN   \n\n\nTigo Business Online SV   \n\n\nTigo Customer Support \n\n\nTigo Mobile Product Fulfillment   \n\n\nTigo Mobile UpSelling Info    \n\n\nTigo Mobile Usage Balance \n\n\nTigo SelfCare (LV1)   \n\n\n\n\n\n\n\n\nEngines / Enablers\n\n\n\n\npayment gateway\n\n\nzendesk\n\n\n\n\nMarketing tools\n\n\n\n\nkannel\n\n\n\n\nRepositories\n\n\n\n\nS3\n\n\n\n\nOther tools\n\n\n\n\nsegment\n\n\nnew relic\n\n\ntableau\n\n\ndashboard tigo shop\n\n\nactive users\n\n\n\n\n\n\nanalytics\n\n\nmixpanel\n\n\n\n\n\n\n\n\nSOUTH ARCHITECTURE (COUNTRY)", 
+            "title": "Mi tigo B2B"
+        }, 
+        {
+            "location": "/tbo/#mi-tigo-b2b-tbo", 
+            "text": "Journey  Subscription B2B - Mobile + Home, USE\nAudience: SMBs  Description  video tutorial CO june 2018: https://vimeo.com/comunicacionestigoune/review/273877003/984d184e8d  Goals and KPIs \n- active users\n- active companies\n- invoices: pay\n- nps", 
+            "title": "Mi Tigo B2B (TBO)"
+        }, 
+        {
+            "location": "/tbo/#features", 
+            "text": "Autocreate user  Manage accounts: mobile+fixed accounts  Discovery  Banner    Use   Self-service  See Balances   Quota  Call History  Sms History  Internet details   Balance Transfer  Renovations  Upgrade plans  Invoices  Pay multiple invoices with CC  Enable electronic bill (eco bill)  Invoice History  Download last invoice    Wifi self-service  change wifi password  change wifi name  reset modem      Care   Recommendation  NPS  Help  chat  faq", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/tbo/#basic-architecture", 
+            "text": "graph TD\n\nsubgraph Channel web\n    web[web - Angular]\n    drupal[drupal]\n    web-- drupal\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    drupal-- backend\n\n    segment\n    newrelic\n    payment_gateway\n    tigoid\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend-- bss\n    bss-- fixed\n    bss-- mobile\nend\nsubgraph Mobile Domain\n    customer[customer]\n    products[product catalog]\n    fulfillment[fulfillment]\n    dpi[dpi]\n    ticketsMob[ticket management]\n    mobile-- customer\nend\n\nsubgraph fixed Domain\n    customerfixed[customer fixed]\n    productsfixed[product catalog]\n    fulfillmentfixed[order management]\n    ticketsFix[ticket management]\n    fixed-- customerfixed\nend", 
+            "title": "Basic architecture"
+        }, 
+        {
+            "location": "/tbo/#implementation-details", 
+            "text": "", 
+            "title": "Implementation Details"
+        }, 
+        {
+            "location": "/tbo/#authentication", 
+            "text": "tigo id  TigoID Public", 
+            "title": "Authentication"
+        }, 
+        {
+            "location": "/tbo/#exposure-layer", 
+            "text": "apigee  Home Selfcare   Kannel SMS      Payment Domiciliation   Selfcare API v2     TBO-mobile self care    Tigo BO Lend APIs   Tigo Business Online BO     Tigo Business Online CO     Tigo Business Online GT     Tigo Business Online HN     Tigo Business Online SV     Tigo Customer Support   Tigo Mobile Product Fulfillment     Tigo Mobile UpSelling Info      Tigo Mobile Usage Balance   Tigo SelfCare (LV1)", 
+            "title": "Exposure layer"
+        }, 
+        {
+            "location": "/tbo/#engines-enablers", 
+            "text": "payment gateway  zendesk", 
+            "title": "Engines / Enablers"
+        }, 
+        {
+            "location": "/tbo/#marketing-tools", 
+            "text": "kannel", 
+            "title": "Marketing tools"
+        }, 
+        {
+            "location": "/tbo/#repositories", 
+            "text": "S3", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/tbo/#other-tools", 
+            "text": "segment  new relic  tableau  dashboard tigo shop  active users    analytics  mixpanel", 
+            "title": "Other tools"
+        }, 
+        {
+            "location": "/tbo/#south-architecture-country", 
+            "text": "", 
+            "title": "SOUTH ARCHITECTURE (COUNTRY)"
+        }, 
+        {
+            "location": "/usa/", 
+            "text": "Tigo USA App\n\n\nJourney\n\n\nJourney: Transactional - Mobile\nAudience: people living in USA doing recharges and paying for services in CAM\n\n\nDescription\n\n\nGoals and KPIs\n\n- active users\n- transactors\n\n\nFeatures\n\n\n\n\nDiscovery\n\n\nBanner\n\n\nPush notifications\n\n\nProduct catalog\n\n\n\n\n\n\nUse \n Self-service\n\n\nBuy Pack\n\n\ncore balance\n\n\nmfs\n\n\n\n\n\n\nLoans\n\n\ncurrent debt \n credit limit\n\n\nloan balance\n\n\nloan packs\n\n\n\n\n\n\nTop-up\n\n\ncredit card\n\n\nmfs\n\n\n\n\n\n\nSee Balances\n\n\nSee Quota\n\n\nManage subscriptions\n\n\nInternet details\n\n\n\n\n\n\nCare \n Recommendation\n\n\nNPS\n\n\nHelp\n\n\nchat\n\n\nfaq\n\n\n\n\n\n\n\n\n\n\n\n\nPromos\nFeature products\nProduct Catalog\nCross links web app\nButton in Tigo En Linea (GT)\nLogin\nView Promotions\nTop-Ups\nCall Contact\nRecharge/Auto-recharge\nRecharge Acct Balance\nTop-up Others\nCalls\nCustomer Care Support\nFAQs\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Channel\n    android[Android]\n    web[web]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    android---appbackend\n    web---appbackend\n    appbackend---fapi\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi---backend\n\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    bss---mobile\n    backend---bss\nend\n\nsubgraph Mobile Domain\n    customer[customer]\n    ePIN[ePIN]\n    mobile---customer\nend\n\n\n\n\n\nImplementation Details\n\n\nSOUTH ARCHITECTURE (COUNTRY)", 
+            "title": "Tigo USA"
+        }, 
+        {
+            "location": "/usa/#tigo-usa-app", 
+            "text": "Journey  Journey: Transactional - Mobile\nAudience: people living in USA doing recharges and paying for services in CAM  Description  Goals and KPIs \n- active users\n- transactors", 
+            "title": "Tigo USA App"
+        }, 
+        {
+            "location": "/usa/#features", 
+            "text": "Discovery  Banner  Push notifications  Product catalog    Use   Self-service  Buy Pack  core balance  mfs    Loans  current debt   credit limit  loan balance  loan packs    Top-up  credit card  mfs    See Balances  See Quota  Manage subscriptions  Internet details    Care   Recommendation  NPS  Help  chat  faq       Promos\nFeature products\nProduct Catalog\nCross links web app\nButton in Tigo En Linea (GT)\nLogin\nView Promotions\nTop-Ups\nCall Contact\nRecharge/Auto-recharge\nRecharge Acct Balance\nTop-up Others\nCalls\nCustomer Care Support\nFAQs", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/usa/#basic-architecture", 
+            "text": "graph TD\n\nsubgraph Channel\n    android[Android]\n    web[web]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    android---appbackend\n    web---appbackend\n    appbackend---fapi\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi---backend\n\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    bss---mobile\n    backend---bss\nend\n\nsubgraph Mobile Domain\n    customer[customer]\n    ePIN[ePIN]\n    mobile---customer\nend", 
+            "title": "Basic architecture"
+        }, 
+        {
+            "location": "/usa/#implementation-details", 
+            "text": "", 
+            "title": "Implementation Details"
+        }, 
+        {
+            "location": "/usa/#south-architecture-country", 
+            "text": "", 
+            "title": "SOUTH ARCHITECTURE (COUNTRY)"
+        }, 
+        {
+            "location": "/sports/", 
+            "text": "Tigo Sports\n\n\nJourney\n\n\nTransaction - Mobile + Home. Audience: b2c end customers. Some countries OTT customers\n\n\nDescription\n\n\nWatch live games and VOD for main local leagues. 2nd screen for home users.\n\n\nGoals and KPIs\n\n\n\n\nactive users\n\n\nstreams: number of streams, number of minutes\n\n\npasses sold\n\n\n\n\nFeatures\n\n\n\n\nLogin\n\n\nMOBILE. Login with HE or sms otp\n\n\nHOME. Login with email + account validation\n\n\nOTHERS. login with email for non tigo customers\n\n\n\n\n\n\nDiscovery\n\n\nHighlights: welcome Banner\n\n\nPush notifications\n\n\nAds: banner + pre-roll\n\n\n\n\n\n\nUse \n Self-service\n\n\nWatch game\n\n\nWatch VOD \n\n\nRead News\n\n\nFollow a team\n\n\nSee stats\n\n\n\n\n\n\nCare \n Recommendation\n\n\nShare VOD or article\n\n\n\n\n\n\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Channel\n    android[Android]\n    ios[ios]\n    web[web]\n    appbackend[Neulion CMS]\n    qos[Neulion QoS]\n    android---appbackend\n    ios---appbackend\n    web---appbackend\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    sportsDB[Sports entitlement DB]\n\n    appbackend--\nbackend\n    backend--\nsportsDB\n    segment\n    newrelic\n    tigoid\n    urban_airship\nend\n\nsubgraph Stats\n    perform[News CMS]\n    datafactory[Game feeds]\n\n    perform--\nappbackend\n    datafactory--\nappbackend\n\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n\n    backend---bss\n    bss---fixed\n    bss---mobile\n\nend\n\n\n\n\nImplementation Details\n\n\nAuthentication\n\n\n\n\ntigo id\n\n\nTigoID Public\n\n\n\n\n\n\n\n\nExposure layer\n\n\n\n\napigee\n\n\ntigo_sports_v1\n\n\ntoolbox_v1\n\n\ntoolbox_auth_v1\n\n\n\n\n\n\n\n\nMarketing tools\n\n\n\n\ndigital turbine\n\n\npush notifications\n\n\nurban_airship\n\n\n\n\n\n\n\n\nRepositories\n\n\n\n\nS3\n\n\n\n\nOther tools\n\n\n\n\nsegment\n\n\nnew relic\n\n\ntableau\n\n\ndashboard tigo sports", 
+            "title": "Tigo Sports"
+        }, 
+        {
+            "location": "/sports/#tigo-sports", 
+            "text": "", 
+            "title": "Tigo Sports"
+        }, 
+        {
+            "location": "/sports/#journey", 
+            "text": "Transaction - Mobile + Home. Audience: b2c end customers. Some countries OTT customers", 
+            "title": "Journey"
+        }, 
+        {
+            "location": "/sports/#description", 
+            "text": "Watch live games and VOD for main local leagues. 2nd screen for home users.", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/sports/#goals-and-kpis", 
+            "text": "active users  streams: number of streams, number of minutes  passes sold", 
+            "title": "Goals and KPIs"
+        }, 
+        {
+            "location": "/sports/#features", 
+            "text": "Login  MOBILE. Login with HE or sms otp  HOME. Login with email + account validation  OTHERS. login with email for non tigo customers    Discovery  Highlights: welcome Banner  Push notifications  Ads: banner + pre-roll    Use   Self-service  Watch game  Watch VOD   Read News  Follow a team  See stats    Care   Recommendation  Share VOD or article", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/sports/#basic-architecture", 
+            "text": "graph TD\n\nsubgraph Channel\n    android[Android]\n    ios[ios]\n    web[web]\n    appbackend[Neulion CMS]\n    qos[Neulion QoS]\n    android---appbackend\n    ios---appbackend\n    web---appbackend\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    sportsDB[Sports entitlement DB]\n\n    appbackend-- backend\n    backend-- sportsDB\n    segment\n    newrelic\n    tigoid\n    urban_airship\nend\n\nsubgraph Stats\n    perform[News CMS]\n    datafactory[Game feeds]\n\n    perform-- appbackend\n    datafactory-- appbackend\n\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n\n    backend---bss\n    bss---fixed\n    bss---mobile\n\nend", 
+            "title": "Basic architecture"
+        }, 
+        {
+            "location": "/sports/#implementation-details", 
+            "text": "", 
+            "title": "Implementation Details"
+        }, 
+        {
+            "location": "/sports/#authentication", 
+            "text": "tigo id  TigoID Public", 
+            "title": "Authentication"
+        }, 
+        {
+            "location": "/sports/#exposure-layer", 
+            "text": "apigee  tigo_sports_v1  toolbox_v1  toolbox_auth_v1", 
+            "title": "Exposure layer"
+        }, 
+        {
+            "location": "/sports/#marketing-tools", 
+            "text": "digital turbine  push notifications  urban_airship", 
+            "title": "Marketing tools"
+        }, 
+        {
+            "location": "/sports/#repositories", 
+            "text": "S3", 
+            "title": "Repositories"
+        }, 
+        {
+            "location": "/sports/#other-tools", 
+            "text": "segment  new relic  tableau  dashboard tigo sports", 
+            "title": "Other tools"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/", 
+            "text": "Mobile Self Care API\n\n\nThis is the standard API for Self Care functions related to Mobile Phones and all other Mobile Network services for Tigo. \nWe use swagger-2.0 specification\n\n\nThis document is used mainly for new API design of new use cases. Traditional use cases have not been ported here yet.\nThis is the reason we used v2\n\n\nVersion:\n 1.0.0\n\n\nTerms of service:\n\nhttp://swagger.io/terms/\n\n\nContact information:\n\nAndres Cavallin\n\nhttp://www.millicom.com\n\nandres.cavallin@millicom.com  \n\n\nLicense:\n \nMIT\n\n\n/plans/subscribers/{MSISDN}/favorites/\n\n\n\n\nGET\n\n\nSummary:\n Get Favorite Numbers by MSISDN\n\n\nDescription:\n Retrieve a list of favorite numbers associated with the specified MSISDN\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n200\n\n\nRequested Favorites Information was found\n\n\nFavoriteNumberList\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \nFavorites Number List\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\nPOST\n\n\nSummary:\n Add Favorite Number by MSISDN\n\n\nDescription:\n If slots are still available, the specified phone number will be added to the list of favorite numbers of the provided MSISDN\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\nbody\n\n\nbody\n\n\n\n\nYes\n\n\nFavoriteNumber\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n201\n\n\nFavorite Number was successfully added\n\n\nsuccessBody\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \ncontractId\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\nDELETE\n\n\nSummary:\n Delete Favorite Numbers by MSISDN\n\n\nDescription:\n If found in the favorite number list of the specified MSISDN, the specified phone number will be deleted\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\nbody\n\n\nbody\n\n\n\n\nYes\n\n\nFavoriteNumber\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n200\n\n\nRecurring Billing was successfully deleted\n\n\nsuccessBody\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \ncontractId\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\n/plans/subscribers/{MSISDN}/availableoffers/\n\n\n\n\nGET\n\n\nSummary:\n Get Available Offers by MSISDN\n\n\nDescription:\n Retrieve a list of offers available to the specified MSISDN\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\nchannelId\n\n\nquery\n\n\nChannel used to present the offer. Default will be Self Care Web and App\n\n\nNo\n\n\ninteger\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n200\n\n\nRequested Offer Information was found\n\n\nOfferList\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \nOffers List\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\n/plans/subscribers/{MSISDN}/acquiredoffers/{offerId}\n\n\n\n\nPOST\n\n\nSummary:\n Purchase Offer by MSISDN and OfferId\n\n\nDescription:\n The Subscriber specified by MSISDN will purchase the Offer specified by OfferId\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\nofferId\n\n\npath\n\n\nThe Offer Unique Identifier obtained from Get Available Offers by MSISDN\n\n\nYes\n\n\nstring\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n201\n\n\nOffer was successfully acquired\n\n\nsuccessBody\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \nOffer Id\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\nDELETE\n\n\nSummary:\n Delete Offer by MSISDN and OfferId\n\n\nDescription:\n The subscriber specified by MSISDN will remove the Offer specified by OfferId previously purchased\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\nofferId\n\n\npath\n\n\nThe Offer Unique Identifier obtained from Get Available Offers by MSISDN\n\n\nYes\n\n\nstring\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n201\n\n\nOffer was successfully acquired\n\n\nsuccessBody\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \nOffer Id\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\n/plans/subscribers/{MSISDN}/phonelease/\n\n\n\n\nGET\n\n\nSummary:\n Get Phone Lease Details by MSISDN\n\n\nDescription:\n Retrieve details of leased phone\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n200\n\n\nRequested phone lease Information was found\n\n\nPhoneLeaseInfo\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \nphonelease\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\n/plans/subscribers/{MSISDN}/current\n\n\n\n\nGET\n\n\nSummary:\n Get Current Plan Details by MSISDN\n\n\nDescription:\n Retrieve Current Plan Details for the provided Customer\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n200\n\n\nRequested Current Plan Information was found\n\n\nPlan\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \nFavorites Number List\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\nPUT\n\n\nSummary:\n Update Current Plan by MSISDN\n\n\nDescription:\n Update the current plan for the MSISDN to the PlanId provided\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\nbody\n\n\nbody\n\n\n\n\nYes\n\n\nPlanUpgrate\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n200\n\n\nOffer was successfully acquired\n\n\nsuccessBody\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \nrequest plan upgrate\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\n/plans/subscribers/{MSISDN}/availableplans/\n\n\n\n\nGET\n\n\nSummary:\n Get Available Plans by MSISDN\n\n\nDescription:\n Obtain a Catalog of available plans by MSISDN that the client can select. Plans can be filtered by planType.\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\nplanType\n\n\nquery\n\n\nApply a filter to returned plans, for example Upgrades, Downgrades, Retention, Additional. If ommited, all plans in the Catalog are returned.\n\n\nNo\n\n\nstring\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n200\n\n\nRequested Upgrade Information was found\n\n\nPlanList\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \nAvailable Plans\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\n/plans/subscribers/{MSISDN}/upgrades/\n\n\n\n\nGET\n\n\nSummary:\n Get Available Plans Upgrades by MSISDN\n\n\nDescription:\n Retrieve Available Plans that the customer can upgrade to the specified MSISDN.\nThis is specific use case of the \"Get Available Plans by MSISDN\" method.\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n200\n\n\nRequested Upgrade Information was found\n\n\nPlanList\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \nAvailable Plans\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\n/plans/subscribers/{MSISDN}/upgraderequest\n\n\n\n\nGET\n\n\nSummary:\n Get Upgrade Request Status by MSISDN\n\n\nDescription:\n Get information if the customer has initiated an upgrade or not for the provided Customer\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n200\n\n\nRequested status of plan update Information was found\n\n\nsuccessBody\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \nstatus of plan update\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\nPOST\n\n\nSummary:\n Create Upgrade Request by MSISDN\n\n\nDescription:\n Register a request from the MSISDN to receive a plan upgrade\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\nbody\n\n\nbody\n\n\n\n\nYes\n\n\nPlanUpgrate\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n200\n\n\nOffer was successfully acquired\n\n\nsuccessBody\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \nrequest plan upgrate\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\n/plans/subscribers/{MSISDN}/subscriptionrequests/\n\n\n\n\nPOST\n\n\nSummary:\n Create Subscription Requests by MSISDN\n\n\nDescription:\n Register one or more requests made by the specified MSISDN to accquire Additional Subscriptions\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nLocated in\n\n\nDescription\n\n\nRequired\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\nMSISDN\n\n\npath\n\n\nInternational Identifiable mobile phone number\n\n\nYes\n\n\nstring\n\n\n\n\n\n\nbody\n\n\nbody\n\n\n\n\nYes\n\n\nPlanAdditional\n\n\n\n\n\n\n\n\nResponses\n\n\n\n\n\n\n\n\nCode\n\n\nDescription\n\n\nSchema\n\n\n\n\n\n\n\n\n\n\n200\n\n\nOffer was successfully acquired\n\n\nsuccessBody\n\n\n\n\n\n\n403\n\n\nForbidden. Check \nerror.message\n for details\n\n\nerrorBody\n\n\n\n\n\n\n404\n\n\nthe specified \nrequest plan upgrate\n was not found\n\n\nerrorBody\n\n\n\n\n\n\ndefault\n\n\nunexpected error\n\n\nerrorBody\n\n\n\n\n\n\n\n\nModels\n\n\n\n\nStatusChangeRequest\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\ncode\n\n\nstring\n\n\nStatus Code. May be alphanumeric\n\n\nYes\n\n\n\n\n\n\nassetType\n\n\nstring\n\n\nAsset which status is being updated\n\n\nYes\n\n\n\n\n\n\nupdateReason\n\n\nstring\n\n\nReson of status being updated\n\n\nNo\n\n\n\n\n\n\ncustomerId\n\n\nstring\n\n\nCustomer unique identifier, usually national identification number or company tax payer number\n\n\nNo\n\n\n\n\n\n\ndocumentType\n\n\nstring\n\n\nDefines if customerId es a National Id, Tax Payer Number, Passport, etc.\n\n\nNo\n\n\n\n\n\n\nname\n\n\nstring\n\n\nFirst Name, Comapny Name or Full Name of the Customer\n\n\nNo\n\n\n\n\n\n\nlastName\n\n\nstring\n\n\nLast Name of the Custoemr\n\n\nNo\n\n\n\n\n\n\n\n\nFavoriteNumberList\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nFavoriteNumberList\n\n\narray\n\n\n\n\n\n\n\n\n\n\n\n\nFavoriteNumber\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nPhoneNumber\n\n\nstring\n\n\nPhone Number that is considered a Favorite Number\n\n\nYes\n\n\n\n\n\n\nExpirationDate\n\n\ndate\n\n\nOptional value if this number have an expiration date\n\n\nNo\n\n\n\n\n\n\nLabel\n\n\nstring\n\n\nOptional value if this number has a description or user defined label\n\n\nNo\n\n\n\n\n\n\nPlanCode\n\n\nstring\n\n\nOptional plan code or number to which this PhoneNumber is being added\n\n\nNo\n\n\n\n\n\n\n\n\nOfferList\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nOfferList\n\n\narray\n\n\n\n\n\n\n\n\n\n\n\n\nOffer\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nOfferId\n\n\nstring\n\n\nUnique Id of the offering, needed to complete the order.\n\n\nYes\n\n\n\n\n\n\nOfferName\n\n\nstring\n\n\nShort name for the offer\n\n\nYes\n\n\n\n\n\n\nDescription\n\n\nstring\n\n\nExplanation to the user.\n\n\nNo\n\n\n\n\n\n\nValidity\n\n\nstring\n\n\nThe quantitative number or period for which the offer is valid.\n\n\nNo\n\n\n\n\n\n\nValidityUnit\n\n\nstring\n\n\nThe period unit. Could be Hour, Day, Week, Month, Megabytes, Gigabytes, Slots\n\n\nNo\n\n\n\n\n\n\nCategoryName\n\n\nstring\n\n\nThe name of main category of this offer\n\n\nNo\n\n\n\n\n\n\nSubCategoryName\n\n\nstring\n\n\nThe name of the secondary category of this offer\n\n\nNo\n\n\n\n\n\n\nRank\n\n\nnumber\n\n\nThis value is used to present the offers in a sorted order.\n\n\nNo\n\n\n\n\n\n\namount\n\n\ndouble\n\n\n\n\nNo\n\n\n\n\n\n\ncurrencyId\n\n\nstring\n\n\nThis is the ISO Id of the currency\n\n\nNo\n\n\n\n\n\n\nAcquisitionMethodList\n\n\nAcquisitionMethod\n\n\n\n\nNo\n\n\n\n\n\n\n\n\nAcquisitionMethod\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nAcquisitionMethodId\n\n\nnumber\n\n\nUnique Id of the Acquisition Method\n\n\nYes\n\n\n\n\n\n\nAcquisitionMethodName\n\n\nstring\n\n\nShort name for the Acquisition Method. Could be Next Invoice or Prepaid\n\n\nYes\n\n\n\n\n\n\n\n\nPlanList\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nPlanList\n\n\narray\n\n\n\n\n\n\n\n\n\n\n\n\nPlan\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nplanId\n\n\nstring\n\n\nUnique Id of the plan\n\n\nYes\n\n\n\n\n\n\nplanName\n\n\nstring\n\n\nShort name for the plan\n\n\nYes\n\n\n\n\n\n\nmonthlyAmount\n\n\nnumber\n\n\nMonthly base amount that customer pays for this plan\n\n\nYes\n\n\n\n\n\n\nplanDataInMB\n\n\nnumber\n\n\nMonthly megabytes included in this plan.\n\n\n\n\n\n\n\n\nThis value is also included in the ProdutOffering array but must be reflected in this value so megabytes can be compared,\n\n\n\n\n\n\n\n\n\n\n\n\ncharted and better communicated to the customer.\n\n\n\n\n\n\n\n\n\n\n\n\nNo\n\n\n\n\n\n\n\n\n\n\n\n\ncurrencyId\n\n\nstring\n\n\nThis is the ISO Id of the currency\n\n\nNo\n\n\n\n\n\n\nstatus\n\n\nstring\n\n\nStatus of this plan, may help build the UX\n\n\nNo\n\n\n\n\n\n\nCategoryName\n\n\nstring\n\n\nThe name of main category of this plan\n\n\nNo\n\n\n\n\n\n\nRank\n\n\nnumber\n\n\nThis value is used to present the offers in a sorted order.\n\n\nNo\n\n\n\n\n\n\nproductOfferingList\n\n\n[ \nProductOffering\n ]\n\n\nAn array of offering details grouped by category\n\n\nNo\n\n\n\n\n\n\n\n\nNameValuePair\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nname\n\n\nstring\n\n\nThis is the name of the of data\n\n\nNo\n\n\n\n\n\n\nvalue\n\n\nstring\n\n\nthis is the value\n\n\nNo\n\n\n\n\n\n\n\n\nProductOffering\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nofferingCategory\n\n\nstring\n\n\nThis is the category that defines the type of offering\n\n\nNo\n\n\n\n\n\n\nofferingId\n\n\nstring\n\n\nThis is the id of that type of offering\n\n\nNo\n\n\n\n\n\n\nofferingDetailList\n\n\n[ \nNameValuePair\n ]\n\n\nAn array of Name and Value pair for additional services\n\n\nNo\n\n\n\n\n\n\n\n\nPhoneLeaseInfo\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nclauseId\n\n\nstring\n\n\nIdentifier that legacy uses for that permanency clause\n\n\nNo\n\n\n\n\n\n\nlastBillingDate\n\n\ndate\n\n\nLast billing of the contract with equipment\n\n\nYes\n\n\n\n\n\n\nnextRenewalDate\n\n\ndate\n\n\nNext renewal of the contract with equipment\n\n\nYes\n\n\n\n\n\n\ntypeClauseId\n\n\nstring\n\n\nType of permanency clause\n\n\nNo\n\n\n\n\n\n\nimei\n\n\nstring\n\n\nInternational Mobile Station Equipment Identity\n\n\nNo\n\n\n\n\n\n\ngama\n\n\nstring\n\n\nEquipment gama\n\n\nNo\n\n\n\n\n\n\nbrand\n\n\nstring\n\n\nEquipment brand\n\n\nNo\n\n\n\n\n\n\nmodel\n\n\nstring\n\n\nEquipment model\n\n\nNo\n\n\n\n\n\n\ninsurance\n\n\nstring\n\n\nConfirmation if the equipment is or is not insured\n\n\nNo\n\n\n\n\n\n\nstatus\n\n\nstring\n\n\nStatus of the comodato\n\n\nNo\n\n\n\n\n\n\n\n\nPlanUpgrate\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nname\n\n\nstring\n\n\nFull Name of the Customer\n\n\nNo\n\n\n\n\n\n\nemail\n\n\nstring\n\n\nEmail of the Customer\n\n\nNo\n\n\n\n\n\n\nplanId\n\n\nstring\n\n\nUnique Id of the NEW plan\n\n\nYes\n\n\n\n\n\n\nplanName\n\n\nstring\n\n\nShort name for the NEW plan\n\n\nNo\n\n\n\n\n\n\nmonthlyAmount\n\n\nnumber\n\n\nMonthly base amount that customer pays for the NEW plan\n\n\nNo\n\n\n\n\n\n\ncurrencyId\n\n\nstring\n\n\nThis is the ISO Id of the currency\n\n\nNo\n\n\n\n\n\n\ncategoryName\n\n\nstring\n\n\nThe name of main category of the NEW plan\n\n\nNo\n\n\n\n\n\n\nfromPlan\n\n\nstring\n\n\nSource or Id of the OLD plan\n\n\nNo\n\n\n\n\n\n\n\n\nPlanAdditional\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\nfromPlan\n\n\nstring\n\n\nSource of the plan\n\n\nNo\n\n\n\n\n\n\nplanId\n\n\nstring\n\n\nUnique Id of the plan\n\n\nYes\n\n\n\n\n\n\nplanName\n\n\nstring\n\n\nShort name for the plan\n\n\nYes\n\n\n\n\n\n\ncategoryName\n\n\nstring\n\n\nThe name of main category of this plan\n\n\nYes\n\n\n\n\n\n\nname\n\n\nstring\n\n\nFull Name of the Customer\n\n\nYes\n\n\n\n\n\n\nemail\n\n\nstring\n\n\nEmail of the Customer\n\n\nNo\n\n\n\n\n\n\nAdditionalSubscriptionsList\n\n\n[ \nAdditionalSubscriptions\n ]\n\n\n\n\nNo\n\n\n\n\n\n\n\n\nAdditionalSubscriptions\n\n\n\n\n\n\n\n\nName\n\n\nType\n\n\nDescription\n\n\nRequired\n\n\n\n\n\n\n\n\n\n\ncurrencyId\n\n\nstring\n\n\nThis is the ISO Id of the currency\n\n\nNo\n\n\n\n\n\n\nemail\n\n\nstring\n\n\nEmail of the Customer\n\n\nNo\n\n\n\n\n\n\nplanId\n\n\nstring\n\n\nUnique Id of the plan\n\n\nYes\n\n\n\n\n\n\nplanName\n\n\nstring\n\n\nShort name for the plan\n\n\nYes\n\n\n\n\n\n\ncategoryName\n\n\nstring\n\n\nThe name of main category of this plan\n\n\nNo\n\n\n\n\n\n\nmonthlyAmount\n\n\nnumber\n\n\nMonthly base amount that customer pays for this plan\n\n\nNo", 
+            "title": "API Mobile Selfcare 2.0"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#mobile-self-care-api", 
+            "text": "This is the standard API for Self Care functions related to Mobile Phones and all other Mobile Network services for Tigo. \nWe use swagger-2.0 specification  This document is used mainly for new API design of new use cases. Traditional use cases have not been ported here yet.\nThis is the reason we used v2  Version:  1.0.0  Terms of service: \nhttp://swagger.io/terms/  Contact information: \nAndres Cavallin \nhttp://www.millicom.com \nandres.cavallin@millicom.com    License:   MIT", 
+            "title": "Mobile Self Care API"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#planssubscribersmsisdnfavorites", 
+            "text": "", 
+            "title": "/plans/subscribers/{MSISDN}/favorites/"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#get", 
+            "text": "Summary:  Get Favorite Numbers by MSISDN  Description:  Retrieve a list of favorite numbers associated with the specified MSISDN  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string     Responses     Code  Description  Schema      200  Requested Favorites Information was found  FavoriteNumberList    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  Favorites Number List  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#post", 
+            "text": "Summary:  Add Favorite Number by MSISDN  Description:  If slots are still available, the specified phone number will be added to the list of favorite numbers of the provided MSISDN  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string    body  body   Yes  FavoriteNumber     Responses     Code  Description  Schema      201  Favorite Number was successfully added  successBody    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  contractId  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "POST"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#delete", 
+            "text": "Summary:  Delete Favorite Numbers by MSISDN  Description:  If found in the favorite number list of the specified MSISDN, the specified phone number will be deleted  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string    body  body   Yes  FavoriteNumber     Responses     Code  Description  Schema      200  Recurring Billing was successfully deleted  successBody    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  contractId  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "DELETE"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#planssubscribersmsisdnavailableoffers", 
+            "text": "", 
+            "title": "/plans/subscribers/{MSISDN}/availableoffers/"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#get_1", 
+            "text": "Summary:  Get Available Offers by MSISDN  Description:  Retrieve a list of offers available to the specified MSISDN  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string    channelId  query  Channel used to present the offer. Default will be Self Care Web and App  No  integer     Responses     Code  Description  Schema      200  Requested Offer Information was found  OfferList    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  Offers List  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#planssubscribersmsisdnacquiredoffersofferid", 
+            "text": "", 
+            "title": "/plans/subscribers/{MSISDN}/acquiredoffers/{offerId}"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#post_1", 
+            "text": "Summary:  Purchase Offer by MSISDN and OfferId  Description:  The Subscriber specified by MSISDN will purchase the Offer specified by OfferId  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string    offerId  path  The Offer Unique Identifier obtained from Get Available Offers by MSISDN  Yes  string     Responses     Code  Description  Schema      201  Offer was successfully acquired  successBody    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  Offer Id  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "POST"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#delete_1", 
+            "text": "Summary:  Delete Offer by MSISDN and OfferId  Description:  The subscriber specified by MSISDN will remove the Offer specified by OfferId previously purchased  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string    offerId  path  The Offer Unique Identifier obtained from Get Available Offers by MSISDN  Yes  string     Responses     Code  Description  Schema      201  Offer was successfully acquired  successBody    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  Offer Id  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "DELETE"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#planssubscribersmsisdnphonelease", 
+            "text": "", 
+            "title": "/plans/subscribers/{MSISDN}/phonelease/"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#get_2", 
+            "text": "Summary:  Get Phone Lease Details by MSISDN  Description:  Retrieve details of leased phone  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string     Responses     Code  Description  Schema      200  Requested phone lease Information was found  PhoneLeaseInfo    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  phonelease  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#planssubscribersmsisdncurrent", 
+            "text": "", 
+            "title": "/plans/subscribers/{MSISDN}/current"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#get_3", 
+            "text": "Summary:  Get Current Plan Details by MSISDN  Description:  Retrieve Current Plan Details for the provided Customer  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string     Responses     Code  Description  Schema      200  Requested Current Plan Information was found  Plan    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  Favorites Number List  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#put", 
+            "text": "Summary:  Update Current Plan by MSISDN  Description:  Update the current plan for the MSISDN to the PlanId provided  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string    body  body   Yes  PlanUpgrate     Responses     Code  Description  Schema      200  Offer was successfully acquired  successBody    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  request plan upgrate  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "PUT"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#planssubscribersmsisdnavailableplans", 
+            "text": "", 
+            "title": "/plans/subscribers/{MSISDN}/availableplans/"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#get_4", 
+            "text": "Summary:  Get Available Plans by MSISDN  Description:  Obtain a Catalog of available plans by MSISDN that the client can select. Plans can be filtered by planType.  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string    planType  query  Apply a filter to returned plans, for example Upgrades, Downgrades, Retention, Additional. If ommited, all plans in the Catalog are returned.  No  string     Responses     Code  Description  Schema      200  Requested Upgrade Information was found  PlanList    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  Available Plans  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#planssubscribersmsisdnupgrades", 
+            "text": "", 
+            "title": "/plans/subscribers/{MSISDN}/upgrades/"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#get_5", 
+            "text": "Summary:  Get Available Plans Upgrades by MSISDN  Description:  Retrieve Available Plans that the customer can upgrade to the specified MSISDN.\nThis is specific use case of the \"Get Available Plans by MSISDN\" method.  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string     Responses     Code  Description  Schema      200  Requested Upgrade Information was found  PlanList    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  Available Plans  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#planssubscribersmsisdnupgraderequest", 
+            "text": "", 
+            "title": "/plans/subscribers/{MSISDN}/upgraderequest"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#get_6", 
+            "text": "Summary:  Get Upgrade Request Status by MSISDN  Description:  Get information if the customer has initiated an upgrade or not for the provided Customer  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string     Responses     Code  Description  Schema      200  Requested status of plan update Information was found  successBody    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  status of plan update  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "GET"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#post_2", 
+            "text": "Summary:  Create Upgrade Request by MSISDN  Description:  Register a request from the MSISDN to receive a plan upgrade  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string    body  body   Yes  PlanUpgrate     Responses     Code  Description  Schema      200  Offer was successfully acquired  successBody    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  request plan upgrate  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "POST"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#planssubscribersmsisdnsubscriptionrequests", 
+            "text": "", 
+            "title": "/plans/subscribers/{MSISDN}/subscriptionrequests/"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#post_3", 
+            "text": "Summary:  Create Subscription Requests by MSISDN  Description:  Register one or more requests made by the specified MSISDN to accquire Additional Subscriptions  Parameters     Name  Located in  Description  Required  Schema      MSISDN  path  International Identifiable mobile phone number  Yes  string    body  body   Yes  PlanAdditional     Responses     Code  Description  Schema      200  Offer was successfully acquired  successBody    403  Forbidden. Check  error.message  for details  errorBody    404  the specified  request plan upgrate  was not found  errorBody    default  unexpected error  errorBody", 
+            "title": "POST"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#models", 
+            "text": "", 
+            "title": "Models"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#statuschangerequest", 
+            "text": "Name  Type  Description  Required      code  string  Status Code. May be alphanumeric  Yes    assetType  string  Asset which status is being updated  Yes    updateReason  string  Reson of status being updated  No    customerId  string  Customer unique identifier, usually national identification number or company tax payer number  No    documentType  string  Defines if customerId es a National Id, Tax Payer Number, Passport, etc.  No    name  string  First Name, Comapny Name or Full Name of the Customer  No    lastName  string  Last Name of the Custoemr  No", 
+            "title": "StatusChangeRequest"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#favoritenumberlist", 
+            "text": "Name  Type  Description  Required      FavoriteNumberList  array", 
+            "title": "FavoriteNumberList"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#favoritenumber", 
+            "text": "Name  Type  Description  Required      PhoneNumber  string  Phone Number that is considered a Favorite Number  Yes    ExpirationDate  date  Optional value if this number have an expiration date  No    Label  string  Optional value if this number has a description or user defined label  No    PlanCode  string  Optional plan code or number to which this PhoneNumber is being added  No", 
+            "title": "FavoriteNumber"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#offerlist", 
+            "text": "Name  Type  Description  Required      OfferList  array", 
+            "title": "OfferList"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#offer", 
+            "text": "Name  Type  Description  Required      OfferId  string  Unique Id of the offering, needed to complete the order.  Yes    OfferName  string  Short name for the offer  Yes    Description  string  Explanation to the user.  No    Validity  string  The quantitative number or period for which the offer is valid.  No    ValidityUnit  string  The period unit. Could be Hour, Day, Week, Month, Megabytes, Gigabytes, Slots  No    CategoryName  string  The name of main category of this offer  No    SubCategoryName  string  The name of the secondary category of this offer  No    Rank  number  This value is used to present the offers in a sorted order.  No    amount  double   No    currencyId  string  This is the ISO Id of the currency  No    AcquisitionMethodList  AcquisitionMethod   No", 
+            "title": "Offer"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#acquisitionmethod", 
+            "text": "Name  Type  Description  Required      AcquisitionMethodId  number  Unique Id of the Acquisition Method  Yes    AcquisitionMethodName  string  Short name for the Acquisition Method. Could be Next Invoice or Prepaid  Yes", 
+            "title": "AcquisitionMethod"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#planlist", 
+            "text": "Name  Type  Description  Required      PlanList  array", 
+            "title": "PlanList"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#plan", 
+            "text": "Name  Type  Description  Required      planId  string  Unique Id of the plan  Yes    planName  string  Short name for the plan  Yes    monthlyAmount  number  Monthly base amount that customer pays for this plan  Yes    planDataInMB  number  Monthly megabytes included in this plan.     This value is also included in the ProdutOffering array but must be reflected in this value so megabytes can be compared,       charted and better communicated to the customer.       No       currencyId  string  This is the ISO Id of the currency  No    status  string  Status of this plan, may help build the UX  No    CategoryName  string  The name of main category of this plan  No    Rank  number  This value is used to present the offers in a sorted order.  No    productOfferingList  [  ProductOffering  ]  An array of offering details grouped by category  No", 
+            "title": "Plan"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#namevaluepair", 
+            "text": "Name  Type  Description  Required      name  string  This is the name of the of data  No    value  string  this is the value  No", 
+            "title": "NameValuePair"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#productoffering", 
+            "text": "Name  Type  Description  Required      offeringCategory  string  This is the category that defines the type of offering  No    offeringId  string  This is the id of that type of offering  No    offeringDetailList  [  NameValuePair  ]  An array of Name and Value pair for additional services  No", 
+            "title": "ProductOffering"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#phoneleaseinfo", 
+            "text": "Name  Type  Description  Required      clauseId  string  Identifier that legacy uses for that permanency clause  No    lastBillingDate  date  Last billing of the contract with equipment  Yes    nextRenewalDate  date  Next renewal of the contract with equipment  Yes    typeClauseId  string  Type of permanency clause  No    imei  string  International Mobile Station Equipment Identity  No    gama  string  Equipment gama  No    brand  string  Equipment brand  No    model  string  Equipment model  No    insurance  string  Confirmation if the equipment is or is not insured  No    status  string  Status of the comodato  No", 
+            "title": "PhoneLeaseInfo"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#planupgrate", 
+            "text": "Name  Type  Description  Required      name  string  Full Name of the Customer  No    email  string  Email of the Customer  No    planId  string  Unique Id of the NEW plan  Yes    planName  string  Short name for the NEW plan  No    monthlyAmount  number  Monthly base amount that customer pays for the NEW plan  No    currencyId  string  This is the ISO Id of the currency  No    categoryName  string  The name of main category of the NEW plan  No    fromPlan  string  Source or Id of the OLD plan  No", 
+            "title": "PlanUpgrate"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#planadditional", 
+            "text": "Name  Type  Description  Required      fromPlan  string  Source of the plan  No    planId  string  Unique Id of the plan  Yes    planName  string  Short name for the plan  Yes    categoryName  string  The name of main category of this plan  Yes    name  string  Full Name of the Customer  Yes    email  string  Email of the Customer  No    AdditionalSubscriptionsList  [  AdditionalSubscriptions  ]   No", 
+            "title": "PlanAdditional"
+        }, 
+        {
+            "location": "/apiMobileSelfCare2.0/#additionalsubscriptions", 
+            "text": "Name  Type  Description  Required      currencyId  string  This is the ISO Id of the currency  No    email  string  Email of the Customer  No    planId  string  Unique Id of the plan  Yes    planName  string  Short name for the plan  Yes    categoryName  string  The name of main category of this plan  No    monthlyAmount  number  Monthly base amount that customer pays for this plan  No", 
+            "title": "AdditionalSubscriptions"
+        }, 
+        {
+            "location": "/processes/devBestPractices/", 
+            "text": "Development Best Practices\n\n\nIn thesede sections we share all the best practices we have gathered over time, and should be followed by developer partners to ensure the timely and effective management of the development our Digital Assets.\n\n\nKey concepts to discuss here:\n\n\n\n\n\n\nBasic concepts:\n\n\n\n\nMinimum viable product\n\n\nKey attributes of any digital product: VIABLE, STABLE and MEASURABLE\n\n\nAgile development\n\n\n2 speed it\n\n\n\n\n\n\n\n\nMillicom\u2019s digital team: who does what\u00a0\n\n\n\n\nMillicom\u2019s digital team: tools\n\n\nProcess and guidelines\n\n\nWhat to expect from Millicom\n\n\nWhat we expect from a Development Partner\n\n\nMillicom\u2019s digital Architecture\n\n\n\n\nBasic Concepts\n\n\nMVP\n\n\n\n\nIn product development, the minimum viable product (MVP) is a product with just enough features to gather validated learning about the product and its continued development. Gathering insights from an MVP is often less expensive than developing a product with more features, which increase costs and risk if the product fails, for example, due to incorrect assumptions.\n\n\nPurposes\n\n\n\n\nBe able to test a product hypothesis with minimal resources\n\n\nAccelerate learning\n\n\nReduce wasted engineering hours\n\n\nGet the product to early customers as soon as possible\n\n\nBase for other products\n\n\nTo establish a builders abilities in crafting the product required\n\n\n\n\nAll millicom\u2019s digital products begins as a MVP. See \nour process\n to understand the process. \n\n\nIf you feel that our requirements surpass this definition.. challenge it!\n\n\nKey attributes\n\n\nAny successful product (even MVPs) MUST have clear Goals and KPIs before starting.\u00a0\nAfter that, must comply this 3 attributes:\n\n\n\n\nVIABLE\n\n\nSTABLE\n\n\nMEASURABLE\n\n\n\n\nIf the goals are not well defined or any of this attributes cannot be guaranteed because poor definitions, missing building blocks or not stable enough.. we should not start a new project.\n\n\nAgile development\n\n\nAll digital products should be develop using iterative and agile methodologies.\u00a0\nThis means:\n\n\n\n\nHave defined goals and scope in each sprint\n\n\nDuration: short sprints (if something takes +3 months probably it is oversize)\n\n\nInvolve all people required to complete the task (functional, technical, support)\n\n\nUsing tools to support communications, issues and decisions\n\n\nMaintaining regular meetings to track progress\n\n\n\n\nFor more info on our process see \nour process\n\n\n2 speed it\n\n\nDigital development requires usually different approach than traditional IT organizations. Figure 1 shows basic differences\n\n\nIn MILLICOM for all digital properties we expect a lean governance and a rapid experimentation approach.\u00a0\n\n\nWho does What\n\n\nRoles at MILLICOM:\n\n\n\n\nBUSINESS DEVELOPMENT/PRODUCT MANAGER\u00a0 (WHAT, WHY): takes care of functional requirements, maximizing value and growth. Responsible for budget allocation and ROI\u00a0\n\n\nPRODUCT DEVELOPMENT (HOW, WHEN): takes care of UX and TECH decisions to build the product. Discuss with PM about the goals, kpis and strategies to get them. Main point of contact with partner\u2019s dev team and countries IT teams.\n\n\nINFRA, OPERATIONS AND MAINTENANCE (WHERE, AFTER-CARE): owner of enablers and responsible for cloud infrastructure and release management.\n\n\nPMO: (when required) administratives, follow project milestones and budget execution. Info consolidation for other areas.\n\n\n\n\nIn PARTNER\u2019s side we expect at least:\n\n\n\n\nTECH LEADER. to work with PD in day to day activities\n\n\nACCOUNT MANAGER. to work with PM on sow analysis, quotes, disputes, SLAs\n\n\n\n\nWhat to expect from Millicom\n\n\n\n\nTitle, descriptions, goals and KPIs of the product\n\n\nList of user stories (JIRA project)\n\n\nList of APIs, basic documentation of each of them (postman collection)\n\n\nBasic wireframes or mockups of those user stories (photoshop, invision, .. ) good enough to understand the scope of work and quote. These mockups may evolve \u00a0 with dev partner\u2019s help later.\u00a0\n\n\nBeta, RC unit and integral testing.\n\n\nRelease management.\n\n\n\n\nWhat we expect from a Dev Partner\n\n\n\n\nExpertise in your area\n\n\nProvide a lot of input in the product definition \n fine tuning based on your previous experience\n\n\nCandid: if something is poorly defined or it is not working as expected, avoid committing dates and results.\n\n\nAccountability: Once delivered, all products must comply agreed functional and nonfunctional requirements within a normal expectation (there is no bug-free software, but we can tell when nobody is taking care of basic stuff). If there is some known restrictions due lack of information or poor API performance, let us know early to avoid surprises.\n\n\nPost-delivery support. After delivering the product we expect support and SLAs in place to work with our NOC.\n\n\n\n\nExpertise with automated testing (Test Driven Development) - Depending on the project we prefer if partners implement automated testing for all their projects, this with the purpose of simplifying and expediting integration testing of new versions in the future. This applies for projects in Mobile APPs, web and backend applications.\n\n\n\n\nWe are ok using any of the tools in which the partner has expertise\n\n\n\n\n\n\n\n\nExpertise in continuous integration - Automation of some of the delivery tasks are preferred, with the purpose of improving efficiency and accountability for changes to the code we develop.\u00a0\n\n\n\n\nWe are ok using any tools with which the partner has expertise.\n\n\n\n\n\n\n\n\nMaintenance of Dev, QA, Stage and Production environments - allowing for simple dev process and UAT acceptance.\n\n\n\n\n\n\nTools\n\n\n\n\nFor day to day communication: slack, mail\n\n\nSoW and project documentation: JIRA. Shared folder with necessary documents when required\n\n\nIssue management: JIRA\n\n\nRest API client: postman\n\n\nAPI documentation: apiary.io\n\n\nLive mockups: invision\n\n\ndigital assets: adobe illustrator, photoshop\n\n\n\n\nProcesses and Guidelines\n\n\n\n\nMarketing and visual guidelines\n\n\nSMART-StyleGuide-v08.pdf\n\n\nTIGO-StyleGuide-v05.pdf\n\n\n\n\n\n\nCard model and inventory:\n\n\nSelfCare_Master_Cards_Design_v06_CS6.ai\n\n\n\n\n\n\n\n\nDigital Best Practices\n. Audience: countries and other millicom areas\n\n\n\n\n\n\nTigo REST API Exposure Guidelines\n\n. Audience: countries and developer partners that needs to expose a new API thru apigee\n\n\n\n\n\n\nNew starter procedure\n. Audience: dev group from software factory\n\n\n\n\n\n\nChange management Process\n. Audience: dev partner who needs to publish products in our cloud infrastructure\n\n\n\n\n\n\nSecurity\u00a0 SSDLC checklist\n\n\n\n\n\n\nMillicom\u2019s Digital Architecture\n\n\nThere are basically 3 layers.\u00a0\n\n\n\n\nCountry layer: includes middleware and all local legacy platforms (Billing, Rating, CRM, field services, etc.) - manage by IT from countries\n\n\nDigital Cloud layer: includes enablers and digital infra to support rapid app development and shared resources. - manage by DIGITAL REGIONAL team\n\n\nPartners \n Apps layer: touchpoints with consumers in their digital journey. Developed with DEV PARTNERS and supported by DIGITAL NOC team\u00a0\n\n\n\n\nFor more information see \ncatalog\n\n\nCLOUD LAYER details:\n\n\n\n\nAPIGEE: api exposure layer. developers onboarding\n\n\nEVENT SERVER (AWS KINESIS): real time streams\n\n\nAWS: Amazon web services. Infrastructure as a service.\n\n\nTIGOID: enabler for authentication (openid connect)\u00a0\n\n\nTABLEAU: BI tool. Dashboards\n\n\nREDSHIFT: cloud database\n\n\nS3 BUCKETs: file repository\n\n\nZENDESK: knowledge base, ticket management, chat\n\n\nLOTUS FLARES: passes (app by app)\n\n\nDIGITAL TURBINE: push apps\u00a0\n\n\nDIGITAL CAMPAIGN MANAGER: real time engine for inbound and outbound campaigns. omnichannel", 
+            "title": "How we work"
+        }, 
+        {
+            "location": "/processes/devBestPractices/#development-best-practices", 
+            "text": "In thesede sections we share all the best practices we have gathered over time, and should be followed by developer partners to ensure the timely and effective management of the development our Digital Assets.  Key concepts to discuss here:    Basic concepts:   Minimum viable product  Key attributes of any digital product: VIABLE, STABLE and MEASURABLE  Agile development  2 speed it     Millicom\u2019s digital team: who does what\u00a0   Millicom\u2019s digital team: tools  Process and guidelines  What to expect from Millicom  What we expect from a Development Partner  Millicom\u2019s digital Architecture", 
+            "title": "Development Best Practices"
+        }, 
+        {
+            "location": "/processes/devBestPractices/#basic-concepts", 
+            "text": "", 
+            "title": "Basic Concepts"
+        }, 
+        {
+            "location": "/processes/devBestPractices/#mvp", 
+            "text": "In product development, the minimum viable product (MVP) is a product with just enough features to gather validated learning about the product and its continued development. Gathering insights from an MVP is often less expensive than developing a product with more features, which increase costs and risk if the product fails, for example, due to incorrect assumptions.  Purposes   Be able to test a product hypothesis with minimal resources  Accelerate learning  Reduce wasted engineering hours  Get the product to early customers as soon as possible  Base for other products  To establish a builders abilities in crafting the product required   All millicom\u2019s digital products begins as a MVP. See  our process  to understand the process.   If you feel that our requirements surpass this definition.. challenge it!  Key attributes  Any successful product (even MVPs) MUST have clear Goals and KPIs before starting.\u00a0\nAfter that, must comply this 3 attributes:   VIABLE  STABLE  MEASURABLE   If the goals are not well defined or any of this attributes cannot be guaranteed because poor definitions, missing building blocks or not stable enough.. we should not start a new project.", 
+            "title": "MVP"
+        }, 
+        {
+            "location": "/processes/devBestPractices/#agile-development", 
+            "text": "All digital products should be develop using iterative and agile methodologies.\u00a0\nThis means:   Have defined goals and scope in each sprint  Duration: short sprints (if something takes +3 months probably it is oversize)  Involve all people required to complete the task (functional, technical, support)  Using tools to support communications, issues and decisions  Maintaining regular meetings to track progress   For more info on our process see  our process", 
+            "title": "Agile development"
+        }, 
+        {
+            "location": "/processes/devBestPractices/#2-speed-it", 
+            "text": "Digital development requires usually different approach than traditional IT organizations. Figure 1 shows basic differences  In MILLICOM for all digital properties we expect a lean governance and a rapid experimentation approach.", 
+            "title": "2 speed it"
+        }, 
+        {
+            "location": "/processes/devBestPractices/#who-does-what", 
+            "text": "Roles at MILLICOM:   BUSINESS DEVELOPMENT/PRODUCT MANAGER\u00a0 (WHAT, WHY): takes care of functional requirements, maximizing value and growth. Responsible for budget allocation and ROI\u00a0  PRODUCT DEVELOPMENT (HOW, WHEN): takes care of UX and TECH decisions to build the product. Discuss with PM about the goals, kpis and strategies to get them. Main point of contact with partner\u2019s dev team and countries IT teams.  INFRA, OPERATIONS AND MAINTENANCE (WHERE, AFTER-CARE): owner of enablers and responsible for cloud infrastructure and release management.  PMO: (when required) administratives, follow project milestones and budget execution. Info consolidation for other areas.   In PARTNER\u2019s side we expect at least:   TECH LEADER. to work with PD in day to day activities  ACCOUNT MANAGER. to work with PM on sow analysis, quotes, disputes, SLAs", 
+            "title": "Who does What"
+        }, 
+        {
+            "location": "/processes/devBestPractices/#what-to-expect-from-millicom", 
+            "text": "Title, descriptions, goals and KPIs of the product  List of user stories (JIRA project)  List of APIs, basic documentation of each of them (postman collection)  Basic wireframes or mockups of those user stories (photoshop, invision, .. ) good enough to understand the scope of work and quote. These mockups may evolve \u00a0 with dev partner\u2019s help later.\u00a0  Beta, RC unit and integral testing.  Release management.", 
+            "title": "What to expect from Millicom"
+        }, 
+        {
+            "location": "/processes/devBestPractices/#what-we-expect-from-a-dev-partner", 
+            "text": "Expertise in your area  Provide a lot of input in the product definition   fine tuning based on your previous experience  Candid: if something is poorly defined or it is not working as expected, avoid committing dates and results.  Accountability: Once delivered, all products must comply agreed functional and nonfunctional requirements within a normal expectation (there is no bug-free software, but we can tell when nobody is taking care of basic stuff). If there is some known restrictions due lack of information or poor API performance, let us know early to avoid surprises.  Post-delivery support. After delivering the product we expect support and SLAs in place to work with our NOC.   Expertise with automated testing (Test Driven Development) - Depending on the project we prefer if partners implement automated testing for all their projects, this with the purpose of simplifying and expediting integration testing of new versions in the future. This applies for projects in Mobile APPs, web and backend applications.   We are ok using any of the tools in which the partner has expertise     Expertise in continuous integration - Automation of some of the delivery tasks are preferred, with the purpose of improving efficiency and accountability for changes to the code we develop.\u00a0   We are ok using any tools with which the partner has expertise.     Maintenance of Dev, QA, Stage and Production environments - allowing for simple dev process and UAT acceptance.", 
+            "title": "What we expect from a Dev Partner"
+        }, 
+        {
+            "location": "/processes/devBestPractices/#tools", 
+            "text": "For day to day communication: slack, mail  SoW and project documentation: JIRA. Shared folder with necessary documents when required  Issue management: JIRA  Rest API client: postman  API documentation: apiary.io  Live mockups: invision  digital assets: adobe illustrator, photoshop", 
+            "title": "Tools"
+        }, 
+        {
+            "location": "/processes/devBestPractices/#processes-and-guidelines", 
+            "text": "Marketing and visual guidelines  SMART-StyleGuide-v08.pdf  TIGO-StyleGuide-v05.pdf    Card model and inventory:  SelfCare_Master_Cards_Design_v06_CS6.ai     Digital Best Practices . Audience: countries and other millicom areas    Tigo REST API Exposure Guidelines \n. Audience: countries and developer partners that needs to expose a new API thru apigee    New starter procedure . Audience: dev group from software factory    Change management Process . Audience: dev partner who needs to publish products in our cloud infrastructure    Security\u00a0 SSDLC checklist", 
+            "title": "Processes and Guidelines"
+        }, 
+        {
+            "location": "/processes/devBestPractices/#millicoms-digital-architecture", 
+            "text": "There are basically 3 layers.\u00a0   Country layer: includes middleware and all local legacy platforms (Billing, Rating, CRM, field services, etc.) - manage by IT from countries  Digital Cloud layer: includes enablers and digital infra to support rapid app development and shared resources. - manage by DIGITAL REGIONAL team  Partners   Apps layer: touchpoints with consumers in their digital journey. Developed with DEV PARTNERS and supported by DIGITAL NOC team\u00a0   For more information see  catalog", 
+            "title": "Millicom\u2019s Digital Architecture"
+        }, 
+        {
+            "location": "/processes/devBestPractices/#cloud-layer-details", 
+            "text": "APIGEE: api exposure layer. developers onboarding  EVENT SERVER (AWS KINESIS): real time streams  AWS: Amazon web services. Infrastructure as a service.  TIGOID: enabler for authentication (openid connect)\u00a0  TABLEAU: BI tool. Dashboards  REDSHIFT: cloud database  S3 BUCKETs: file repository  ZENDESK: knowledge base, ticket management, chat  LOTUS FLARES: passes (app by app)  DIGITAL TURBINE: push apps\u00a0  DIGITAL CAMPAIGN MANAGER: real time engine for inbound and outbound campaigns. omnichannel", 
+            "title": "CLOUD LAYER details:"
+        }
+    ]
+}

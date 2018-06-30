@@ -1,0 +1,1270 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Mobile Self Care API
+  description: | 
+    This is the standard API for Self Care functions related to Mobile Phones and all other Mobile Network services for Tigo. 
+    We use swagger-2.0 specification
+
+    This document is used mainly for new API design of new use cases. Traditional use cases have not been ported here yet.
+    This is the reason we used v2
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Andres Cavallin
+    email: andres.cavallin@millicom.com
+    url: http://www.millicom.com
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: sandbox.api.tigo.com
+basePath: /v2/tigo/mobile/{country}
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+  
+#####....####...######..##..##...####..
+##..##..##..##....##....##..##..##.....
+#####...######....##....######...####..
+##......##..##....##....##..##......##.
+##......##..##....##....##..##...####..
+
+paths:
+
+#.......##..#####...######..##......##......######..##..##...####..
+#......##...##..##....##....##......##........##....###.##..##.....
+#.....##....#####.....##....##......##........##....##.###..##.###.
+#....##.....##..##....##....##......##........##....##..##..##..##.
+#...##......#####...######..######..######..######..##..##...####..
+
+  /billing/subscribers/{MSISDN}/status:
+    get:
+      summary: Get Status of Subscriber by MSISDN
+      description: |
+        Returns the status of a subscriber
+      operationId: GetStatusOfSubscriberByMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+      responses:
+        200:
+          description: Status was successfully retrived 
+          schema:
+            $ref: '#/definitions/Status'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `MSISDN` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    put:
+      summary: Update Status of Subscriber by MSISDN
+      description: |
+        Update the status of a subscriber due to stolen SIM card, stolen phone or any other incident that requires the user to block the service.
+      operationId: UpdateStatusOfSubscriberByMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/StatusChangeRequest'          
+      responses:
+        200:
+          description: Status was successfully updated 
+          schema:
+            $ref: '#/definitions/Status'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `MSISDN` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+
+#Transparency              
+  /billing/subscribers/{msisdn}/usage/data/hourlybyapp:
+    get:
+      summary: Get Data Usage By MSISDN Per Hour and App
+      description: Obtain a list of consumed services per hour.
+      operationId: GetDataUsageByMSISDNPerHourAndApp
+      parameters:
+        - name: msisdn
+          in: path
+          description: Unique identifier for the customer
+          required: true
+          type: string
+        - name: startDate
+          in: query
+          description: "(optional, ISO8601 datetime) Start date for query period, if not specified it should default to 24 hours ago, from current system datetime."
+          required: false
+          type: string  
+        - name: endDate
+          in: query
+          description: "(optional, ISO8601 datetime) End Date for query period, if not specified, it should default to current system datetime."
+          required: false
+          type: string 
+
+            
+      responses:
+        200:
+          description: Successfull
+          schema:
+            $ref: '#/definitions/getUsagePerHourResponse'
+        400:
+          description: Invalid Parameters
+          schema:
+            $ref: '#/definitions/error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/error'
+        500:
+          description: Server Error
+          schema:
+            $ref: '#/definitions/error'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+  /billing/subscribers/{msisdn}/usage/data/percentagebyapp:
+    get:
+      summary: Get Data Usage Percentage By MSISDN Per App
+      description: Obtain a list of consumed services percentage.
+      operationId: GetDataUsagePercentageByMSISDNPerApp
+      parameters:
+        - name: msisdn
+          in: path
+          description: Unique identifier for the customer
+          required: true
+          type: string
+        - name: startDate
+          in: query
+          description: "(optional, ISO8601 datetime) Start date for query period, if not specified it should default to 24 hours ago, from current system datetime."
+          required: false
+          type: string  
+        - name: endDate
+          in: query
+          description: "(optional, ISO8601 datetime) End Date for query period, if not specified, it should default to current system datetime."
+          required: false
+          type: string  
+        - name: resolution
+          in: query
+          description: "DAY means 1 record per hour per App/protocol and HOUR means 1 record per day per App/protocol (default if not specified)."
+          required: false
+          type: string  
+
+      responses:
+        200:
+          description: Successfull
+          schema:
+            $ref: '#/definitions/getUsagePercentageResponse'
+        400:
+          description: Invalid Parameters
+          schema:
+            $ref: '#/definitions/error'
+        404:
+          description: Not found
+          schema:
+            $ref: '#/definitions/error'
+        500:
+          description: Server Error
+          schema:
+            $ref: '#/definitions/error'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+            
+
+
+#####...##.......####...##..##...####..
+##..##..##......##..##..###.##..##.....
+#####...##......######..##.###...####..
+##......##......##..##..##..##......##.
+##......######..##..##..##..##...####..
+
+  /plans/subscribers/{MSISDN}/favorites/:
+    get:
+      summary: Get Favorite Numbers by MSISDN
+      description: Retrieve a list of favorite numbers associated with the specified MSISDN
+      operationId: GetFavoriteNumbersByMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Favorites Information was found
+          schema:
+            $ref: '#/definitions/FavoriteNumberList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `Favorites Number List` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    post:
+      summary: Add Favorite Number by MSISDN
+      description: If slots are still available, the specified phone number will be added to the list of favorite numbers of the provided MSISDN
+      operationId: AddFavoriteNumberByMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/FavoriteNumber'          
+      responses:
+        201:
+          description: Favorite Number was successfully added
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `contractId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    delete:
+      summary: Delete Favorite Numbers by MSISDN
+      description: If found in the favorite number list of the specified MSISDN, the specified phone number will be deleted
+      operationId: DeleteFavoriteNumberByMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/FavoriteNumber'                   
+      responses:
+        200:
+          description: Recurring Billing was successfully deleted
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `contractId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+
+  /plans/subscribers/{MSISDN}/availableoffers/:
+    get:
+      summary: Get Available Offers by MSISDN
+      description: Retrieve a list of offers available to the specified MSISDN
+      operationId: GetAvailableOffersByMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+        - name: channelId
+          in: query
+          description: Channel used to present the offer. Default will be Self Care Web and App
+          required: false
+          type: integer
+          default: 4
+#          minimum: 1
+#          maximum: 5          
+      responses:
+        200:
+          description: Requested Offer Information was found
+          schema:
+            $ref: '#/definitions/OfferList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `Offers List` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /plans/subscribers/{MSISDN}/acquiredoffers/{offerId}:
+    post:
+      summary: Purchase Offer by MSISDN and OfferId
+      description: The Subscriber specified by MSISDN will purchase the Offer specified by OfferId
+      operationId: PurchaseOfferbyMSISDNandOfferId
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+        - name: offerId
+          in: path
+          description: The Offer Unique Identifier obtained from Get Available Offers by MSISDN
+          required: true
+          type: string          
+#        - name: body
+#          in: body
+#          required: true
+#          schema:
+#            $ref: '#/definitions/Offer'          
+      responses:
+        201:
+          description: Offer was successfully acquired
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `Offer Id` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+            
+    delete:
+      summary: Delete Offer by MSISDN and OfferId
+      description: The subscriber specified by MSISDN will remove the Offer specified by OfferId previously purchased
+      operationId: DeleteOfferbyMSISDNandOfferId
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+        - name: offerId
+          in: path
+          description: The Offer Unique Identifier obtained from Get Available Offers by MSISDN
+          required: true
+          type: string          
+#        - name: body
+#          in: body
+#          required: true
+#          schema:
+#            $ref: '#/definitions/Offer'          
+      responses:
+        201:
+          description: Offer was successfully acquired
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `Offer Id` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+            
+  /plans/subscribers/{MSISDN}/phonelease/:
+  #HN - GetContractsV1 
+  #Pasar a Billing ?
+  #/plans/subscribers/{MSISDN}/contractdetails/:
+    get:
+      summary: Get Phone Lease Details by MSISDN
+      description: Retrieve details of leased phone
+      operationId: GetPhoneLeaseDetailsbyMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested phone lease Information was found
+          schema:
+            $ref: '#/definitions/PhoneLeaseInfo'
+            #$ref: '#/definitions/ContractDetails'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `phonelease` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /plans/subscribers/{MSISDN}/current:
+  #HN - GetPlans/Current - DONE
+    get:
+      summary: Get Current Plan Details by MSISDN
+      description: Retrieve Current Plan Details for the provided Customer
+      operationId: GetCurrentPlanDetailsbyMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Current Plan Information was found
+          schema:
+            $ref: '#/definitions/Plan'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `Favorites Number List` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    put:
+      summary: Update Current Plan by MSISDN
+      description: Update the current plan for the MSISDN to the PlanId provided
+      operationId: UpdateCurrentPlanByMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/PlanUpgrate'
+      responses:
+        200:
+          description: Offer was successfully acquired
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `request plan upgrate` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'            
+            
+#Add New Lines HN
+  /plans/subscribers/{MSISDN}/availableplans/:
+    #HN - GetPlansAll - REVIEW
+      get:
+        summary: Get Available Plans by MSISDN
+        description: Obtain a Catalog of available plans by MSISDN that the client can select. Plans can be filtered by planType.
+        operationId: GetAvailablePlansbyMSISDN
+        parameters:
+          - name: MSISDN
+            in: path
+            description: International Identifiable mobile phone number
+            required: true
+            type: string
+          - name: planType
+            in: query
+            description: Apply a filter to returned plans, for example Upgrades, Downgrades, Retention, Additional. If ommited, all plans in the Catalog are returned.
+            required: false
+            type: string
+            enum:
+              - upgrades
+              - downgrades
+              - retention
+              - additional
+              - new  
+        responses:
+          200:
+            description: Requested Upgrade Information was found
+            schema:
+              $ref: '#/definitions/PlanList'
+          403:
+            description: Forbidden. Check `error.message` for details
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: the specified `Available Plans` was not found
+            schema:
+              $ref: '#/definitions/errorBody'            
+          default:
+            description: unexpected error
+            schema:
+              $ref: '#/definitions/errorBody'            
+  /plans/subscribers/{MSISDN}/upgrades/:
+  #HN - GetPlansInfo - DONE
+    get:
+      summary: Get Available Plans Upgrades by MSISDN
+      description: |
+        Retrieve Available Plans that the customer can upgrade to the specified MSISDN.
+        This is specific use case of the "Get Available Plans by MSISDN" method.
+      operationId: GetAvailablePlansUpgradesbyMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Upgrade Information was found
+          schema:
+            $ref: '#/definitions/PlanList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `Available Plans` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /plans/subscribers/{MSISDN}/upgraderequest:
+  #HN - UpgradeStatus -REVIEW
+    get:
+      summary: Get Upgrade Request Status by MSISDN
+      description: Get information if the customer has initiated an upgrade or not for the provided Customer
+      operationId: GetUpgradeStatusbyMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested status of plan update Information was found
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `status of plan update` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'       
+# HN - sendNotification - REVIEW
+    post:
+      summary: Create Upgrade Request by MSISDN
+      description: Register a request from the MSISDN to receive a plan upgrade
+      operationId: CreateUpgradeRequestbyMSISDN
+      parameters:
+        - name: MSISDN
+          in: path
+          description: International Identifiable mobile phone number
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/PlanUpgrate'
+      responses:
+        200:
+          description: Offer was successfully acquired
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `request plan upgrate` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+
+  /plans/subscribers/{MSISDN}/subscriptionrequests/:              
+# HN - sendNotificationAdd - REVIEW 
+      post:
+        summary: Create Subscription Requests by MSISDN
+        description: Register one or more requests made by the specified MSISDN to accquire Additional Subscriptions
+        operationId: CreateSubscriptionRequestsbyMSISDN
+        parameters:
+          - name: MSISDN
+            in: path
+            description: International Identifiable mobile phone number
+            required: true
+            type: string
+          - name: body
+            in: body
+            required: true
+            schema:
+              $ref: '#/definitions/PlanAdditional'
+        responses:
+          200:
+            description: Offer was successfully acquired
+            schema:
+              $ref: '#/definitions/successBody'
+          403:
+            description: Forbidden. Check `error.message` for details
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: the specified `request plan upgrate` was not found
+            schema:
+              $ref: '#/definitions/errorBody'            
+          default:
+            description: unexpected error
+            schema:
+              $ref: '#/definitions/errorBody'
+
+  
+            
+#####...######..######..######..##..##..######..######..######...####...##..##...####..
+##..##..##......##........##....###.##....##......##......##....##..##..###.##..##.....
+##..##..####....####......##....##.###....##......##......##....##..##..##.###...####..
+##..##..##......##........##....##..##....##......##......##....##..##..##..##......##.
+#####...######..##......######..##..##..######....##....######...####...##..##...####..
+
+definitions:
+
+  Status:
+    required:
+      - code
+      - assetType
+    properties:
+      code:
+        type: string
+        description: Status Code. May be alphanumeric
+      description:
+        type: string
+        description: Human readable status if needed.
+      assetType:
+        type: string
+        description: Asset which status is being returned        
+
+  StatusChangeRequest:
+    type: object
+    required:
+      - code
+      - assetType
+    properties:
+      code:
+        type: string
+        description: Status Code. May be alphanumeric
+        enum: [Active, Blocked]
+      assetType:
+        type: string
+        description: Asset which status is being updated
+        enum: [SIM, IMEI, SIM_IMEI]
+      updateReason:
+        type: string
+        description: Reson of status being updated
+      customerId:
+        type: string
+        description: Customer unique identifier, usually national identification number or company tax payer number
+      documentType:
+        type: string
+        description: Defines if customerId es a National Id, Tax Payer Number, Passport, etc.
+      name:
+        type: string
+        description: First Name, Comapny Name or Full Name of the Customer
+      lastName:
+        type: string
+        description: Last Name of the Custoemr
+
+  FavoriteNumberList:
+    type: array
+    items:
+      $ref: "#/definitions/FavoriteNumber"
+
+  FavoriteNumber:
+    type: object
+    required:
+      - PhoneNumber    
+    properties:
+      PhoneNumber:
+        type: string
+        description: Phone Number that is considered a Favorite Number
+        example: "75007493"
+      ExpirationDate:
+        type: string
+        format: date        
+        description: Optional value if this number have an expiration date
+      Label:
+        type: string
+        description: Optional value if this number has a description or user defined label
+      PlanCode:
+        type: string
+        description: Optional plan code or number to which this PhoneNumber is being added
+
+  OfferList:
+    type: array
+    items:
+      $ref: "#/definitions/Offer"
+
+  Offer:
+    type: object
+    required:
+      - OfferId
+      - OfferName
+    properties:
+      OfferId:
+        type: string
+        description: Unique Id of the offering, needed to complete the order.
+        example: "104"
+        #vasOffer.packageId
+      OfferName:
+        type: string
+        description: Short name for the offer
+        example: "Mas Internet 500MB"
+        #vasOffer.name
+      Description:
+        type: string
+        description: Explanation to the user.
+        example: "Has seleccionado MAS INTERNET de 500 MB - $5.46 con un costo de $4.75 ISV no incluido. Este paquete expirara en tu fecha de corte."
+        #vasOffer.description
+      Validity:
+        type: string
+        description: The quantitative number or period for which the offer is valid.
+        example: "1"
+        #vasOffer.validityNumber
+      ValidityUnit:
+        type: string
+        description: The period unit. Could be Hour, Day, Week, Month, Megabytes, Gigabytes, Slots
+        example: "Month"
+        #vasOffer.validityType
+      CategoryName:
+        type: string
+        description: The name of main category of this offer
+        example: "Paquetigos Datos"
+        #vasOffer.category        
+      SubCategoryName:
+        type: string
+        description: The name of the secondary category of this offer
+        example: "Internet"
+        #vasOffer.subcategory
+      Rank:
+        type: number
+        description: This value is used to present the offers in a sorted order.
+        example: 0
+        #vasOffer.priority
+      amount:
+        type: number
+        format: double
+        example: 5.46
+        #vasOffer.cost
+      currencyId:
+        type: string
+        description: This is the ISO Id of the currency
+        example: "USD"
+        #vasOffer.currency
+      AcquisitionMethodList:
+        type: array
+        $ref: "#/definitions/AcquisitionMethod"
+        #vasOffer.acquisitionMethods[]
+  AcquisitionMethod:
+    type: object
+    required:
+      - AcquisitionMethodId
+      - AcquisitionMethodName
+    properties:
+      AcquisitionMethodId:
+        type: number
+        description: Unique Id of the Acquisition Method
+        example: 2
+        #vasOffer.acquisitionMethods[].paymentMethodId
+      AcquisitionMethodName:
+        type: string
+        description: Short name for the Acquisition Method. Could be Next Invoice or Prepaid
+        example: "NEXT_INVOICE"
+        #vasOffer.acquisitionMethods[].paymentMethodName    
+
+  PlanList:
+    type: array
+    items:
+      $ref: "#/definitions/Plan"
+
+  Plan:
+    type: object
+    required:
+      - planId
+      - planName
+      - monthlyAmount
+    properties:
+      planId:
+        type: string
+        description: Unique Id of the plan
+        example: "862"
+        #idPlan
+      planName:
+        type: string
+        description: Short name for the plan
+        example: "Todo Sin Limites $99.99 Mixto"
+        #planDescription
+      monthlyAmount:
+        type: number
+        description: Monthly base amount that customer pays for this plan
+        example: 99.99
+        #amount
+      planDataInMB:
+        type: number
+        description: | 
+          Monthly megabytes included in this plan. 
+          This value is also included in the ProdutOffering array but must be reflected in this value so megabytes can be compared,
+          charted and better communicated to the customer.
+        example: 99.99
+      currencyId:
+        type: string
+        description: This is the ISO Id of the currency
+        example: "USD"
+        #currency
+      status:
+        type: string
+        description: Status of this plan, may help build the UX
+        example: "ACTIVE"
+        #status        
+      CategoryName:
+        type: string
+        description: The name of main category of this plan
+        example: "Plan Sin Limite Hibrido"
+        #planType   
+      Rank:
+        type: number
+        description: This value is used to present the offers in a sorted order.
+        example: 0
+        #currently not available in HN
+      
+      productOfferingList:
+        type: array
+        items:
+          $ref: "#/definitions/ProductOffering"
+        description: An array of offering details grouped by category     
+      # voiceOfferingList:
+      #   type: array
+      #   items:
+      #     $ref: "#/definitions/NameValuePair"
+      #   description: An array of Name and Value pair for voice service
+      # dataOfferingList:
+      #   type: array
+      #   items:
+      #     $ref: "#/definitions/NameValuePair"
+      #   description: An array of Name and Value pair for data service
+      # smsOfferingList:
+      #   type: array
+      #   items:
+      #     $ref: "#/definitions/NameValuePair"
+      #   description: An array of Name and Value pair for SMS service
+      # bundlesOfferingList:
+      #   type: array
+      #   items:
+      #     $ref: "#/definitions/NameValuePair"
+      #   description: An array of Name and Value pair for carrier billing add ons like Smart Apps or any other additional service included in the monthly amount    
+      # additionalDetailList:
+      #   type: array
+      #   items:
+      #     $ref: "#/definitions/NameValuePair"
+      #   description: An array of Name and Value pair for additional services     
+
+  NameValuePair:
+    type: object
+    properties:
+      name:
+        type: string
+        description: This is the name of the of data
+      value:
+        type: string
+        description: this is the value
+
+  ProductOffering:
+    type: object
+    properties:
+      offeringCategory:
+        type: string
+        description: This is the category that defines the type of offering
+        enum: [voice, data, sms, bundle, other]
+      offeringId:
+        type: string
+        description: This is the id of that type of offering
+        example: "Voz Ilimitado"
+      offeringDetailList:
+        type: array
+        items:
+          $ref: "#/definitions/NameValuePair"
+        description: An array of Name and Value pair for additional services     
+
+  PhoneLeaseInfo:
+    type: object
+    required:
+      - lastBillingDate
+      - nextRenewalDate
+      
+    properties:
+      clauseId:
+        type: string
+        description: Identifier that legacy uses for that permanency clause
+# review definition
+        example: "1668"
+        #clauseId
+      lastBillingDate:
+        type: string
+        format: date 
+        description: Last billing of the contract with equipment
+        example: "2017-05-12"
+        #lastBillingDate
+      nextRenewalDate:
+        type: string
+        format: date 
+        description: Next renewal of the contract with equipment
+        example: "2018-11-12"
+        #nextRenewalDate
+      typeClauseId:
+        type: string
+        description: Type of permanency clause
+        example: " "
+        #typeClauseId
+      imei:
+        type: string
+        description: International Mobile Station Equipment Identity
+        example: "357975075748204"
+        #imei
+      gama:
+        type: string
+        description: Equipment gama
+        example: " "
+        #gama  
+      brand:
+        type: string
+        description: Equipment brand
+        example: "LG G5 LTE"
+        #brand
+      model:
+        type: string
+        description: Equipment model
+        example: "LGT286"
+        #model
+      insurance:
+        type: string
+        description: Confirmation if the equipment is or is not insured
+        example: "No"
+        #insurance
+      status:
+        type: string
+        description: Status of the comodato
+        example: "ACTIVE"
+        #state   
+        
+#      planName:
+#        type: string
+#        description: Short name for the plan
+#        example: "Todo Sin Limites $99.99 Mixto"
+#        #planDescription
+
+  # StatusPlanUpgrates:
+  #   type: object
+  #   required:
+  #     - code
+  #     - description
+  #   properties:
+  #     code:
+  #       type: integer
+  #       description: Identifier the status of the plan change
+  #       example: "702"
+  #       #code
+        
+  #     description:
+  #       type: string
+  #       description: Describe the current status of the plan change
+  #       example: "Ya cuenta con una solitud de cambio de plan en proceso."
+  #       #description
+        
+  PlanUpgrate:
+      type: object
+      required:
+        - planId
+        
+      properties:
+        name:
+          type: string
+          description:  Full Name of the Customer
+          example: "Karen Aguilar"
+          #subscribernamer
+        email:
+          type: string
+          description:  Email of the Customer
+          example: "host@tigo.com.hn"
+          #email
+        planId:
+          type: string
+          description: Unique Id of the NEW plan
+          example: "236"
+          #plancode
+        planName:
+          type: string
+          description: Short name for the NEW plan
+          example: "Mas Internet 5GB"
+          #planname
+        monthlyAmount:
+          type: number
+          description: Monthly base amount that customer pays for the NEW plan
+          example: 65.23
+          #price
+        currencyId:
+          type: string
+          description: This is the ISO Id of the currency
+          example: "USD"
+          #currency
+        categoryName:
+          type: string
+          description: The name of main category of the NEW plan
+          example: "Plan Sin Limite Hibrido"
+          #planType
+        fromPlan:
+          type: string
+          description: Source or Id of the OLD plan
+          example: "TigoApp"
+          #from
+          
+  PlanAdditional:
+      type: object
+      required:
+        - name
+        - planId
+        - planName
+        - monthlyAmount
+        - currencyId
+        - categoryName
+        
+      properties:
+        fromPlan:
+            type: string
+            description: Source of the plan
+            example: "TigoApp"
+            #from 
+        planId:
+            type: string
+            description: Unique Id of the plan
+            example: "236"
+            #plancode
+        planName:
+            type: string
+            description: Short name for the plan
+            example: "Mas Internet 5GB"
+            #planname
+        categoryName:
+          type: string
+          description: The name of main category of this plan
+          example: "Plan Sin Limite Hibrido"
+          #planType
+        name:
+          type: string
+          description:  Full Name of the Customer
+          example: "Karen Aguilar"
+          #subscribernamer
+        email:
+          type: string
+          description:  Email of the Customer
+          example: "host@tigo.com.hn"
+          #email
+        AdditionalSubscriptionsList:
+          type: array
+          items:
+           $ref: "#/definitions/AdditionalSubscriptions"
+           #notify[]
+        
+  AdditionalSubscriptions:
+    type: object
+    required:
+      - planId
+      - planName
+    properties:
+       currencyId:
+        type: string
+        description: This is the ISO Id of the currency
+        example: "USD"
+        #currency
+       email:
+        type: string
+        description:  Email of the Customer
+        example: "host@tigo.com.hn"
+        #email  
+       planId:
+        type: string
+        description: Unique Id of the plan
+        example: "862"
+        #idPlan
+       planName:
+        type: string
+        description: Short name for the plan
+        example: "Todo Sin Limites $99.99 Mixto"
+        #planDescription
+       categoryName:
+        type: string
+        description: The name of main category of this plan
+        example: "Plan Sin Limite Hibrido"
+        #planType  
+       monthlyAmount:
+        type: number
+        description: Monthly base amount that customer pays for this plan
+        example: 99.99
+        #amount
+
+#Transparency
+  getUsagePerHourResponse:
+    type: object
+    properties:
+      code:
+        type: string
+      description:
+        type: string
+      totalVolumeBytes:
+        type: number
+      lastUpdatedAt:
+        type: string
+      trafficDetails:
+        $ref: "#/definitions/usagePerHourList"
+
+  getUsagePercentageResponse:
+    type: object
+    properties:
+      code:
+        type: string
+      description:
+        type: string
+      lastUpdatedAt:
+        type: string
+      trafficDetails:
+        $ref: "#/definitions/usagePercentageList"
+
+  usagePerHourList:
+    type: array
+    items:
+      $ref: "#/definitions/usagePerHourDetail"
+
+  usagePercentageList:
+    type: array
+    items:
+      $ref: "#/definitions/usagePercentageDetail"
+
+  usagePerHourDetail:
+    type: object
+    properties:
+      date:
+        type: string
+        description: ""
+      hour:
+        type: string
+        description: ""
+      appName:
+        type: string
+        description: ""
+      trafficVolumeBytes:
+        type: number
+        description: ""
+
+
+  usagePercentageDetail:
+    type: object
+    properties:
+      date:
+        type: string
+        description: ""
+      percentage:
+        type: string
+        description: ""
+      appName:
+        type: string
+        description: ""
+      trafficVolumeBytes:
+        type: number
+        description: ""
+
+  error:
+    properties:
+      statusCode:
+        type: integer
+        format: int32
+      code:
+        type: string
+      message:
+        type: string
+      developerMessage:
+        type: string
+
+
+  successBody:
+    type: object
+    properties:
+      response:
+        type: string
+        description: Generic response from platform. May be ommited.
+      message:
+        type: string
+        description: Success Message from platform. May be ommited.
+  errorBody:
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string

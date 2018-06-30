@@ -1,0 +1,200 @@
+swagger: '2.0'
+info:
+    version: '2.0.0'
+    title: tigo_b2b_hn_billing_v2
+    description: |
+        Api that is in charge of making the downloads of the invoices in pdf format.
+    termsOfService: http://swagger.io/terms/
+    contact:
+        name: Andrea Forneron
+        email: andrea.forneron@edge.com.py
+        url: https://edge.com.py
+    license:
+        name: MIT
+        url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: test.api.tigo.com
+basePath: /v2/tigo/b2b/hn/billing
+schemes:
+    - https
+consumes:
+    - application/json
+produces:
+    - application/json
+securityDefinitions:
+    application:
+        type: oauth2
+        tokenUrl: https://test.api.tigo.com/oauth/client_credential/accesstoken?grant_type=client_credentials
+        flow: application
+        scopes:
+            read: "customer bills"
+security:
+  - application:
+    - read    
+#                        /$$     /$$
+#                       | $$    | $$
+#   /$$$$$$   /$$$$$$  /$$$$$$  | $$$$$$$   /$$$$$$$
+#  /$$__  $$ |____  $$|_  $$_/  | $$__  $$ /$$_____/
+# | $$  \ $$  /$$$$$$$  | $$    | $$  \ $$|  $$$$$$
+# | $$  | $$ /$$__  $$  | $$ /$$| $$  | $$ \____  $$
+# | $$$$$$$/|  $$$$$$$  |  $$$$/| $$  | $$ /$$$$$$$/
+# | $$____/  \_______/   \___/  |__/  |__/|_______/
+# | $$
+# | $$
+# |__/
+
+paths:
+#  /$$   /$$ /$$   /$$
+# | $$  | $$| $$$ | $$
+# | $$  | $$| $$$$| $$
+# | $$$$$$$$| $$ $$ $$
+# | $$__  $$| $$  $$$$
+# | $$  | $$| $$\  $$$
+# | $$  | $$| $$ \  $$
+# |__/  |__/|__/  \__/
+
+
+# /$$$$$$$$ /$$$$$$    /$$   /$$  /$$$$$$   /$$$$$$ 
+#|__  $$__//$$__  $$  | $$  | $$ /$$$_  $$ /$$__  $$
+#   | $$  | $$  \__/  | $$  | $$| $$$$\ $$| $$  \ $$
+#   | $$  | $$ /$$$$$$| $$$$$$$$| $$ $$ $$|  $$$$$$$
+#   | $$  | $$|______/|_____  $$| $$\ $$$$ \____  $$
+#   | $$  | $$    $$        | $$| $$ \ $$$ /$$  \ $$
+#   | $$  |  $$$$$$/        | $$|  $$$$$$/|  $$$$$$/
+#   |__/   \______/         |__/ \______/  \______/ 
+                                                   
+  /customers/{msisdn}/invoices:
+   post:
+      summary: Allows you to download invoices in pdf format
+      description: This resource allows you to download the billing summary in pdf format
+      operationId: postCustomerBillsByMsisdn
+      tags:
+        - billing
+      parameters:
+        - $ref: "#/parameters/msisdn"
+        - $ref: "#/parameters/invoiceNumber"
+        - $ref: "#/parameters/invoiceDate"
+        - $ref: "#/parameters/type"
+        - $ref: "#/parameters/typeResult"
+        - $ref: "#/parameters/authorization"
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/invoice'
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/errorBody'
+        401:
+          description: Unauthorized.
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: Not Found.
+          schema:
+            $ref: '#/definitions/errorBody'
+        default:
+          description: Unhandled resource
+          schema:
+            $ref: '#/definitions/errorBody'
+
+#                                                                  /$$                                  
+#                                                                 | $$                                  
+#  /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$   /$$$$$$$
+# /$$__  $$ |____  $$ /$$__  $$|____  $$| $$_  $$_  $$ /$$__  $$|_  $$_/   /$$__  $$ /$$__  $$ /$$_____/
+#| $$  \ $$  /$$$$$$$| $$  \__/ /$$$$$$$| $$ \ $$ \ $$| $$$$$$$$  | $$    | $$$$$$$$| $$  \__/|  $$$$$$ 
+#| $$  | $$ /$$__  $$| $$      /$$__  $$| $$ | $$ | $$| $$_____/  | $$ /$$| $$_____/| $$       \____  $$
+#| $$$$$$$/|  $$$$$$$| $$     |  $$$$$$$| $$ | $$ | $$|  $$$$$$$  |  $$$$/|  $$$$$$$| $$       /$$$$$$$/
+#| $$____/  \_______/|__/      \_______/|__/ |__/ |__/ \_______/   \___/   \_______/|__/      |_______/ 
+#| $$                                                                                                   
+#| $$                                                                                                   
+#|__/
+
+parameters:
+  msisdn:
+    name: msisdn
+    in: path
+    required: true
+    type: string
+    description: Customer Msisdn
+  invoiceNumber:
+    name: invoiceNumber
+    in: query
+    required: true
+    description: Invoice Number Identification
+    type: string
+  invoiceDate:
+    name: invoiceDate
+    in: query
+    required: true
+    description: Date of issue of the invoice
+    type: string
+  type:
+    name: type
+    in: query
+    required: true
+    description: Type of invoice to be returned
+    type: string
+  typeResult:
+    name: typeResult
+    in: query
+    required: true
+    description: Format of the invoice to be returned
+    type: string
+  authorization:
+    name: Authorization
+    in: header
+    required: true
+    type: string
+    description: 'Access Token provided by the Authorization Url'
+
+
+#        /$$            /$$$$$$  /$$           /$$   /$$     /$$
+#       | $$           /$$__  $$|__/          |__/  | $$    |__/
+#   /$$$$$$$  /$$$$$$ | $$  \__/ /$$ /$$$$$$$  /$$ /$$$$$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$$
+#  /$$__  $$ /$$__  $$| $$$$    | $$| $$__  $$| $$|_  $$_/  | $$ /$$__  $$| $$__  $$ /$$_____/
+# | $$  | $$| $$$$$$$$| $$_/    | $$| $$  \ $$| $$  | $$    | $$| $$  \ $$| $$  \ $$|  $$$$$$
+# | $$  | $$| $$_____/| $$      | $$| $$  | $$| $$  | $$ /$$| $$| $$  | $$| $$  | $$ \____  $$
+# |  $$$$$$$|  $$$$$$$| $$      | $$| $$  | $$| $$  |  $$$$/| $$|  $$$$$$/| $$  | $$ /$$$$$$$/
+#  \_______/ \_______/|__/      |__/|__/  |__/|__/   \___/  |__/ \______/ |__/  |__/|_______/
+
+definitions:
+  #invoiceCollection
+  invoice: 
+    type: object
+    properties: 
+      status:
+        type: string
+        description: Result of the execution of ws
+      message:
+        type: string
+        description: Shows the message that accompanies the status of the service query
+      invoice:
+        type: string
+        description: Result of the invoice returned in B64 format
+      
+# Error Response
+  errorBody:
+    properties:
+      error:
+        required:
+          - statusCode
+          - message
+        type: object
+        properties:
+          statusCode:
+            type: string
+            description: Http Status Code
+            example: "401"
+          code:
+            type: string
+            description: Same as the http status code
+            example: "401"
+          message:
+            type: string
+            description: General message for the error
+            example: "Not Authorized"
+          developerMessage:
+            type: string
+            description: More precise info about the error
+            example: "Access token was not provided or is invalid"

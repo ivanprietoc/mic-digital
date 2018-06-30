@@ -1,0 +1,128 @@
+swagger: '2.0'
+info:
+  title: Tigo - Profiling API
+  description: Información de suscriptores basada en profiling
+  version: 1.0.0
+host: qa.api.tigo.com
+schemes:
+  - https
+basePath: /v1/tigo/mobile/{country}/profiling
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  '/subscribers/{msisdn}/suggestedProducts/{category}':
+    get:
+      description: Listado de productos sugeridos por categoría
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: API key
+          type: string
+          required: true
+        - name: msisdn
+          in: path
+          description: Número del suscriptor
+          type: string
+          required: true
+          default: 50230947306
+        - name: category
+          in: path
+          description: Servicio a consultar
+          type: string
+          required: true
+          default: all
+      tags:
+        - Listado de productos sugeridos por categoría
+      responses:
+        '200':
+          description: Datos de activación del servicio
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Product'
+        '401':
+          description: Error de autenticación
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: El recurso solicitado no existe.
+          schema:
+            $ref: "#/definitions/Error"
+        '503':
+          description: No hay comunicacion con el servicio.
+          schema:
+            $ref: "#/definitions/Error"
+        '504':
+          description: Timeout en request al servicio legado
+          schema:
+            $ref: "#/definitions/Error"
+            
+  '/subscribers/{msisdn}/suggestedProduct':
+    get:
+      description: Listado de productos sugeridos
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          description: API key
+          type: string
+          required: true
+        - name: msisdn
+          in: path
+          description: Número del suscriptor
+          type: string
+          required: true
+          default: 50230947306
+      tags:
+        - Listado de productos sugeridos
+      responses:
+        '200':
+          description: Datos de activación del servicio
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Product'
+        '401':
+          description: Error de autenticación
+          schema:
+            $ref: "#/definitions/Error"
+        '404':
+          description: El recurso solicitado no existe
+          schema:
+            $ref: "#/definitions/Error"
+        '503':
+          description: No hay comunicacion con el servicio
+          schema:
+            $ref: "#/definitions/Error"
+        '504':
+          description: Timeout en request al servicio legado
+          schema:
+            $ref: "#/definitions/Error"
+definitions:
+  Product:
+    properties:
+      product:
+        type: string
+        description: Código de producto
+      category:
+        type: string
+        description: Categoría del producto
+  Error:
+    properties:
+      errorType:
+        type: integer
+        description: Indica el tipo de error, posibles valores COM (Comunicación NEG (Negocio), SEG (Seguridad), INF (Informativo), MSG (Mensaje)
+      code:
+        type: string
+        description: Código númerico de error
+      reason:
+        type: string
+        description: Mensaje a nivel técnico que explica el motivo del error
+      description:
+        type: string
+        description: Descripción del error.
