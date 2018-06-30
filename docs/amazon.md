@@ -153,7 +153,6 @@ TIGO_BCK-->TIGO_BCK: POST AddOn(tigo_account, product_id)
 
 AMZ-->END_USER: amazon welcome mail
 TIGO_BCK-->END_USER: tigo welcome mail/sms
-
 ```
 
 ### Termination

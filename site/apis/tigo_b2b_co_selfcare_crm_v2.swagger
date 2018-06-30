@@ -1,0 +1,1306 @@
+swagger: '2.0'
+info:
+    version: '2.0.0'
+    title: tigo_b2b_co_selfcare_crm_v2
+    description: |
+        Standard API related to CRM for Colombia B2B services
+    termsOfService: http://swagger.io/terms/
+    contact:
+        name: Carlos Carvallo
+        email: carlos.carvallo@edge.com.py
+        url: https://edge.com.py
+    license:
+        name: MIT
+        url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: test.api.tigo.com
+basePath: /v2/tigo/b2b/co/crm
+schemes:
+    - https
+consumes:
+    - application/json
+produces:
+    - application/json
+securityDefinitions:
+    application:
+        type: oauth2
+        tokenUrl: https://test.api.tigo.com/oauth/client_credential/accesstoken?grant_type=client_credentials
+        flow: application
+        scopes:
+            read: "customer accounts"
+security:
+  - application:
+    - read    
+    
+paths:
+    /accounts:
+        get:
+          description: Consulta de cuentas Atp Corporativo por número de documento (NIT)
+          summary: Consulta Cuentas ATP Corporativo por Numero Doc
+          operationId: Consulta Cuentas ATP Corporativo por Numero Doc
+          parameters:
+            - $ref: "#/parameters/idType"
+            - $ref: "#/parameters/id"
+            - $ref: "#/parameters/authorization"
+          responses:
+            200:
+              description: "Succesful Response"
+              schema:
+                $ref: '#/definitions/accountsResponse'
+            400:
+              description: Bad Request.
+              schema:
+                $ref: '#/definitions/errorBody'
+            401:
+              description: Unathorized.
+              schema:
+                $ref: '#/definitions/errorBody'
+            404:
+              description: Not Found.
+              schema:
+                $ref: '#/definitions/errorBody'
+            default:
+              description: Unhandled resource
+              schema:
+                $ref: '#/definitions/errorBody'
+
+    /accounts/{accountId}:
+        get:
+          description: Consulta de detalle de una cuenta (contrato) Atp Corporativo por id de cuenta
+          summary: Consulta cliente ATP Corporativo por su ID
+          operationId: Consulta cliente ATP Corporativo por su ID
+          parameters:
+            - $ref: "#/parameters/accountId"
+            - $ref: "#/parameters/authorization"       
+          responses:
+            200:
+              description: "Succesful Response"
+              schema:
+                $ref: '#/definitions/accountsDetailsResponse'
+            400:
+              description: Bad Request.
+              schema:
+                $ref: '#/definitions/errorBody'
+            401:
+              description: Unathorized.
+              schema:
+                $ref: '#/definitions/errorBody'
+            404:
+              description: Not Found.
+              schema:
+                $ref: '#/definitions/errorBody'
+            default:
+              description: Unhandled resource
+              schema:
+                $ref: '#/definitions/errorBody'
+    
+    /accounts/{accountId}/profiles:
+        get:
+          description: Consulta de perfiles de una cuenta ATP Corporativo buscando por un id de cuenta
+          summary: Consulta de perfiles de un cliente ATP Corporativo por ID
+          operationId: Consulta de perfiles de un cliente ATP Corporativo por ID
+          parameters:
+            - $ref: "#/parameters/accountId"
+            - $ref: "#/parameters/authorization"
+          responses:
+            200:
+              description: "Succesful Response"
+              schema:
+                $ref: '#/definitions/profilesResponse'
+            400:
+              description: Bad Request.
+              schema:
+                $ref: '#/definitions/errorBody'
+            401:
+              description: Unathorized.
+              schema:
+                $ref: '#/definitions/errorBody'
+            404:
+              description: Not Found.
+              schema:
+                $ref: '#/definitions/errorBody'
+            default:
+              description: Unhandled resource
+              schema:
+                $ref: '#/definitions/errorBody'
+
+    /accounts/profiles/{profileId}:
+        get:
+          description: Consulta de detalle de un perfil buscando por su id de perfil
+          summary: Detalle de un perfil ATP Corporativo por ID
+          operationId: Detalle de un perfil ATP Corporativo por ID
+          parameters:
+            - $ref: "#/parameters/profileId"
+            - $ref: "#/parameters/authorization"
+          responses:
+            200:
+              description: "Succesful Response"
+              schema:
+                $ref: '#/definitions/profilesDetailsResponse'
+            400:
+              description: Bad Request.
+              schema:
+                $ref: '#/definitions/errorBody'
+            401:
+              description: Unathorized.
+              schema:
+                $ref: '#/definitions/errorBody'
+            404:
+              description: Not Found.
+              schema:
+                $ref: '#/definitions/errorBody'
+            default:
+              description: Unhandled resource
+              schema:
+                $ref: '#/definitions/errorBody'
+
+    /accounts/profiles/{profileId}/lines:
+        get:
+          description: Consulta de las líneas asociadas a un perfil, buscando por un id de perfil
+          summary: Consulta Lineas asociadas a un Profile por ID
+          operationId: Consulta Lineas asociadas a un Profile por ID
+          parameters:
+            - $ref: "#/parameters/profileId"
+            - $ref: "#/parameters/authorization"
+          responses:
+            200:
+              description: "Succesful Response"
+              schema:
+                $ref: '#/definitions/linesResponse'
+            400:
+              description: Bad Request.
+              schema:
+                $ref: '#/definitions/errorBody'
+            401:
+              description: Unathorized.
+              schema:
+                $ref: '#/definitions/errorBody'
+            404:
+              description: Not Found.
+              schema:
+                $ref: '#/definitions/errorBody'
+            default:
+              description: Unhandled resource
+              schema:
+                $ref: '#/definitions/errorBody'
+
+    /accounts/profiles/{profileId}/services:
+        get:
+          description: Consulta de los servicios/planes de un perfil Atp Corporativo, buscando por el id perfil
+          summary: Consulta planes/servicios asociados al perfil por ID
+          operationId: Consulta planes/servicios asociados al perfil por ID
+          parameters:
+            - $ref: "#/parameters/profileId"
+            - $ref: "#/parameters/authorization"
+          responses:
+            200:
+              description: "Succesful response"
+              schema:
+                $ref: '#/definitions/servicesResponse'
+            400:
+              description: Bad Request.
+              schema:
+                $ref: '#/definitions/errorBody'
+            401:
+              description: Unathorized.
+              schema:
+                $ref: '#/definitions/errorBody'
+            404:
+              description: Not Found.
+              schema:
+                $ref: '#/definitions/errorBody'
+            default:
+              description: Unhandled resource
+              schema:
+                $ref: '#/definitions/errorBody'
+                
+    /accounts/profiles:
+        get:
+          description: Consulta de información de una línea Atp Corporativo, buscando por su MSISDN
+          summary: Consulta detalle línea asociada a ATP Corporativo por Msisdn
+          operationId: Consulta detalle línea asociada a ATP Corporativo por Msisdn
+          parameters:
+            - $ref: "#/parameters/msisdn"
+            - $ref: "#/parameters/authorization"
+          responses:
+            200:
+              description: "Succesful response"
+              schema:
+                $ref: '#/definitions/linesDetailsResponse'
+            400:
+              description: Bad Request.
+              schema:
+                $ref: '#/definitions/errorBody'
+            401:
+              description: Unathorized.
+              schema:
+                $ref: '#/definitions/errorBody'
+            404:
+              description: Not Found.
+              schema:
+                $ref: '#/definitions/errorBody'
+            default:
+              description: Unhandled resource
+              schema:
+                $ref: '#/definitions/errorBody'
+    /documents/{documentId}:
+      get:
+        summary: Returns the url of the digital document for massive and corporate clients.
+        description: Taking as initial parameter the client id returns the url of the digital document for massive and corporate clients.
+        operationId: findDigitalDocumentsById
+        tags:
+          - document
+        parameters:
+          - $ref: "#/parameters/documentId"
+          - $ref: "#/parameters/movil"
+          - $ref: "#/parameters/segment"
+          - $ref: "#/parameters/document"
+          - $ref: "#/parameters/additional"
+          - $ref: "#/parameters/authorization"
+        responses:
+          200:
+            description: Successful response
+            schema:
+              $ref: '#/definitions/documents'
+          400:
+            description: Bad Request.
+            schema:
+              $ref: '#/definitions/errorBody'
+          401:
+            description: Unauthorized.
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: Not Found.
+            schema:
+              $ref: '#/definitions/errorBody'
+          default:
+            description: Unhandled resource
+            schema:
+              $ref: '#/definitions/errorBody'
+    #getCustomersPortfolioByNit
+    /customers/{nit}/portfolio:
+      get:
+        summary: Obtain the Unified Communications sites of the clients and their respective extensions, taking the nit as the initial parameter.
+        description: Taking as initial parameter the client's nit returns the Unified Communications sites and their respective extensions.
+        operationId: findCustomersPortfolioByNit
+        tags:
+          - lines
+        parameters:
+          - $ref: "#/parameters/nit"
+          - $ref: "#/parameters/authorization"
+        responses:
+          200:
+            description: Successful response
+            schema:
+              $ref: '#/definitions/portfolioList'
+          400:
+            description: Bad Request.
+            schema:
+              $ref: '#/definitions/errorBody'
+          401:
+            description: Unauthorized.
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: Not Found.
+            schema:
+              $ref: '#/definitions/errorBody'
+          default:
+            description: Unhandled resource
+            schema:
+              $ref: '#/definitions/errorBody'
+     #postCustomersLinesRecordings
+    /lines/recordings:
+      post:
+        summary: Get the recordings generated for the client extensions for a defined period of time.
+        description: Defining a period of time obtains the generated recordings for the client extensions.
+        operationId: postCustomersLinesRecordings
+        parameters:
+          - $ref: "#/parameters/recordingsParameters"
+          - $ref: "#/parameters/authorization"
+        responses:
+          200:
+            description: Successful response
+            schema:
+              $ref: '#/definitions/recordingsList'
+          400:
+            description: Bad Request.
+            schema:
+              $ref: '#/definitions/errorBody'
+          401:
+            description: Unauthorized.
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: Not Found.
+            schema:
+              $ref: '#/definitions/errorBody'
+          default:
+            description: Unhandled resource
+            schema:
+              $ref: '#/definitions/errorBody'
+    #getCustomersCallsById
+    /calls/{idFormat}/{idCall}/recordings:
+      get:
+        summary: It allows to download the recordings that have been generated on the calls of the customer extensions.
+        description: Taking as the initial parameter the id of the call download the recordings of the client extensions.
+        operationId: findCustomersCallsById
+        parameters:
+          - $ref: "#/parameters/idCall"
+          - $ref: "#/parameters/idFormat"
+          - $ref: "#/parameters/authorization"
+        responses:
+          200:
+            description: Successful response
+            schema:
+              $ref: '#/definitions/callsList'
+          400:
+            description: Bad Request.
+            schema:
+              $ref: '#/definitions/errorBody'
+          401:
+            description: Unauthorized.
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: Not Found.
+            schema:
+              $ref: '#/definitions/errorBody'
+          default:
+            description: Unhandled resource
+            schema:
+              $ref: '#/definitions/errorBody'
+  
+    #deleteCustomersCallsById
+    /calls/{idCall}/recordings:
+      get:
+        summary: It allows to erase the generated recordings on the calls of the extensions of the client.
+        description: Taking as the initial parameter the id of the call allows you to erase the recordings generated on that call.
+        operationId: deleteCustomersCallsById
+        tags:
+          - lines
+        parameters:
+          - $ref: "#/parameters/idCall"
+          - $ref: "#/parameters/authorization"
+        responses:
+          200:
+            description: Successful response
+            schema:
+              $ref: '#/definitions/recordings'
+          400:
+            description: Bad Request.
+            schema:
+              $ref: '#/definitions/errorBody'
+          401:
+            description: Unauthorized.
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: Not Found.
+            schema:
+              $ref: '#/definitions/errorBody'
+          default:
+            description: Unhandled resource
+            schema:
+              $ref: '#/definitions/errorBody'
+    #getCustomerCallDetailsService
+    /customers/{MSISDN}/calls/details:
+      get:
+        summary: Find the detail of the calls taking the msisdn as the initial parameter.
+        description: Returns the detail of the calls made from the msisdn.
+        operationId: findCustomersCallsDetailsService
+        tags:
+          - Calls
+        parameters:
+          - $ref: "#/parameters/MSISDN"
+          - $ref: "#/parameters/dateFrom"
+          - $ref: "#/parameters/dateTill"
+          - $ref: "#/parameters/authorization"
+        responses:
+          200:
+            description: Successful response
+            schema:
+              $ref: '#/definitions/details'
+          400:
+            description: Bad Request.
+            schema:
+              $ref: '#/definitions/errorBody'
+          401:
+            description: Unauthorized.
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: Not Found.
+            schema:
+              $ref: '#/definitions/errorBody'
+          default:
+            description: Unhandled resource
+            schema:
+              $ref: '#/definitions/errorBody'
+              
+    #AddServices
+    /profiles/{profileId}/services:
+      post:
+        summary: Operation that receives a list of services / packages to add to a profile.
+        description: To add to a profile, the operation that receives a list of services / packages .
+        operationId: postATPCorporateServices
+        tags:
+          - services
+        parameters:
+          - $ref: "#/parameters/profileId"
+          - $ref: "#/parameters/postServicesParameters"
+          - $ref: "#/parameters/authorization"
+        responses:
+          200:
+            description: Successful response
+            schema:
+              $ref: '#/definitions/servicesList'
+          400:
+            description: Bad Request.
+            schema:
+              $ref: '#/definitions/errorBody'
+          401:
+            description: Unauthorized.
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: Not Found.
+            schema:
+              $ref: '#/definitions/errorBody'
+          default:
+            description: Unhandled resource
+            schema:
+              $ref: '#/definitions/errorBody'
+    #DeleteServices 
+    /profiles/{profileId}:
+      delete:
+        summary: Operation that receives a list of services / packages to remove to a profile.
+        description: To remove to a profile, the operation that receives a list of services / packages.
+        operationId: deleteATPCorporateServices
+        parameters:
+          - $ref: "#/parameters/profileId"
+          - $ref: "#/parameters/deleteServicesParameters"
+          - $ref: "#/parameters/authorization"
+        responses:
+          200:
+            description: Successful response
+            schema:
+              $ref: '#/definitions/servicesList'
+          400:
+            description: Bad Request.
+            schema:
+              $ref: '#/definitions/errorBody'
+          401:
+            description: Unauthorized.
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: Not Found.
+            schema:
+              $ref: '#/definitions/errorBody'
+          default:
+            description: Unhandled resource
+            schema:
+              $ref: '#/definitions/errorBody'
+    #UpdateServices
+    /profile/{profileId}:
+      put:
+        summary: Operation that receives a list of services / packages to update to a profile.
+        description: To update to a profile, the operation that receives a list of services / packages.
+        operationId: updateATPCorporateServices
+        parameters:
+          - $ref: "#/parameters/profileId"
+          - $ref: "#/parameters/updateServicesParameters"
+          - $ref: "#/parameters/authorization"
+        responses:
+          200:
+            description: Successful response
+            schema:
+              $ref: '#/definitions/servicesList'
+          400:
+            description: Bad Request.
+            schema:
+              $ref: '#/definitions/errorBody'
+          401:
+            description: Unauthorized.
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: Not Found.
+            schema:
+              $ref: '#/definitions/errorBody'
+          default:
+            description: Unhandled resource
+            schema:
+              $ref: '#/definitions/errorBody'
+    #GetServiceByPartnum
+    /services/{partnum}:
+      get:
+        summary: Operation that receives as input parameter the partnum of a service / package and returns the information of the consulted package.
+        description: It returns the information of the consulted package, receiving as the input parameter the name of a service / package.
+        operationId: getATPCorporateServices
+        parameters:
+          - $ref: "#/parameters/partnum"
+          - $ref: "#/parameters/authorization"
+        responses:
+          200:
+            description: Successful response
+            schema:
+              $ref: '#/definitions/getServicesList'
+          400:
+            description: Bad Request.
+            schema:
+              $ref: '#/definitions/errorBody'
+          401:
+            description: Unauthorized.
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: Not Found.
+            schema:
+              $ref: '#/definitions/errorBody'
+          default:
+            description: Unhandled resource
+            schema:
+              $ref: '#/definitions/errorBody'
+    #ProcessCatalog
+    /accounts/{accountId}/processes:
+      post:
+        summary: Process secondary transactions necessary to complete the purchase process.
+        description: Performs the processing of secondary transactions necessary to complete the purchase process.
+        operationId: postATPCorporateAccounts
+        parameters:
+          - $ref: "#/parameters/accountId"
+          - $ref: "#/parameters/postAccountsParameters"
+          - $ref: "#/parameters/authorization"
+        responses:
+          200:
+            description: Successful response
+            schema:
+              $ref: '#/definitions/servicesList'
+          400:
+            description: Bad Request.
+            schema:
+              $ref: '#/definitions/errorBody'
+          401:
+            description: Unauthorized.
+            schema:
+              $ref: '#/definitions/errorBody'
+          404:
+            description: Not Found.
+            schema:
+              $ref: '#/definitions/errorBody'
+          default:
+            description: Unhandled resource
+            schema:
+              $ref: '#/definitions/errorBody'
+                
+#                                                                  /$$                                  
+#                                                                 | $$                                  
+#  /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$   /$$$$$$$
+# /$$__  $$ |____  $$ /$$__  $$|____  $$| $$_  $$_  $$ /$$__  $$|_  $$_/   /$$__  $$ /$$__  $$ /$$_____/
+#| $$  \ $$  /$$$$$$$| $$  \__/ /$$$$$$$| $$ \ $$ \ $$| $$$$$$$$  | $$    | $$$$$$$$| $$  \__/|  $$$$$$ 
+#| $$  | $$ /$$__  $$| $$      /$$__  $$| $$ | $$ | $$| $$_____/  | $$ /$$| $$_____/| $$       \____  $$
+#| $$$$$$$/|  $$$$$$$| $$     |  $$$$$$$| $$ | $$ | $$|  $$$$$$$  |  $$$$/|  $$$$$$$| $$       /$$$$$$$/
+#| $$____/  \_______/|__/      \_______/|__/ |__/ |__/ \_______/   \___/   \_______/|__/      |_______/ 
+#| $$                                                                                                   
+#| $$                                                                                                   
+#|__/
+
+parameters:
+  partnum: 
+    name: partnum
+    in: path
+    required: true
+    type: integer
+    description: "Customer Document"
+  postServicesParameters: 
+    name: postServicesParameters
+    in: body
+    required: true
+    schema: 
+      $ref: '#/definitions/servicesParameters'
+    description: "Parameters needed to add a perfil"
+  deleteServicesParameters: 
+    name: deleteServicesParameters
+    in: body
+    required: true
+    schema: 
+      $ref: '#/definitions/servicesParameters'
+    description: "Parameters needed to remove a perfil"
+  updateServicesParameters: 
+    name: updateServicesParameters
+    in: body
+    required: true
+    schema: 
+      $ref: '#/definitions/updateServicesParameters'
+    description: "Parameters needed to update a perfil"
+  postAccountsParameters: 
+    name: postAccountsParameters
+    in: body
+    required: true
+    schema: 
+      $ref: '#/definitions/postAccountsParameters'
+    description: "Parameters needed to process secondary transactions necessary to complete the purchase"
+  nit:
+    name: nit
+    in: path
+    required: true
+    type: integer
+    description: "It's the customer's nit."
+  idCall:
+    name: idCall
+    in: path
+    required: true
+    type: integer
+    description: "It's the call's id."
+  idFormat:
+    name: idFormat
+    in: path
+    required: true
+    type: integer
+    description: "It's the call's format."
+  id:
+    name: id
+    in: query
+    required: true
+    type: integer
+    description: "Identification Number"
+  idType:
+    name: idType
+    in: query
+    required: true
+    type: string
+    description: "Identifier Type of the Identification Number"
+  accountId:
+    name: accountId
+    in: path
+    required: true
+    type: integer
+    description: "Account Identification Number"
+  profileId:
+    name: profileId
+    in: path
+    required: true
+    type: integer
+    description: "Profile Identification Number"
+  msisdn:
+    name: msisdn
+    in: query
+    required: true
+    type: integer
+    description: "Customers MSISDN"
+  MSISDN:
+    name: MSISDN
+    in: path
+    required: true
+    type: integer
+    description: "Customers MSISDN"
+  dateFrom:
+    name: dateFrom
+    in: query
+    description: Date of start
+    required: true
+    type: string
+  dateTill:
+    name: dateTill
+    in: query
+    description: Date of end
+    required: true
+    type: integer
+  documentId:
+    name: documentId
+    in: path
+    required: true
+    type: integer
+    description: Is the document number.
+  movil:
+    name: movil
+    in: query
+    required: true
+    type: integer
+    description: Msisdn to consult.
+  segment:
+    name: segment
+    in: query
+    required: false
+    type: string
+    description: Segment to consult can be one of the CORPORATE / MASIVE values.
+  document:
+    name: document
+    in: query
+    required: false
+    type: string
+    description: Corresponds to the id of the document found in computer.
+  additional:
+    name: additional
+    in: query
+    required: false
+    type: string
+    description: Additional parameters.
+  recordingsParameters: 
+    name: recordingsParameters
+    in: body
+    required: true
+    schema: 
+      $ref: '#/definitions/recordingsParameters'
+    description: "Parameters required to obtain the generated recordings for the client extensions for a defined period of time"
+  authorization:
+    name: Authorization
+    in: header
+    required: true
+    type: string
+    description: "Access Token provided by the Authorization Url"
+
+#        /$$            /$$$$$$  /$$           /$$   /$$     /$$
+#       | $$           /$$__  $$|__/          |__/  | $$    |__/
+#   /$$$$$$$  /$$$$$$ | $$  \__/ /$$ /$$$$$$$  /$$ /$$$$$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$$
+#  /$$__  $$ /$$__  $$| $$$$    | $$| $$__  $$| $$|_  $$_/  | $$ /$$__  $$| $$__  $$ /$$_____/
+# | $$  | $$| $$$$$$$$| $$_/    | $$| $$  \ $$| $$  | $$    | $$| $$  \ $$| $$  \ $$|  $$$$$$
+# | $$  | $$| $$_____/| $$      | $$| $$  | $$| $$  | $$ /$$| $$| $$  | $$| $$  | $$ \____  $$
+# |  $$$$$$$|  $$$$$$$| $$      | $$| $$  | $$| $$  |  $$$$/| $$|  $$$$$$/| $$  | $$ /$$$$$$$/
+#  \_______/ \_______/|__/      |__/|__/  |__/|__/   \___/  |__/ \______/ |__/  |__/|_______/
+
+definitions:
+  servicesParameters:
+    properties:
+      serviceCollection:
+        type: array
+        items: 
+           $ref: '#/definitions/service'
+  service: 
+    type: object
+    properties: 
+      partnum:
+        type: string
+  updateServicesParameters:
+    properties:
+      service:
+        type: array
+        items: 
+           $ref: '#/definitions/serviceList'
+  serviceList: 
+    type: object
+    properties:
+      id:
+        type: integer 
+      partnum:
+        type: string  
+  postAccountsParameters: 
+    type: object
+    properties: 
+      consultantId:
+        type: integer 
+        
+  servicesList:
+    type: object
+    properties: 
+      payload: 
+        type: string
+      msgCode: 
+        type: string
+      description: 
+        type: string
+      severity: 
+        type: string
+  getServicesList:
+    type: object
+    properties: 
+      payload:
+        type: string
+      service:
+        type: object
+        properties:
+          id: 
+            type: integer
+          type: 
+            type: string
+          subType: 
+            type: string
+          description:
+            type: string
+          price: 
+            type: integer
+          taxPrice: 
+            type: integer
+          partNum: 
+            type: string
+          poidType:
+            type: string
+  details: 
+    type: object
+    properties: 
+      msisdn:
+        type: integer
+      company: 
+        type: string
+      callType: 
+        type: string
+      callFrom: 
+        type: string
+      callDateTime: 
+        type: string
+        format: date-time
+      callDuration: 
+        type: integer
+      airTime: 
+        type: integer
+      airAmount: 
+        type: string 
+      interconnectionTime: 
+        type: integer
+      interconnectionAmount: 
+        type: string 
+      callAmount: 
+        type: string    
+  portfolioList:
+    type: array
+    items:
+      type: object
+      properties:
+        idSede:
+          type: string
+        nameSede:
+          type: integer
+        extensionsList:
+          type: array
+          items: 
+            $ref: '#/definitions/extensions'
+  extensions:
+    type: object
+    properties:
+      number:
+        type: integer
+      recording: 
+        type: string
+      name: 
+        type: string
+  recordingsParameters:
+    type: object
+    properties: 
+      extensions:
+        type: array
+        items:
+          type: integer
+      start: 
+        type: string
+        format: date-time
+      end: 
+        type: string
+        format: date-time
+      direction: 
+        type: string
+  recordingsList:
+    type: array
+    items:
+      type: object
+      properties:
+        callTime:
+          type: integer
+        destination:
+          type: string
+        idCall:
+          type: string
+        end:
+          type: string
+          format: date-time
+        origin:
+          type: integer
+        start:
+          type: string
+          format: date-time
+        direction:
+          type: string
+  callsList:
+    type: object
+    properties:
+      weight:
+        type: integer
+      route: 
+        type: string
+  recordings:
+    type: object
+    properties:
+      message:
+        type: string
+      code: 
+        type: integer 
+  documents:
+    properties:
+      url:
+        type: string
+        description: Url of the digital document (Contract) found on the Computec platform in pdf format.
+  accountsResponse:
+    type: object
+    properties:
+      accountCollection:
+        type: array
+        items:
+          properties:
+            accountId:
+              type: string
+            accountName:
+              type: string
+            billingAccount:
+              type: string
+            consultantName:
+              type: string
+            contactName:
+              type: string
+            contactPhone:
+              type: string
+            contractCollection:
+              type: string
+              enum: [null, string]
+            cycle:
+              type: string
+              enum: [null, string]
+            documentNumber:
+              type: string
+            email:
+              type: string
+            imsi:
+              type: string
+            msisdn:
+              type: string
+            parentAccountId:
+              type: string
+            parentName:
+              type: string
+          type: object
+
+  accountsDetailsResponse:
+    properties:
+      accountId:
+        type: string
+      accountName:
+        type: string
+      billingAccount:
+        type: string
+      consultantName:
+        type: string
+      contactName:
+        type: string
+      contactPhone:
+        type: string
+      contractCollection:
+        items:
+          properties:
+            avalaibleBenefit:
+              type: integer
+            contractId:
+              type: string
+            endDate:
+              type: string
+            rank:
+              properties:
+                maximumRank:
+                  type: integer
+                minimumRank:
+                  type: integer
+                rankId:
+                  type: string
+                registeredBenefit:
+                  type: integer
+              type: object
+            startDate:
+              type: string
+          type: object
+        type: array
+      cycle:
+        type: string
+        enum: [string, null]
+      documentNumber:
+        type: string
+      email:
+        type: string
+      imsi:
+        type: string
+      msisdn:
+        type: string
+      parentAccountId:
+        type: string
+      parentName:
+        type: string
+    type: object
+
+  profilesResponse:
+    properties:
+      profileCollection:
+        items:
+          properties:
+            accountId:
+              type: string
+            billingAccount:
+              type: string
+            cycle:
+              type: integer
+            description:
+              type: string
+            id:
+              type: string
+            imsi:
+              type: string
+            msisdn:
+              type: string
+            name:
+              type: string
+            status:
+              type: string
+          type: object
+        type: array
+    type: object
+      
+  profilesDetailsResponse:
+    properties:
+      documentNumber:
+        type: string
+      value:
+        type: integer
+      totalValue:
+        type: integer
+      accountId:
+        type: string
+      billingAccount:
+        type: string
+      billingAccountFather:
+        type: string
+      cycle:
+        type: integer
+      description:
+        type: string
+      id:
+        type: string
+      imsi:
+        type: string
+      lineCollection:
+        items:
+          properties:
+            id:
+              type: string
+            msisdn:
+              type: string
+            poid:
+              type: string
+            profileId:
+              type: string
+            status:
+              type: string
+            type:
+              type: string
+          type: object
+        type: array
+      linesAmount:
+        type: string
+      msisdn:
+        type: string
+      msisdnFather:
+        type: string
+      name:
+        type: string
+      serviceCollection:
+        items:
+          properties:
+            category:
+              type: string
+              enum: [null, string]
+            description:
+              type: string
+            id:
+              type: string
+            partnum:
+              type: string
+            price:
+              type: integer
+            profileId:
+              type: string
+            serviceId:
+              type: string
+            status:
+              type: string
+            subtype:
+              type: string
+            taxPrice:
+              type: integer
+            type:
+              type: string
+          type: object
+        type: array
+      servicesAmount:
+        type: string
+      status:
+        type: string
+    type: object
+  
+  linesResponse:
+    properties:
+      lineCollection:
+        items:
+          properties:
+            id:
+              type: string
+            msisdn:
+              type: string
+            poid:
+              type: string
+            profileId:
+              type: string
+            status:
+              type: string
+            type:
+              type: string
+          type: object
+        type: array
+    type: object
+    
+  servicesResponse:
+    properties:
+      serviceCollection:
+        items:
+          properties:
+            category:
+              type: string
+              enum: [null, string]
+            description:
+              type: string
+            id:
+              type: string
+            partnum:
+              type: string
+            price:
+              type: integer
+            profileId:
+              type: string
+            serviceId:
+              type: string
+            status:
+              type: string
+            subtype:
+              type: string
+            taxPrice:
+              type: integer
+            type:
+              type: string
+          type: object
+        type: array
+    type: object
+    
+  linesDetailsResponse:
+    properties:
+      account:
+        properties:
+          accountId:
+            type: string
+          accountName:
+            type: string
+          billingAccount:
+            type: string
+          consultantName:
+            type: string
+          contactName:
+            type: string
+          contactPhone:
+            type: string
+          documentNumber:
+            type: string
+          email:
+            type: string
+          msisdn:
+            type: string
+          parentAccountId:
+            type: string
+          parentName:
+            type: string
+        type: object
+      contractCollecion:
+        items:
+          properties:
+            avalaibleBenefit:
+              type: integer
+            contractId:
+              type: string
+            endDate:
+              type: string
+            rank:
+              properties:
+                maximumRank:
+                  type: integer
+                minimumRank:
+                  type: integer
+                rankId:
+                  type: string
+                registeredBenefit:
+                  type: integer
+              type: object
+            startDate:
+              type: string
+          type: object
+        type: array
+      msisdn:
+        type: string
+      profileList:
+        items:
+          properties:
+            billingAccount:
+              type: string
+            cycle:
+              type: integer
+            description:
+              type: string
+            id:
+              type: string
+            lineCollection:
+              items:
+                properties:
+                  msisdn:
+                    type: string
+                type: object
+              type: array
+            name:
+              type: string
+            serviceCollection:
+              items:
+                properties:
+                  description:
+                    type: string
+                  id:
+                    type: string
+                  profileId:
+                    type: string
+                  serviceId:
+                    type: string
+                  subtype:
+                    type: string
+                  type:
+                    type: string
+                type: object
+              type: array
+          type: object
+        type: array
+    type: object
+    
+  
+  errorBody:
+    properties:
+      error:
+        required:
+          - statusCode
+          - message
+        type: object
+        properties:
+          statusCode:
+            type: string
+            description: Http Status Code
+            example: "401"
+          code:
+            type: string
+            description: Same as the http status code
+            example: "401"
+          message:
+            type: string
+            description: General message for the error
+            example: "Not Authorized"
+          developerMessage:
+            type: string
+            description: More precise info about the error
+            example: "Access token was not provided or is invalid"

@@ -2,77 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/catalog/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/amazon/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/tigoshop/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/mitigo/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/bot/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/mfs/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/mitigo-agent/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/payment-gtw/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/pos/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/tbo/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/usa/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/sports/</loc>
-     <lastmod>2018-06-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>/apiMobileSelfCare2.0/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/processes/devBestPractices/</loc>
-     <lastmod>2018-06-27</lastmod>
+     <lastmod>2018-06-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

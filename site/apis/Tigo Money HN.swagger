@@ -1,0 +1,1069 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Tigo Money HN
+  description: Subscriber operations
+  contact:
+    name: Miguel Godoy
+    email: miguel.godoy@edge.com.py
+host: securesandbox.tigo.com
+basePath: /v1/tigo/money/hn/mfsapi
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /subscribers/{msisdn}/know-your-customer:
+    get:
+      description: >-
+        KYC (Know Your Customer) subscriber registration complementary API. Will
+        allow us to validate a set of parameters for a susbcriber before
+        proceeding to register.
+      produces:
+        - application/json
+      parameters:
+        - name: msisdn
+          in: path
+          required: true
+          description: Client MSISDN
+          type: string
+        - name: id_number
+          in: query
+          required: true
+          description: Id Number
+          type: integer
+        - name: birthdate
+          in: query
+          required: true
+          description: Date of birth YYYY-MM-DD
+          type: string
+          format: date
+      responses:
+        '200':
+          description: ok
+          schema:
+            properties:
+              subscriber:
+                $ref: '#/definitions/Subscriber'
+        '400':
+          description: bad request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: not found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /subscribers/login:
+    post:
+      description: API to authenticate subscribers
+      produces:
+        - application/json
+      parameters:
+        - name: subscriber
+          in: body
+          required: true
+          description: Tigo Money PIN
+          schema:
+            properties:
+              msisdn:
+                type: string
+              pin:
+                type: string
+      responses:
+        '200':
+          description: Ok
+          schema:
+            properties:
+              login:
+                $ref: '#/definitions/StatusResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /subscribers/{msisdn}/pins:
+    get:
+      description: API to get Tigo Money subscriber pin status
+      produces:
+        - application/json
+      parameters:
+        - name: msisdn
+          in: path
+          required: true
+          description: Subscriber MSISDN
+          type: string
+      responses:
+        '200':
+          description: Ok
+          schema:
+            properties:
+              pin_status:
+                $ref: '#/definitions/StatusResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+    put:
+      description: API to change Tigo Money subscriber pin
+      produces:
+        - application/json
+      parameters:
+        - name: msisdn
+          in: path
+          required: true
+          description: Subscriber MSISDN
+          type: string
+        - name: pin_data
+          in: body
+          required: true
+          description: Tigo Money subscriber pin information
+          schema:
+            properties:
+              current_pin:
+                type: string
+              new_pin:
+                type: string
+              confirm_new_pin:
+                type: string
+      responses:
+        '200':
+          description: ok
+          schema:
+            properties:
+              pin:
+                $ref: '#/definitions/SuccessTransactionResponse'
+        '400':
+          description: bad request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: not found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /subscribers/{msisdn}/send-money:
+    post:
+      description: API to send Tigo Money
+      produces:
+        - application/json
+      parameters:
+        - name: msisdn
+          in: path
+          required: true
+          description: Subscriber MSISDN
+          type: string
+        - name: Send money
+          in: body
+          description: transaction data
+          schema:
+            required:
+              - subscriber
+              - transaction
+            properties:
+              subscriber:
+                type: object
+                properties:
+                  pin:
+                    description: pin's subscriber
+                    type: string
+              transaction:
+                type: object
+                properties:
+                  target:
+                    description: msisdn to receive
+                    type: string
+                  amount:
+                    description: money to send
+                    type: number
+                    format: float
+                  currency:
+                    description: type of currency
+                    type: string
+                    enum:
+                      - HN
+                      - BO
+                      - PY
+                      - SV
+                      - CO
+      responses:
+        '201':
+          description: Created
+          schema:
+            $ref: '#/definitions/SuccessTransactionResponse'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '403':
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /subscribers/{msisdn}/transactions:
+    post:
+      description: API to get a list of transactions made by a Tigo Money subscriber
+      produces:
+        - application/json
+      parameters:
+        - name: msisdn
+          in: path
+          required: true
+          description: Subscriber MSISDN
+          type: string
+        - name: transactions
+          in: body
+          description: transaction data
+          schema:
+            required:
+              - subscriber
+              - transactions
+            properties:
+              subscriber:
+                type: object
+                required:
+                  - pin
+                properties:
+                  pin:
+                    description: Tigo Money Suscriber PIN
+                    type: string
+              transactions:
+                type: object
+                required:
+                  - limit
+                  - begin_at
+                  - end_at
+                properties:
+                  limit:
+                    description: Number of transactions returned
+                    type: number
+                  begin_at:
+                    description: Query begin date (YYYY-MM-DD)
+                    type: string
+                    format: date
+                  end_at:
+                    description: Query end date (YYYY-MM-DD)
+                    type: string
+                    format: date
+      responses:
+        '200':
+          description: ok
+          schema:
+            properties:
+              transactions:
+                type: array
+                items:
+                  $ref: '#/definitions/TransactionDetail'
+        '400':
+          description: bad request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: not found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /topups:
+    get:
+      description: API to get the list of air time top up amounts
+      produces:
+        - application/json
+      parameters:
+        - name: channel_code
+          in: query
+          required: true
+          description: channel code
+          type: string
+      responses:
+        '200':
+          description: Ok
+          schema:
+            properties:
+              toptup:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code:
+                      type: string
+                    description:
+                      type: string
+                    amount:
+                      type: number
+                      format: float
+                    currency:
+                      description: type of currency
+                      type: string
+                      enum:
+                        - HN
+                        - BO
+                        - PY
+                        - SV
+                        - CO
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /subscribers/{msisdn}/topups:
+    post:
+      description: API to reload airtime to a prepaid account.
+      produces:
+        - application/json
+      parameters:
+        - name: msisdn
+          in: path
+          required: true
+          description: Subscriber MSISDN
+          type: string
+        - name: Top Up
+          in: body
+          description: transaction data
+          schema:
+            required:
+              - subscriber
+              - transaction
+            properties:
+              subscriber:
+                type: object
+                required:
+                  - pin
+                properties:
+                  pin:
+                    description: subscriber pin
+                    type: string
+              transaction:
+                type: object
+                required:
+                  - target
+                  - amount
+                  - currency
+                properties:
+                  target:
+                    description: topups's target
+                    type: string
+                  amount:
+                    type: number
+                    format: float
+                  currency:
+                    description: type of currency
+                    type: string
+                    enum:
+                      - HN
+                      - BO
+                      - PY
+                      - SV
+                      - CO
+      responses:
+        '201':
+          description: created
+          schema:
+            $ref: '#/definitions/SuccessTransactionResponse'
+        '400':
+          description: bad request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: not found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /agents:
+    get:
+      description: API to obtain nearest Tigo Money agents.
+      produces:
+        - application/json
+      parameters:
+        - name: lat
+          required: true
+          in: query
+          description: subscriber latitude
+          type: number
+          format: float
+        - name: long
+          required: true
+          in: query
+          description: subscriber longitude
+          type: number
+          format: float
+        - name: limit
+          in: query
+          description: max results to return
+          type: integer
+        - name: type
+          in: query
+          description: type of agent
+          type: string
+      responses:
+        '200':
+          description: Ok
+          schema:
+            properties:
+              agents:
+                type: array
+                items:
+                  $ref: '#/definitions/AgentDetail'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /billers:
+    get:
+      description: API to obtain available billers integrated with Tigo Money.
+      produces:
+        - application/json
+      parameters:
+        - name: category_code
+          in: query
+          description: Biller category Id (default 0)
+          type: integer
+          required: true
+        - name: channel_code
+          in: query
+          type: integer
+          required: false
+      responses:
+        '200':
+          description: Ok
+          schema:
+            properties:
+              billers:
+                type: array
+                items:
+                  $ref: '#/definitions/Bill'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /subscribers/{msisdn}/billers/{biller_id}/bills:
+    post:
+      description: API to obtain bill/s for a specific company given a reference number
+      produces:
+        - application/json
+      parameters:
+        - name: msisdn
+          in: path
+          required: true
+          description: Subscriber MSISDN
+          type: string
+        - name: biller_id
+          in: path
+          required: true
+          description: Biller number
+          type: string
+        - name: data
+          in: body
+          schema:
+            required:
+              - subscriber
+              - bill
+            properties:
+              subscriber:
+                type: object
+                required:
+                  - pin
+                properties:
+                  pin:
+                    type: string
+              bill:
+                type: object
+                required:
+                  - reference
+                  - company_name
+                  - transaction_id
+                properties:
+                  reference:
+                    type: string
+                  company_name:
+                    type: string
+                  transaction_id:
+                    type: string
+      responses:
+        '200':
+          description: Ok
+          schema:
+            properties:
+              bill:
+                type: object
+                required:
+                  - transaction_id
+                  - status
+                  - currency
+                  - account
+                  - account_name
+                properties:
+                  transaction_id:
+                    type: string
+                  status:
+                    type: number
+                  currency:
+                    type: string
+                  account:
+                    type: string
+                  account_name:
+                    type: string
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /subscribers/{msisdn}/billers/{biller_id}/bills/{bill_id}:
+    post:
+      description: API to pay a bill
+      produces:
+        - application/json
+      parameters:
+        - name: msisdn
+          in: path
+          required: true
+          description: Subscriber MSISDN
+          type: string
+        - name: biller_id
+          in: path
+          required: true
+          description: Company Id
+          type: string
+        - name: bill_id
+          in: path
+          required: true
+          description: Biller Id
+          type: string
+        - name: bill
+          in: body
+          required: true
+          description: Bill payment data
+          schema:
+            properties:
+              pin:
+                type: string
+              bill:
+                $ref: '#/definitions/BillPayment'
+      responses:
+        '201':
+          description: Created
+          schema:
+            required:
+              - transaction_id
+              - status
+              - message
+            properties:
+              transaction_id:
+                type: string
+              status:
+                type: string
+              message:
+                type: string
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /subscribers/{msisdn}/fees:
+    get:
+      description: Get fees
+      produces:
+        - application/json
+      parameters:
+        - name: msisdn
+          in: path
+          required: true
+          description: The internacional cellphone number
+          type: string
+        - name: transaction_type
+          in: query
+          required: true
+          description: transaction type
+          type: string
+        - name: amount
+          in: query
+          required: true
+          description: fees amount
+          type: number
+          format: float
+        - name: currency
+          in: query
+          required: true
+          description: type of currency
+          type: string
+          enum:
+            - HN
+            - BO
+            - PY
+            - SV
+            - CO
+        - name: target
+          description: target's msisdn
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Ok
+          schema:
+            required:
+              - fee
+            properties:
+              fee:
+                $ref: '#/definitions/Fee'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /subscribers/{msisdn}/fees/{biller_name}:
+    post:
+      description: Get fees
+      produces:
+        - application/json
+      parameters:
+        - name: msisdn
+          in: path
+          required: true
+          description: The internacional cellphone number
+          type: string
+        - name: biller_name
+          in: path
+          required: true
+          description: set biller name
+          type: string
+        - name: transaction
+          in: body
+          required: true
+          description: transaction body
+          schema:
+            required:
+              - type
+              - amount
+            properties:
+              type:
+                type: string
+              amount:
+                type: number
+                format: float
+              currency:
+                description: type of currency
+                type: string
+                enum:
+                  - HN
+                  - BO
+                  - PY
+                  - SV
+                  - CO
+      responses:
+        '201':
+          description: Created
+          schema:
+            required:
+              - fee
+            properties:
+              fee:
+                $ref: '#/definitions/Fee'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+  /subscribers/{msisdn}/balances:
+    post:
+      description: Get balance
+      produces:
+        - application/json
+      parameters:
+        - name: msisdn
+          in: path
+          required: true
+          description: The internacional cellphone number
+          type: string
+        - name: transaction
+          in: body
+          required: true
+          description: transaction body
+          schema:
+            required:
+              - subscriber
+            properties:
+              subscriber:
+                type: object
+                required:
+                  - pin
+                properties:
+                  pin:
+                    type: string
+      responses:
+        '200':
+          description: Ok
+          schema:
+            required:
+              - balances
+            properties:
+              balances:
+                required:
+                  - transaction_id
+                  - wallet
+                properties:
+                  transaction_id:
+                    type: string
+                  wallet:
+                    type: object
+                    required:
+                      - name
+                      - balance
+                      - currency
+                    properties:
+                      name:
+                        type: string
+                      balance:
+                        type: number
+                      currency:
+                        type: string
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: Not Found
+          schema:
+            $ref: '#/definitions/ErrorResponse'
+definitions:
+  Subscriber:
+    required:
+      - id_number
+      - birthdate
+      - pin
+      - pin_confirm
+    properties:
+      id_number:
+        type: integer
+      birthdate:
+        description: date of birthday YYYY-MM-DD
+        type: string
+        format: date
+      pin:
+        type: string
+      pin_confirm:
+        type: string
+  SubscriberDetails:
+    required:
+      - id
+      - firstname
+      - lastname
+      - primary_id_type
+      - birth_date
+      - address
+      - msisdn
+      - primary_id_number
+      - language
+      - status
+      - user_type
+      - created_at
+      - category
+    properties:
+      id:
+        type: string
+      firstname:
+        type: string
+      lastname:
+        type: string
+      primary_id_type:
+        type: string
+      birth_date:
+        description: date of birthday YYYY-MM-DD
+        type: string
+        format: date
+      address:
+        type: string
+      msisdn:
+        type: string
+      primary_id_number:
+        type: string
+      email_address:
+        type: string
+      language:
+        type: integer
+      status:
+        type: string
+        enum:
+          - active
+          - pending_confirmation
+          - blocked
+          - suspneded_or_blacklisted
+      user_type:
+        type: string
+      created_at:
+        description: 'date was created YYYY-MM-DD HH:MM:YY'
+        type: string
+        format: datetime
+      category:
+        type: string
+  StatusResponse:
+    required:
+      - status_code
+      - status_message
+    properties:
+      status_code:
+        type: string
+      status_message:
+        type: string
+  TransactionDetail:
+    required:
+      - type_transaction
+      - description
+      - detail
+      - amount
+      - charge
+      - reference
+      - processed_at
+      - entry_type
+    properties:
+      type_transaction:
+        type: string
+        enum:
+          - P2P
+          - BillPayment
+          - CompanionCard
+          - Topup
+          - CashIn
+          - CashOut
+      description:
+        type: string
+      detail:
+        type: string
+      amount:
+        type: number
+        format: float
+      currency:
+        description: type of currency
+        type: string
+        enum:
+          - HN
+          - BO
+          - PY
+          - SV
+          - CO
+      charge:
+        type: integer
+      reference:
+        type: string
+      processed_at:
+        description: date processed YYYY-MM-DD
+        type: string
+        format: date
+      entry_type:
+        type: string
+        enum:
+          - CREDITO
+          - DEBITO
+  SubscriberResponse:
+    required:
+      - id_number
+      - firstname
+      - lastname
+      - birthdate
+    properties:
+      id_number:
+        type: integer
+      firstname:
+        type: string
+      lastname:
+        type: string
+      birthdate:
+        description: date of birthdate YYYY-MM-DD
+        type: string
+        format: date
+  ErrorResponse:
+    required:
+      - error
+    properties:
+      error:
+        type: object
+        properties:
+          status_code:
+            type: integer
+          status_message:
+            type: string
+          developer_code:
+            type: integer
+          developer_message:
+            type: string
+  SuccessTransactionResponse:
+    required:
+      - transaction_id
+    properties:
+      transaction_id:
+        type: string
+  AgentDetail:
+    properties:
+      latitude:
+        type: number
+        format: float
+      longitude:
+        type: number
+        format: float
+      type:
+        type: string
+      business_unit:
+        type: string
+      name_pos:
+        type: string
+      contact_pos:
+        type: string
+      contact_number:
+        type: string
+      description:
+        type: string
+      status:
+        type: string
+      neighborhood:
+        type: string
+      pos_code:
+        type: string
+      distance:
+        type: string
+        format: float
+      business_hours:
+        type: string
+      balance_amount:
+        type: integer
+      currency_amount:
+        type: string
+  ReferenceNumber:
+    required:
+      - number
+      - max_length
+      - min_length
+      - type
+    properties:
+      number:
+        type: string
+      max_length:
+        type: number
+      min_length:
+        type: number
+      type:
+        type: string
+  Bill:
+    properties:
+      id:
+        type: string
+      code:
+        type: string
+      shortname:
+        type: string
+      fullname:
+        type: string
+      category_code:
+        type: integer
+      category_name:
+        type: string
+      partial_payment:
+        type: boolean
+      view_bill:
+        type: boolean
+      reference_numbers:
+        type: array
+        items:
+          $ref: '#/definitions/ReferenceNumber'
+  BillPayment:
+    required:
+      - subscriber
+      - bill
+    properties:
+      subscriber:
+        type: object
+        required:
+          - pin
+        properties:
+          pin:
+            type: string
+      bill:
+        type: object
+        required:
+          - amount
+          - currency
+          - company_name
+        properties:
+          amount:
+            type: number
+            format: float
+          currency:
+            description: type of currency
+            type: string
+            enum:
+              - HN
+              - BO
+              - PY
+              - SV
+              - CO
+          company_name:
+            type: string
+  Fee:
+    properties:
+      type:
+        type: string
+      fee:
+        type: number
+        format: float
+      units:
+        type: string
+      description:
+        type: string
+      conditions:
+        type: string
+      additional_results:
+        type: string
+  Balance:
+    required:
+      - transaction_id
+      - wallet
+    properties:
+      transaction_id:
+        type: string
+      wallet:
+        type: object
+        required:
+          - name
+          - balance
+          - currency
+        properties:
+          name:
+            type: string
+          balance:
+            type: number
+            format: float
+          currency:
+            type: string

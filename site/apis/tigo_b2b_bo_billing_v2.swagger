@@ -1,0 +1,247 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: "tigo_b2b_bo_billing_v2"
+  description: |
+    This is the Standard API related to Billing in Version 2 for BOtermsOfService: http://swagger.io/terms/
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Carlos Carvallo
+    email: carlos.carvallo@edge.com.py
+    url: https://edge.com.py
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: test.api.tigo.com
+basePath: /v2/tigo/b2b/bo/billing
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  application:
+    type: oauth2
+    tokenUrl: https://test.api.tigo.com/oauth/client_credential/accesstoken?grant_type=client_credentials
+    flow: application
+    scopes:
+      read: Allows read bills collection
+      
+security:
+  - application:
+    - read
+
+#                        /$$     /$$
+#                       | $$    | $$
+#   /$$$$$$   /$$$$$$  /$$$$$$  | $$$$$$$   /$$$$$$$
+#  /$$__  $$ |____  $$|_  $$_/  | $$__  $$ /$$_____/
+# | $$  \ $$  /$$$$$$$  | $$    | $$  \ $$|  $$$$$$
+# | $$  | $$ /$$__  $$  | $$ /$$| $$  | $$ \____  $$
+# | $$$$$$$/|  $$$$$$$  |  $$$$/| $$  | $$ /$$$$$$$/
+# | $$____/  \_______/   \___/  |__/  |__/|_______/
+# | $$
+# | $$
+# |__/
+
+paths:
+
+#  /$$$$$$$   /$$$$$$ 
+# | $$__  $$ /$$__  $$
+# | $$  \ $$| $$  \ $$
+# | $$$$$$$ | $$  | $$
+# | $$__  $$| $$  | $$
+# | $$  \ $$| $$  | $$
+# | $$$$$$$/|  $$$$$$/
+# |_______/  \______/ 
+
+#  /$$$$$$$$ /$$$$$$   /$$$$$$   /$$$$$$   /$$$$$$ 
+# |__  $$__//$$__  $$ /$$__  $$ /$$__  $$ /$$__  $$
+#    | $$  | $$  \__/|__/  \ $$| $$  \ $$|__/  \ $$
+#    | $$  | $$ /$$$$$$ /$$$$$/|  $$$$$$$  /$$$$$$/
+#    | $$  | $$|______/|___  $$ \____  $$ /$$____/ 
+#    | $$  | $$    $$ /$$  \ $$ /$$  \ $$| $$      
+#    | $$  |  $$$$$$/|  $$$$$$/|  $$$$$$/| $$$$$$$$
+#    |__/   \______/  \______/  \______/ |________/
+
+# tigo_b2b_bo_billing_v2
+  /customers/{idType}/{id}/bills:
+    get:
+      summary: Find the Customers Bills Collection by the Client Number
+      description: This resource returns Bills Collection optionally can be filtered by the Contract Number
+      operationId: findCustomerBillsByClientNumber
+      tags:
+        - billing
+      parameters:
+        - $ref: "#/parameters/id"
+        - $ref: "#/parameters/idType"
+        - $ref: "#/parameters/offset"
+        - $ref: "#/parameters/limit"
+        - $ref: "#/parameters/contractNumber"
+        - $ref: "#/parameters/authorization"
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/billsCollection'
+        400:
+          description: Bad Request.
+          schema:
+            $ref: '#/definitions/errorBody'
+        401:
+          description: Unauthorized.
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: Not Found.
+          schema:
+            $ref: '#/definitions/errorBody'
+        default:
+          description: Unhandled resource
+          schema:
+            $ref: '#/definitions/errorBody'
+#                                                                  /$$                                  
+#                                                                 | $$                                  
+#  /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$  /$$$$$$/$$$$   /$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$   /$$$$$$$
+# /$$__  $$ |____  $$ /$$__  $$|____  $$| $$_  $$_  $$ /$$__  $$|_  $$_/   /$$__  $$ /$$__  $$ /$$_____/
+#| $$  \ $$  /$$$$$$$| $$  \__/ /$$$$$$$| $$ \ $$ \ $$| $$$$$$$$  | $$    | $$$$$$$$| $$  \__/|  $$$$$$ 
+#| $$  | $$ /$$__  $$| $$      /$$__  $$| $$ | $$ | $$| $$_____/  | $$ /$$| $$_____/| $$       \____  $$
+#| $$$$$$$/|  $$$$$$$| $$     |  $$$$$$$| $$ | $$ | $$|  $$$$$$$  |  $$$$/|  $$$$$$$| $$       /$$$$$$$/
+#| $$____/  \_______/|__/      \_______/|__/ |__/ |__/ \_______/   \___/   \_______/|__/      |_______/ 
+#| $$                                                                                                   
+#| $$                                                                                                   
+#|__/
+
+parameters:
+  id:
+    name: id
+    in: path
+    required: true
+    type: number
+    description: "The Identifier number related to the Type (the Local Client Number in this case)"
+  idType:
+    name: idType
+    in: path
+    required: true
+    type: string
+    description: "Identification Type (related to the Local Client Number)"
+  contractNumber:
+    name: contractNumber
+    in: query
+    required: true
+    description: Contract Number Identification
+    type: integer
+  offset:
+    name: pageInit
+    in: query
+    description: Initial number for pagination
+    type: integer
+  limit:
+    name: quantity
+    in: query
+    description: Number of bills to be returned
+    type: integer
+  authorization:
+    name: Authorization
+    in: header
+    required: true
+    type: string
+    description: 'Access Token provided by the Authorization Url'
+
+
+#        /$$            /$$$$$$  /$$           /$$   /$$     /$$
+#       | $$           /$$__  $$|__/          |__/  | $$    |__/
+#   /$$$$$$$  /$$$$$$ | $$  \__/ /$$ /$$$$$$$  /$$ /$$$$$$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$$
+#  /$$__  $$ /$$__  $$| $$$$    | $$| $$__  $$| $$|_  $$_/  | $$ /$$__  $$| $$__  $$ /$$_____/
+# | $$  | $$| $$$$$$$$| $$_/    | $$| $$  \ $$| $$  | $$    | $$| $$  \ $$| $$  \ $$|  $$$$$$
+# | $$  | $$| $$_____/| $$      | $$| $$  | $$| $$  | $$ /$$| $$| $$  | $$| $$  | $$ \____  $$
+# |  $$$$$$$|  $$$$$$$| $$      | $$| $$  | $$| $$  |  $$$$/| $$|  $$$$$$/| $$  | $$ /$$$$$$$/
+#  \_______/ \_______/|__/      |__/|__/  |__/|__/   \___/  |__/ \______/ |__/  |__/|_______/
+
+definitions:
+  # billingAccountCollection
+  billsCollection:
+    type: object
+    properties:
+        contractNo: 
+          type: string
+          description: Contract number
+        billingAddress: 
+          type: array
+          description: Addresses related to the contract
+          items:
+            $ref: '#/definitions/address'
+        dueDate:
+          type: string
+          description: Account expiration date
+        invoiceCollection:
+          type: array
+          description: Invoices related to the contract
+          items: 
+            $ref: '#/definitions/invoice'
+  # billingAddressAcount         
+  address: 
+    type: object
+    properties: 
+      street: 
+        type: string
+        description: Customer address
+      neighborhood: 
+        type: string
+        description: Neighborhood where the customer lives
+      city: 
+        type: string
+        description: City ??where the consumer lives
+      state: 
+        type: string
+        description: State where the consumer resides
+      country: 
+        type: string
+        description: Country of residence of the consumer
+      zipCode:
+        type: string
+        description: Customer zipCode 
+  #invoiceCollection
+  invoice: 
+    type: object
+    properties: 
+      invoiceContractNo:
+        type: string
+        description: Invoice contract number
+      invoiceNumber:
+        type: string
+        description: Invoice number
+      billPeriod: 
+        type: string
+        description: Billing period
+      invoiceAmount:
+        type: integer
+        description: Total invoice value
+      invoiceStatus:
+        type: boolean
+        description: Invoice Status
+# Error Response
+  errorBody:
+    properties:
+      error:
+        required:
+          - statusCode
+          - message
+        type: object
+        properties:
+          statusCode:
+            type: string
+            description: Http Status Code
+            example: "401"
+          code:
+            type: string
+            description: Same as the http status code
+            example: "401"
+          message:
+            type: string
+            description: General message for the error
+            example: "Not Authorized"
+          developerMessage:
+            type: string
+            description: More precise info about the error
+            example: "Access token was not provided or is invalid"

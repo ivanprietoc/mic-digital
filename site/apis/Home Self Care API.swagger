@@ -1,0 +1,3300 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Home Self Care API
+  description: | 
+    This is the standard API for Self Care functions related to TV, Internet, Voice and all other Home services for Tigo including TigoSTAR and UNE. 
+    We use swagger-2.0 specification
+        
+    What is a ContractId? This is a unique identifier for a relation between our company and our customer.
+    Some customers may have more than one Contract, for example they can have one contract for their vacation home at the beach,
+    and other contract for their everyday home. Most resourcers require a ContractId value on the path.
+    Many methods have a counterpart method that use a compound key using a document type and a document number. 
+    Those methods that are queried by doc-type and customerId (the document number) will return data
+    from several contracts.
+    
+    Additionally, one contract may have different products associated. For example "Internet", "TV", "Telefonía Fija".
+    Each Product will have a base offering and additional offerings that are part of the product. for example the base offering can be "Basic Plan TV" and a second offering can be "HBO".
+    Each offering may have a list of devices associated, typically only the main offer has devices.
+    
+    The Product Hierarchy is like this <br>
+    ProductList -> Product -> OfferingList -> Offering -> DeviceList -> Device    
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Andres Cavallin
+    email: andres.cavallin@millicom.com
+    url: http://www.millicom.com
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: sandbox.api.tigo.com
+basePath: /v1/tigo/home/{country}
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+  
+#####....####...######..##..##...####..
+##..##..##..##....##....##..##..##.....
+#####...######....##....######...####..
+##......##..##....##....##..##......##.
+##......##..##....##....##..##...####..
+
+paths:
+
+#.......##..#####...######..##......##......######..##..##...####..
+#......##...##..##....##....##......##........##....###.##..##.....
+#.....##....#####.....##....##......##........##....##.###..##.###.
+#....##.....##..##....##....##......##........##....##..##..##..##.
+#...##......#####...######..######..######..######..##..##...####..
+
+  /billing/contracts/{contractId}/invoices/:
+    get:
+      summary: Get Invoices by contractId
+      description: |
+        [NOTE] Asking for more than 3 invoices may have an impact on time and accuracy of information.
+        
+        Returns a list of up to 5 most recent invoices for the contractId specified.
+        If this customerId has more than one contract, query each one by contractId to obtain them.        
+      operationId: GetInvoicesByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+        - name: limit
+          in: query
+          description: number of invoices to return
+          required: false
+          type: integer
+          default: 1
+          minimum: 1
+          maximum: 5
+      responses:
+        200:
+          description: Invoices associated with provieded contractId were found
+          schema:
+            $ref: '#/definitions/InvoiceList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `contractId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    post:
+      summary: Create Invoice by contractId
+      description: |
+        Creates a new invoice for the provided contract and for the amount provided in the body. 
+        This may serve to create invoices for partial payments where available.
+      operationId: CreateInvoiceByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              amount:
+                type: number
+                description: Amount of the new invoice that is being created for the provided contractId
+                example: 100000
+      responses:
+        201:
+          description: Invoice associated with provieded contractId sucessfully created
+          schema:
+            type: object
+            properties:
+              invoiceId:
+                type: string
+                description: The new invoiceId created, also known as payment reference or invoice reference.
+                example: "123456789-00"
+#              username:
+#                type: string
+#                description: The user name.
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `contractId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+
+            
+  /billing/contracts/{contractId}/invoices/{invoiceId}:
+    get:
+      summary: Get Invoice by contractId and invoiceId
+      description: Returns the invoice details that matches the corresponding invoiceId and is associated with provided contractId
+      operationId: GetInvoiceByContractIdAndInvoiceId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string      
+        - name: invoiceId
+          in: path
+          description: Unique identifier for the Invoice
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Invoice was found
+          schema:
+            $ref: '#/definitions/Invoice'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /billing/contracts/{contractId}/invoices/{invoiceId}/paymentInfo:
+    get:
+      summary: Get Invoice Payment Info by contractId and invoiceId
+      description: If referenced invoice was payed, this method will retorn details about the payment
+      operationId: GetInvoicePaymentInfoByContractIdAndInvoiceId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string      
+        - name: invoiceId
+          in: path
+          description: Unique identifier for the Invoice
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Invoice was found
+          schema:
+            $ref: '#/definitions/paymentInfo'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /billing/contracts/{contractId}/recurringBillingInfo:
+    get:
+      summary: Get Recurring Billing Info by contractId
+      description: If referenced contract is subscribed to recurring billing, this method will return details about it
+      operationId: GetRecurringBillingInfoByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Recurring Billing Information was found
+          schema:
+            $ref: '#/definitions/RecurringBillingInfo'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    post:
+      summary: Create Recurring Billing Info by contractId
+      description: If referenced contract is not subscribed to recurring billing, this method will add the required payment information
+      operationId: CreateRecurringBillingInfoByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/RecurringBillingInfoRequest'          
+      responses:
+        201:
+          description: Recurring Billing was successfully created
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `contractId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    delete:
+      summary: Delete Recurring Billing Info by contractId
+      description: If referenced contract is subscribed to recurring billing, this method will end the subscription
+      operationId: DeleteRecurringBillingInfoByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/cardTokenizationRequest'          
+      responses:
+        200:
+          description: Recurring Billing was successfully deleted
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `contractId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    put:
+      summary: Update Recurring Billing Info by contractId
+      description: Update referenced contract recurring billing, will overwrite current information
+      operationId: UpdateRecurringBillingInfoByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/RecurringBillingInfoRequest'          
+      responses:
+        200:
+          description: Recurring Billing was successfully updated
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `contractId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'            
+            
+  /billing/contracts/{contractId}/paperlessInvoiceInfo:
+    get:
+      summary: Get Paperless Invoice Info by contractId
+      description: If referenced contract is subscribed to paperless Invoice, this method will return email and other details
+      operationId: GetPaperlessInvoiceInfoByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Invoice was found
+          schema:
+            $ref: '#/definitions/paperlessInvoiceInfo'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: The specified `contractId` is not subscribed to Paperless Invoice
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'            
+    put:
+      summary: Update Paperless Invoice Info by contractId
+      description: |
+        Update the paperless Invoice information for the specified contractId
+      operationId: UpdatePaperlessInvoiceInfoByContractId    
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract for which the paperless Info is defined
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/paperlessInvoiceInfoRequest'
+      responses:
+        200:
+          description: Paperless Invoice was successfully updated
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    post:
+      summary: Create Paperless Invoice Info by contractId
+      description: |
+        Create the paperless Invoice information when there is none, for the specified contractId
+      operationId: CreatePaperlessInvoiceInfoByContractId    
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract for which the paperless Info is defined
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/paperlessInvoiceInfoRequest'
+      responses:
+        201:
+          description: Paperless Invoice subcription was scuessfully created
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    delete:
+      summary: Delete Paperless Invoice Info by contractId
+      description: |
+        Remove the paperless Invoice information for the specified contractId
+      operationId: DeletePaperlessInvoiceInfoByContractId    
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract for which the paperless Info is defined
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/paperlessInvoiceInfoRequest'
+      responses:
+        200:
+          description: Paperless Invoice subscription succesfully removed
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+
+  /billing/contracts/{contractId}/{idType}/{id}/paperlessInvoiceInfo:
+    get:
+      summary: Get Paperless Invoice Info by contractId and idType and Id
+      description: |
+        If referenced contract and its subaccount provided in the id, is using paperless Invoice, this method will return email and other details.
+        Guatemala uses subscriptions as idType and uses a subscriptionNumber as the id.
+        El Salvador uses billingaccounts as idType and uses the billingAccountId as the id. 
+        Colombia does not use this method, only uses the contractId.
+      operationId: GetPaperlessInvoiceInfoByContractIdAndIdTypeAndId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+        - name: idType
+          in: path
+          description: Possible values sor far are subscriptions for Guatemala and billingaccounts for El Salvador.
+          required: true
+          type: string          
+        - name: id
+          in: path
+          description: Unique identifier for the Subscription or main account in the billing system. In Guatemala it may be the phone number, MSISDN or line; known as subscriptionNumber. El Salvador the billing system Id is used, known as billingAccountId.
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Invoice was found
+          schema:
+            $ref: '#/definitions/paperlessInvoiceInfo'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: The specified `contractId` is not subscribed to Paperless Invoice
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'            
+    put:
+      summary: Update Paperless Invoice Info by contractId and idType and Id
+      description: |
+        Update the paperless Invoice information for the specified contractId and subscriptionNumber
+      operationId: UpdatePaperlessInvoiceInfoByContractIdAndIdTypeAndId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract for which the paperless Info is defined
+          required: true
+          type: string
+        - name: idType
+          in: path
+          description: Possible values sor far are subscriptions for Guatemala and billingaccounts for El Salvador.
+          required: true
+          type: string          
+        - name: id
+          in: path
+          description: Unique identifier for the Subscription or main account in the billing system. In Guatemala it may be the phone number, MSISDN or line; known as subscriptionNumber. El Salvador the billing system Id is used, known as billingAccountId.
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/paperlessInvoiceInfoRequest'
+      responses:
+        200:
+          description: Paperless Invoice was successfully updated
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    post:
+      summary: Create Paperless Invoice Info by contractId and idType and Id
+      description: |
+        Create the paperless Invoice information when there is none, for the specified contractId
+      operationId: CreatePaperlessInvoiceInfoByContractIdandAndIdTypeAndId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract for which the paperless Info is defined
+          required: true
+          type: string
+        - name: idType
+          in: path
+          description: Possible values sor far are subscriptions for Guatemala and billingaccounts for El Salvador.
+          required: true
+          type: string          
+        - name: id
+          in: path
+          description: Unique identifier for the Subscription or main account in the billing system. In Guatemala it may be the phone number, MSISDN or line; known as subscriptionNumber. El Salvador the billing system Id is used, known as billingAccountId.
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/paperlessInvoiceInfoRequest'
+      responses:
+        201:
+          description: Paperless Invoice subcription was scuessfully created
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    delete:
+      summary: Delete Paperless Invoice Info by contractId and idType and Id
+      description: |
+        Remove the paperless Invoice information for the specified contractId
+      operationId: DeletePaperlessInvoiceInfoByContractIdandSubscriptionNumber
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract for which the paperless Info is defined
+          required: true
+          type: string
+        - name: idType
+          in: path
+          description: Possible values sor far are subscriptions for Guatemala and billingaccounts for El Salvador.
+          required: true
+          type: string          
+        - name: id
+          in: path
+          description: Unique identifier for the Subscription or main account in the billing system. In Guatemala it may be the phone number, MSISDN or line; known as subscriptionNumber. El Salvador the billing system Id is used, known as billingAccountId.
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/paperlessInvoiceInfoRequest'
+      responses:
+        200:
+          description: Paperless Invoice subscription succesfully removed
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+
+  /billing/doc-type/{docTypeId}/customers/{customerId}/invoices/:
+    get: 
+      summary: Get Invoices by customerId
+      description: | 
+        Returns a list up to the 5 most recent invoices associated to this customerId 
+        for only the first contract associated with this customer. 
+        If this customerId has more than one contract, a query by contractId must be used to obtain them.
+      operationId: GetInvoicesByCustomerId
+      parameters:
+        - name: docTypeId
+          in: path
+          required: true
+          type: string
+        - name: customerId
+          in: path
+          description: Unique identifier for the Customer, may be NationalId or Tax Payer Number
+          required: true
+          type: string
+        - name: limit
+          in: query
+          description: number of invoices to return
+          required: false
+          type: integer
+          default: 1
+          minimum: 1
+          maximum: 5          
+      responses:
+        200:
+          description: Invoices associated with provided customerId were found
+          schema:
+            $ref: '#/definitions/InvoiceList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'         
+  /billing/doc-type/{docTypeId}/customers/{customerId}/invoices/{invoiceId}:
+    get:
+      summary: Get Invoice by customerId and invoiceId
+      description: Returns the invoice details that matches the corresponding invoiceId and is associated with provided customerId
+      operationId: GetInvoiceByCustomerIdAndInvoiceId
+      parameters:
+        - name: docTypeId
+          in: path
+          required: true
+          type: string      
+        - name: customerId
+          in: path
+          description: Unique identifier for the Customer, may be NationalId or Tax Payer Number
+          required: true
+          type: string      
+        - name: invoiceId
+          in: path
+          description: Unique identifier for the Invoice
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Invoice was found
+          schema:
+            $ref: '#/definitions/Invoice'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /billing/doc-type/{docTypeId}/customers/{customerId}/contracts/:
+    get:
+      summary: Get Contracts by customerId
+      description: |
+        Returns a list of all contracts associated to this customerId, 
+        including a contractId that can be used to query invoices, and the address associated with it.
+        Contracts are not grouped by Address.
+      operationId: GetContractsByCustomerId
+      parameters:
+        - name: docTypeId
+          in: path
+          required: true
+          type: string      
+        - name: customerId
+          in: path
+          description: Unique identifier for the Customer
+          required: true
+          type: string
+      responses:
+        200:
+          description: Contracts associated with provided customerId were found
+          schema:
+            $ref: '#/definitions/ContractList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /billing/doc-type/{docTypeId}/customers/{customerId}:
+    get:
+      summary: Get Customer by customerId
+      description: |
+        Return information about the Customer that matches the provided docTypeId and customerId
+      operationId: GetCustomerByCustomerId
+      parameters:
+        - name: docTypeId
+          in: path
+          required: true
+          type: string      
+        - name: customerId
+          in: path
+          description: Unique identifier for the Customer
+          required: true
+          type: string
+      responses:
+        200:
+          description: Customer contact Info for the provided customerId were found
+          schema:
+            $ref: '#/definitions/CustomerExtendedInfo'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /billing/contracts/{contractId}/customers:
+    get:
+      summary: Get Customer by contractId
+      description: |
+        Return information about the Customer that matches the provided contractId
+      operationId: GetCustomerByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string          
+      responses:
+        200:
+          description: Customer contact Info for the provided customerId were found
+          schema:
+            $ref: '#/definitions/CustomerExtendedInfo'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+
+  /billing/contracts/{contractId}/invoices/{invoiceId}/checkOut:
+    get:
+      summary: Get ChekOut by contractId and invoiceId
+      description: |
+        Return CheckOut Information and payment information for the latest attempt made for the contractId and invoiceId provided.
+        PaymentApproved = true only when transaction successfully completed
+      operationId: GetCheckOutByContractIdAndInvoiceId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string      
+        - name: invoiceId
+          in: path
+          description: Unique identifier for the Invoice
+          required: true
+          type: string
+      responses:
+        200:
+          description: CheckOut information for invoiceId provided was found
+          schema:
+            $ref: '#/definitions/CheckOutInfo'
+        202:
+          description: CheckOut information for invoiceId provided found but still in process
+          schema:
+            $ref: '#/definitions/errorBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: CheckOut information about  specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    post:
+      summary: Create CheckOut for contractId and invoiceId
+      description: |
+        Create a new CheckOut instance and retrieve information about how to complete the process and track its temporary status until approved or rejected   
+      operationId: CreateCheckOutForContractIdAndInvoiceId    
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string      
+        - name: invoiceId
+          in: path
+          description: Unique identifier for the Invoice
+          required: true
+          type: string
+#Please check this input parameter
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/CheckOutInfo'
+      responses:
+        201:
+          description: CheckOut was scuessfully created
+          schema:
+            $ref: '#/definitions/CheckOutReference'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /billing/contracts/{contractId}/invoices/{invoiceId}/checkOut/{paymentToken}:
+    get:
+      summary: Get ChekOut by contractId and invoiceId and paymentToken
+      description: |
+        Return CheckOut Information and payment information for the paymentToken provided.
+        PaymentApproved = true only when transaction successfully completed
+      operationId: GetCheckOutByContractIdAndInvoiceIdAndPaymentToken
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string      
+        - name: invoiceId
+          in: path
+          description: Unique identifier for the Invoice
+          required: true
+          type: string
+        - name: paymentToken
+          in: path
+          description: Unique identifier for the payment attempt at Checkout
+          required: true
+          type: string          
+      responses:
+        200:
+          description: CheckOut information for paymentToken provided was found
+          schema:
+            $ref: '#/definitions/CheckOutInfo'
+        202:
+          description: CheckOut information for paymentToken provided found but still in process
+          schema:
+            $ref: '#/definitions/errorBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: CheckOut information about  specified `paymentToken` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'            
+  /billing/contracts/{contractId}/invoices/spool/billingDates/:
+    get:
+      summary: Get Available Spool Billing Dates by contractId
+      description: Return the billing dates that have available invoices on the spool for the specified contract. The billingDate of an invoice is the Creation Date, also known as the billing period
+      operationId: GetAvailableSpoolBillingDatesByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string      
+      responses:
+        200:
+          description: Requested Invoice was found
+          schema:
+            $ref: '#/definitions/BillingDateList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody' 
+  /billing/contracts/{contractId}/invoices/spool/billingDates/{billingDate}/url:
+    get:
+      summary: Get Spool URL by contractId and billingDate
+      description: Return the URL where the spool can be downloaded for the specified contractId and billingDate. The billingDate of an invoice is the Creation Date, also known as the billing period
+      operationId: GetSpoolURLByContractIdAndBillingDate
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+        - name: billingDate
+          in: path
+          description: invoice  Creation Date or billing period formatted as initial date
+          required: true
+          type: string
+          format: date
+      responses:
+        200:
+          description: Requested Invoice was found
+          schema:
+            $ref: '#/definitions/URLaddress'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /billing/contracts/{contractId}/invoices/spool/{invoiceId}/url:
+    get:
+      summary: Get Spool URL by contractId and invoiceId
+      description: Return the encoded PDF for the specified contractId and invoiceId
+      operationId: GetSpoolURLByContractIdAndInvoiceId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+        - name: invoiceId
+          in: path
+          description: Unique identifier for the Invoice
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Invoice was found
+          schema:
+            $ref: '#/definitions/URLaddress'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'            
+  /billing/contracts/{contractId}/invoices/spool/{invoiceId}/pdf:
+    get:
+      produces: [application/pdf]
+      summary: Get Invoice PDF by contractId and invoiceId
+      description: Return the encoded PDF for the specified contractId and invoiceId
+      operationId: GetInvoicePDFByContractIdAndInvoiceId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+        - name: invoiceId
+          in: path
+          description: Unique identifier for the Invoice
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested PDF was found for provided invoiceId
+          schema: 
+            type: file
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /billing/billingaccounts/{billingAccountId}/invoices/spool/{invoiceId}/pdf:
+    get:
+      produces: [application/pdf]
+      summary: Get Invoice PDF by billingAccountId and invoiceId
+      description: Return the encoded PDF for the specified billingAccountId and invoiceId
+      operationId: GetInvoicePDFByBillingAccountIdAndInvoiceId
+      parameters:
+        - name: billingAccountId
+          in: path
+          description: Unique identifier in the billing system. This can speed up searches compared to the contract.
+          required: true
+          type: string
+        - name: invoiceId
+          in: path
+          description: Unique identifier for the Invoice
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested PDF was found for provided invoiceId
+          schema: 
+            type: file
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+            
+  /billing/contracts/{contractId}/balance:
+    get:
+      summary: Get Balance by contractId
+      description: |
+        Get the total outstanding balance from the provided contractId.
+        This amount could be zero, a positive number if the customer owes money or negative if the customer has a credit.
+        If the customer has more than one invoice pending, this amount will reflect the sum of the outstanding amount from those invoices.
+        Example of balances are total debt, sum of all outstanding invoices, credit loss, the total credit loss for the billing account, 
+        over due, the sum of all outstanding invoices that as passed the over due date.        
+      operationId: GetBalanceByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Invoice was found
+          schema:
+            $ref: '#/definitions/BillingBalance'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /billing/contracts/{contractId}/measuringElement/{measuringElement}/localcalls/:
+    get:
+      summary: Get LocalCalls by contractId and measuringElement
+      description: |
+        Return detail about phone calls that were made by the phone provided in the measuringElement parameter during the period between dateFrom and dateTo, both inclusive.
+        This specific method for Colombia only returns the local phone calls.
+      operationId: GetLocalCallsByContractIdAndMeasuringElement
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+        - name: measuringElement
+          in: path
+          description: Unique identifier for which the usage is matched, usually the phone number
+          required: true
+          type: string
+        - name: fromDate
+          in: query
+          description: Results must have a date equal or later than the fromDate
+          required: true
+          type: string
+          format: date
+        - name: toDate
+          in: query
+          description: Results must have a date earlier or equal than the toDate
+          required: true
+          type: string
+          format: date
+      responses:
+        200:
+          description: Requested Invoice was found
+          schema:
+            $ref: '#/definitions/CallDetailList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `measureingElement` has no data
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /billing/contracts/{contractId}/measuringElement/{measuringElement}/calls/:
+    get:
+      summary: Get Calls by contractId and measuringElement
+      description: |
+        Return detail about phone calls that were made by the phone provided in the measuringElement parameter during the period between dateFrom and dateTo, both inclusive.
+      operationId: GetCallsByContractIdAndMeasuringElement
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+        - name: measuringElement
+          in: path
+          description: Unique identifier for which the usage is matched, usually the phone number
+          required: true
+          type: string
+        - name: fromDate
+          in: query
+          description: Results must have a date equal or later than the fromDate
+          required: true
+          type: string
+          format: date
+        - name: toDate
+          in: query
+          description: Results must have a date earlier or equal than the toDate
+          required: true
+          type: string
+          format: date
+      responses:
+        200:
+          description: Requested Invoice was found
+          schema:
+            $ref: '#/definitions/CallDetailList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `measureingElement` has no data
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /billing/contracts/{contractId}/financing:
+    get:
+      summary: Get Financing Details by contractId
+      description: Get financing details like minimum amount and availability for the specified contract
+      operationId: GetFinancingByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Financing info was found
+          schema:
+            $ref: '#/definitions/FinancingInfo'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: The specified `contractId` is not subscribed to Paperless Invoice
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'            
+            
+
+#.......##..#####....####...#####...######..######...####...##......######...####..
+#......##...##..##..##..##..##..##....##....##......##..##..##........##....##..##.
+#.....##....#####...##..##..#####.....##....####....##..##..##........##....##..##.
+#....##.....##......##..##..##..##....##....##......##..##..##........##....##..##.
+#...##......##.......####...##..##....##....##.......####...######..######...####..
+
+  /portfolio/contracts/{contractId}/products/:
+    get:
+      summary: Get Products by contractId
+      description: |
+        Returns a list of products associated with the provided contractId
+      operationId: GetProductsByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string
+        - name: limit
+          in: query
+          description: number of products to return
+          required: false
+          type: integer
+          default: 9
+          minimum: 1
+          maximum: 99
+      responses:
+        200:
+          description: Products associated with provieded contractId were found
+          schema:
+            $ref: '#/definitions/ProductList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `contractId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /portfolio/contracts/{contractId}/products/{productId}:
+    get:
+      summary: Get Product by contractId and productId
+      description: Returns the product details that matches the corresponding productId and is associated with provided contractId
+      operationId: GetProductByContractIdAndProductId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple products into one invoice
+          required: true
+          type: string      
+        - name: productId
+          in: path
+          description: Unique identifier for the Product
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Product was found
+          schema:
+            $ref: '#/definitions/Product'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    post:
+      summary: Add Offering by contractId and productId
+      description: | 
+        Add the specified offeringId (in body) to the provided ContractId and ProductId
+      operationId: AddOfferingByContractIdAndProductId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple products into one invoice
+          required: true
+          type: string      
+        - name: productId
+          in: path
+          description: Unique identifier for the Product. One contract may have more than one of the same Product
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/OfferingRequest'          
+      responses:
+        201:
+          description: Requested Product was found
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+            
+    delete:
+      summary: Delete Offering by contractId and productId
+      description: | 
+        Remove the specified offeringId to the provided ContractId and ProductId
+      operationId: DeleteOfferingByContractIdAndProductId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple products into one invoice
+          required: true
+          type: string      
+        - name: productId
+          in: path
+          description: Unique identifier for the Product. One contract may have more than one of the same Product
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/OfferingRequest'          
+      responses:
+        201:
+          description: Requested Product was found
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+            
+  /portfolio/contracts/{contractId}/products/{productId}/subscriptions/{subscriptionNumber}:
+    get:
+      summary: Get Product by contractId and productId and subscriptionNumber
+      description: | 
+        Returns the product details that matches the corresponding subscriptionNumber and is associated with provided contractId.
+        Since one contract may have more than one subscription of the same product, productId is not unique within the same contract,
+        but subscriptionNumber is indeed unique within the same contract.
+      operationId: GetProductByContractIdAndProductIdAndSubscriptionNumber
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple products into one invoice
+          required: true
+          type: string      
+        - name: productId
+          in: path
+          description: Unique identifier for the Product. One contract may have more than one of the same Product
+          required: true
+          type: string
+        - name: subscriptionNumber
+          in: path
+          description: Unique identifier for the Subscription. This number is unique whithin the Contract
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Product was found
+          schema:
+            $ref: '#/definitions/Product'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+            
+  /portfolio/doc-type/{docTypeId}/customers/{customerId}/:
+    get:
+      summary: Get Products by customerId
+      description: |
+        Returns a list of products associated with the provided docTypeId and customerId
+      operationId: GetProductsByCustomerId
+      parameters:
+        - name: docTypeId
+          in: path
+          required: true
+          type: string
+        - name: customerId
+          in: path
+          description: Unique identifier for the Customer, may be NationalId or Tax Payer Number
+          required: true
+          type: string
+        - name: limit
+          in: query
+          description: number of products to return
+          required: false
+          type: integer
+          default: 9
+          minimum: 1
+          maximum: 99
+      responses:
+        200:
+          description: Products associated with provieded contractId were found
+          schema:
+            $ref: '#/definitions/ProductList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `contractId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'            
+
+#.......##..######...####...##..##..######..##..##..######..######...####...######..######...####...##..##.
+#......##.....##....##..##..##.##...##......###.##....##.......##...##..##....##......##....##..##..###.##.
+#.....##......##....##..##..####....####....##.###....##......##....######....##......##....##..##..##.###.
+#....##.......##....##..##..##.##...##......##..##....##.....##.....##..##....##......##....##..##..##..##.
+#...##........##.....####...##..##..######..##..##..######..######..##..##....##....######...####...##..##.
+
+  /tokenization/doc-type/{docTypeId}/customers/{customerId}/cardtokens/:
+    get:
+      summary: Get cardTokens by customerId
+      description: Retrieve cardToken and information about the tokenized card for the specified docTypeId and customerId
+      operationId: GetCardTokensByCustomerId
+      parameters:
+        - name: docTypeId
+          in: path
+          required: true
+          type: string
+        - name: customerId
+          in: path
+          description: Unique identifier for the Customer, may be NationalId or Tax Payer Number
+          required: true
+          type: string
+        - name: limit
+          in: query
+          description: number of tokens to return.
+          required: false
+          type: integer
+          default: 1
+          minimum: 1
+          maximum: 5
+      responses:
+        200:
+          description: Requested Token Information was found
+          schema:
+            $ref: '#/definitions/TokenInfoList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    post:
+      summary: Create Card Token for customerId
+      description: Create a cardToken representing the provided credit card information for the specified docTypeId and customerId
+      operationId: CreateCardTokenForCustomerId
+      parameters:
+        - name: docTypeId
+          in: path
+          required: true
+          type: string
+        - name: customerId
+          in: path
+          description: Unique identifier for the Customer, may be NationalId or Tax Payer Number
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/CreateCardTokenizationRequest'
+      responses:
+        201:
+          description: Recurring Billing was successfully created
+          schema:
+            $ref: '#/definitions/TokenInfo'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `contractId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    delete:
+      summary: Delete cardToken by customerId
+      description: Delete the Token associated with the provided docTypeId and customerId
+      operationId: DeleteCardTokenByCustomerId
+      parameters:
+        - name: docTypeId
+          in: path
+          required: true
+          type: string
+        - name: customerId
+          in: path
+          description: Unique identifier for the Customer, may be NationalId or Tax Payer Number
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/cardTokenizationRequest'          
+      responses:
+        200:
+          description: Recurring Billing was successfully deleted
+          schema:
+            $ref: '#/definitions/successBody'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `contractId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /portfolio/contracts/{contractId}/products/{productId}/availableoffers:
+    get:
+      summary: Get Available Offers by contractId and productId
+      description: Retrieve a list of offers available to the specified productId (Internet, TV, etc.) and contractId
+      operationId: GetAvailableOffersByContractIdAndProductId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple products into one invoice
+          required: true
+          type: string      
+        - name: productId
+          in: path
+          description: Unique identifier for the Product
+          required: true
+          type: string
+      responses:
+        200:
+          description: Requested Product was found
+          schema:
+            $ref: '#/definitions/CommercialOfferingList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `invoiceId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+            
+
+#.......##...####....####....####...######...####..
+#......##...##..##..##..##..##......##......##.....
+#.....##....##......######...####...####.....####..
+#....##.....##..##..##..##......##..##..........##.
+#...##.......####...##..##...####...######...####..
+  /cases/contracts/{contractId}/servicerequests/:
+    get: 
+      summary: Get Service Requests by contractId
+      description: | 
+        Returns a list of open service requests and their list of actions for the specified contract
+      operationId: GetServiceRequestsByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple products into one invoice
+          required: true
+          type: string
+      responses:
+        200:
+          description: Invoices associated with provided customerId were found
+          schema:
+            $ref: '#/definitions/ServiceRequestList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'         
+
+  /cases/doc-type/{docTypeId}/customers/{customerId}/servicerequests/:
+    get: 
+      summary: Get Service Requests by customerId
+      description: | 
+        Returns a list of open service requests and their list of actions
+      operationId: GetServiceRequestsByCustomerId
+      parameters:
+        - name: docTypeId
+          in: path
+          required: true
+          type: string
+        - name: customerId
+          in: path
+          description: Unique identifier for the Customer, may be NationalId or Tax Payer Number
+          required: true
+          type: string
+      responses:
+        200:
+          description: Invoices associated with provided customerId were found
+          schema:
+            $ref: '#/definitions/ServiceRequestList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'         
+  /cases/doc-type/{docTypeId}/customers/{customerId}/scheduledvisits/:
+    get: 
+      summary: Get Scheduled Visits by customerId
+      description: | 
+        Returns a list of scheduled visits from technicians for installations 
+        and repairs of damages.
+      operationId: GetScheduledVisitsByCustomerId
+      parameters:
+        - name: docTypeId
+          in: path
+          required: true
+          type: string
+        - name: customerId
+          in: path
+          description: Unique identifier for the Customer, may be NationalId or Tax Payer Number
+          required: true
+          type: string
+      responses:
+        200:
+          description: Invoices associated with provided customerId were found
+          schema:
+            $ref: '#/definitions/ScheduledVisitInfo'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'         
+
+#.....##...####...##..##...####...######...####...##...##..######..#####..
+#....##...##..##..##..##..##........##....##..##..###.###..##......##..##.
+#...##....##......##..##...####.....##....##..##..##.#.##..####....#####..
+#..##.....##..##..##..##......##....##....##..##..##...##..##......##..##.
+#.##.......####....####....####.....##.....####...##...##..######..##..##.
+  /customer/contracts/{contractId}/contactinformation:
+    get:
+      summary: Get ContactInformation by contractId
+      description: |
+        Return information the contact that matches the provided contractId
+      operationId: GetContactInformationByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string          
+      responses:
+        200:
+          description: Customer contact Info for the provided customerId were found
+          schema:
+            $ref: '#/definitions/CustomerDetailInfo'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+  /customer/contracts/{contractId}/contactinformation/phones/:
+    get:
+      summary: Get Phones by ContactInformation by contractId
+      description: |
+        Return list of phones from the contact that matches the provided contractId
+      operationId: GetPhonesContactInformationByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string          
+      responses:
+        200:
+          description: Customer contact Info for the provided customerId were found
+          schema:
+            $ref: '#/definitions/CustomerPhoneList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    post:
+      summary: Add Phone to ContactInformation by contractId
+      description: |
+        Add phone to the contact that matches the provided contractId
+      operationId: AddPhonesContactInformationByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string          
+      responses:
+        200:
+          description: Customer contact Info for the provided customerId were found
+          schema:
+            $ref: '#/definitions/CustomerPhone'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    delete:
+      summary: Remove Phone to ContactInformation by contractId
+      description: |
+        Remove phone information the contact that matches the provided contractId
+      operationId: RemovePhonesContactInformationByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string          
+      responses:
+        200:
+          description: Customer contact Info for the provided customerId were found
+          schema:
+            $ref: '#/definitions/CustomerPhone'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    put:
+      summary: Update Phone to ContactInformation by contractId
+      description: |
+        Update phone information the contact that matches the provided contractId
+      operationId: UpdatePhonesContactInformationByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string          
+      responses:
+        200:
+          description: Customer contact Info for the provided customerId were found
+          schema:
+            $ref: '#/definitions/CustomerPhoneUpdate'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'            
+  /customer/contracts/{contractId}/contactinformation/emails/:
+    get:
+      summary: Get Emails from ContactInformation by contractId
+      description: |
+        Return list of emails from the contact that matches the provided contractId
+      operationId: GetEmailsFromContactInformationByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string          
+      responses:
+        200:
+          description: Customer contact Info for the provided customerId were found
+          schema:
+            $ref: '#/definitions/CustomerEmailList'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'            
+    
+    post:
+      summary: Add Email to ContactInformation by contractId
+      description: |
+        Add email to the contact that matches the provided contractId
+      operationId: AddEmailContactInformationByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string          
+      responses:
+        200:
+          description: Customer contact Info for the provided customerId were found
+          schema:
+            $ref: '#/definitions/CustomerEmail'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    delete:
+      summary: Remove Email to ContactInformation by contractId
+      description: |
+        Remove email information the contact that matches the provided contractId
+      operationId: RemoveEmailContactInformationByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string          
+      responses:
+        200:
+          description: Customer contact Info for the provided customerId were found
+          schema:
+            $ref: '#/definitions/CustomerEmail'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'
+    put:
+      summary: Update Email to ContactInformation by contractId
+      description: |
+        Update email information the contact that matches the provided contractId
+      operationId: UpdateEmailsContactInformationByContractId
+      parameters:
+        - name: contractId
+          in: path
+          description: Unique identifier for the contract that may combine multiple services into one invoice
+          required: true
+          type: string          
+      responses:
+        200:
+          description: Customer contact Info for the provided customerId were found
+          schema:
+            $ref: '#/definitions/CustomerEmailUpdate'
+        403:
+          description: Forbidden. Check `error.message` for details
+          schema:
+            $ref: '#/definitions/errorBody'
+        404:
+          description: the specified `customerId` was not found
+          schema:
+            $ref: '#/definitions/errorBody'            
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorBody'        
+
+
+#####...######..######..######..##..##..######..######..######...####...##..##...####..
+##..##..##......##........##....###.##....##......##......##....##..##..###.##..##.....
+##..##..####....####......##....##.###....##......##......##....##..##..##.###...####..
+##..##..##......##........##....##..##....##......##......##....##..##..##..##......##.
+#####...######..##......######..##..##..######....##....######...####...##..##...####..
+
+# AECA. Need to review several things:
+# If it is possible to have different billing systems inside the recurringBillingInfo and the Invoice itself
+# If the facturadorID is used elsewere
+# If id is used for something else, or the referente de pago is enough
+# 
+definitions:
+
+  Invoice:
+    type: object
+    required:
+      - invoiceId
+    properties:
+      invoiceId:
+        type: string
+        description: Unique Identifier for the Invoice
+      contractId:
+        type: string
+        description: Unique Identifier for the Contract associated with this invoice
+      invoiceType:
+        type: string
+        description: type of invoice that is generated to the client. Ex.charges, partial payments.
+      billingId:
+        type: number
+        description: Unique Id of the billing system where this contract exists        
+      billingName:
+        type: string
+        description: Name of the billing system where this contract exists, not as consistent as billingId.
+      streetAddress:
+        type: string
+        description: The main street address for identifying the contract
+      invoiceAmount:
+        type: number
+        description: Total amount of the invoiced, adjusted or not. It's never Zero.
+      dueAmount:
+        type: number
+        description: Amount that must be payed by dueDate. Zero if already payed.
+      minPaymentAmount:
+        type: number
+        description: Minimum amount that can be payed by dueDate, only available to customers with extended credit.  
+      taxAmount:
+        type: number
+        description: tax amount, already included into the invoiceAmount
+      currencyId:
+        type: string
+        description: This is the ISO Id of the currency
+      period:
+        type: string
+        description: Named period for this invoice
+      creationDate:
+        type: string
+        format: date
+        description: Date when the Invoice was generated
+      dueDate:
+        type: string
+        format: date
+        description: Date when the Invoice must be payed without incurring in late fees
+      extendedDueDate:
+        type: string
+        format: date
+        description: Date when the Invoice must be payed including generated late fees
+      hasAdjustments:
+        type: boolean
+        description: True if the invoice has received adjustements so avoid showing the outdated PDF file.   
+      hasPayment:
+        type: boolean
+        description: True if the invoice has been already been payed in full
+      hasRecurringBilling:
+        type: boolean
+        description: True if there is a recurring paymnet method associated to this contract
+      hasPaperlessInvoice:
+        type: boolean
+        description: True if the customer is subscribed to receive only a digital invoice
+      VIP:
+        type: boolean
+        description: True if customer is VIP or Plus
+      billingAccountId:
+        type: number
+        description: The contractId identifier in the local billing system, in case they are different.
+
+  paymentInfo:
+    type: object
+    properties:
+      paymentId:
+        type: string
+        description: Reference to the payment in our internal systems
+      paymentDate:
+        type: string
+        format: date
+        description: Date in which the Invoice was payed
+      paymentAmount:
+        type: number
+        description: Amount of the payed amount, if ommited it assumed the payed amount was the Invoice amount to which this payment refers to.
+      paymentMethod:
+        type: string
+        description: For Colombia the possible values are POL or PSE or FACTURANET BANCOLOMBIA
+      ExternalReference:
+        type: string
+        description: A reference that provides trazability with payment provider
+      bankName:
+        type: string
+        description: The bank institution associated witht he payment
+      cardBrand:
+        type: string
+        description: Franchise or Brand of the registered card
+
+  paperlessInvoiceInfo:
+    type: object
+    required:
+      - email
+    properties:
+      email:
+        type: string
+        description: EMail where the digital Invoice is going to be sent
+      alternateEmail:
+        type: string
+        description: optional secondary email for sending the digital Invoice
+      phoneNumber:
+        type: string
+        description: Phone number associated with the digital invoice
+      billingId:
+        type: number
+        description: Name or Id of the billing system where this contract exists
+      customerId:  
+        type: string
+        description: Unique identifier for the Customer, may be NationalId or Tax Payer Number      
+      documentType:
+        type: string
+        description: Defines if customerId es a National Id, Tax Payer Number, Passport, etc.        
+      subcriptionStatusId:
+        type: integer
+        description: 1 if the customer is subscribed to receive only a digital invoice, other number may represent cancelled, invalid address, etc.
+      subcriptionStatusMessage:
+        type: string
+        description: A description of the status like Active
+
+  paperlessInvoiceInfoRequest:
+    type: object
+    required:
+      - email
+    properties:
+      email:
+        type: string
+        description: EMail where the digital Invoice is going to be sent
+      alternateEmail:
+        type: string
+        description: optional secondary email for sending the digital Invoice
+      phoneNumber:
+        type: string
+        description: Phone number associated with the digital invoice
+      billingId:
+        type: number
+        description: Name or Id of the billing system where this contract exists
+      customerId:  
+        type: string
+        description: Unique identifier for the Customer, may be NationalId or Tax Payer Number      
+      documentType:
+        type: string
+        description: Defines if customerId es a National Id, Tax Payer Number, Passport, etc.
+      registeringAppName:
+        type: string
+        description: Name of the App consuming the services, for auditing processes. Possible values may be MiTigoWeb or CanalesAlternos
+      customerIpAddress:
+        type: string
+        description: IP Address of the customer, reported to the App server, for auditing processes
+      unsubscribeReasonId:
+        type: number
+        description: And Id for the reson the customer decided to unsubscribe. Only needed on the DELETE
+      updateReason:
+        type: string
+        description: A text reason the customer decided to unsubscribe or update the email. Added for SV for the first time.
+      affectRelatedContracts:
+        type: boolean
+        description: When true, related contracts like child accounts or other accounts for the same customer, are also updated
+  RecurringBillingInfo:
+    type: object
+    properties:
+      contractId:
+        type: string
+        description: Unique Identifier for the Contract
+      billingId:
+        type: string
+        description: Name or Id of the billing system where this contract exists
+      billingName:
+        type: string
+        description: Name of the billing system where this contract exists, not as consistent as billingId.
+      cardInfo:
+        type: string
+        description: Last 4 digits of credit card or account. Or full masked number if possibe (first 6 digits, 6 "X" characters and last 4 digits)
+      cardBrand:
+        type: string
+        description: Franchise or Brand of the registered card
+      cardExpirationDate:
+        type: string
+        description: Expiration date, month and year or full date, of the registered card        
+      cardIssuingBank:
+        type: string
+        description: Name of the issuing bank
+      paymentMethod:
+        type: string
+        description: |
+          For Colombia the possible values are Debit = 1 or Credit = 2. This value is use to define some business logic at the front end.
+          For the Regional Payment Gateway this value must be different to that of "Card on file" that is already processed by a local bank institution.
+      registrationDate:
+        type: string
+        format: date
+        description: Date when the payment was registered in ISO 8601 format
+        example: "1985-04-12T23:20:50.52Z"
+      phoneNumber:
+        type: string
+        description: Phone number associated with this payment registration
+      customerIpAddress:
+        type: string
+        description: IP Address from client that submitted the registration, if it was online.
+
+  RecurringBillingInfoRequest:
+    type: object
+    properties:  
+      recurringBillingInfo:
+        $ref: "#/definitions/RecurringBillingInfo"
+      customerInfo:
+        $ref: "#/definitions/CustomerInfo"
+      transactionId:
+        type: string
+        description: Unique Identifier for the Transaction
+      cardToken:
+        type: string
+        description: Token obtained from the Payment Gateway
+        example: "49f594a0-f927-4377-a4b3-6bcf46d99547"
+
+  cardTokenizationRequest:
+    type: object
+    properties:
+      cardToken:
+        type: string
+        description: Token obtained from the Payment Gateway
+        example: "49f594a0-f927-4377-a4b3-6bcf46d99547"
+      customerId:
+        type: string
+        description: Customer unique identifier, usually national identification number or company tax payer number
+      documentType:
+        type: string
+        description: Defines if customerId es a National Id, Tax Payer Number, Passport, etc.
+      transactionId:
+        type: string
+        description: Unique Identifier for the Transaction
+      customerIpAddress:
+        type: string
+        description: IP Address of the customer, reported to the App server, for auditing processes
+
+  CreateCardTokenizationRequest:
+    type: object
+    properties:
+      customerInfo:
+        $ref: "#/definitions/CustomerInfo"
+      address:
+        $ref: "#/definitions/Address"
+      cardDetails:
+        $ref: "#/definitions/CardDetails"
+      transactionId:
+        type: string
+        description: Unique Identifier for the Transaction
+      customerIpAddress:
+        type: string
+        description: IP Address of the customer, reported to the App server, for auditing processes
+
+  CardDetails:
+    type: object
+    properties:
+      cardNumber:
+        type: string
+        example: "4111111111111111"
+      cardExpirationDate:
+        type: string
+        example: "201803"
+      cardVerificationValue:
+        type: string
+        example: "123"
+      cardBrand:
+        type: string
+        example: "VISA"
+      cardPrintedName:
+        type: string
+        example: "Steve Jobs"
+
+  InvoiceList:
+    type: array
+    items:
+      $ref: "#/definitions/Invoice"
+
+  Contract:
+    type: object
+    required:
+      - contractId
+    properties:
+      contractId:
+        type: string
+        description: Unique Identifier for the Contract
+      billingId:
+        type: string
+        description: Name or Id of the billing system where this contract exists
+      streetAddress:
+        type: string
+        description: the main street address associated with the contract
+
+  ContractList:
+    type: array
+    items:
+      $ref: "#/definitions/Contract"
+
+  Address:
+    type: object
+    required:
+      - streetAddress
+    example:
+      streetAddress: 10542 NW 51 ST
+    properties:
+      streetAddress:
+        type: string
+        description: the main street address
+      streetAddressLine2:
+        type: string
+        description: optional additional information about address like suite or floor number
+      stateId:
+        type: string
+        description: Unique Identifier for State, Province or Department of the address. Numeric or two letter depending on each database.
+      stateName:
+        type: string
+        description: Name of the State, Province or Department of the address
+      districtId:
+        type: integer
+        description: Unique Identifier for County, Municipality, Town, District, Sector or Neighborhood        
+      districtName:
+        type: string
+        description: Name of the County, Municipality, Town, District, Sector or Neighborhood
+      cityId:
+        type: integer
+        description: Unique Identifier for City associated with the address        
+      cityName:
+        type: string
+        description: Name of the City associated with the address
+      countryId:
+        type: string
+        description: Unique Identifier for Name of the country using ISO Alpha-2        
+      countryName:
+        type: string
+        description: Name of the country
+      zoneId:
+        type: integer
+        description: Identifier for the internal zone
+      stratumId:
+        type: integer
+        description: Identifier for social stratum
+
+  CustomerInfo:
+    type: object
+    required:
+      - customerId
+    properties:
+      customerId:
+        type: string
+        description: Customer unique identifier, usually national identification number or company tax payer number
+      documentType:
+        type: string
+        description: Defines if customerId es a National Id, Tax Payer Number, Passport, etc.
+      name:
+        type: string
+        description: First Name, Comapny Name or Full Name of the Customer
+      lastName:
+        type: string
+        description: Last Name of the Custoemr
+      email:
+        type: string
+        description: Email of the customer
+      phoneNumber:
+        type: string
+        description: Preferred contact phone number for the customer
+      checksum:
+        type: string
+        description: Some countries may have an additional digit for validating integrity of the customerId.
+        
+  CustomerDetailInfo:
+      type: object
+      required:
+        - customerId
+      properties:
+        
+        name:
+          type: string
+          description: First Name, Comapny Name or Full Name of the Customer
+        lastName:
+          type: string
+          description: Last Name of the Customer
+        Address:
+          $ref: "#/definitions/Address"  
+        checksum:
+          type: string
+          description: Some countries may have an additional digit for validating integrity of the customerId.
+        customerEmailList:
+          $ref: "#/definitions/CustomerEmailList"
+        customerPhoneList:
+          $ref: "#/definitions/CustomerPhoneList"          
+        customerIdentificationList:
+          type: array
+          items:
+            $ref: "#/definitions/CustomerIdentification"
+
+  CustomerEmailList:
+    type: array
+    items:
+      $ref: "#/definitions/CustomerEmail"    
+
+  CustomerPhoneList:
+    type: array
+    items:
+      $ref: "#/definitions/CustomerPhone"    
+       
+  CustomerIdentification:
+    type: object
+    properties:    
+        documentType:
+          type: string
+          description: Defines if customerId is a National Id, Tax Payer Number, Passport, etc.
+        customerId:
+          type: string
+          description: Customer unique identifier, usually national identification number or company tax payer number
+  
+  CustomerEmail:
+    type: object
+    properties:    
+        email:
+          type: string
+          description: Emails of customer.
+        validated:
+          type: boolean
+          description: True if the email was validated. False is not validated yet.          
+  
+  CustomerPhone:
+    type: object
+    properties:    
+        phoneType:
+          type: string
+          description: Defines if the phone is a home phone, work phone,mobile, etc.
+        phone:
+          type: string
+          description: Customer telephone
+        validated:
+          type: boolean
+          description: True if the phone number was validated. False is not validated yet.   
+
+  CustomerPhoneUpdate:
+    type: object
+    properties:    
+        oldPhone:
+          type: string
+          description: Customer telephone
+        newPhoneType:
+          type: string
+          description: Defines if the phone is a home phone, work phone,mobile, etc.
+        newPhone:
+          type: string
+          description: Customer telephone
+                
+  CustomerEmailUpdate:
+    type: object
+    properties:    
+        oldEmail:
+          type: string
+          description: Customer email
+        newEmail:
+          type: string
+          description: Customer email
+          
+  CustomerCharacteristics:
+    type: object
+    properties:    
+      segmentId:
+        type: string
+        description: Internal identifier for customer segmentation
+      segmentName:
+        type: string
+        description: Friendly name for the customer segmentation
+      VIP:
+        type: boolean
+        description: Important customers have access to video call support and other services
+
+  CheckOutInfo:
+    type: object
+    required:
+      - invoiceId
+      - paymentAmount      
+      - customerInfo
+    properties:
+      checkOutId:
+        type: string
+        description: Non-Encrypted Unique identifier returned by the Payment Gateway
+      invoiceId:
+        type: string
+        description: Reference to the payment in our internal systems, usually the invoiceId      
+      paymentDate:
+        type: string
+        format: date
+        description: Date of the invoice that is being payer, may help to prevent frauds or errors
+      paymentAmount:
+        type: number
+        description: Amount of the payed amount, if ommited it assumed the payed amount was the Invoice amount to which this payment refers to.
+      paymentDescription:
+        type: string
+        description: Reference to the payment in our internal systems, usually the invoiceId      
+      returnUrl:
+        type: string
+        description: URL of the application payment result page
+      cancelUrl:
+        type: string
+        description: URL redirect if customer cancels payment
+      paymentMethods:
+        type: array
+        description: Forms of payment allowed for this process
+        items:
+          type: string
+      paymentApproved:
+        type: boolean
+        description: True if approved, false if not approved yet.
+      paymentStatus:
+        type: integer
+        description: |
+          Some payment gateways may give more details on the temporary status during payment, like pending, in process. And also final status like cancelled, rejected or approved.
+      customerInfo:
+        $ref: "#/definitions/CustomerInfo"
+
+  CheckOutReference:
+    type: object
+    required:
+      - paymentToken
+    properties:
+      paymentToken:
+        type: string
+        description: Encrypted unique identifier for the payment attempt. Is tied to an invoiceId and amount
+      checkOutId:
+        type: string
+        description: Non-Encrypted Unique identifier returned by the Payment Gateway
+      redirectUrl:
+        type: string
+        description: Url where the user needs to be redirected, including the paymentToken to be presented
+
+# Delete this definition after the change to Product is completed
+  Product_Old_Please_Deleteme:
+    type: object
+    required:
+      - productId
+      - productName 
+      - offeringId
+      - offeringName
+    properties:
+      productId:
+        type: number
+        description: The Id of the product, its unique only within the contract scope
+        # Products[i].ProductId
+      productName:
+        type: string
+        description: The common name of the product like Internet or TV
+        # Products[i].Name
+      subscriptionNumber:
+        type: string
+        description: Unique identifier for the subscription
+        # Products[i].Assets[j].SubscriptionNumber
+      measuringElement:
+        type: string
+        description: Unique identifier for the subscription used for metering, like the phone number
+        # Products[i].Assets[j].MeasuringElement
+      offeringId:
+        type: string
+        description: An Id that identifies the offering in the backend platform
+        # Products[i].Assets[j].ProductOffering.Id
+      offeringName:
+        type: string
+        description: The common name of the offering or plan, like 5GB or Premium
+        # Products[i].Assets[j].ProductOffering.Name
+      offeringLegacyId:
+        type: string
+        description: Alternate Id for the offering or plan
+        # Products[i].Assets[j].ProductOffering.Legacy.Id
+      offeringLegacyName:
+        type: string
+        description: Alternate name of the product plan
+        # Products[i].Assets[j].ProductOffering.Legacy.Name
+      serviceAddress:
+        type: string
+        description: The address where the user receive the service, may be different to the one where the bill is received
+        # Accounts[i].LocalAddress[j].Address
+        # Sí el valor es “Address could not be normalized” utilizar
+        # Accounts[i].LocalAddress[j].Legacy[k].Address
+      active:
+        type: boolean
+        description: Indicates if the product is currently active for the the contract, can be used to draw colors
+        # If Products[i].Assets[j].Status == 'Active' then active = true else active = false
+      status:
+        type: string
+        description: A descriptive name of the satus of this service to provide better feedback about why the service is inactive, like for example Suspedido por falta de Pago
+        # Products[i].Assets[j].Status
+      fromDate: 
+        type: string
+        format: date
+        description: Date when the customer first received this service
+        # Products[i].Assets[j].FromDate
+      DeviceList:
+        type: array
+        description: Products associated with provieded contractId were found
+        items:
+          $ref: '#/definitions/DeviceList'
+
+  Product:
+    type: object
+    required:
+      - productId
+      - productName 
+    properties:
+      productId:
+        type: number
+        description: The Id of the product, its unique only within the contract scope
+        # Products[i].ProductId
+      productName:
+        type: string
+        description: The common name of the product like Internet or TV
+        # Products[i].Name
+      serviceAddress:
+        type: string
+        description: The address where the user receive the service, may be different to the one where the bill is received
+        # Accounts[i].LocalAddress[j].Address
+        # Sí el valor es “Address could not be normalized” utilizar
+        # Accounts[i].LocalAddress[j].Legacy[k].Address
+      offeringList:
+        type: array
+        description: List of Offerings, Plans and Services contracted by the Customer
+        items:
+          $ref: '#/definitions/Offering'
+
+  # The ProductList is equivalent to all Assets returned, but we don't use the Asset concept here.
+  # In MDM, Assets are grouped by Product, but we don't have the Asset concept in this API
+  # So I suggest iterating through each Product returned by MDM and create
+  # one Product for each asset found, and use information from the parent Product to fill it out
+  # This was changed April 2017 so one Product may have one or more Assets named Offerings
+  ProductList:
+    type: array
+    items:
+      $ref: "#/definitions/Product"
+
+  Offering:
+    type: object
+    required:
+      - offeringId
+      - offeringName
+      - subscriptionNumber
+    properties:
+      subscriptionNumber:
+        type: string
+        description: Unique identifier for the subscription
+        # Products[i].Assets[j].SubscriptionNumber
+        # payload.listAddress.listTask.listService.identification
+        # GT: service
+        # GT: internalId
+      measuringElement:
+        type: string
+        description: Unique identifier for the subscription used for metering, like the phone number
+        # Products[i].Assets[j].MeasuringElement
+      offeringId:
+        type: string
+        description: An Id that identifies the offering in the backend platform
+        # Products[i].Assets[j].ProductOffering.Id
+        # payload.listAddress.listTask.listService.serviuceIdentification
+        # GT: packageCode
+      offeringName:
+        type: string
+        description: The common name of the offering or plan, like 5GB or Premium
+        # Products[i].Assets[j].ProductOffering.Name
+        # payload.listAddress.listTask.listService.description
+        # GT: serviceDescription
+        # GT: packageName
+      offeringLegacyId:
+        type: string
+        description: Alternate Id for the offering or plan
+        # Products[i].Assets[j].ProductOffering.Legacy.Id
+      offeringLegacyName:
+        type: string
+        description: Alternate name of the product plan
+        # Products[i].Assets[j].ProductOffering.Legacy.Name
+        # payload.listAddress.listTask.listService.name
+        # GT: serviceAlternateDescription
+        # GT: internalId
+      active:
+        type: boolean
+        description: Indicates if the product is currently active for the the contract, can be used to draw colors
+        # If Products[i].Assets[j].Status == 'Active' then active = true else active = false
+      status:
+        type: string
+        description: A descriptive name of the satus of this service to provide better feedback about why the service is inactive, like for example Suspedido por falta de Pago
+        # Products[i].Assets[j].Status
+        # GT: status
+      registrationDate: 
+        type: string
+        format: date
+        description: Added for Guatemala. Date when the service was registered, created or purchased.
+        # GT: registrationDate
+      fromDate: 
+        type: string
+        format: date
+        description: Date when the customer stopped or will stop receiving the service. For prepaid addons, date when the service expires.
+        # Products[i].Assets[j].FromDate
+        # GT: activationDate
+        # GT: initialDate
+      toDate: 
+        type: string
+        format: date
+        description: Date when the customer stopped or will stop receiving the service. For prepaid addons, date when the service expires.
+        # GT: expirationDate
+      offeringType:
+        type: string
+        description: The type of offering, could be Prepaid, Postpaid, etc.
+        # GT: source of information, supplementaryServices or prepaidPackages
+      mediaType:
+        type: string
+        description: The type of connection, could be Copper, Coaxial, Cable Modem, HFC, Satellite
+        # Products[i].Assets[j].MediaType
+        # GT: collectionType        
+      currencyId:
+        type: string
+        description: This is the ISO Id of the currency  
+        # GT: currency        
+      priceAmount:
+        type: number
+        description: regular price for the bundled item
+        # GT: serviceCost
+      bundledItemList:
+        type: array
+        description: List of additional offerings or plans. Currently not used by any country.
+        items:
+          $ref: '#/definitions/BundledItem'
+      deviceList:
+        type: array
+        description: List of devices associated with the subscription
+        items:
+          $ref: '#/definitions/Device'        
+      contract:
+        $ref: "#/definitions/Contract"
+        
+        
+  OfferingList:
+    type: array
+    items:
+      $ref: "#/definitions/Offering"
+
+  BundledItem:
+    type: object
+    required:
+      - bundledItemId
+      - bundledItemName
+    properties:
+      bundledItemId:
+        type: number
+        description: Internal numeric identifier for the bundled item
+        # serviceId
+      bundledItemName:
+        type: string
+        description: Name of the bundled item
+        # serviceDescription
+      bundledItemLegacyName:
+        type: string
+        description: Alternate name of the bundled item 
+        # serviceAlternateDescription
+      currencyId:
+        type: string
+        description: This is the ISO Id of the currency  
+        # currency
+      priceAmount:
+        type: number
+        description: regular price for the bundled item
+        # serviceCost
+      fromDate:
+        type: string      
+        format: date
+        description: Date when the customer first received the bundled item
+        # initialDate
+      toDate:
+        type: string      
+        format: date
+        description: Date when the customer last received the bundled item
+        # expirationDate
+      bundledItemType:
+        type: string
+        description: Type of the bundled item
+        # collectionType  
+  
+  Device:
+    type: object
+    required:
+      - deviceId
+      - serialNumber
+    properties:
+      deviceId:
+        type: number
+        description: Internal numeric identifier for the device
+        # Products[i].Assets[j].Equipment[k] <=> Equipments[x].Id
+      serialNumber:
+        type: string
+        description: Serial number unique to the model and manufacturer, usually visible  on the device
+        # Equipments[x].SerialNumber
+      modelId:
+        type: number
+        description: Numeric identifier for the model
+        # Equipments[x].ModelId
+      modelName:
+        type: string
+        description: Name of the model of the device
+        # Equipments[x].Model
+      manufacturer:
+        type: string
+        description: Name of the manufacturer
+        # Equipments[x].Manufacturer
+      type:
+        type: string
+        description: Type of Media or Device
+        # Equipments[x].Type
+      active:
+        type: boolean
+        description: Indicates if the device is currently active for the the contract, can be used to draw colors
+        # Hardcoded to true
+      status:
+        type: string
+        description: A descriptive name of the satus of this device to provide better feedback about why the service is inactive, like for example Sin Señal
+        # Hardcoded to "Active"
+      extendedUniqueIdentifier:
+        type: string
+        description: An identifier whose limited uses include a 48-bit or 64-bit identifier used to address hardware interfaces within existing IEEE 802 or IEEE 802-like networking applications (MAC address)
+        # Equipments[x].InternationalIdentityOne
+  DeviceList:
+    type: array
+    items:
+      $ref: "#/definitions/Device"
+
+  CustomerExtendedInfo:
+    type: object
+    properties:  
+      customerInfo:
+        $ref: "#/definitions/CustomerInfo"
+      customerCharacteristics:
+        $ref: "#/definitions/CustomerCharacteristics"
+
+  docTypeEnum:
+    type: string
+    enum:
+      - cc
+      - ce
+      - nit
+      - pas
+      - ne
+
+  BillingDateList:
+    type: array
+    items:
+      type: string
+      format: date
+
+  URLaddress:
+    type: object
+    required:
+      - URL
+    properties:
+      URL:
+        type: string
+        description: And URL address like htttp://www.tigo.com
+
+  TokenInfo:
+    type: object
+    required:
+      - cardToken
+    properties:
+      cardToken:
+        type: string
+        description: Token obtained from the Payment Gateway
+        example: "49f594a0-f927-4377-a4b3-6bcf46d99547"
+      cardInfo:
+        type: string
+        description: Last 4 digits of credit card or account
+      cardBrand:
+        type: string
+        description: Franchise or Brand of the registered card
+      cardPrintedName:
+        type: string
+        example: "Steve Jobs"
+# Currently not returned, we can add it when it does
+#      cardExpirationDate:
+#        type: string
+#        example: "201803"        
+
+  TokenInfoList:
+    type: array
+    items:
+      $ref: "#/definitions/TokenInfo"
+
+  BillingBalance:
+    type: object
+    required:
+      - dueAmount
+    properties:
+      dueAmount:
+        type: number
+        description: Amount that must be payed by dueDate.
+      minPaymentAmount:
+        type: number
+        description: Minimum Amount that the user must pay before dueDate.      
+      dueDate:
+        type: string
+        format: date
+        description: Date when the dueAmount must be payed without incurring in late fees
+      lastUpdateDate:
+        type: string
+        format: date
+        description: Date when the balance last changed, could be the date of the most recent invoice.
+      period:
+        type: string
+        description: Named period for this pending balance.
+      dueInvoicesCount:
+        type: number 
+        description: Number of invoices with pending amounts.
+      hasRecurringBilling:
+        type: boolean
+        description: True if there is a recurring paymnet method associated to this contract
+        
+  CallDetail:
+    type: object
+    required:
+      - destination
+      - duration
+    properties:
+      origin:
+        type: string
+        description: Originating number, usually the same measuring element.
+      destination:
+        type: string
+        description: Called number, the one that received the call
+      destinationCityName:
+        type: string
+        description: Name of the City where the destination number resides
+      destionationStateName:
+        type: string
+        description: Name of the State or Province where the call was recevied
+      dateTimeStart:
+        type: string
+        format: dateTime
+        description: Date and time when the call started
+      dateTimeEnd:
+        type: string
+        format: dateTime
+        description: Date and time when the call ended
+      duration:
+        type: number
+        format: float
+        description: Duation in minutes of the call
+      destinationType:
+        type: string
+        description: A tag that helps differiantiate between national calls, international calls and mobile phone calls
+      operatorName:
+        type: string
+        description: When known, gives information about the mobile network operator that received the call
+      callOffering:
+        type: string
+        description: Name or reference of the plan or offering that was used to bill the call
+  CallDetailList:
+    type: array
+    items:
+      $ref: "#/definitions/CallDetail"
+
+  ServiceRequest:
+    type: object
+    required:
+      - serviceRequestId
+      - duration
+    properties:
+      serviceId:
+        type: string
+        description: IDServicioDano
+        example: "100720458"
+      creationDate:
+        type: string
+        format: dateTime
+        description: FechaIngreso
+        example: "2017-05-11 00:03:15"
+      productName:
+        type: string
+        description: NombreProducto
+        example: "Internet"
+      serviceRequestId:
+        type: string
+        description: NumeroSR
+        example: "1-4151217807437"
+      status:
+        type: string
+        description: Estado
+        example: "En progreso"
+      requestType:
+        type: string
+        description: SubTipo
+        example: "Reparacion Integral"
+      subStatus:
+        type: string
+        description: SubEstado
+        example: "Agendado"
+      externalId:
+        type: string
+        description: NumeroCUN
+        example: "3612170000999108"
+      asignedGroup:
+        type: string
+        description: Grupo
+        example: "PREMISAS DEL CLIENTE"
+      ServiceActionList:
+        type: array
+        description: "<ListOfAction/>"
+        items:
+          $ref: '#/definitions/ServiceAction'
+  ServiceRequestList:
+    type: array
+    items:
+      $ref: "#/definitions/ServiceRequest"
+      
+
+  ServiceAction:
+    type: object
+    properties:
+      serviceActionId:
+        type: string
+        description: Id of the Service Action
+        example: "50159"
+        #payload.listAddress.listTask.idOrder
+      status:
+        type: string
+        description: Estado
+        example: "Agendado"
+        #payload.listAddress.listTask.taskState
+      type:
+        type: string
+        description: Tipo of Schedule, Recuperación or Agendamiento
+        example: "Agenda"
+        #payload.listAddress.listTask.category
+      startDateTime:
+        type: string
+        format: dateTime
+        description: "FechaInicial + ' ' + HoraInicial"
+        example: "2017-05-13 07:30:00"
+        #payload.listAddress.listTask.appointmentDate + #payload.listAddress.listTask.appointmentStart
+      endDateTime:
+        type: string
+        format: dateTime
+        description: "FechaFinal + ' ' HoraFinal"
+        example: "2017-05-13 08:00:00"
+        #payload.listAddress.listTask.appointmentDate + #payload.listAddress.listTask.appointmentFinish
+      scheduleType:
+        type: string
+        description: TipoFranja
+        example: "Hora Fija"
+      technicianName:
+        type: string
+        description: Complete Name of Technician Visiting
+        example: "Pedro Perez"
+        #payload.listAddress.listTask.engineer.name
+      technicianDocumentId:
+        type: string
+        description: Cedula or Identification Number of Technician
+        example: "9638523698"
+        #payload.listAddress.listTask.engineer.identification
+      technicianPictureURL:
+        type: string
+        description: URL of Technician Picture Image
+        example: "http://createglobalweb.com/chamilo/fotostecnicos/14652342.jpg"
+        #payload.listAddress.listTask.engineer.photo
+      technicianContractorCompany:
+        type: string
+        description: Name of the Contractor Company the Technician belongs to
+        example: "Home Depot"
+        #payload.listAddress.listTask.engineer.company
+      SimplifiedOfferingList:
+        type: array
+        description: List of Offerings in their simplified Version
+        items:
+          $ref: '#/definitions/SimplifiedOffering'
+        # One item for each item in listService
+
+  ScheduledVisit:
+    type: object
+    properties:
+      contractId:
+        type: string
+        description: Unique identifier for the contract that may combine multiple services into one invoice
+        # No contract yet, please ommit for the moment
+      serviceAddressId:
+        type: string
+        description: Unique Identifier of the Address where the service is going to be provided
+        example: "1428567250"
+        #payload.listAddress.id
+      serviceAddress:
+        type: string
+        description: Address where the service is going to be provided
+        example: "KR 23 # 73 - 101"
+        #payload.listAddress.name
+      serviceCityName:
+        type: string
+        description: Name of the City where the address belongs to
+        example: "Cali"
+        #payload.listAddress.city
+      serviceStateName:
+        type: string
+        description: Name of the State, Province or Department where the address belongs to
+        example: "Valle del Cauca"
+        #payload.listAddress.department
+      neighborhood:
+        type: string
+        description: Name of the neighborhood, area or zonification reference
+        example: "Los Guaduales"
+        #payload.listAddress.neighborhood        
+      serviceActionList:
+        type: array
+        description: List of Actions to be Performed at the address
+        items:
+          $ref: '#/definitions/ServiceAction'
+        # One item for each item in listTask
+  ScheduledVisitInfo:
+    type: object
+    properties:
+      customerId:
+        type: string
+        description: Id of the Customer receiving the service, could be the CC, NIT or Passport number
+        example: "71345628"
+        #payload.identification
+      msisdn:
+        type: string
+        description: Tigo Mobile Phone Number of the customer. Colombia used both msisdn and Phone Number.
+        example: "3005679536"
+        #paylopad.msisdn
+      customerName:
+        type: string
+        description: Name of the Customer receiving the service
+        #payload.name
+      customerPhone:
+        type: string
+        description: Phone number of the Customer receiving the service
+        #payload.phone
+      scheduledVisitList:
+        type: array
+        items:
+          $ref: "#/definitions/ScheduledVisit"
+
+  SimplifiedOffering:
+    type: object
+    required:
+      - offeringId
+      - offeringName
+    properties:
+      offeringId:
+        type: string
+        description: An Id that identifies the offering in the backend platform
+        # payload.listAddress.listTask.listService.serviceIdentification
+      offeringName:
+        type: string
+        description: The common name of the offering or plan, like 5GB or Premium
+        # payload.listAddress.listTask.listService.description
+      offeringType:
+        type: string
+        description: Type of transaction, new installation, repairing, recover equipment
+        # payload.listAddress.listTask.listService.transactionType
+      subscriptionNumber:
+        type: string
+        description: Unique identifier for the subscription. Needed only if the customer already is subscribed
+        # payload.listAddress.listTask.listService.identification
+      measuringElement:
+        type: string
+        description: Unique identifier for the subscription used for metering, like the phone number
+      productId:
+        type: number
+        description: The Id of the product that this offering belongs to
+      productName:
+        type: string
+        description: The common name of the product this offering belongs to, like Internet or TV
+        # payload.listAddress.listTask.listService.name
+      details:
+        type: string
+        description: Details about the offering
+        # payload.listAddress.listTask.listService.activity
+
+  FinancingInfo:
+    type: object
+    required:
+      - isAvailable    
+    properties:
+      isAvailable:
+        type: boolean
+        description: True if Financing is availbe for the specified contract, or false if the customer can't finance the owed amount.
+      minPaymentAmount:
+        type: number
+        description: Minimum amount that can be payed by dueDate, only available to customers with extended credit.  
+
+  CommercialOfferingList:
+    type: array
+    items:
+      $ref: "#/definitions/CommercialOffering"
+  CommercialOffering:
+    type: object
+    required:
+      - offeringId
+      - offeringName
+    properties:
+      offeringId:
+        type: string
+        description: An Id that identifies the offering in the backend platform
+      offeringName:
+        type: string
+        description: The common name of the offering or plan, like 5GB or Premium
+      includedAssets:
+        type: string
+        description: Short summary of included assets for display to user
+      offeringDescription:
+        type: string
+        description: Text explaining the offering and its coditions.        
+      productId:
+        type: string
+        description: The Id of the product that this offering belongs to
+      productName:
+        type: string
+        description: The common name of the product this offering belongs to, like Internet or TV        
+      amount:
+        type: number
+        description: regular price for the offer
+      currencyId:
+        type: string
+        description: This is the ISO Id of the currency
+      promotionAmount:
+        type: number
+        description: special price for this offer        
+      promotionDescription:
+        type: string
+        description: Optional text explaining conditions regulating the discounted price, like limited period of time. If they are not included in the Description.
+      promotionCode:
+        type: string
+        description: Code that may be required when requesting the upsell/upgrade
+      promotionStatus:
+        type: string
+        description: Code that may help presenting the promotion to the customer        
+      mediaType:
+        type: string
+        description: The type of connection, could be Copper, Coaxial, Cable Modem, HFC, Satellite
+      details:
+        type: string
+        description: |
+          Additional Details about the offering. Use this field for to map capabilities like ' "HD_Capable": "S" '
+
+  OfferingRequest:
+    type: object
+    required:
+      - offeringId    
+    properties:
+      offeringId:
+        type: string
+        description: An Id that identifies the offering in the backend platform
+      promotionCode:
+        type: string
+        description: Code that may be required when requesting the upsell/upgrade
+
+  successBody:
+    type: object
+    properties:
+      response:
+        type: string
+        description: Generic response from platform. May be ommited.
+      message:
+        type: string
+        description: Success Message from platform. May be ommited.
+
+  errorBody:
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string

@@ -8,7 +8,7 @@
         <meta name="author" content="Ivan Prieto">
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Amazon - Millicom</title>
+        <title>Amazon - Millicom Digital</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -38,7 +38,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="..">Millicom</a>
+            <a class="navbar-brand" href="..">Millicom Digital</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -98,15 +98,6 @@
                             
 <li >
     <a href="../sports/">Tigo Sports</a>
-</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">APIs <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../apiMobileSelfCare2.0/">API Mobile Selfcare 2.0</a>
 </li>
                         </ul>
                     </li>
@@ -291,70 +282,80 @@ end
 <p>Mi tigo mockups: https://projects.invisionapp.com/share/9C8H21I3R
 Tigo activation flow: https://invis.io/65LX4R9NE7S</p>
 <h3 id="activation">Activation</h3>
-<pre><code class="sequenceDiagram">title Amazon &amp; Tigo integration - ACTIVATION FLOW 
+<pre><code class="mermaid">sequenceDiagram
 
-note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Identification
+participant END_USER
+participant MITIGO
+participant TIGO_BCK
+participant DOCOMO
+participant AMZ
 
-END_USER-&gt;MITIGO: login w/ mobile or fixed account (email+passw)
-MITIGO-&gt;END_USER: ok
-END_USER-&gt;MITIGO: open add-Ons section
+note over END_USER,AMZ: discovery and Login
+END_USER--&gt;MITIGO: login w/ mobile or fixed account (email+passw)
+MITIGO--&gt;END_USER: ok
+END_USER--&gt;MITIGO: open add-Ons section
 
-note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Elegibility
-MITIGO-&gt;TIGO_BCK: getAddOnOffers()
-TIGO_BCK-&gt;MITIGO: Amazon Prime Video
-END_USER-&gt;MITIGO: Click on Buy/Add addOn:Amz Video
+note over END_USER,AMZ: Elegibility
+MITIGO--&gt;TIGO_BCK: getAddOnOffers()
+TIGO_BCK--&gt;MITIGO: Amazon Prime Video
+END_USER--&gt;MITIGO: Click on Buy/Add addOn:Amz Video
 
-note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Subscribe
+note over END_USER,AMZ: Subscribe
+MITIGO--&gt;DOCOMO: subscribe, alias=mobileid/homeid
+DOCOMO--&gt;AMZ: subscribe
+AMZ--&gt;DOCOMO: ok
+DOCOMO--&gt;MITIGO: ok,redirectUrl to activate
+MITIGO--&gt;END_USER: redirect to landing
+MITIGO--&gt;END_USER: sms or email to complete the flow later
 
-MITIGO-&gt;DOCOMO: subscribe
-DOCOMO-&gt;AMZ: subscribe
-AMZ-&gt;DOCOMO: ok
-DOCOMO-&gt;MITIGO: OK, redirectUrl to activate
-MITIGO-&gt;END_USER: redirect to landing
-MITIGO-&gt;END_USER: sms or email to complete the flow later
+note over END_USER,AMZ: Association journey and Activation
+END_USER--&gt;DOCOMO: click on ACTIVATE, go to redirectUrl
+AMZ--&gt;AMZ: sign in/sign up
+AMZ--&gt;DOCOMO: activation successful
+DOCOMO--&gt;TIGO_BCK: activation successful alias=123
 
-note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Association journey + Activation
-END_USER-&gt;DOCOMO: click on ACTIVATE, go to redirectUrl
-AMZ-&gt;AMZ: sign in/sign up
-AMZ-&gt;DOCOMO: deactivation successful
-DOCOMO-&gt;TIGO_BCK: activation successful alias=123
+TIGO_BCK--&gt;TIGO_BCK: POST AddOn(tigo_account, product_id) 
 
-TIGO_BCK-&gt;TIGO_BCK: POST AddOn(tigo_account, product_id) 
-
-note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: end of flow
+AMZ--&gt;END_USER: amazon welcome mail
+TIGO_BCK--&gt;END_USER: tigo welcome mail/sms
 </code></pre>
 
 <h3 id="termination">Termination</h3>
 <p>This flow can begin on:
 - end user
-- agent
+- tigo
 - amazon</p>
 <p>Here we describe the flow from the end_user.
-Agents may use mitigo-agent.
-Amazon flow doesn't require user interaction.
-On plan migration or change number user will be disconected thru APIs and needs to begin the association flow again with the new number. This process will be manage by the country.</p>
+Agents may use mitigo-agent. Amazon flow doesn't require user interaction.</p>
+<p>On plan migration, early churn or change number user will be disconected thru APIs and needs to begin the association flow again with the new number. This process will be manage by the country.</p>
 <p>Tigo deactivation flow: https://invis.io/65LX4R9NE7S</p>
-<pre><code class="sequenceDiagram">title Amazon &amp; Tigo integration - DEACTIVATION FLOW 
+<pre><code class="mermaid">sequenceDiagram
 
-note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Identification
+participant END_USER
+participant MITIGO
+participant TIGO_BCK
+participant DOCOMO
+participant AMZ
 
-END_USER-&gt;MITIGO: login w/ mobile or fixed account (email+passw)
-MITIGO-&gt;END_USER: ok
-END_USER-&gt;MITIGO: open addOns
+note over END_USER,AMZ: discovery and Login
+END_USER-&gt;&gt;+MITIGO: login w/ mobile or fixed account (email+passw)
+MITIGO-&gt;&gt;-END_USER: ok
+END_USER-&gt;&gt;MITIGO: open addOns
 
-note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Add-on Status
-MITIGO-&gt;TIGO_BCK: getAddOns(user_id)
-TIGO_BCK-&gt;MITIGO: User_id has: Amazon Prime Video, HBO, ETC.
-END_USER-&gt;MITIGO: Click on Deactivate addOn:Amz Video
+note over END_USER,AMZ: Add-on Status
+MITIGO-&gt;&gt;TIGO_BCK: getAddOns(user_id)
+TIGO_BCK-&gt;&gt;MITIGO: User_id has: Amazon Prime Video, HBO, ETC.
+END_USER-&gt;&gt;MITIGO: Click on Deactivate addOn:Amz Video
 
-note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: Deactivate
+note over END_USER,AMZ: Deactivate
 
-MITIGO-&gt;DOCOMO: deactivate user_id, amz_video
-DOCOMO-&gt;AMZ: deactivate 
-MITIGO-&gt;TIGO_BCK: DELETE addon(tigo_account, product_id) 
-MITIGO-&gt;END_USER: your subscription has been deactivated
+MITIGO-&gt;&gt;DOCOMO: deactivate alias=mobileid/homeid, amz_video
+DOCOMO-&gt;&gt;AMZ: deactivated
+DOCOMO-&gt;&gt;TIGO_BCK: deactivated
+TIGO_BCK-&gt;&gt;TIGO_BCK: DELETE addon(tigo_account, product_id) 
+TIGO_BCK-&gt;&gt;END_USER: your subscription has been deactivated
+AMZ-&gt;&gt;END_USER: your subscription has been deactivated
 
-note over END_USER,MITIGO,TIGO_BCK,DOCOMO,AMZ: end of flow
 </code></pre>
 
 <h2 id="implementation-details">Implementation Details</h2>
@@ -466,6 +467,7 @@ Based on <a href="https://drive.google.com/file/d/1PPU5YNCoKs31-29OGS2GZd_URpw9F
 </ul>
 </li>
 <li>File: Subscription Eligibility file-based interface (docomo chp 7)</li>
+<li>File: deactivations, early churn.</li>
 <li>Processes for:<ul>
 <li>Queues for activations/deactivations on zendesk (in case activate/deactivate api is not available)</li>
 <li>Reconciliation</li>

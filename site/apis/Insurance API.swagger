@@ -1,0 +1,100 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Insurance API
+  description: | 
+    This is the standard API for Self Care functions related to insurance services for Tigo. 
+    We use swagger-2.0 specification
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Jose Colman
+    email: jose.colman@edge.com.py
+    url: https://edge.com.py/
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: qa.api.tigo.com
+basePath: /v1/tigo/mobile/{country}/
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+
+
+  
+paths:
+
+  /insurances/{msisdn}:
+    get:
+      summary: Get a list of insurances acquired
+      description: Get a detailed list of insurances acquired by the user based on his msisdn
+      operationId: GetInsuranceDetail
+      parameters:
+        - name: msisdn
+          in: path
+          description: Unique identifier for the customer
+          required: true
+          type: string
+        
+      responses:
+        200:
+          description: Requested Insurance list was found
+          schema:
+            $ref: '#/definitions/insuranceList'
+        400:
+          description: Invalid Parameters
+          schema:
+            $ref: '#/definitions/proxyError' 
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/error'
+
+definitions:
+
+  insuranceList:
+    type: array
+    items:
+      $ref: "#/definitions/insurance"
+
+  insurance:
+    type: object
+    properties:
+      model:
+        type: string
+        description: ""
+      insuranceType:
+        type: string
+        description: ""
+      allowedClaims:
+        type: string
+        description: ""
+      incurredClaims:
+        type: number
+        description: ""
+      insurancePremium:  
+        type: string
+        description: ""    
+  error:
+    properties:
+      errorType:
+        type: string
+      code:
+        type: integer
+        format: int32
+      description:
+        type: string
+      reason:
+        type: string
+
+  proxyError:
+    properties:
+      statusCode:
+        type: integer
+        format: int32
+      message:
+        type: string
+      developerMessage:
+        type: string

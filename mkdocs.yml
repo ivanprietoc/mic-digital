@@ -15,8 +15,6 @@ pages:
     - 'Mi tigo B2B': 'tbo.md'
     - 'Tigo USA': 'usa.md'
     - 'Tigo Sports': 'sports.md'
-- APIs:
-    - 'API Mobile Selfcare 2.0': 'apiMobileSelfCare2.0.md'
 - Procesess:
     - 'How we work': 'processes/devBestPractices.md'
 dev_addr: 127.0.0.1:8001
