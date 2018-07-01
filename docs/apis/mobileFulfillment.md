@@ -26,8 +26,8 @@
 
 Swagger: 
 
-- [Fulfillment]('TigoMobileProductsFulfillmentAPI.md')
+- [Fulfillment](TigoMobileProductsFulfillmentAPI.md)
 
-- [VAS]('apis/TigoMobileVASProductManagementAPI.md')
+- [VAS](apis/TigoMobileVASProductManagementAPI.md)
 
 ## Example request/response
