@@ -71,17 +71,347 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/apis/mobileFulfillment/</loc>
+     <loc>/apis/Mobile Money API - Accounts.swagger/</loc>
      <lastmod>2018-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/</loc>
+     <loc>/apis/AppCallbackPayment Gateway.swagger/</loc>
      <lastmod>2018-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/</loc>
+     <loc>/apis/AppLinks/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/B2B Selfcare API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/BSSPilot/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Balance Management Service Api.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/CallUsageDetails.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/ConvergentPaymentAPI.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/DeezerTelco/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Exacaster Next Best Offer API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Fulfillment Payment Gateway.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/GT Point Of Sale [PoS] API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Home Self Care API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Insurance API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Internet Usage Data.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Mobile Money API - Accounts.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Mobile Money API - Transactions.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Mobile Money API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Mobile Self Care API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Modify Favorite Number Api.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Music Freedom SV API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Netflix partner/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Next Best Action-Offers.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/OpenTIGO - Billing/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/OpenTIGO - CRM/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/OpenTIGO - Common/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/OpenTIGO - Favorites/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/OpenTIGO - Lend/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/OpenTIGO - Push/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/OpenTIGO - Utils/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/OpenTigo Balance Management/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Payment Gateway.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Recharge Service Api.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/SMS Usage Details.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Self Care API - DESIGN ONLY.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Selfcare API Billing.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Selfcare API CRM.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Selfcare API Transactions.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Sim Swap Events.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/SimCard management API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Tigo - Activation API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Tigo - Profiling API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Tigo Churn.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Tigo MSISDN Identification API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Tigo Mobile PY Up-Selling Information API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Tigo Money HN.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Tigo OAuth 2.0 API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/TigoMobileProductsFulfillmentAPI/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/TigoMobileVASProductManagementAPI/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/UNE Accounts api.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/UberPOS.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/Virtual Appointemnts and Geolocation API.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/apiMobileSelfCare2.0/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/opentigosmartapps-tigoExchange/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo-events-publisher-node.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_b2b_bo_billing_v2.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_b2b_bo_selfcare_crm_v2.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_b2b_co_billing_v2.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_b2b_co_selfcare_crm_v2.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_b2b_co_selfcare_transactions_v2.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_b2b_gt_selfcare_crm_v2.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_b2b_hn_billing_v2.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_co_customerSupport_v1.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_co_selfcare_crm_v1.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_crm_co_digitalDocuments_v2.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_home_sv_billing_v1.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_mobile_bo_crm_v1.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_mobile_gt_roaming_v1.swagger/</loc>
+     <lastmod>2018-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/apis/tigo_sv_selfcare_crm_v1.swagger/</loc>
      <lastmod>2018-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>

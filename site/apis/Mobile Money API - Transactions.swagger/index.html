@@ -1,0 +1,2939 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ivan Prieto">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Mobile Money API   Transactions.swagger - Millicom Digital</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Millicom Digital</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../catalog/">Catalogo</a>
+</li>
+                            
+<li >
+    <a href="../../amazon/">Amazon</a>
+</li>
+                            
+<li >
+    <a href="../../tigoshop/">Shop</a>
+</li>
+                            
+<li >
+    <a href="../../mitigo/">Mi Tigo</a>
+</li>
+                            
+<li >
+    <a href="../../bot/">Bot</a>
+</li>
+                            
+<li >
+    <a href="../../mfs/">MFS</a>
+</li>
+                            
+<li >
+    <a href="../../mitigo-agent/">Mi Tigo Agent</a>
+</li>
+                            
+<li >
+    <a href="../../pos/">Distribution</a>
+</li>
+                            
+<li >
+    <a href="../../tbo/">Mi tigo B2B</a>
+</li>
+                            
+<li >
+    <a href="../../usa/">Tigo USA</a>
+</li>
+                            
+<li >
+    <a href="../../sports/">Tigo Sports</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enablers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../..">Tigo ID</a>
+</li>
+                            
+<li >
+    <a href="../../payment-gtw/">Payment Gateway</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Apis <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../Mobile Money API - Accounts.swagger/">Mobile Money API   Accounts.swagger</a>
+</li>
+                            
+<li >
+    <a href="../AppCallbackPayment Gateway.swagger/">AppCallbackPayment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../AppLinks/">AppLinks</a>
+</li>
+                            
+<li >
+    <a href="../B2B Selfcare API.swagger/">B2B Selfcare API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../BSSPilot/">BSS Pilot</a>
+</li>
+                            
+<li >
+    <a href="../Balance Management Service Api.swagger/">Balance Management Service Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../CallUsageDetails.swagger/">CallUsageDetails.swagger</a>
+</li>
+                            
+<li >
+    <a href="../ConvergentPaymentAPI.swagger/">ConvergentPaymentAPI.swagger</a>
+</li>
+                            
+<li >
+    <a href="../DeezerTelco/">Deezer Telco</a>
+</li>
+                            
+<li >
+    <a href="../Exacaster Next Best Offer API.swagger/">Exacaster Next Best Offer API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Fulfillment Payment Gateway.swagger/">Fulfillment Payment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../GT Point Of Sale [PoS] API.swagger/">GT Point Of Sale [PoS] API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Home Self Care API.swagger/">Home Self Care API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Insurance API.swagger/">Insurance API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Internet Usage Data.swagger/">Internet Usage Data.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API - Accounts.swagger/">Mobile Money API   Accounts.swagger</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Mobile Money API   Transactions.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API.swagger/">Mobile Money API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Self Care API.swagger/">Mobile Self Care API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Modify Favorite Number Api.swagger/">Modify Favorite Number Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Music Freedom SV API.swagger/">Music Freedom SV API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Netflix partner/">Netflix partner</a>
+</li>
+                            
+<li >
+    <a href="../Next Best Action-Offers.swagger/">Next Best Action Offers.swagger</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Billing/">OpenTIGO   Billing</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - CRM/">OpenTIGO   CRM</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Common/">OpenTIGO   Common</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Favorites/">OpenTIGO   Favorites</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Lend/">OpenTIGO   Lend</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Push/">OpenTIGO   Push</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Utils/">OpenTIGO   Utils</a>
+</li>
+                            
+<li >
+    <a href="../OpenTigo Balance Management/">OpenTigo Balance Management</a>
+</li>
+                            
+<li >
+    <a href="../Payment Gateway.swagger/">Payment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Recharge Service Api.swagger/">Recharge Service Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../SMS Usage Details.swagger/">SMS Usage Details.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Self Care API - DESIGN ONLY.swagger/">Self Care API   DESIGN ONLY.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API Billing.swagger/">Selfcare API Billing.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API CRM.swagger/">Selfcare API CRM.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API Transactions.swagger/">Selfcare API Transactions.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Sim Swap Events.swagger/">Sim Swap Events.swagger</a>
+</li>
+                            
+<li >
+    <a href="../SimCard management API.swagger/">SimCard management API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo - Activation API.swagger/">Tigo   Activation API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo - Profiling API.swagger/">Tigo   Profiling API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Churn.swagger/">Tigo Churn.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo MSISDN Identification API.swagger/">Tigo MSISDN Identification API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Mobile PY Up-Selling Information API.swagger/">Tigo Mobile PY Up Selling Information API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Money HN.swagger/">Tigo Money HN.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo OAuth 2.0 API.swagger/">Tigo OAuth 2.0 API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../TigoMobileProductsFulfillmentAPI/">TigoMobileProductsFulfillmentAPI</a>
+</li>
+                            
+<li >
+    <a href="../TigoMobileVASProductManagementAPI/">TigoMobileVASProductManagementAPI</a>
+</li>
+                            
+<li >
+    <a href="../UNE Accounts api.swagger/">UNE Accounts api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../UberPOS.swagger/">UberPOS.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Virtual Appointemnts and Geolocation API.swagger/">Virtual Appointemnts and Geolocation API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../apiMobileSelfCare2.0/">apiMobileSelfCare2.0</a>
+</li>
+                            
+<li >
+    <a href="../opentigosmartapps-tigoExchange/">opentigosmartapps tigoExchange</a>
+</li>
+                            
+<li >
+    <a href="../tigo-events-publisher-node.swagger/">Tigo events publisher node.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_bo_billing_v2.swagger/">Tigo b2b bo billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_bo_selfcare_crm_v2.swagger/">Tigo b2b bo selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_billing_v2.swagger/">Tigo b2b co billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_selfcare_crm_v2.swagger/">Tigo b2b co selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_selfcare_transactions_v2.swagger/">Tigo b2b co selfcare transactions v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_gt_selfcare_crm_v2.swagger/">Tigo b2b gt selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_hn_billing_v2.swagger/">Tigo b2b hn billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_co_customerSupport_v1.swagger/">tigo co customerSupport v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_co_selfcare_crm_v1.swagger/">Tigo co selfcare crm v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_crm_co_digitalDocuments_v2.swagger/">tigo crm co digitalDocuments v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_home_sv_billing_v1.swagger/">Tigo home sv billing v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_mobile_bo_crm_v1.swagger/">Tigo mobile bo crm v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_mobile_gt_roaming_v1.swagger/">Tigo mobile gt roaming v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_sv_selfcare_crm_v1.swagger/">Tigo sv selfcare crm v1.swagger</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Procesess <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../processes/devBestPractices/">How we work</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../Mobile Money API - Accounts.swagger/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Mobile Money API.swagger/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#mobile-money-api-transactions">Mobile Money API - Transactions</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#transactions">/transactions</a></li>
+            <li><a href="#transactionstransactionreference">/transactions/{transactionReference}</a></li>
+            <li><a href="#responsesclientcorrelationid">/responses/{clientCorrelationId}</a></li>
+            <li><a href="#transactionstransactionreferencereversals">/transactions/{transactionReference}/reversals</a></li>
+            <li><a href="#models">Models</a></li>
+            <li><a href="#basetransaction">baseTransaction</a></li>
+            <li><a href="#requesttransaction">requestTransaction</a></li>
+            <li><a href="#responsetransaction">responseTransaction</a></li>
+            <li><a href="#internationaltransfer">internationalTransfer</a></li>
+            <li><a href="#internationaltransferresponse">internationalTransferResponse</a></li>
+            <li><a href="#basereversal">baseReversal</a></li>
+            <li><a href="#requestreversal">requestReversal</a></li>
+            <li><a href="#responsereversal">responseReversal</a></li>
+            <li><a href="#accountstatus">accountStatus</a></li>
+            <li><a href="#accountbalance">accountBalance</a></li>
+            <li><a href="#accountname">accountName</a></li>
+            <li><a href="#statemententry">statementEntry</a></li>
+            <li><a href="#bill">bill</a></li>
+            <li><a href="#basedebitmandate">baseDebitMandate</a></li>
+            <li><a href="#requestdebitmandate">requestDebitMandate</a></li>
+            <li><a href="#responsedebitmandate">responseDebitMandate</a></li>
+            <li><a href="#link">link</a></li>
+            <li><a href="#responselink">responseLink</a></li>
+            <li><a href="#basequotation">baseQuotation</a></li>
+            <li><a href="#requestquotation">requestQuotation</a></li>
+            <li><a href="#responsequotation">responseQuotation</a></li>
+            <li><a href="#requeststate">requestState</a></li>
+            <li><a href="#kyc">kyc</a></li>
+            <li><a href="#name">name</a></li>
+            <li><a href="#iddocument">idDocument</a></li>
+            <li><a href="#address">address</a></li>
+            <li><a href="#quote">quote</a></li>
+            <li><a href="#metadata">metadata</a></li>
+            <li><a href="#error">error</a></li>
+            <li><a href="#heartbeat">heartbeat</a></li>
+            <li><a href="#response">response</a></li>
+            <li><a href="#patch">patch</a></li>
+            <li><a href="#accountidentifierbase">accountIdentifierBase</a></li>
+            <li><a href="#accountcategory">accountCategory</a></li>
+            <li><a href="#bankaccountno">bankAccountNo</a></li>
+            <li><a href="#accountrank">accountRank</a></li>
+            <li><a href="#identityalias">identityAlias</a></li>
+            <li><a href="#iban">iban</a></li>
+            <li><a href="#accountid">accountId</a></li>
+            <li><a href="#msisdn">msisdn</a></li>
+            <li><a href="#payref">payRef</a></li>
+            <li><a href="#swiftbic">swiftbic</a></li>
+            <li><a href="#transactiontypeenum">transactionTypeEnum</a></li>
+            <li><a href="#countriesenum">countriesEnum</a></li>
+            <li><a href="#currenciesenum">currenciesEnum</a></li>
+            <li><a href="#genderenum">genderEnum</a></li>
+            <li><a href="#idtypeenum">idTypeEnum</a></li>
+            <li><a href="#deliverymethodenum">deliveryMethodEnum</a></li>
+            <li><a href="#frequencytypeenum">frequencyTypeEnum</a></li>
+            <li><a href="#accountstatusenum">accountStatusEnum</a></li>
+            <li><a href="#mandatestatusenum">mandateStatusEnum</a></li>
+            <li><a href="#linkstatusenum">linkStatusEnum</a></li>
+            <li><a href="#linkmodeenum">linkModeEnum</a></li>
+            <li><a href="#quotationstatusenum">quotationStatusEnum</a></li>
+            <li><a href="#patchopenum">patchOpEnum</a></li>
+            <li><a href="#requeststatestatusenum">requestStateStatusEnum</a></li>
+            <li><a href="#notificationmethodenum">notificationMethodEnum</a></li>
+            <li><a href="#servicestatusenum">serviceStatusEnum</a></li>
+            <li><a href="#errorcategoryenum">errorCategoryEnum</a></li>
+            <li><a href="#errorcodeenum">errorCodeEnum</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="mobile-money-api-transactions">Mobile Money API - Transactions</h1>
+<p>Millicom version of GSMA Harmonized Mobile Money API for handling Transactions.<br>
+The Transactions API is used for all operations involving mobile money financial transactions.<br>
+This currently covers:
+- Creating a Transaction <strong>(POST)</strong>
+- Returning a representation of one or more transactions <strong>(GET)</strong></p>
+<p>Transactions are used for a wide range of use cases including Merchant Payments, International Transfers, Domestic Transfers and agent cash-in/cash-out. Reversals and Adjustments are also treated as Transactions.</p>
+<p>URI is consistent for all transactions and format is:</p>
+<p><code>/transactions</code></p>
+<p>See [https://mmapi.gsma.com/transactions/]</p>
+<p><strong>Version:</strong> 1.0.0</p>
+<p><strong>Terms of service:</strong><br />
+https://mmapi.gsma.com/</p>
+<p><strong>Contact information:</strong><br />
+Andres Cavallin<br />
+https://mmapi.gsma.com/<br />
+andres.cavallin@millicom.com  </p>
+<p><strong>License:</strong> <a href="http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT">MIT</a></p>
+<h3 id="security">Security</h3>
+<hr />
+<p><strong>applicationLevel_auth</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>apiKey</th>
+<th><em>API Key</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Description</td>
+<td>This API Key is a secret known only to the API Client and the API Gateway server. Never store in an App. API Key secret is used instead of oauth2 grant type "client credentials" to avoid conflict with user level security which uses oauthv2 (Open ID Connect)</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>api_key</td>
+</tr>
+<tr>
+<td>In</td>
+<td>header</td>
+</tr>
+</tbody>
+</table>
+<p><strong>userLevel_auth</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>oauth2</th>
+<th><em>OAuth 2.0</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Description</td>
+<td>Any party in possession of a bearer token (a "bearer") can use it to get access to the associated resources (without demonstrating possession of a cryptographic key). To prevent misuse, bearer tokens need to be protected from disclosure in storage and in transport. This token is going to be passed to the Mobile Money Backend who supports it.  If not supported, this token can be used to retrieve proper credentials to be presented to the backend (MFS ID)</td>
+</tr>
+<tr>
+<td>Flow</td>
+<td>accessCode</td>
+</tr>
+<tr>
+<td>Authorization URL</td>
+<td>https://mic-test.apigee.net/oauth/v2/authorize?response_type=code{&amp;redirect_uri,client_id,scope,state,nonce,prompt,display,login_hint}</td>
+</tr>
+<tr>
+<td>Token URL</td>
+<td>https://myapp.tigo.com/tigoid/callback</td>
+</tr>
+<tr>
+<td><strong>Scopes</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>openid</td>
+<td>Used to identify this API is compliant with the OpenID Connect 1.0 specification</td>
+</tr>
+<tr>
+<td>profile</td>
+<td>May be useful for self registering the user. Includs name, birthday, photo on Tigo ID, not the KWY</td>
+</tr>
+<tr>
+<td>email</td>
+<td>Email address of the user used to register on Tigo ID, not the KYC</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>The MSISDN. Also the account identifier on the Mobile Money Platform</td>
+</tr>
+<tr>
+<td>write:transactions</td>
+<td>Create or update transactions that affect the balance</td>
+</tr>
+<tr>
+<td>read:transactions</td>
+<td>Query existing transactions that affected the wallet</td>
+</tr>
+<tr>
+<td>write:accounts</td>
+<td>Modify information about the account like name or PIN</td>
+</tr>
+<tr>
+<td>read:accounts</td>
+<td>Read information about the account like balance or address</td>
+</tr>
+<tr>
+<td>read:companioncard</td>
+<td>Elevated privileges to see the full Companion Card Info. Must expire in a short period.</td>
+</tr>
+<tr>
+<td>write:companioncard</td>
+<td>Elevated privileges to associate a Companion card to the account. Requires two factor authentication.</td>
+</tr>
+<tr>
+<td>merchantpayment</td>
+<td>Grant permission to a third party merchant to charge (debit) the account. One time use.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>legacyUserLevel_auth</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>basic</th>
+<th><em>Basic</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Description</td>
+<td>If basic credentials are present, token based authentication is ommited.  Use only as a fallback method when there is no support for Open ID Connect at the Mobile Money Platform nor MFS ID deployment. Best practice is for PIN to be encrypted and salted at the source using a pre-shared key and symmetric algorithm obtained during provisioning of the API Client. The API Client (App Server) can then pass this decrypted credentials to the API Gateway.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transactions">/transactions</h3>
+<hr />
+<h5 id="post"><strong><em>POST</em></strong></h5>
+<p><strong>Summary:</strong> Create A Transaction</p>
+<p><strong>Description:</strong> Provided with a valid object representation, this endpoint allows for a new transaction to be created.
+All transactions are composed of</p>
+<p><strong>correlationId</strong> An object with information for tracking the transaction during and after completion. Also known as Server Correlation, and is only for asynchronous calls.<br>
+<strong>date</strong> current date and time.<br>
+<strong>baseTransaction</strong> How much money, from whom, to whom and why its being moved.</p>
+<p>There is only one transaction verb, and the transaction type and subtype are part of the parameters.</p>
+<p>Available transactions Types include :
+  - billpay 
+  - deposit
+  - withdrawal
+  - merchantPayment
+  - internationalMoneyTransfer</p>
+<p>Non-GSMA transactions types include:
+  - requestTransfer
+  - requestMerchantPayment
+  - topUp</p>
+<p>Additionaly the transaction Sub-Type includes:
+  - synchronous (default)
+  - asynchronous</p>
+<p>For information on asynchronous behaviour and error codes see https://mmapi.gsma.com/behaviour/</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-CorrelationID</td>
+<td>header</td>
+<td>Header parameter to uniquely identify the request</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>header</td>
+<td>Header parameter to indicate the date and time that the message was originated</td>
+<td>Yes</td>
+<td>string (datetime)</td>
+</tr>
+<tr>
+<td>requestTransaction</td>
+<td>body</td>
+<td>Represents the request body of a transaction</td>
+<td>Yes</td>
+<td><a href="#requesttransaction">requestTransaction</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td></td>
+</tr>
+<tr>
+<td>202</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td></td>
+</tr>
+<tr>
+<td>401</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td></td>
+</tr>
+<tr>
+<td>500</td>
+<td></td>
+</tr>
+<tr>
+<td>503</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Security</strong></p>
+<table>
+<thead>
+<tr>
+<th>Security Schema</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>applicationLevel_aut</td>
+<td></td>
+</tr>
+<tr>
+<td>userLevel_auth</td>
+<td>write:transactions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transactionstransactionreference">/transactions/{transactionReference}</h3>
+<hr />
+<h5 id="get"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> View A Transaction</p>
+<p><strong>Description:</strong> This endpoint returns the current state of a transaction</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date</td>
+<td>header</td>
+<td>Header parameter to indicate the date and time that the message was originated</td>
+<td>Yes</td>
+<td>string (datetime)</td>
+</tr>
+<tr>
+<td>transactionReference</td>
+<td>path</td>
+<td>Path variable to uniquely identify the transaction</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td></td>
+</tr>
+<tr>
+<td>401</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td></td>
+</tr>
+<tr>
+<td>500</td>
+<td></td>
+</tr>
+<tr>
+<td>503</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="responsesclientcorrelationid">/responses/{clientCorrelationId}</h3>
+<hr />
+<h5 id="get_1"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> View transaction state</p>
+<p><strong>Description:</strong> This endpoint returns a specfic response.
+In some circumstances, the client may not have received the final representation of the resource for which it attempted to create. For example, a proxy server issue may have resulted in a HTTP 5xx response but the provider may have actually successfully completed the request. The /Responses API allows a client to identify and retrieve the final representation of the resource assuming that the resource was created. In order to get a representation, the client issues a GET /Responses/{Client Correlation ID}. The provider will then match the client correlation ID to the appropriate resource and return a link to that resource. If the resource is not found for the given correlation ID then a HTTP 404 will be returned.        </p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date</td>
+<td>header</td>
+<td>Header parameter to indicate the date and time that the message was originated</td>
+<td>Yes</td>
+<td>string (datetime)</td>
+</tr>
+<tr>
+<td>clientCorrelationId</td>
+<td>path</td>
+<td>Path variable to uniquely identify a response</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td></td>
+</tr>
+<tr>
+<td>401</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td></td>
+</tr>
+<tr>
+<td>500</td>
+<td></td>
+</tr>
+<tr>
+<td>503</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="transactionstransactionreferencereversals">/transactions/{transactionReference}/reversals</h3>
+<hr />
+<h5 id="post_1"><strong><em>POST</em></strong></h5>
+<p><strong>Summary:</strong> Create A Reversal</p>
+<p><strong>Description:</strong> Provided with a valid object representation, this endpoint allows for a new reversal to be created.
+The Reversals API is used to reverse a financial transaction. The originating transaction reference must be provided in the URI in order to identify the transaction to be reversed. For a partial reversal, the amount needs to be supplied. It should be noted however that API Providers may not support partial reversals and will return an error if a partial amount is supplied. 
+This API can also be used for adjustments.
+Note that only reversal creation is supported. For viewing reversals, the Transactions API should be used. Format is:
+<code>/transactions/{Original Transaction Reference}/reversals</code></p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X-CorrelationID</td>
+<td>header</td>
+<td>Header parameter to uniquely identify the request</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>header</td>
+<td>Header parameter to indicate the date and time that the message was originated</td>
+<td>Yes</td>
+<td>string (datetime)</td>
+</tr>
+<tr>
+<td>transactionReference</td>
+<td>path</td>
+<td>Path variable to uniquely identify the transaction</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>requestReversal</td>
+<td>body</td>
+<td>Represents the request body of a reversal</td>
+<td>Yes</td>
+<td><a href="#requestreversal">requestReversal</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td></td>
+</tr>
+<tr>
+<td>202</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td></td>
+</tr>
+<tr>
+<td>401</td>
+<td></td>
+</tr>
+<tr>
+<td>404</td>
+<td></td>
+</tr>
+<tr>
+<td>500</td>
+<td></td>
+</tr>
+<tr>
+<td>503</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="models">Models</h3>
+<hr />
+<h3 id="basetransaction">baseTransaction</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>double</td>
+<td>Principle Transaction Amount.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#currenciesenum">currenciesEnum</a></td>
+<td>Currency of the principal transaction amount.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#transactiontypeenum">transactionTypeEnum</a></td>
+<td>The harmonised Transaction Type</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>subType</td>
+<td>string</td>
+<td>A non-harmonised sub-classification of the type of transaction. Values are not fixed and usage will vary according to Provider.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>descriptionText</td>
+<td>string</td>
+<td>Free format text description of the transaction provided by the client. This can be provided as a reference for the receiver on the SMS and on the account statement.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>requestDate</td>
+<td>dateTime</td>
+<td>The creation date and time of the transaction as supplied by the client.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>oneTimeCode</td>
+<td>string</td>
+<td>A one-time code that can be supplied in the request or can be generated in the response depending upon the use case.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>geoCode</td>
+<td>string</td>
+<td>Indicates the geographic location from where the transaction was initiated.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>debitParty</td>
+<td>[ <a href="#accountidentifierbase">accountIdentifierBase</a> ]</td>
+<td>A collection of key/value pairs that enable the debit party to be identified. Keys include MSISDN and Wallet Identifier.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>creditParty</td>
+<td>[ <a href="#accountidentifierbase">accountIdentifierBase</a> ]</td>
+<td>A series of key/value pairs that enable the credit party to be identified. Keys include MSISDN and Wallet Identifier.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>senderKyc</td>
+<td><a href="#kyc">kyc</a></td>
+<td>A collection of properties detailing the KYC of the transaction Sender, typically used for International Transfers.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>recipientKyc</td>
+<td><a href="#kyc">kyc</a></td>
+<td>A collection of properties detailed the KYC of the transaction Recipient, typically used for International Transfers.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>originalTransactionReference</td>
+<td>string</td>
+<td>For reversals and refunds, this property indicates the transaction which is the subject of the reversal.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>servicingIdentity</td>
+<td>string</td>
+<td>The property is used to identify the servicing identity for ?present? transactions, e.g. till, POS ID, assistant ID</td>
+<td>No</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>[ <a href="#metadata">metadata</a> ]</td>
+<td>A collection of key/value pairs. These can be used to populate additional transaction properties.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="requesttransaction">requestTransaction</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>requestTransaction</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="responsetransaction">responseTransaction</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>responseTransaction</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="internationaltransfer">internationalTransfer</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>originCountry</td>
+<td><a href="#countriesenum">countriesEnum</a></td>
+<td>The originating country of the transaction, i.e. the country where the transaction commenced.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>quotationReference</td>
+<td>string</td>
+<td>Reference for the quotation that was provider to the sender.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>quoteId</td>
+<td>string</td>
+<td>The specific quote associated with the quotation.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>receivingCountry</td>
+<td><a href="#countriesenum">countriesEnum</a></td>
+<td>Destination Country of international remittance.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>remittancePurpose</td>
+<td>string</td>
+<td>Property providing a description of the reason for the international remittance.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>relationshipSender</td>
+<td>string</td>
+<td>Indicates the relationship (if any) between the sender and the receiver.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>deliveryMethod</td>
+<td><a href="#deliverymethodenum">deliveryMethodEnum</a></td>
+<td>The recipient delivery method as chosen by the sender.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="internationaltransferresponse">internationalTransferResponse</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>internationalTransferResponse</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="basereversal">baseReversal</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>double</td>
+<td>Principle Transaction Amount.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#currenciesenum">currenciesEnum</a></td>
+<td>Currency of the principal transaction amount.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#transactiontypeenum">transactionTypeEnum</a></td>
+<td>The harmonised Transaction Type</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>subType</td>
+<td>string</td>
+<td>A non-harmonised sub-classification of the type of transaction. Values are not fixed and usage will vary according to Provider.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>descriptionText</td>
+<td>string</td>
+<td>Free format text description of the transaction provided by the client. This can be provided as a reference for the receiver on the SMS and on the account statement.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>requestDate</td>
+<td>dateTime</td>
+<td>The creation date and time of the transaction as supplied by the client.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>geoCode</td>
+<td>string</td>
+<td>Indicates the geographic location from where the transaction was initiated.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>debitParty</td>
+<td>[ <a href="#accountidentifierbase">accountIdentifierBase</a> ]</td>
+<td>A collection of key/value pairs that enable the debit party to be identified. Keys include MSISDN and Wallet Identifier.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>creditParty</td>
+<td>[ <a href="#accountidentifierbase">accountIdentifierBase</a> ]</td>
+<td>A series of key/value pairs that enable the credit party to be identified. Keys include MSISDN and Wallet Identifier.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>servicingIdentity</td>
+<td>string</td>
+<td>The property is used to identify the servicing identity for ?present? transactions, e.g. till, POS ID, assistant ID</td>
+<td>No</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>[ <a href="#metadata">metadata</a> ]</td>
+<td>A collection of key/value pairs. These can be used to populate additional transaction properties.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="requestreversal">requestReversal</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>requestReversal</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="responsereversal">responseReversal</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>responseReversal</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="accountstatus">accountStatus</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td><a href="#accountstatusenum">accountStatusEnum</a></td>
+<td>Indicates a simplified representation of the account state. This will be shown as ?Available? or ?Unavailable?. A state of ?Unavailable? means that the account is in a state that does not allow posting of transactions. Unregistered indicates that although not available a transaction created with the account identifier(s) will result an unregistered voucher creation.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>subStatus</td>
+<td>string</td>
+<td>Property can be used to return a provider-specific status for the account.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accountbalance">accountBalance</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentBalance</td>
+<td>double</td>
+<td>Current outstanding balance on the account.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>availableBalance</td>
+<td>double</td>
+<td>Indicates the balance that is able to be debited for an account. This balance is only provided on some API provider systems.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>reservedBalance</td>
+<td>double</td>
+<td>Indicates the portion of the balance that is reserved, i.e. intended to be debited. This balance is only provided on some API provider systems.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>unclearedBalance</td>
+<td>double</td>
+<td>Indicates the sum of uncleared funds in an account, i.e. those that are awaiting a credit confirmation.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#currenciesenum">currenciesEnum</a></td>
+<td>Currency for all returned balances.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>status</td>
+<td><a href="#accountstatusenum">accountStatusEnum</a></td>
+<td>Indicates a simplified representation of the account state. This will be shown as ?Available? or ?Unavailable?. A state of ?Unavailable? means that the account is in a state that does not allow posting of transactions. Unregistered indicates that although not available a transaction created with the account identifier(s) will result an unregistered voucher creation.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accountname">accountName</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><a href="#name">name</a></td>
+<td>A collection of properties detailing the name of the Primary Account Holder.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>status</td>
+<td><a href="#accountstatusenum">accountStatusEnum</a></td>
+<td>Indicates a simplified representation of the account state. This will be shown as ?Available? or ?Unavailable?. A state of ?Unavailable? means that the account is in a state that does not allow posting of transactions. Unregistered indicates that although not available a transaction created with the account identifier(s) will result an unregistered voucher creation.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="statemententry">statementEntry</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>double</td>
+<td>Requested transaction amount.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>currency</td>
+<td><a href="#currenciesenum">currenciesEnum</a></td>
+<td>Currency of the requested transaction amount.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>displayType</td>
+<td>string</td>
+<td>The transaction type that is to be used for presentation to the account holder as determined by the API provider. This is not necessarily the actual transaction type.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>transactionStatus</td>
+<td>string</td>
+<td>Indicates the status of the transaction as represented by the API provider.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>descriptionText</td>
+<td>string</td>
+<td>Free format text description of the transaction provided by the client. This can be provided as a reference for the receiver on the SMS and on the account statement.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>requestDate</td>
+<td>string (datetime)</td>
+<td>The creation date and time of the transaction as supplied by the client.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>creationDate</td>
+<td>string (datetime)</td>
+<td>Date and time when the transaction was created by the API Provider.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>modificationDate</td>
+<td>string (datetime)</td>
+<td>Date and time when the transaction modified by the API Provider.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>transactionReference</td>
+<td>string</td>
+<td>Unique reference for the transaction. This is returned in the response by API provider. Note that for GET and PATCH requests, the Transaction Reference for the subject can be provided in the URI.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>transactionReceipt</td>
+<td>string</td>
+<td>Transaction receipt number as notified to the parties. This may differ from the Transaction Reference.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>debitParty</td>
+<td>[ <a href="#accountidentifierbase">accountIdentifierBase</a> ]</td>
+<td>A collection of key/value pairs that enable the debit party to be identified. Keys include MSISDN and Wallet Identifier.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>creditParty</td>
+<td>[ <a href="#accountidentifierbase">accountIdentifierBase</a> ]</td>
+<td>A series of key/value pairs that enable the credit party to be identified. Keys include MSISDN and Wallet Identifier.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bill">bill</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currency</td>
+<td><a href="#currenciesenum">currenciesEnum</a></td>
+<td>Currency of the bill to be paid.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>amountDue</td>
+<td>double</td>
+<td>Amount outstanding on the bill to be paid.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>dueDate</td>
+<td>date</td>
+<td>Date on which the Bill is due to be paid.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>billReference</td>
+<td>string</td>
+<td>Reference number for the Bill that this payer can use when he/she wishes to pay.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>minimumAmountDue</td>
+<td>double</td>
+<td>The minimum amount that is outstanding on the bill to be paid.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="basedebitmandate">baseDebitMandate</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currency</td>
+<td><a href="#currenciesenum">currenciesEnum</a></td>
+<td>Currency of the principal transaction amount.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>amountLimit</td>
+<td>double</td>
+<td>The maximum amount that can be taken by the Payee on a payment request.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>date</td>
+<td>Date on which the first payment is to be taken.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>date</td>
+<td>Date on which the final payment is to be taken.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>numberOfPayments</td>
+<td>number (int32)</td>
+<td>Indicates the number of consecutive payments that are to be taken.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>frequencyType</td>
+<td><a href="#frequencytypeenum">frequencyTypeEnum</a></td>
+<td>Indicates the frequency for which payments will be taken from the payers account.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>mandateStatus</td>
+<td><a href="#mandatestatusenum">mandateStatusEnum</a></td>
+<td>Indicates the status of the Mandate as held in the API Provider system.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>requestDate</td>
+<td>string (datetime)</td>
+<td>The request date and time of the transaction as supplied by the client.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="requestdebitmandate">requestDebitMandate</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>requestDebitMandate</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="responsedebitmandate">responseDebitMandate</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>responseDebitMandate</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="link">link</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td><a href="#linkstatusenum">linkStatusEnum</a></td>
+<td>Indicates the status of the Link.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>mode</td>
+<td><a href="#linkmodeenum">linkModeEnum</a></td>
+<td>Indicates the mode of operation support for the Link. If not populated, then default value it ?Both?.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="responselink">responseLink</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>responseLink</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="basequotation">baseQuotation</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>requestDate</td>
+<td>string (datetime)</td>
+<td>The creation date and time of the transaction as supplied by the client.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>debitParty</td>
+<td>[ <a href="#accountidentifierbase">accountIdentifierBase</a> ]</td>
+<td>A collection of key/value pairs that enable the debit party to be identified. Keys include MSISDN and Wallet Identifier.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>creditParty</td>
+<td>[ <a href="#accountidentifierbase">accountIdentifierBase</a> ]</td>
+<td>A series of key/value pairs that enable the credit party to be identified. Keys include MSISDN and Wallet Identifier.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>senderKyc</td>
+<td><a href="#kyc">kyc</a></td>
+<td>A collection of properties detailing the KYC of the transaction Sender, typically used for International Transfers.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>recipientKyc</td>
+<td><a href="#kyc">kyc</a></td>
+<td>A collection of properties detailed the KYC of the transaction Recipient, typically used for International Transfers.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>requestAmount</td>
+<td>double</td>
+<td>Requested quotation amount.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>requestCurrency</td>
+<td><a href="#currenciesenum">currenciesEnum</a></td>
+<td>Currency of the requested quotation amount.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>chosenDeliveryMethod</td>
+<td><a href="#deliverymethodenum">deliveryMethodEnum</a></td>
+<td>The delivery method chosen by the sending end user as the specific delivery method to be used in the quotes received.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>quotes</td>
+<td>[ <a href="#quote">quote</a> ]</td>
+<td>A collection of quotes. A quote can be received from a single receiving payment service provider or from multiple providers.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>senderBlockingReason</td>
+<td>string</td>
+<td>The reason for blocking the quotation, based on AML checks on the sender.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>recipientBlockingReason</td>
+<td>string</td>
+<td>The reason for blocking the quotation, based on AML checks on the recipient.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>[ <a href="#metadata">metadata</a> ]</td>
+<td>A collection of key/value pairs. These can be used to populate additional quotation properties.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="requestquotation">requestQuotation</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>requestQuotation</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="responsequotation">responseQuotation</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>responseQuotation</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="requeststate">requestState</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>serverCorrelationId</td>
+<td>string</td>
+<td>A unique identifier issued by the provider to enable the client to identify the RequestState resource on subsequent polling requests.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>status</td>
+<td><a href="#requeststatestatusenum">requestStateStatusEnum</a></td>
+<td>Indicates the status of the request.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>pendingReason</td>
+<td>string</td>
+<td>A textual description that can be provided to describe the reason for a pending status.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>notificationMethod</td>
+<td><a href="#notificationmethodenum">notificationMethodEnum</a></td>
+<td>Indicates whether a callback will be issued or whether the client will need to poll.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>objectReference</td>
+<td>string</td>
+<td>Provides a reference to the subject resource, e.g. transaction reference.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>expiryTime</td>
+<td>string (datetime)</td>
+<td>Indicate the time by which the provider will fail the request if completion criteria have not been met. For an example, a debit party failing to authorise within the allowed time period.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>pollLimit</td>
+<td>number (int32)</td>
+<td>Indicates the number of poll attempts for the given requeststate resource that will be allowed by the provider.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>error</td>
+<td><a href="#error">error</a></td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="kyc">kyc</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nationality</td>
+<td><a href="#countriesenum">countriesEnum</a></td>
+<td>Nationality of the KYC subject.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>dateOfBirth</td>
+<td>date</td>
+<td>Birth date of the KYC subject.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>occupation</td>
+<td>string</td>
+<td>Occupation of the KYC subject.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>employerName</td>
+<td>string</td>
+<td>Employer Name of the KYC subject.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>contactPhone</td>
+<td>string</td>
+<td>Contact phone number (mobile or landline) of the KYC subject.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>gender</td>
+<td><a href="#genderenum">genderEnum</a></td>
+<td>Gender of the KYC Object.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>idDocument</td>
+<td>[ <a href="#iddocument">idDocument</a> ]</td>
+<td>An array of properties containing the forms of identification that are associated with the subject.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>postalAddress</td>
+<td><a href="#address">address</a></td>
+<td>A collection of properties that details the postal address of the KYC subject.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>subjectName</td>
+<td><a href="#name">name</a></td>
+<td>Refers to the name properties for the KYC subject.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>emailAddress</td>
+<td>string</td>
+<td>Email address of the KYC subject.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>birthCountry</td>
+<td><a href="#countriesenum">countriesEnum</a></td>
+<td>The country of birth of the KYC subject.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="name">name</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>The given title of the KYC subject, e.g. Mr, Mrs, Dr.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>firstName</td>
+<td>string</td>
+<td>First name (also referred to as given name) of the KYC subject.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>middleName</td>
+<td>string</td>
+<td>Middle Name of the KYC subject.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Surname (also referred to as last or family name) of the KYC subject.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>fullName</td>
+<td>string</td>
+<td>The full name of the KYC subject.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>nativeName</td>
+<td>string</td>
+<td>The full name expressed as in the native language.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iddocument">idDocument</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idType</td>
+<td><a href="#idtypeenum">idTypeEnum</a></td>
+<td>Indicates the type of identification for the KYC subject, e.g. passport, driving licence etc.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>idNumber</td>
+<td>string</td>
+<td>Reference pertaining to the type of identification for the KYC subject.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>issueDate</td>
+<td>date</td>
+<td>Date of issue for the identification document.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>expiryDate</td>
+<td>date</td>
+<td>Date of expiry for the identification document.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>issuer</td>
+<td>string</td>
+<td>Indicates the organisation/government entity that issued the ID document.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>issuerPlace</td>
+<td>string</td>
+<td>Place of issue for the identification type.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>issuerCountry</td>
+<td><a href="#countriesenum">countriesEnum</a></td>
+<td>Country where the identification type was issued.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>otherIdDescription</td>
+<td>string</td>
+<td>Where an ID Type of ?OtherID? is specified, a description of the type of identification can be provided in this property.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="address">address</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addressLine1</td>
+<td>string</td>
+<td>First line of the address.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>addressLine2</td>
+<td>string</td>
+<td>Second line of the address.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>addressLine3</td>
+<td>string</td>
+<td>Third line of the address.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City/Town</td>
+<td>No</td>
+</tr>
+<tr>
+<td>stateProvince</td>
+<td>string</td>
+<td>State or Province</td>
+<td>No</td>
+</tr>
+<tr>
+<td>postalCode</td>
+<td>string</td>
+<td>Postal Code</td>
+<td>No</td>
+</tr>
+<tr>
+<td>country</td>
+<td><a href="#countriesenum">countriesEnum</a></td>
+<td>Country</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="quote">quote</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>quoteId</td>
+<td>string</td>
+<td>The unique ID for this quote.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>quoteExpiryTime</td>
+<td>string (datetime)</td>
+<td>The timestamp when the quote will expire.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>receivingServiceProvider</td>
+<td>string</td>
+<td>The name of the RSP, i.e. the provider that the quote is associated with.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>sendingAmount</td>
+<td>double</td>
+<td>Requested quotation amount as supplied by the sender.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>sendingCurrency</td>
+<td><a href="#currenciesenum">currenciesEnum</a></td>
+<td>Currency of the requested quotation amount.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>receivingAmount</td>
+<td>double</td>
+<td>The total amount as it will be received by the receiving end user.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>receivingCurrency</td>
+<td><a href="#currenciesenum">currenciesEnum</a></td>
+<td>The currency of the quote.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>fxRate</td>
+<td>double</td>
+<td>The conversion rate applicable between the sending and the receiving currency for the requested transaction.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>deliveryMethod</td>
+<td><a href="#deliverymethodenum">deliveryMethodEnum</a></td>
+<td>The delivery method that is applicable to the quotation.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="metadata">metadata</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>Identifies the type of additional property.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Identifies the value of the additional property.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error">error</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errorCategory</td>
+<td><a href="#errorcategoryenum">errorCategoryEnum</a></td>
+<td>The category grouping for the error.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>errorCode</td>
+<td><a href="#errorcodeenum">errorCodeEnum</a></td>
+<td>The harmonised error code identifying the reason for error.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>errorDescription</td>
+<td>string</td>
+<td>A textual Description of the error.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>errorDateTime</td>
+<td>string (datetime)</td>
+<td>The timestamp indicating when the error occurred.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>errorParameters</td>
+<td>[ <a href="#metadata">metadata</a> ]</td>
+<td>Diagnostic information in the form of key/value pairs relating to the error.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="heartbeat">heartbeat</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>serviceStatus</td>
+<td><a href="#servicestatusenum">serviceStatusEnum</a></td>
+<td>Provides the status of the requested service.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>delay</td>
+<td>number (int64)</td>
+<td>The anticipated processing delay in milliseconds.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response">response</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>link</td>
+<td>string</td>
+<td>Provides a URL to the resource associated with the given correlation ID.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="patch">patch</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>op</td>
+<td><a href="#patchopenum">patchOpEnum</a></td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accountidentifierbase">accountIdentifierBase</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>Provides the account identifier type.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Provides the account identifier type value.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accountcategory">accountCategory</h3>
+<p>Can be used to identify the sources of funds category where there are multiple accounts (wallets) held against an account holder.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accountCategory</td>
+<td></td>
+<td>Can be used to identify the sources of funds category where there are multiple accounts (wallets) held against an account holder.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="bankaccountno">bankAccountNo</h3>
+<p>Financial institution account number that is typically known by the account holder.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bankAccountNo</td>
+<td></td>
+<td>Financial institution account number that is typically known by the account holder.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="accountrank">accountRank</h3>
+<p>Is used to identify the rank of the source of funds ranks where there are multiple accounts (wallets) held against an account holder.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accountRank</td>
+<td></td>
+<td>Is used to identify the rank of the source of funds ranks where there are multiple accounts (wallets) held against an account holder.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="identityalias">identityAlias</h3>
+<p>An alias for the identity, e.g. short code for an agent till or company name/number for a bill payment.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>identityAlias</td>
+<td></td>
+<td>An alias for the identity, e.g. short code for an agent till or company name/number for a bill payment.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="iban">iban</h3>
+<p>Internationally agreed system of identifying bank accounts across national borders to facilitate the communication and processing of cross border transactions. Can contain up to 34 alphanumeric characters.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iban</td>
+<td></td>
+<td>Internationally agreed system of identifying bank accounts across national borders to facilitate the communication and processing of cross border transactions. Can contain up to 34 alphanumeric characters.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="accountid">accountId</h3>
+<p>Identifier for the account holder.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accountId</td>
+<td></td>
+<td>Identifier for the account holder.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="msisdn">msisdn</h3>
+<p>Mobile Number of the account holder. Should conform to ITU E.123.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msisdn</td>
+<td></td>
+<td>Mobile Number of the account holder. Should conform to ITU E.123.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="payref">payRef</h3>
+<p>Payment reference, i.e. utility bill number.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>payRef</td>
+<td></td>
+<td>Payment reference, i.e. utility bill number.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="swiftbic">swiftbic</h3>
+<p>A bank identifier code (BIC) is a unique identifier for a specific financial institution. A BIC is composed of a 4-character bank code, a 2-character country code, a 2-character location code and an optional 3-character branch code. BICs are used by financial institutions for letters of credit, payments and securities transactions and other business messages between banks. Please refer to ISO 9362 for further information.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>swiftbic</td>
+<td></td>
+<td>A bank identifier code (BIC) is a unique identifier for a specific financial institution. A BIC is composed of a 4-character bank code, a 2-character country code, a 2-character location code and an optional 3-character branch code. BICs are used by financial institutions for letters of credit, payments and securities transactions and other business messages between banks. Please refer to ISO 9362 for further information.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="transactiontypeenum">transactionTypeEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>transactionTypeEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="countriesenum">countriesEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>countriesEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="currenciesenum">currenciesEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currenciesEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="genderenum">genderEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>genderEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="idtypeenum">idTypeEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idTypeEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="deliverymethodenum">deliveryMethodEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deliveryMethodEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="frequencytypeenum">frequencyTypeEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>frequencyTypeEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="accountstatusenum">accountStatusEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accountStatusEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="mandatestatusenum">mandateStatusEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mandateStatusEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="linkstatusenum">linkStatusEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linkStatusEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="linkmodeenum">linkModeEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>linkModeEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="quotationstatusenum">quotationStatusEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>quotationStatusEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="patchopenum">patchOpEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>patchOpEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="requeststatestatusenum">requestStateStatusEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>requestStateStatusEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="notificationmethodenum">notificationMethodEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>notificationMethodEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="servicestatusenum">serviceStatusEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>serviceStatusEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="errorcategoryenum">errorCategoryEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errorCategoryEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="errorcodeenum">errorCodeEnum</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errorCodeEnum</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

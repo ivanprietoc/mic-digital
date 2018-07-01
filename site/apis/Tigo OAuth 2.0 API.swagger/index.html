@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ivan Prieto">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Tigo OAuth 2.0 API - Millicom Digital</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Millicom Digital</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../catalog/">Catalogo</a>
+</li>
+                            
+<li >
+    <a href="../../amazon/">Amazon</a>
+</li>
+                            
+<li >
+    <a href="../../tigoshop/">Shop</a>
+</li>
+                            
+<li >
+    <a href="../../mitigo/">Mi Tigo</a>
+</li>
+                            
+<li >
+    <a href="../../bot/">Bot</a>
+</li>
+                            
+<li >
+    <a href="../../mfs/">MFS</a>
+</li>
+                            
+<li >
+    <a href="../../mitigo-agent/">Mi Tigo Agent</a>
+</li>
+                            
+<li >
+    <a href="../../pos/">Distribution</a>
+</li>
+                            
+<li >
+    <a href="../../tbo/">Mi tigo B2B</a>
+</li>
+                            
+<li >
+    <a href="../../usa/">Tigo USA</a>
+</li>
+                            
+<li >
+    <a href="../../sports/">Tigo Sports</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enablers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../..">Tigo ID</a>
+</li>
+                            
+<li >
+    <a href="../../payment-gtw/">Payment Gateway</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Apis <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../Mobile Money API - Accounts.swagger/">Mobile Money API   Accounts.swagger</a>
+</li>
+                            
+<li >
+    <a href="../AppCallbackPayment Gateway.swagger/">AppCallbackPayment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../AppLinks/">AppLinks</a>
+</li>
+                            
+<li >
+    <a href="../B2B Selfcare API.swagger/">B2B Selfcare API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../BSSPilot/">BSS Pilot</a>
+</li>
+                            
+<li >
+    <a href="../Balance Management Service Api.swagger/">Balance Management Service Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../CallUsageDetails.swagger/">CallUsageDetails.swagger</a>
+</li>
+                            
+<li >
+    <a href="../ConvergentPaymentAPI.swagger/">ConvergentPaymentAPI.swagger</a>
+</li>
+                            
+<li >
+    <a href="../DeezerTelco/">Deezer Telco</a>
+</li>
+                            
+<li >
+    <a href="../Exacaster Next Best Offer API.swagger/">Exacaster Next Best Offer API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Fulfillment Payment Gateway.swagger/">Fulfillment Payment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../GT Point Of Sale [PoS] API.swagger/">GT Point Of Sale [PoS] API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Home Self Care API.swagger/">Home Self Care API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Insurance API.swagger/">Insurance API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Internet Usage Data.swagger/">Internet Usage Data.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API - Accounts.swagger/">Mobile Money API   Accounts.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API - Transactions.swagger/">Mobile Money API   Transactions.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API.swagger/">Mobile Money API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Self Care API.swagger/">Mobile Self Care API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Modify Favorite Number Api.swagger/">Modify Favorite Number Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Music Freedom SV API.swagger/">Music Freedom SV API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Netflix partner/">Netflix partner</a>
+</li>
+                            
+<li >
+    <a href="../Next Best Action-Offers.swagger/">Next Best Action Offers.swagger</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Billing/">OpenTIGO - Billing</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - CRM/">OpenTIGO - CRM</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Common/">OpenTIGO - Common</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Favorites/">OpenTIGO   Favorites</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Lend/">OpenTIGO - Lend</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Push/">OpenTIGO - Push</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Utils/">OpenTIGO - Utils</a>
+</li>
+                            
+<li >
+    <a href="../OpenTigo Balance Management/">OpenTigo Balance Management</a>
+</li>
+                            
+<li >
+    <a href="../Payment Gateway.swagger/">Payment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Recharge Service Api.swagger/">Recharge Service Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../SMS Usage Details.swagger/">SMS Usage Details.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Self Care API - DESIGN ONLY.swagger/">Self Care API   DESIGN ONLY.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API Billing.swagger/">Selfcare API Billing.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API CRM.swagger/">Selfcare API CRM.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API Transactions.swagger/">Selfcare API Transactions.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Sim Swap Events.swagger/">Sim Swap Events</a>
+</li>
+                            
+<li >
+    <a href="../SimCard management API.swagger/">SimCard management API</a>
+</li>
+                            
+<li >
+    <a href="../Tigo - Activation API.swagger/">Tigo   Activation API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo - Profiling API.swagger/">Tigo   Profiling API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Churn.swagger/">Tigo Churn</a>
+</li>
+                            
+<li >
+    <a href="../Tigo MSISDN Identification API.swagger/">Tigo MSISDN Identification API</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Mobile PY Up-Selling Information API.swagger/">Tigo Mobile PY Up Selling Information API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Money HN.swagger/">Tigo Money HN.swagger</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Tigo OAuth 2.0 API</a>
+</li>
+                            
+<li >
+    <a href="../TigoMobileProductsFulfillmentAPI/">TigoMobileProductsFulfillmentAPI</a>
+</li>
+                            
+<li >
+    <a href="../TigoMobileVASProductManagementAPI/">TigoMobileVASProductManagementAPI</a>
+</li>
+                            
+<li >
+    <a href="../UNE Accounts api.swagger/">UNE Accounts api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../UberPOS.swagger/">UberPOS.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Virtual Appointemnts and Geolocation API.swagger/">Virtual Appointemnts and Geolocation API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../apiMobileSelfCare2.0/">apiMobileSelfCare2.0</a>
+</li>
+                            
+<li >
+    <a href="../opentigosmartapps-tigoExchange/">opentigosmartapps tigoExchange</a>
+</li>
+                            
+<li >
+    <a href="../tigo-events-publisher-node.swagger/">Tigo events publisher node.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_bo_billing_v2.swagger/">Tigo b2b bo billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_bo_selfcare_crm_v2.swagger/">Tigo b2b bo selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_billing_v2.swagger/">Tigo b2b co billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_selfcare_crm_v2.swagger/">Tigo b2b co selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_selfcare_transactions_v2.swagger/">Tigo b2b co selfcare transactions v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_gt_selfcare_crm_v2.swagger/">Tigo b2b gt selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_hn_billing_v2.swagger/">Tigo b2b hn billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_co_customerSupport_v1.swagger/">tigo co customerSupport v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_co_selfcare_crm_v1.swagger/">Tigo co selfcare crm v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_crm_co_digitalDocuments_v2.swagger/">tigo crm co digitalDocuments v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_home_sv_billing_v1.swagger/">Tigo home sv billing v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_mobile_bo_crm_v1.swagger/">Tigo mobile bo crm v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_mobile_gt_roaming_v1.swagger/">Tigo mobile gt roaming v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_sv_selfcare_crm_v1.swagger/">Tigo sv selfcare crm v1.swagger</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Procesess <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../processes/devBestPractices/">How we work</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../Tigo Money HN.swagger/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../TigoMobileProductsFulfillmentAPI/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#tigo-oauth-20-api">Tigo OAuth 2.0 API</a></li>
+        <li class="main "><a href="#group-pre-requisites">Group Pre-requisites</a></li>
+        <li class="main "><a href="#client-registration">Client Registration</a></li>
+        <li class="main "><a href="#important-security-considerations">IMPORTANT Security considerations</a></li>
+            <li><a href="#server-to-server-api-access-only">Server To Server API access ONLY</a></li>
+            <li><a href="#bearer-tokens-safety">Bearer Tokens safety</a></li>
+        <li class="main "><a href="#group-api-endpoints">Group API endpoints</a></li>
+        <li class="main "><a href="#oauth-token-endpoint-v2oauthtoken">OAuth token endpoint [/v2/oauth/token]</a></li>
+            <li><a href="#obtain-a-token-with-client-credentials-post">Obtain a token with Client Credentials [POST]</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="tigo-oauth-20-api">Tigo OAuth 2.0 API</h1>
+<p>All APIs exposed by Tigo require Authentication using OAuth 2.0 Bearer tokens.
+Any Application that has been granted access to any Tigo API must authenticate using <strong>client credentials</strong>
+as described below.</p>
+<h1 id="group-pre-requisites">Group Pre-requisites</h1>
+<h1 id="client-registration">Client Registration</h1>
+<p>Any Developer and App must request its own set of Client Credentials thru its Tigo Point of Contact.
+For each Developer the following information is needed:</p>
+<ul>
+<li>Full Name</li>
+<li>Company Name</li>
+<li>Email Address</li>
+</ul>
+<p>For each Client Application the following information is required:</p>
+<ul>
+<li>Application Name</li>
+<li>Environment requesting access to: <strong>test</strong> and/or <strong>prod</strong></li>
+<li>API Products it needs to access</li>
+</ul>
+<p>It exchange the Developer will receive a <strong>client_id</strong> and <strong>client_secret</strong> for each environment.<br />
+This two parameters are referred to as <strong>client credentials</strong></p>
+<h1 id="important-security-considerations">IMPORTANT Security considerations</h1>
+<h2 id="server-to-server-api-access-only">Server To Server API access ONLY</h2>
+<p>Since the only OAuth 2.0 <strong>grant_type</strong> supported for authenticating access to Tigo APIs is <strong>client_credentials</strong>, the Application must be able to store secrets safely.
+So a developer must NEVER use this type of authentication from a Native Application or a Web Application than runs on the User-agent, since these are trivial to decompile or peak at the code to obtain the <strong>client_secret</strong>.
+In other words, <strong>client_credential</strong> should be used in Server to Server comunications ONLY, where the Application Server is under controlled access.<br />
+If Developer suspect the <strong>client_secret</strong> has been compromised, it must notify inmediately to its Tigo's point of contact to invalidate and generate a new <strong>client_id</strong> and <strong>client_secret</strong></p>
+<h2 id="bearer-tokens-safety">Bearer Tokens safety</h2>
+<p>OAuth 2.0 Bearer Tokens only rely on the presence of a valid <strong>access_token</strong> to grant access to an API, this must be safely stored in a KeyChain or KeyStore on the Client Server.<br />
+Also, they must never be transmitted over clear HTTP. Always use TLS/SSL to access Tigo APIs when using Bearer tokens.</p>
+<h1 id="group-api-endpoints">Group API endpoints</h1>
+<h1 id="oauth-token-endpoint-v2oauthtoken">OAuth token endpoint [/v2/oauth/token]</h1>
+<p>This API end point allows partner to get a valid <code>access_token</code>.<br />
+A new <code>access_token</code> must be acquired <em>before</em> the Client Application can access any Tigo API.<br />
+Also a new <code>access_token</code> must be acquired once a previous <code>access_token</code> has expired.<br />
+The Time to live of each token is obtained in the <code>expires_in</code> attribute everytime a new token is issued.</p>
+<h2 id="obtain-a-token-with-client-credentials-post">Obtain a token with Client Credentials [POST]</h2>
+<p>Create a new <code>access_token</code> using the developer's App client credentials.</p>
+<h3 id="parameters">Parameters</h3>
+<ul>
+<li><strong>grant_type</strong>: use string <code>client_credentials</code></li>
+<li><strong>scope</strong> (optional): list of scopes, separated by a single space character, identifying the APIs &amp; access-level required. Not currently in use, since Tigo is pre-assigning which API Products are accesible to each Developer/App.</li>
+<li><strong>client_id</strong>: Client Identifier assigned to the App by Tigo</li>
+<li><strong>client_secret</strong>: Client Secret assigned to the App by Tigo</li>
+</ul>
+<h3 id="paramter-encoding">Paramter Encoding</h3>
+<ul>
+<li><strong>grant_type</strong> and <strong>scope</strong> must be sent in the HTTP request body in url-encoded format, using header <strong>Content-Type</strong>:<code>x-www-form-urlencoded</code></li>
+<li>HTTP Basic authentication must be used as specified in <a href="http://tools.ietf.org/html/rfc2617">RFC2617</a> where: <ul>
+<li><strong>client_id</strong> must be used as the <em>username</em></li>
+<li><strong>client_secret</strong> must be used as the <em>password</em></li>
+<li>concatenate <strong>client_id</strong> and <strong>client_secret</strong> with a <code>:</code> as separator</li>
+<li>encode the resulting string with <em>Base64</em> encoding</li>
+<li>
+<p>Add HTTP header: </p>
+<p><code>Authorization: Basic &lt;base64 encoded string here&gt;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="response-attributes">Response Attributes</h3>
+<p>On succesful authentication, the response will be a JSON Object serialization containing the following attrbiutes:</p>
+<ul>
+<li><strong>issued_at</strong>: (string) containing the unix timestamp in milliseconds when the token was issued.<br />
+    Example: <code>1405620313800</code></li>
+<li><strong>application_name</strong>: (string, uuid) the Client Application internal identifier.<br />
+    Example: <code>d0734134-0eab-4a2a-91a7-8024c4b7a12e</code></li>
+<li><strong>scope</strong>: (string) granted scopes.<br />
+    Example: <code>upselling fulfillment</code></li>
+<li><strong>status</strong>: (string) Approval status of the Clien Application.<br />
+    It may be <code>approved</code>, <code>pending</code> or <code>rejected</code></li>
+<li><strong>api_product_list</strong>: (string) comma-delimited list of API Products to which this <strong>access_token</strong> grants access to.<br />
+    Example: <code>[mobile-internet-up-selling-api, product-fulfillment-api, tigo_mobile_kannel_v1-Product]</code></li>
+<li><strong>expires_in</strong>: (string) Time in seconds when this <strong>access_token</strong> will expire, counting from the <strong>issued_at</strong>.<br />
+    Example: <code>172799</code> (roughly 48 hours)</li>
+<li><strong>developer.email</strong>: (string) Developer's email as registered by Tigo.<br />
+    Example: <code>developer@example.com</code></li>
+<li><strong>organization_id</strong>: (string) Developer's company ID.<br />
+    Example: <code>0</code></li>
+<li><strong>token_type</strong>: (string) Type of Token.<br />
+    Only one supported is: <code>BearerToken</code></li>
+<li><strong>client_id</strong>: (string) Client App identifier as registered.<br />
+    Example: <code>raowlsQ8q2kIcrIlva6HUomzG5kRUay0</code></li>
+<li><strong>access_token</strong>: (string) the access token.<br />
+    Example: <code>nxa8WSX8T9GL3xnPJdFEy0YsJFwe</code></li>
+<li><strong>organization_name</strong>: (string) Tigo API organization where the API products are available.<br />
+    Example: <code>millicom-nonprod</code></li>
+<li><strong>refresh_token_expires_in</strong>: (string) Time in seconds when the refresh token is going to expire. refresh_tokens are NOT supported for client_credentials, so ignore.</li>
+<li>
+<p><strong>refresh_count</strong>: (string) How many times this token has been refreshed. refresh_tokens are NOT supported for client_credentials, so ignore.</p>
+</li>
+<li>
+<p>Request Valid (application/x-www-form-urlencoded)</p>
+<ul>
+<li>
+<p>Headers</p>
+<pre><code>Authorization: Basic Base64({client_id}:{client_secret})
+</code></pre>
+</li>
+<li>
+<p>Body </p>
+<pre><code>grant_type=client_credentials&amp;scope={scope}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Response 200 (application/json)</p>
+<ul>
+<li>Body<pre><code>{
+    "issued_at": "1405620313800"
+    "application_name": "d0734134-0eab-4a2a-91a7-8024c4b7a12e"
+    "scope": "upselling fulfillment"
+    "status": "approved"
+    "api_product_list": "[mobile-internet-up-selling-api, product-fulfillment-api, tigo_mobile_kannel_v1-Product]"
+    "expires_in": "172799"
+    "developer.email": "developer@example.com"
+    "organization_id": "0"
+    "token_type": "BearerToken"
+    "client_id": "raowlsQ8q2kIcrIlva6HUomzG5kRUay0"
+    "access_token": "nxa8WSX8T9GL3xnPJdFEy0YsJFwe"
+    "organization_name": "millicom-nonprod"
+    "refresh_token_expires_in": "0"
+    "refresh_count": "0"
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Request Invalid (application/x-www-form-urlencoded)</p>
+<ul>
+<li>
+<p>Headers</p>
+<pre><code>Authorization: Basic Base64({client_id}:WRONG CLIENT_SECRET)
+</code></pre>
+</li>
+<li>
+<p>Body </p>
+<pre><code>grant_type=client_credentials&amp;scope={scope}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Response 401 (application/json)</p>
+<ul>
+<li>Body<pre><code>{
+    "ErrorCode": "invalid_client"
+    "Error": "Client credentials are invalid"
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

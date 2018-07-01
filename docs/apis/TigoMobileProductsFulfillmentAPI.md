@@ -204,7 +204,7 @@ Each **PriceList** object containst the following attributes:
                     "ROOT/PAQUETIGOS/Invencible Increible/",
                     "ROOT/PAQUETIGOS/Internet/Z|Internet Increible - Autocompra/"
                   ],
-                  "description": "Promo Whatsapp +50MB+30MB EXTRAS x DIA. Activa solo una vez y disfruta todos los días!",
+                  "description": "Promo Whatsapp +50MB+30MB EXTRAS x DIA. Activa solo una vez y disfruta todos los dï¿½as!",
                   "durationTime": -1,
                   "id": 394,
                   "name": "50MB+30MBx1500Gs",
@@ -220,7 +220,7 @@ Each **PriceList** object containst the following attributes:
                     "Default",
                     "Internet Increible"
                   ],
-                  "shortName": "Internet Increíble 1.500Gs"
+                  "shortName": "Internet Increï¿½ble 1.500Gs"
                 },
                 {
                   "acquisitionMethods": [
@@ -289,7 +289,7 @@ Each **PriceList** object containst the following attributes:
                     "ROOT/PAQUETIGOS/Invencible Increible/",
                     "ROOT/PAQUETIGOS/Internet/Z|Internet Increible - Autocompra/"
                   ],
-                  "description": "Promo Whatsapp +50MB+30MB EXTRAS x DIA. Activa solo una vez y disfruta todos los días! - Automatico",
+                  "description": "Promo Whatsapp +50MB+30MB EXTRAS x DIA. Activa solo una vez y disfruta todos los dï¿½as! - Automatico",
                   "durationTime": -1,
                   "id": 435,
                   "name": "50MB+30MBx1500Gs Auto",
@@ -373,7 +373,7 @@ Each **PriceList** object containst the following attributes:
                     "ROOT/PAQUETIGOS/Invencible Increible/",
                     "ROOT/PAQUETIGOS/Internet/Z|Internet Increible - Autocompra/"
                   ],
-                  "description": "Promo Whatsapp +25MB+15MB EXTRAS x DIA. Activa solo una vez y disfruta todos los días!",
+                  "description": "Promo Whatsapp +25MB+15MB EXTRAS x DIA. Activa solo una vez y disfruta todos los dï¿½as!",
                   "durationTime": -1,
                   "id": 395,
                   "name": "25MB+15MBx1000Gs",
@@ -388,7 +388,7 @@ Each **PriceList** object containst the following attributes:
                     "Default",
                     "Internet Increible"
                   ],
-                  "shortName": "Internet Increíble 1.000Gs"
+                  "shortName": "Internet Increï¿½ble 1.000Gs"
                 },
                 {
                   "acquisitionMethods": [
@@ -1002,7 +1002,7 @@ Each **PriceList** object containst the following attributes:
                     "ROOT/PAQUETIGOS/Invencible Increible/",
                     "ROOT/PAQUETIGOS/Internet/Z|Internet Increible - Autocompra/"
                   ],
-                  "description": "Promo Whatsapp +80MB+45MB EXTRAS x DIA. Activa solo una vez y disfruta todos los días!",
+                  "description": "Promo Whatsapp +80MB+45MB EXTRAS x DIA. Activa solo una vez y disfruta todos los dï¿½as!",
                   "durationTime": -1,
                   "id": 396,
                   "name": "80MB+45MBx2000Gs",
@@ -1017,7 +1017,7 @@ Each **PriceList** object containst the following attributes:
                     "Default",
                     "Internet Increible"
                   ],
-                  "shortName": "Internet Increíble 2.000Gs"
+                  "shortName": "Internet Increï¿½ble 2.000Gs"
                 },
                 {
                   "acquisitionMethods": [
@@ -1046,7 +1046,7 @@ Each **PriceList** object containst the following attributes:
                     "ROOT/PAQUETIGOS/Invencible Increible/",
                     "ROOT/PAQUETIGOS/Internet/Z|Internet Increible - Autocompra/"
                   ],
-                  "description": "Promo Whatsapp +25MB+15MB EXTRAS x DIA. Activa solo una vez y disfruta todos los días! - Automatico",
+                  "description": "Promo Whatsapp +25MB+15MB EXTRAS x DIA. Activa solo una vez y disfruta todos los dï¿½as! - Automatico",
                   "durationTime": -1,
                   "id": 436,
                   "name": "25MB+15MBx1000Gs Auto",
@@ -1090,7 +1090,7 @@ Each **PriceList** object containst the following attributes:
                     "ROOT/PAQUETIGOS/Invencible Increible/",
                     "ROOT/PAQUETIGOS/Internet/Z|Internet Increible - Autocompra/"
                   ],
-                  "description": "Promo Whatsapp +80MB+45MB EXTRAS x DIA. Activa solo una vez y disfruta todos los días! - Automatico",
+                  "description": "Promo Whatsapp +80MB+45MB EXTRAS x DIA. Activa solo una vez y disfruta todos los dï¿½as! - Automatico",
                   "durationTime": -1,
                   "id": 437,
                   "name": "80MB+45MBx2000Gs Auto",
@@ -1258,7 +1258,7 @@ Each **PriceList** object containst the following attributes:
                     "ROOT/PAQUETIGOS/Internet/Z|Internet Increible - Autocompra/",
                     "ROOT/Internet TigoShopApp/"
                   ],
-                  "description": "Promo Whatsapp +65MB+25Min+65SMS EXTRAS x DIA. Activa solo una vez y disfruta todos los días!",
+                  "description": "Promo Whatsapp +65MB+25Min+65SMS EXTRAS x DIA. Activa solo una vez y disfruta todos los dï¿½as!",
                   "durationTime": 24,
                   "id": 428,
                   "name": "65MB+25Min+65SMSX2500Gs",

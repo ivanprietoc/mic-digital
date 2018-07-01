@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ivan Prieto">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Tigo MSISDN Identification API - Millicom Digital</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Millicom Digital</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../catalog/">Catalogo</a>
+</li>
+                            
+<li >
+    <a href="../../amazon/">Amazon</a>
+</li>
+                            
+<li >
+    <a href="../../tigoshop/">Shop</a>
+</li>
+                            
+<li >
+    <a href="../../mitigo/">Mi Tigo</a>
+</li>
+                            
+<li >
+    <a href="../../bot/">Bot</a>
+</li>
+                            
+<li >
+    <a href="../../mfs/">MFS</a>
+</li>
+                            
+<li >
+    <a href="../../mitigo-agent/">Mi Tigo Agent</a>
+</li>
+                            
+<li >
+    <a href="../../pos/">Distribution</a>
+</li>
+                            
+<li >
+    <a href="../../tbo/">Mi tigo B2B</a>
+</li>
+                            
+<li >
+    <a href="../../usa/">Tigo USA</a>
+</li>
+                            
+<li >
+    <a href="../../sports/">Tigo Sports</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enablers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../..">Tigo ID</a>
+</li>
+                            
+<li >
+    <a href="../../payment-gtw/">Payment Gateway</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Apis <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../Mobile Money API - Accounts.swagger/">Mobile Money API   Accounts.swagger</a>
+</li>
+                            
+<li >
+    <a href="../AppCallbackPayment Gateway.swagger/">AppCallbackPayment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../AppLinks/">AppLinks</a>
+</li>
+                            
+<li >
+    <a href="../B2B Selfcare API.swagger/">B2B Selfcare API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../BSSPilot/">BSS Pilot</a>
+</li>
+                            
+<li >
+    <a href="../Balance Management Service Api.swagger/">Balance Management Service Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../CallUsageDetails.swagger/">CallUsageDetails.swagger</a>
+</li>
+                            
+<li >
+    <a href="../ConvergentPaymentAPI.swagger/">ConvergentPaymentAPI.swagger</a>
+</li>
+                            
+<li >
+    <a href="../DeezerTelco/">Deezer Telco</a>
+</li>
+                            
+<li >
+    <a href="../Exacaster Next Best Offer API.swagger/">Exacaster Next Best Offer API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Fulfillment Payment Gateway.swagger/">Fulfillment Payment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../GT Point Of Sale [PoS] API.swagger/">GT Point Of Sale [PoS] API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Home Self Care API.swagger/">Home Self Care API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Insurance API.swagger/">Insurance API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Internet Usage Data.swagger/">Internet Usage Data.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API - Accounts.swagger/">Mobile Money API   Accounts.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API - Transactions.swagger/">Mobile Money API   Transactions.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API.swagger/">Mobile Money API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Self Care API.swagger/">Mobile Self Care API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Modify Favorite Number Api.swagger/">Modify Favorite Number Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Music Freedom SV API.swagger/">Music Freedom SV API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Netflix partner/">Netflix partner</a>
+</li>
+                            
+<li >
+    <a href="../Next Best Action-Offers.swagger/">Next Best Action Offers.swagger</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Billing/">OpenTIGO - Billing</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - CRM/">OpenTIGO - CRM</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Common/">OpenTIGO - Common</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Favorites/">OpenTIGO   Favorites</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Lend/">OpenTIGO - Lend</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Push/">OpenTIGO - Push</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Utils/">OpenTIGO - Utils</a>
+</li>
+                            
+<li >
+    <a href="../OpenTigo Balance Management/">OpenTigo Balance Management</a>
+</li>
+                            
+<li >
+    <a href="../Payment Gateway.swagger/">Payment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Recharge Service Api.swagger/">Recharge Service Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../SMS Usage Details.swagger/">SMS Usage Details.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Self Care API - DESIGN ONLY.swagger/">Self Care API   DESIGN ONLY.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API Billing.swagger/">Selfcare API Billing.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API CRM.swagger/">Selfcare API CRM.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API Transactions.swagger/">Selfcare API Transactions.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Sim Swap Events.swagger/">Sim Swap Events</a>
+</li>
+                            
+<li >
+    <a href="../SimCard management API.swagger/">SimCard management API</a>
+</li>
+                            
+<li >
+    <a href="../Tigo - Activation API.swagger/">Tigo   Activation API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo - Profiling API.swagger/">Tigo   Profiling API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Churn.swagger/">Tigo Churn</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Tigo MSISDN Identification API</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Mobile PY Up-Selling Information API.swagger/">Tigo Mobile PY Up Selling Information API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Money HN.swagger/">Tigo Money HN.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo OAuth 2.0 API.swagger/">Tigo OAuth 2.0 API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../TigoMobileProductsFulfillmentAPI/">TigoMobileProductsFulfillmentAPI</a>
+</li>
+                            
+<li >
+    <a href="../TigoMobileVASProductManagementAPI/">TigoMobileVASProductManagementAPI</a>
+</li>
+                            
+<li >
+    <a href="../UNE Accounts api.swagger/">UNE Accounts api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../UberPOS.swagger/">UberPOS.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Virtual Appointemnts and Geolocation API.swagger/">Virtual Appointemnts and Geolocation API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../apiMobileSelfCare2.0/">apiMobileSelfCare2.0</a>
+</li>
+                            
+<li >
+    <a href="../opentigosmartapps-tigoExchange/">opentigosmartapps tigoExchange</a>
+</li>
+                            
+<li >
+    <a href="../tigo-events-publisher-node.swagger/">Tigo events publisher node.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_bo_billing_v2.swagger/">Tigo b2b bo billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_bo_selfcare_crm_v2.swagger/">Tigo b2b bo selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_billing_v2.swagger/">Tigo b2b co billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_selfcare_crm_v2.swagger/">Tigo b2b co selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_selfcare_transactions_v2.swagger/">Tigo b2b co selfcare transactions v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_gt_selfcare_crm_v2.swagger/">Tigo b2b gt selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_hn_billing_v2.swagger/">Tigo b2b hn billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_co_customerSupport_v1.swagger/">tigo co customerSupport v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_co_selfcare_crm_v1.swagger/">Tigo co selfcare crm v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_crm_co_digitalDocuments_v2.swagger/">tigo crm co digitalDocuments v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_home_sv_billing_v1.swagger/">Tigo home sv billing v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_mobile_bo_crm_v1.swagger/">Tigo mobile bo crm v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_mobile_gt_roaming_v1.swagger/">Tigo mobile gt roaming v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_sv_selfcare_crm_v1.swagger/">Tigo sv selfcare crm v1.swagger</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Procesess <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../processes/devBestPractices/">How we work</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../Tigo Churn.swagger/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Tigo Mobile PY Up-Selling Information API.swagger/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#tigo-msisdn-identification-api">Tigo MSISDN Identification API</a></li>
+            <li><a href="#group-introduction">Group Introduction</a></li>
+            <li><a href="#purpose">Purpose</a></li>
+            <li><a href="#msisdn-identification">MSISDN Identification</a></li>
+            <li><a href="#methods-for-identifying-the-msisdn">Methods for identifying the MSISDN</a></li>
+            <li><a href="#availability">Availability</a></li>
+            <li><a href="#client-application-requirements">Client Application Requirements</a></li>
+        <li class="main "><a href="#group-obtain-authorization-code">Group Obtain Authorization Code</a></li>
+            <li><a href="#network-authorization-code-net_codeclient_idresponse_typescopestateredirect_uri">Network Authorization Code [/net_code{?client_id,response_type,scope,state,redirect_uri}]</a></li>
+            <li><a href="#sms-one-time-password-sms_otp">SMS One Time Password [/sms_otp]</a></li>
+            <li><a href="#sms-authorization-code-sms_codeclient_idmsisdnsms_passwordresponse_typescopestateredirect_uri">SMS Authorization Code [/sms_code{?client_id,msisdn,sms_password,response_type,scope,state,redirect_uri}]</a></li>
+        <li class="main "><a href="#group-obtain-token-and-msisdn">Group Obtain token and MSISDN</a></li>
+            <li><a href="#token-token">token [/token]</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="tigo-msisdn-identification-api">Tigo MSISDN Identification API</h1>
+<h2 id="group-introduction">Group Introduction</h2>
+<h2 id="purpose">Purpose</h2>
+<p>The purpose of these APIs is to enable Tigo and Partner's applications to 
+securely identify the MSISDN of the Tigo User, 
+when accesing the Application from a Mobile Device.</p>
+<h2 id="msisdn-identification">MSISDN Identification</h2>
+<p>The MSISDN is the Mobile Phone number in International format 
+of a particular Tigo customer.<br />
+Applications running in the Mobile device or in a Mobile Web App 
+might need to reliably know the MSISDN of the subscriber to access Tigo APIs.<br />
+Even when the SIM Card and the Address Book in the Mobile Device 
+might contain the user's phone number, this is just data configured 
+by the end user and cannot be trusted.<br />
+The Mobile Phone itself does NOT have access to its own phone number 
+in a reliable way, since the main Network identifier between the Deivce 
+and the Network is the IMSI.<br />
+this is why the Mobile Network is the only one that knows the MSISDN 
+of the user reliably.</p>
+<h2 id="methods-for-identifying-the-msisdn">Methods for identifying the MSISDN</h2>
+<p>The API provides 2 ways to identify the Tigo user MSISDN:  </p>
+<h3 id="network-header-enrichment">Network Header Enrichment</h3>
+<p>When the user is connected to the Tigo Mobile Network, it is possible to identify the MSISDN without user intervention at Tigo Network.<br />
+This is done in 2 steps:  </p>
+<ol>
+<li>The App calls <strong>net_code</strong> API endpoint using HTTP without TLS/SSL. If the user is on the Tigo Network the MSISDN will be extracted from the HTTP headers (which in turn, where added by the Network) and if verified, will return an OAuth 2.0 authorization <code>code</code> to the App.  </li>
+<li>The App calls the <strong>token</strong> endpoint API using HTTPS with TLS/SSL to exchange the authorization <code>code</code> for an <code>access_token</code>. The <strong>token</strong> API response will also include the user's verified <code>msisdn</code>.</li>
+</ol>
+<h3 id="sms-one-time-passwords">SMS One Time Passwords</h3>
+<p>Where the user is connected to any other Network (WiFi, other Mobile Operators, etc.), and it is not possible to ask Tigo Network to identify the MSISDN.<br />
+This is done in 3 steps:  </p>
+<ol>
+<li>the App request the User to supply his/her claimed MSISDN.</li>
+<li>the App calls <strong>sms_otp</strong> API endpoint to generate a "One Time Password". This temporary password is sent to the claimed MSISDN via SMS but never revealed to the App.</li>
+<li>the App then requests the user to supply the "One Time Password" he should have received in a SMS (only if the claimed MSISDN is actually in his/her possesion).</li>
+<li>then, the App calls <strong>sms_code</strong> API endpoint to verify the user supplied "One Time Password". If the temporary passwords match, an OAuth 2.0 authorization <code>code</code> is returned to the App.</li>
+<li>finally, the App calls the <strong>token</strong> endpoint API using HTTPS with TLS/SSL to exchange the authorization <code>code</code> for a OAuth 2.0 <code>access_token</code>. The token will also include the user's verified <code>msisdn</code>.</li>
+</ol>
+<h2 id="availability">Availability</h2>
+<p>The following Tigo Markets support Network Header Enrichment:</p>
+<ul>
+<li>Bolivia</li>
+<li>Paraguay</li>
+<li>Guatemala</li>
+<li>El Salvador</li>
+<li>Colombia</li>
+</ul>
+<h2 id="client-application-requirements">Client Application Requirements</h2>
+<p>All Applications (Clients) must be registered at Tigo API platform before 
+attempting to use this API.<br />
+The Client Application must provide the following information to Tigo:  </p>
+<ul>
+<li><strong>Application Name and Description</strong></li>
+<li><strong>Developer Name</strong></li>
+<li><strong>Developer Email</strong> (main point of contact)</li>
+<li><strong>Application Redirect URI</strong>: All API responses will redirect to this URI.</li>
+<li>for Web Applications a normal URI can be supplied, like: <code>https://example.com/callback</code></li>
+<li>for Native Applications, a custom protocol schema URI may be used, like: <code>com.example.myapp://callback</code></li>
+</ul>
+<p>In exchange, Tigo must provide the Application Developer with the following parameters:</p>
+<ul>
+<li><code>client_id</code>: this is a OAuth 2.0 client_id, and is considered safe to store on your Application.</li>
+<li><code>client_secret</code>: this is a OAuth 2.0 client_secret and should be protected and kept secret.  </li>
+</ul>
+<blockquote>
+<p><strong>WARNING</strong>:
+Avoid hard-coding the <code>client_secret</code> in Native Applications code.<br />
+Store and use from the Server Side of your application, NOT from the User's Device.</p>
+</blockquote>
+<ul>
+<li><code>redirect_uri</code>: the same Application Redirect URI supplied by the App Developer to Tigo.</li>
+</ul>
+<h1 id="group-obtain-authorization-code">Group Obtain Authorization Code</h1>
+<h2 id="network-authorization-code-net_codeclient_idresponse_typescopestateredirect_uri">Network Authorization Code [/net_code{?client_id,response_type,scope,state,redirect_uri}]</h2>
+<p>Grants an authorization code to the requesting Client application ONLY if the MSISDN can be identified by the Tigo Network automatically.  </p>
+<p><strong>Usage guidelines</strong>:  </p>
+<ul>
+<li>Call this endpoint only using HTTP <em>without</em> TLS/SSL encryption, otherwise the network cannot detect the request.</li>
+<li>Call this endpoint only from the User's Device or the User-agent (Browser)...not from your backend server.  </li>
+</ul>
+<blockquote>
+<p><strong>WARNING</strong>: 
+Verify that the user's Device is actually connected to a Mobile Network before calling this endpoint.<br />
+The user might be connected via WiFi/Bluetooth using the Hotspot of another Tigo User! so the API may identify the Hotspot's user MSISDN not the end-user MSISDN.</p>
+</blockquote>
+<h3 id="obtain-authorization-code-from-network-header-enrichment-get">Obtain Authorization Code from Network Header Enrichment [GET]</h3>
+<ul>
+<li>
+<p>Parameters</p>
+<ul>
+<li>client_id (required, string, <code>cAGOBtZREWM2SRXmP3JQZ8uhBDJQzA7Y</code>) ... Application <code>client_id</code> that identifies the Client Application.</li>
+<li>response_type (required, string, <code>code</code>) ... OAuth 2.0 <code>response_type</code> parameter. Always use <code>code</code> at this endpoint.</li>
+<li>scope (optional, string, <code>balance</code>) ... Optional OAuth 2.0 <code>scope</code> parameter to specify the level of access requested. NOT used.</li>
+<li>state (required, string, <code>msisdn_detected</code>) ... Recommended OAuth 2.0 <code>state</code> parameter. Supply a meaningful string to keep <em>state</em> in your application logic. this will be returned by the API to your registerd <code>redirect_uri</code> as supplied. Use to avoid known security vulnerabilities.</li>
+<li>redirect_uri (required, string, <code>https://qa.api.tigo.com/v1/tigo/diagnostics/callback</code>) ... Your Application's redirection URI, URL encoded, where this API will callback and send the authorization code or an error. MUST match exactly as the one registered with Tigo API platform.</li>
+</ul>
+</li>
+<li>
+<p>Request Valid</p>
+</li>
+<li>
+<p>Response 302 (application/json)</p>
+<ul>
+<li>
+<p>Headers</p>
+<pre><code>Cache-Control: no-store
+Pragma: no-cache
+Location: {redirect_uri}?code={code}&amp;state={state}
+</code></pre>
+</li>
+<li>
+<p>Body</p>
+<pre><code>{
+    "code":"{code}"
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Request Error when Network could not validate MSISDN</p>
+</li>
+<li>
+<p>Response 302  (application/json)</p>
+<ul>
+<li>
+<p>Headers</p>
+<pre><code>Cache-Control: no-store
+Pragma: no-cache
+Location: {redirect_uri}?error=access_denied&amp;error_description=Invalid%20MSISDN%20header%20from%20Tigo%20Network&amp;state={state}
+</code></pre>
+</li>
+<li>
+<p>Body</p>
+<pre><code>{
+    "error":"access_denied",
+    "error_desription":"Invalid MSISDN Headers in request",
+    "state":"{state}"
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="sms-one-time-password-sms_otp">SMS One Time Password [/sms_otp]</h2>
+<p>Generates a new One Time Password for a <code>msisdn</code> that will be send over SMS to a Tigo Customer.  </p>
+<p><strong>Usage guidelines</strong>:  </p>
+<ul>
+<li>Call this endpoint only using HTTPS <em>with</em> TLS/SSL encryption.</li>
+<li>You may Call this endpoint from the User's Device or the backend server.</li>
+<li>Everytime this API is called a new SMS One Time Password is generated and sent via SMS to Mobile Subscriber.</li>
+</ul>
+<h3 id="generate-new-one-time-password-post">Generate new One Time Password [POST]</h3>
+<p><strong>Input Parameters</strong>  </p>
+<ul>
+<li><em>client_id</em> (required, string, Example: <code>cAGOBtZREWM2SRXmP3JQZ8uhBDJQzA7Y</code>) Application <code>client_id</code> that identifies the Client Application.</li>
+<li><em>msisdn</em> (required, string, Example: <code>50378832010</code>) The MSISDN number supplied by the end user and that we want to verify.</li>
+<li><em>state</em> (required, string, Example: <code>sms_sent</code>) Recommended OAuth 2.0 <code>state</code> parameter. Supply a meaningful string to keep <em>state</em> in your application logic. this will be returned by the API to your registerd <code>redirect_uri</code> as supplied. Use to avoid known security vulnerabilities.</li>
+</ul>
+<p><strong>Succesful response</strong>  </p>
+<p>The API will reply with HTTP Status code <code>302</code> on Success<br />
+The <code>Location</code> header will contain the registered <code>redirect_uri</code> with the following additional parameters in the query string:  </p>
+<ul>
+<li><em>result</em> will contain string <code>OK</code>, just to confirm that now you can ask the user for the SMS One Time Password.</li>
+<li><em>msisdn</em> the <code>msisdn</code> supplied in the input parameters</li>
+<li><em>state</em> the <code>state</code> supplied in the input parameters. Always Check on you Application that the <code>state</code> in the response was the same as the one in the request.</li>
+</ul>
+<p>After receiving this response your Application should:</p>
+<ol>
+<li>Instruct the User to check for a new SMS containing a one time password.</li>
+<li>Ask the user to Input the one time password received by SMS.</li>
+<li>Call the <strong>sms_code</strong> API to verify the one time password and get an Authorization <code>code</code> in return.</li>
+</ol>
+<p><strong>Error Handling</strong></p>
+<p>The API will reply with HTTP Status code <code>302</code><br />
+The <code>Location</code> header will contain the registered <code>redirect_uri</code> with the following additional parameters in the query string:  </p>
+<ul>
+<li><em>error</em> will contain one of:</li>
+<li><code>server_error</code></li>
+<li><code>invalid_request</code></li>
+<li><em>error_description</em> will contain a more verbose description of the error.</li>
+<li><em>state</em> the <code>state</code> supplied in the input parameters. Always Check on you Application that the <code>state</code> in the response was the same as the one in the request.</li>
+</ul>
+<p>the API may also reply with a HTTP Status code in the range <code>4XX</code> and <code>5XX</code> if an unexpected error ocurred.</p>
+<ul>
+<li>
+<p>Request Valid (application/x-www-form-urlencoded)</p>
+<ul>
+<li>Body<pre><code>client_id={client_id}&amp;msisdn={msisdn}&amp;state={state}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Response 302 (application/json)</p>
+<ul>
+<li>Headers<pre><code>Cache-Control: no-store
+Pragma: no-cache
+Location: {redirect_uri}?result=OK&amp;msisdn={msisdn}&amp;state={state}
++ Body
+
+{
+    "result":"OK",
+    "message":"SMS with temporary user credentials sent to your Mobile {msisdn}",
+    "expires_in":300,
+    "msisdn":"{msisdn}",
+    "state":"{state}"
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="sms-authorization-code-sms_codeclient_idmsisdnsms_passwordresponse_typescopestateredirect_uri">SMS Authorization Code [/sms_code{?client_id,msisdn,sms_password,response_type,scope,state,redirect_uri}]</h2>
+<p>This endpoint will return an OAuth 2.0 authorization <code>code</code> 
+ONLY if the <code>msisdn</code> and <code>sms_password</code> supplied in the inputs 
+matches the one time password sent to the Mobile user via SMS in 
+a previous API call to <a href="#/sms_otp">Send new One Time Password</a>  </p>
+<blockquote>
+<p><strong>NOTICE</strong>
+that authorization <code>code</code> have a very brief lifetime (less than 5 minutes).<br />
+So you must exchange <code>code</code> for a <code>access_token</code> before it expires.</p>
+</blockquote>
+<h3 id="obtain-authorization-code-from-sms-one-time-password-get">Obtain Authorization Code from SMS One Time Password [GET]</h3>
+<ul>
+<li>
+<p>Parameters</p>
+<ul>
+<li>client_id (required, string, <code>cAGOBtZREWM2SRXmP3JQZ8uhBDJQzA7Y</code>) ... Application <code>client_id</code> that identifies the Client Application.</li>
+<li>msisdn (required, string, <code>50378832010</code>) ... The MSISDN number supplied by the end user and that we want to verify.</li>
+<li>sms_password (required, string, <code>123456</code>) ... The SMS password supplied by the end user that we want to verify against the one time password sent via SMS.</li>
+<li>response_type (required, string, <code>code</code>) ... OAuth 2.0 <code>response_type</code> parameter. Always use <code>code</code> at this endpoint.</li>
+<li>scope (optional, string, <code>balance</code>) ... Optional OAuth 2.0 <code>scope</code> parameter to specify the level of access requested. NOT used.</li>
+<li>state (required, string, <code>sms_password_verified</code>) ... Recommended OAuth 2.0 <code>state</code> parameter. Supply a meaningful string to keep <em>state</em> in your application logic. this will be returned by the API to your registerd <code>redirect_uri</code> as supplied. Use to avoid known security vulnerabilities.</li>
+<li>redirect_uri (required, string, <code>https://qa.api.tigo.com/v1/tigo/diagnostics/callback</code>) ... Your Application's redirection URI, URL encoded, where this API will callback and send the authorization code or an error. MUST match exactly as the one registered with Tigo API platform.</li>
+</ul>
+</li>
+<li>
+<p>Request Valid</p>
+</li>
+<li>
+<p>Response 302 (application/json)</p>
+<ul>
+<li>
+<p>Headers</p>
+<pre><code>Cache-Control: no-store
+Pragma: no-cache
+Location: {redirect_uri}?code={code}&amp;state={state}
+</code></pre>
+</li>
+<li>
+<p>Body</p>
+<pre><code>{
+    "code":"{code}"
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Request Error when Wrong MSISDN or sms_password</p>
+</li>
+<li>
+<p>Response 302  (application/json)</p>
+<ul>
+<li>
+<p>Headers</p>
+<pre><code>Cache-Control: no-store
+Pragma: no-cache
+Location: {redirect_uri}?error=access_denied&amp;error_description=Wrong%20MSISDN%20or%20SMS%20password&amp;state={state}
+</code></pre>
+</li>
+<li>
+<p>Body</p>
+<pre><code>{
+    "error":"access_denied",
+    "error_desription":"Wrong MSISDN or SMS password",
+    "state":"{state}"
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="group-obtain-token-and-msisdn">Group Obtain token and MSISDN</h1>
+<p>After an authorization <code>code</code> has been obtained from either <strong>net_code</strong> or <strong>sms_code</strong> 
+now you can exchange the <code>code</code> for a valid OAuth 2.0 <code>access_token</code> 
+which will also provide the valid <code>msisdn</code> identity of the Mobile User.</p>
+<h2 id="token-token">token [/token]</h2>
+<p>Obtain an <code>access_token</code> in exchange of a valid authorization <code>code</code>.
+Along with the response you will also receive the validated <code>msisdn</code>.</p>
+<h3 id="obtain-access_token-post">Obtain access_token [POST]</h3>
+<h3 id="authentication">Authentication</h3>
+<p>You must supply your <code>client_id</code> and <code>client_secret</code> credentials using HTTP Basic Authentication by including the HTTP Request Header:  </p>
+<p><code>Authorization: Basic Base64( {client_id}:{client_secret} )</code>  </p>
+<h3 id="input-paramters">Input Paramters</h3>
+<p>Sin this is a <code>POST</code> HTTP request, All input parameters must be sent in the HTTP request <strong>body</strong> encoded as <code>Content-Type: application/x-www-form-urlencoded</code>  </p>
+<ul>
+<li><strong>grant_type</strong> (required, string, example: <code>authorization_code</code>) ... Always use <code>authorization_code</code></li>
+<li><strong>redirect_uri</strong> (required, string, example: <code>https://qa.api.tigo.com/v1/tigo/diagnostics/callback</code>) ... Your Application's redirection URI, URL encoded, where this API will callback and send the authorization code or an error. MUST match exactly as the one registered with Tigo API platform.</li>
+<li><strong>code</strong> (required, string, example: <code>4ksu1PhM</code>) ... the OAuth 2.0 authorization <code>code</code></li>
+</ul>
+<h3 id="successful-response">Successful Response</h3>
+<p>The API will respond with a HTTP Status Code <code>200</code>
+with a JSON serialized Object containing the following properties:</p>
+<ul>
+<li><em>issued_at</em>: TimeStamp in milliseconds since epoch. example: <code>1408064062980</code></li>
+<li><em>msisdn_identification_method</em>: How the MSISDN was verified, any of:<ul>
+<li><code>network header</code></li>
+<li><code>sms code</code></li>
+</ul>
+</li>
+<li><em>scope</em>: requested OAuth scopes</li>
+<li><em>application_name</em>: Application GUUID registered in Apigee. example: <code>42eefff1-e43c-41a1-b505-02381043b3c8</code></li>
+<li><em>refresh_token_issued_at</em>: TimeStamp in milliseconds since epoch. ex: <code>1408064062980</code></li>
+<li><em>msisdn_verified_at</em>: TimeStamp in milliseconds since epoch. ex: <code>1408064037436</code></li>
+<li><em>msisdn_valid</em>: should always be <code>true</code></li>
+<li><em>status</em>: should always be <code>approved</code></li>
+<li><em>msisdn</em>: the actual MSISDN of the Tigo Customer. ex: <code>595981400007</code></li>
+<li><em>refresh_token_status</em>: should always be <code>approved</code></li>
+<li><em>api_product_list</em>: Array with all API products which this access_token has given permissions to access. ex: <code>[mobile-internet-up-selling-api, product-fulfillment-api, tigo_mobile_kannel_v1-Product]</code></li>
+<li><em>expires_in</em>: expiration time in seconds for the access_token. ex: <code>3599</code></li>
+<li><em>country</em>: ISO code for the country of the MSISDN. ex: <code>PY</code></li>
+<li><em>developer.email</em>: Developer Email. ex: <code>roberto.navas@millicom.com</code></li>
+<li><em>organization_id</em>: Apigee organization ID. ex: <code>0</code></li>
+<li><em>token_type</em>: type of access_token. expect <code>BearerToken</code></li>
+<li><em>refresh_token</em>: refresh token. ex: <code>x0xMDAa8hAe475RPH89AoldoRQ8XHu9Y</code></li>
+<li><em>client_id</em>: App client id. ex: <code>cAGOBtZREWM2SRXmP3JQZ8uhBDJQzA7Y</code></li>
+<li><em>access_token</em>: the OAuth token. ex: <code>licqaD7XTrUacjzISu4OqzjUTRkx</code></li>
+<li><em>organization_name</em>: Apigee organization name. ex: <code>millicom-nonprod</code></li>
+<li><em>refresh_token_expires_in</em>: expiration time in seconds for the refresh_token. ex: <code>3599</code></li>
+<li>
+<p><em>refresh_count</em>: time the token has been refreshed. (not currently supported). ex: <code>0</code></p>
+</li>
+<li>
+<p>Request Valid (application/x-www-form-urlencoded)</p>
+<ul>
+<li>
+<p>Headers</p>
+<pre><code>Authorization: Basic Base64("{client_id}:{client_secret}")
+</code></pre>
+</li>
+<li>
+<p>Body</p>
+<pre><code>code={code}&amp;grant_type=authorization_code&amp;redirect_uri={redirect_uri}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Response 200 (application/json)</p>
+<ul>
+<li>Body<pre><code>{
+    "issued_at" : "1408064062980",
+    "msisdn_identification_method" : "network header",
+    "scope" : "{scope}",
+    "application_name" : "42eefff1-e43c-41a1-b505-02381043b3c8",
+    "refresh_token_issued_at" : "1408064062980",
+    "msisdn_verified_at" : "1408064037436",
+    "msisdn_valid" : "true",
+    "status" : "approved",
+    "msisdn" : "{msisdn}",
+    "refresh_token_status" : "approved",
+    "api_product_list" : "[mobile-internet-up-selling-api, product-fulfillment-api, tigo_mobile_kannel_v1-Product]",
+    "expires_in" : "3599",
+    "country" : "PY",
+    "developer.email" : "roberto.navas@millicom.com",
+    "organization_id" : "0",
+    "token_type" : "BearerToken",
+    "refresh_token" : "x0xMDAa8hAe475RPH89AoldoRQ8XHu9Y",
+    "client_id" : "cAGOBtZREWM2SRXmP3JQZ8uhBDJQzA7Y",
+    "access_token" : "licqaD7XTrUacjzISu4OqzjUTRkx",
+    "organization_name" : "millicom-nonprod",
+    "refresh_token_expires_in" : "3599",
+    "refresh_count" : "0"
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

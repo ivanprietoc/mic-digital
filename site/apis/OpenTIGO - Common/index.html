@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ivan Prieto">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>OpenTIGO - Common - Millicom Digital</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Millicom Digital</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../catalog/">Catalogo</a>
+</li>
+                            
+<li >
+    <a href="../../amazon/">Amazon</a>
+</li>
+                            
+<li >
+    <a href="../../tigoshop/">Shop</a>
+</li>
+                            
+<li >
+    <a href="../../mitigo/">Mi Tigo</a>
+</li>
+                            
+<li >
+    <a href="../../bot/">Bot</a>
+</li>
+                            
+<li >
+    <a href="../../mfs/">MFS</a>
+</li>
+                            
+<li >
+    <a href="../../mitigo-agent/">Mi Tigo Agent</a>
+</li>
+                            
+<li >
+    <a href="../../pos/">Distribution</a>
+</li>
+                            
+<li >
+    <a href="../../tbo/">Mi tigo B2B</a>
+</li>
+                            
+<li >
+    <a href="../../usa/">Tigo USA</a>
+</li>
+                            
+<li >
+    <a href="../../sports/">Tigo Sports</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enablers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../..">Tigo ID</a>
+</li>
+                            
+<li >
+    <a href="../../payment-gtw/">Payment Gateway</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Apis <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../Mobile Money API - Accounts.swagger/">Mobile Money API   Accounts.swagger</a>
+</li>
+                            
+<li >
+    <a href="../AppCallbackPayment Gateway.swagger/">AppCallbackPayment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../AppLinks/">AppLinks</a>
+</li>
+                            
+<li >
+    <a href="../B2B Selfcare API.swagger/">B2B Selfcare API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../BSSPilot/">BSS Pilot</a>
+</li>
+                            
+<li >
+    <a href="../Balance Management Service Api.swagger/">Balance Management Service Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../CallUsageDetails.swagger/">CallUsageDetails.swagger</a>
+</li>
+                            
+<li >
+    <a href="../ConvergentPaymentAPI.swagger/">ConvergentPaymentAPI.swagger</a>
+</li>
+                            
+<li >
+    <a href="../DeezerTelco/">Deezer Telco</a>
+</li>
+                            
+<li >
+    <a href="../Exacaster Next Best Offer API.swagger/">Exacaster Next Best Offer API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Fulfillment Payment Gateway.swagger/">Fulfillment Payment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../GT Point Of Sale [PoS] API.swagger/">GT Point Of Sale [PoS] API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Home Self Care API.swagger/">Home Self Care API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Insurance API.swagger/">Insurance API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Internet Usage Data.swagger/">Internet Usage Data.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API - Accounts.swagger/">Mobile Money API   Accounts.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API - Transactions.swagger/">Mobile Money API   Transactions.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API.swagger/">Mobile Money API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Self Care API.swagger/">Mobile Self Care API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Modify Favorite Number Api.swagger/">Modify Favorite Number Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Music Freedom SV API.swagger/">Music Freedom SV API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Netflix partner/">Netflix partner</a>
+</li>
+                            
+<li >
+    <a href="../Next Best Action-Offers.swagger/">Next Best Action Offers.swagger</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Billing/">OpenTIGO - Billing</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - CRM/">OpenTIGO - CRM</a>
+</li>
+                            
+<li class="active">
+    <a href="./">OpenTIGO - Common</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Favorites/">OpenTIGO   Favorites</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Lend/">OpenTIGO   Lend</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Push/">OpenTIGO   Push</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Utils/">OpenTIGO   Utils</a>
+</li>
+                            
+<li >
+    <a href="../OpenTigo Balance Management/">OpenTigo Balance Management</a>
+</li>
+                            
+<li >
+    <a href="../Payment Gateway.swagger/">Payment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Recharge Service Api.swagger/">Recharge Service Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../SMS Usage Details.swagger/">SMS Usage Details.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Self Care API - DESIGN ONLY.swagger/">Self Care API   DESIGN ONLY.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API Billing.swagger/">Selfcare API Billing.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API CRM.swagger/">Selfcare API CRM.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API Transactions.swagger/">Selfcare API Transactions.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Sim Swap Events.swagger/">Sim Swap Events.swagger</a>
+</li>
+                            
+<li >
+    <a href="../SimCard management API.swagger/">SimCard management API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo - Activation API.swagger/">Tigo   Activation API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo - Profiling API.swagger/">Tigo   Profiling API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Churn.swagger/">Tigo Churn.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo MSISDN Identification API.swagger/">Tigo MSISDN Identification API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Mobile PY Up-Selling Information API.swagger/">Tigo Mobile PY Up Selling Information API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Money HN.swagger/">Tigo Money HN.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo OAuth 2.0 API.swagger/">Tigo OAuth 2.0 API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../TigoMobileProductsFulfillmentAPI/">TigoMobileProductsFulfillmentAPI</a>
+</li>
+                            
+<li >
+    <a href="../TigoMobileVASProductManagementAPI/">TigoMobileVASProductManagementAPI</a>
+</li>
+                            
+<li >
+    <a href="../UNE Accounts api.swagger/">UNE Accounts api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../UberPOS.swagger/">UberPOS.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Virtual Appointemnts and Geolocation API.swagger/">Virtual Appointemnts and Geolocation API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../apiMobileSelfCare2.0/">apiMobileSelfCare2.0</a>
+</li>
+                            
+<li >
+    <a href="../opentigosmartapps-tigoExchange/">opentigosmartapps tigoExchange</a>
+</li>
+                            
+<li >
+    <a href="../tigo-events-publisher-node.swagger/">Tigo events publisher node.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_bo_billing_v2.swagger/">Tigo b2b bo billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_bo_selfcare_crm_v2.swagger/">Tigo b2b bo selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_billing_v2.swagger/">Tigo b2b co billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_selfcare_crm_v2.swagger/">Tigo b2b co selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_selfcare_transactions_v2.swagger/">Tigo b2b co selfcare transactions v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_gt_selfcare_crm_v2.swagger/">Tigo b2b gt selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_hn_billing_v2.swagger/">Tigo b2b hn billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_co_customerSupport_v1.swagger/">tigo co customerSupport v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_co_selfcare_crm_v1.swagger/">Tigo co selfcare crm v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_crm_co_digitalDocuments_v2.swagger/">tigo crm co digitalDocuments v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_home_sv_billing_v1.swagger/">Tigo home sv billing v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_mobile_bo_crm_v1.swagger/">Tigo mobile bo crm v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_mobile_gt_roaming_v1.swagger/">Tigo mobile gt roaming v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_sv_selfcare_crm_v1.swagger/">Tigo sv selfcare crm v1.swagger</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Procesess <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../processes/devBestPractices/">How we work</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../OpenTIGO - CRM/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../OpenTIGO - Favorites/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#opentigo-common">OpenTIGO - Common</a></li>
+            <li><a href="#this-entry-defines-generic-information-useful-to-publish-consume-tigo-apis">This entry defines generic information useful to publish / consume Tigo APIs</a></li>
+        <li class="main "><a href="#group-common-parameters">Group Common Parameters</a></li>
+        <li class="main "><a href="#group-expandable-links">Group Expandable Links</a></li>
+        <li class="main "><a href="#group-implicit-authentication">Group Implicit Authentication</a></li>
+        <li class="main "><a href="#group-user-identifier-type">Group User Identifier Type</a></li>
+        <li class="main "><a href="#group-versioning">Group Versioning</a></li>
+        <li class="main "><a href="#group-pagination">Group Pagination</a></li>
+            <li><a href="#parameter-fix">Parameter Fix</a></li>
+        <li class="main "><a href="#group-rate-limiting">Group Rate Limiting</a></li>
+        <li class="main "><a href="#group-common-errors">Group Common Errors</a></li>
+            <li><a href="#common-error-body">Common Error Body</a></li>
+            <li><a href="#common-error-body-definition">Common Error Body Definition</a></li>
+            <li><a href="#common-status-code-list">Common Status Code List</a></li>
+        <li class="main "><a href="#group-caching">Group Caching</a></li>
+            <li><a href="#etag-caching">ETag Caching</a></li>
+            <li><a href="#cache-control">Cache Control</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="opentigo-common">OpenTIGO - Common</h1>
+<h3 id="this-entry-defines-generic-information-useful-to-publish-consume-tigo-apis">This entry defines generic information useful to publish / consume Tigo APIs</h3>
+<h1 id="group-common-parameters">Group Common Parameters</h1>
+<p>|<code>Attribute</code>|<code>Description</code>|<code>Example</code>|<code>Comments</code>|
+|------|---------|------|------|------|
+|country|ISO 3166-1 alpha-2 country code|PY (paraguay)<br>GT (guatemala)<br>SV (el salvador) <br>CO (colombia)<br>BO (bolivia)<br>HN (honduras)||
+|version|base path version of the resource|v1 represents the first version of the resource<br>v2 represents the second version. More on this on Versioning Section|base path version is part of the URL itself and is not specified as a parameter. it is represented here for informative purposes only|
+|msisdn|Mobile number of tigo subscriber in international or local format|595985334650 (intl) 0985334650(loc)|Due to some backend restrictions some api might require the full international format while others can use only portion of the identifier|</p>
+<h1 id="group-expandable-links">Group Expandable Links</h1>
+<p>Allows the developer to request additional information included in the <code>links</code> section to be appended to the response by expanding the full contents. 
+Example:
+URL:</p>
+<pre><code>/someurl/1234:
+</code></pre>
+<p>Will return:</p>
+<pre><code>"data" : "some data",
+"links" : [
+    {
+        "expandableLink1" : "/someurl/1234/expand1",
+        "expandableLink2" : "/someurl/1234/expand2",
+    }
+]
+</code></pre>
+<p>URL:</p>
+<pre><code>/someurl/1234?expand=expandableLink1
+</code></pre>
+<p>Will return:</p>
+<pre><code>"data" : "some data",
+"links" : [
+    {
+        "expandableLink2" : "/someurl/1234/expand2",
+    }
+],
+"expandableLink1" : [
+    {
+        "property1" : "some value",
+        "property2" : "some other value"
+    },
+    ...
+]
+</code></pre>
+<p>Circular expansions are not allowed:</p>
+<pre><code>/lines/
+</code></pre>
+<p>has a link to expand /customer</p>
+<p>we can expand the customer inside the lines body by specifying </p>
+<pre><code>expand=customer
+</code></pre>
+<p>/customer/ has a link to expand /lines/</p>
+<p>the following expression is invalid, as it is circular:</p>
+<pre><code>expand=customer.lines
+</code></pre>
+<p>and will return <code>400 BAD_REQUEST</code></p>
+<p><strong>Hints</strong>
+<em> You can expand more than one field by specifying comma separated list. 
+</em> If you expanded into an object that contains links, you can use dotted notation to specify 
+nested expansions</p>
+<h1 id="group-implicit-authentication">Group Implicit Authentication</h1>
+<p>When <em>Header Enrichment</em> is an option or a <em>Enriched token</em> is present on the invocation, some endpoints
+might allow the use of Implicit Authentication, which means that attributes that otherwise must be 
+specified as parameters could be omitted by replacing them by the noun <code>self</code> or the pronoun <code>me</code></p>
+<p>Examples:</p>
+<p>An URL containing <code>MSISDN</code> identifier :</p>
+<pre><code>/crm/customers/595981123456
+</code></pre>
+<p>Can be replaced by </p>
+<pre><code>/crm/customers/msisdn/me
+</code></pre>
+<p>or by</p>
+<pre><code>/crm/customers/msisdn/self
+</code></pre>
+<p>Failing to detect Header Enrichment or to extract the <code>MSISDN</code> from Enriched token will result in error 
+<code>401 UNAUTHORIZED</code></p>
+<h1 id="group-user-identifier-type">Group User Identifier Type</h1>
+<p>Different types of users can be identified by different methods. For example, in Mobile, a subscriber can be identified by <code>MSISDN</code>, 
+<code>contract number</code> or <code>email</code>, while Home users can use either <code>email</code> or <code>home id</code></p>
+<p>The standard identifier for URLs is <code>MSISDN</code>. To specify that the identifier is something different than a <code>MSISDN</code>, use the following 
+<strong><em>userIdentifierType</em></strong> query string as follows:</p>
+<pre><code>/crm/customers/courage@nowhere.com?userIdentifierType=email
+</code></pre>
+<p>This specifies that <code>courage@nowhere.com</code> es an <code>email</code> instead of a <code>msisdn</code>. If you don't specify the parameter, all APIs will 
+assume that you are using an <code>MSISDN</code> so the following invocation will <strong>FAIL</strong>:</p>
+<pre><code>/crm/customers/courage@nowhere.com
+</code></pre>
+<h1 id="group-versioning">Group Versioning</h1>
+<p>Versioning is supported at two levels:
++ <strong>URL Versioning:</strong> determines major updates to either the URL (forcing a resource to have another URI) or the resource itself (it is not the same or has breaking changes making it incompatible with current clients). This is defined on the best practices document. 
++ <strong>Header Versioning:</strong> used to introduce minor revisions in the payload but not breaking changes. 
+The revision is a date string using the format YYYYMMDD.</p>
+<pre><code>    x-api-revision : 20141118
+</code></pre>
+<p>The following conditions apply:
++ Header versioning is <strong>ONLY</strong> for minor changes that could represent incompatible changes on the code, like removing, renaming, changing datatype of an existing attribute. Addition of new attributes is perfectly compatible so it doesn't  require revision header.
++ Adding a revision to the API means it is FROZEN, meaning that no further changes will be introduced in that version. 
++ By no means revision header should be used to introduce alternative behavior in the code. It's only purpose is to serve the payload representation. This excludes dynamic parameter evaluation, proxy selectivity, payload modification, etc. </p>
+<h1 id="group-pagination">Group Pagination</h1>
+<p>|<code>Attribute</code>|<code>Description</code>|<code>Example</code>|<code>Comments</code>|
+|------|---------|------|------|------|
+|Limit|to limit the number of entities returned cursor|?limit=10|depending on the api, server will apply a sensible default.|
+|Cursor|to enable pagination when using limit|?cursor=hash7yh9ahda|
+|Offset|to enable pagination when using limit|?offset=20|defaults to 0|</p>
+<h4 id="parameter-fix">Parameter Fix</h4>
+<p>Specifying an invalid offset or limits will be automatically fixed by the server:
++ Negative / NaN offsets will be converted to 0
++ Negative / NaN limits will be converted to API default limit
++ Limits greater than the maximum allowed will be fixed to the maximum allowed by the API. 
++ Offsets greater than the maximum allowed will be fixed to the maximum allowed by the API.</p>
+<h1 id="group-rate-limiting">Group Rate Limiting</h1>
+<p>TBD</p>
+<h1 id="group-common-errors">Group Common Errors</h1>
+<h3 id="common-error-body">Common Error Body</h3>
+<p>Usually the HTTP Status returned by the service should be enough to understand the server side behavior, 
+like HTTP 404 (not found) or 401 (unauthorized)
+However, in most situations, further level of details are required by the developer to fully understand what
+went wrong. For those cases, the ENTITY in a response will contain whe following JSON data:</p>
+<pre><code>    {
+        "error": {
+            "statusCode": "404",
+            "code": "15",
+            "message": "Thespecifiednumberwasnotfound",
+            "developerMessage": "provided MSISDN was not found. Exception was: NotFoundException: MSISDN not found",
+            "errorURL": null
+        }
+    }
+</code></pre>
+<p>An extended form of the same error body can contain an additional attribute, <code>_debug</code> that will provide developer specific 
+information about the error. This is for internal use only and will disappear from the response once we have an stable API. 
+The <code>_debug</code> info <em>MUST NOT</em> be used by clients</p>
+<pre><code>    {
+        "error": {
+            "statusCode": "404",
+            "code": "15",
+            "message": "Thespecifiednumberwasnotfound",
+            "developerMessage": "provided MSISDN was not found. Exception was: NotFoundException: MSISDN not found",
+            "errorURL": null
+        },
+        "_debug": {}
+    }
+</code></pre>
+<h3 id="common-error-body-definition">Common Error Body Definition</h3>
+<ul>
+<li><code>statusCode</code>: duplicates the HTTP Status returned by the server. OPTIONAL</li>
+<li><code>code</code>: internal development error code. useful to identify the error when reporting to API owner. </li>
+<li><code>message</code>: user friendly description of what went wrong. </li>
+<li><code>developerMessage</code>: developer oriented fine grained description of the server condition preventing the action 
+to be completed.</li>
+<li><code>errorURL</code>: optional URL pointing to a common developer friendly site that will provide more information about 
+the situation. OPTIONAL</li>
+<li><code>_debug</code> : developer specific information to determine the cause of an error with more level of detail. It's a free form
+object that will change continually until the api is stable and will be removed afterwards. </li>
+</ul>
+<h3 id="common-status-code-list">Common Status Code List</h3>
+<p>The following list summarizes the common errors that might be returned for API invocation. Specific lists can 
+extend the api definition:</p>
+<ul>
+<li>200 <code>OK</code> - The request was successful (some API calls may return 201 instead).</li>
+<li>201 <code>Created</code> - The request was successful and a resource was created.</li>
+<li>204 <code>No Content</code> - The request was successful but there is no representation to return (that is, the response is empty).</li>
+<li>304 <code>Not Modified</code> - the copy stored on the client is still valid as the server didnt made changes on the cache. Requires the client using ETag and If-None-Match and local caching.  </li>
+<li>400 <code>Bad Request</code> - The request could not be understood or was missing required parameters.</li>
+<li>401 <code>Unauthorized</code> - Authentication failed or user does not have permissions for the requested operation.</li>
+<li>403 <code>Forbidden</code> - Access denied. Differs from 401 in that Authentication DID succeed, but permission check failed.</li>
+<li>404 <code>Not Found</code> - Resource was not found.</li>
+<li>405 <code>Method Not Allowed</code> - Requested method is not supported for the specified resource.</li>
+<li>429 <code>Too Many Requests</code> - Exceeded API execution limits. Pause requests, wait one minute, and try again. </li>
+<li>500 <code>Internal Server Error</code> - Something bad has happened :( We might be already aware and working on the solution. </li>
+<li>503 <code>Service Unavailable</code> - The service is temporary unavailable (e.g. scheduled Platform Maintenance). Try again later.</li>
+</ul>
+<h1 id="group-caching">Group Caching</h1>
+<h3 id="etag-caching">ETag Caching</h3>
+<p>When an API enables caching the client can decide to cache the data locally. For this purpose, those APIs that
+provide caching support will return the corresponding headers as follows:</p>
+<pre><code>    ETag: "686897696a7c876b7e"
+</code></pre>
+<p>Client must in turn, in the succesive requests send the obtained ETag:</p>
+<pre><code>    If-None-Match: "686897696a7c876b7e"
+</code></pre>
+<p>If locally cached data is still valid, server will return <code>HTTP 304 Not Modified</code> status, without a body.</p>
+<h3 id="cache-control">Cache Control</h3>
+<p>Server support for cache control methods as defined in standard <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">RFC2616</a></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

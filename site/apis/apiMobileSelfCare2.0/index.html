@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ivan Prieto">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Mobile Self Care API - Millicom Digital</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Millicom Digital</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../catalog/">Catalogo</a>
+</li>
+                            
+<li >
+    <a href="../../amazon/">Amazon</a>
+</li>
+                            
+<li >
+    <a href="../../tigoshop/">Shop</a>
+</li>
+                            
+<li >
+    <a href="../../mitigo/">Mi Tigo</a>
+</li>
+                            
+<li >
+    <a href="../../bot/">Bot</a>
+</li>
+                            
+<li >
+    <a href="../../mfs/">MFS</a>
+</li>
+                            
+<li >
+    <a href="../../mitigo-agent/">Mi Tigo Agent</a>
+</li>
+                            
+<li >
+    <a href="../../pos/">Distribution</a>
+</li>
+                            
+<li >
+    <a href="../../tbo/">Mi tigo B2B</a>
+</li>
+                            
+<li >
+    <a href="../../usa/">Tigo USA</a>
+</li>
+                            
+<li >
+    <a href="../../sports/">Tigo Sports</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enablers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../..">Tigo ID</a>
+</li>
+                            
+<li >
+    <a href="../../payment-gtw/">Payment Gateway</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Apis <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../Mobile Money API - Accounts.swagger/">Mobile Money API   Accounts.swagger</a>
+</li>
+                            
+<li >
+    <a href="../AppCallbackPayment Gateway.swagger/">AppCallbackPayment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../AppLinks/">AppLinks</a>
+</li>
+                            
+<li >
+    <a href="../B2B Selfcare API.swagger/">B2B Selfcare API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../BSSPilot/">BSS Pilot</a>
+</li>
+                            
+<li >
+    <a href="../Balance Management Service Api.swagger/">Balance Management Service Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../CallUsageDetails.swagger/">CallUsageDetails.swagger</a>
+</li>
+                            
+<li >
+    <a href="../ConvergentPaymentAPI.swagger/">ConvergentPaymentAPI.swagger</a>
+</li>
+                            
+<li >
+    <a href="../DeezerTelco/">Deezer Telco</a>
+</li>
+                            
+<li >
+    <a href="../Exacaster Next Best Offer API.swagger/">Exacaster Next Best Offer API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Fulfillment Payment Gateway.swagger/">Fulfillment Payment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../GT Point Of Sale [PoS] API.swagger/">GT Point Of Sale [PoS] API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Home Self Care API.swagger/">Home Self Care API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Insurance API.swagger/">Insurance API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Internet Usage Data.swagger/">Internet Usage Data.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API - Accounts.swagger/">Mobile Money API   Accounts.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API - Transactions.swagger/">Mobile Money API   Transactions.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API.swagger/">Mobile Money API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Self Care API.swagger/">Mobile Self Care API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Modify Favorite Number Api.swagger/">Modify Favorite Number Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Music Freedom SV API.swagger/">Music Freedom SV API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Netflix partner/">Netflix partner</a>
+</li>
+                            
+<li >
+    <a href="../Next Best Action-Offers.swagger/">Next Best Action Offers.swagger</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Billing/">OpenTIGO - Billing</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - CRM/">OpenTIGO - CRM</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Common/">OpenTIGO - Common</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Favorites/">OpenTIGO   Favorites</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Lend/">OpenTIGO - Lend</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Push/">OpenTIGO - Push</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Utils/">OpenTIGO - Utils</a>
+</li>
+                            
+<li >
+    <a href="../OpenTigo Balance Management/">OpenTigo Balance Management</a>
+</li>
+                            
+<li >
+    <a href="../Payment Gateway.swagger/">Payment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Recharge Service Api.swagger/">Recharge Service Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../SMS Usage Details.swagger/">SMS Usage Details.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Self Care API - DESIGN ONLY.swagger/">Self Care API   DESIGN ONLY.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API Billing.swagger/">Selfcare API Billing.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API CRM.swagger/">Selfcare API CRM.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API Transactions.swagger/">Selfcare API Transactions.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Sim Swap Events.swagger/">Sim Swap Events</a>
+</li>
+                            
+<li >
+    <a href="../SimCard management API.swagger/">SimCard management API</a>
+</li>
+                            
+<li >
+    <a href="../Tigo - Activation API.swagger/">Tigo   Activation API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo - Profiling API.swagger/">Tigo   Profiling API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Churn.swagger/">Tigo Churn</a>
+</li>
+                            
+<li >
+    <a href="../Tigo MSISDN Identification API.swagger/">Tigo MSISDN Identification API</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Mobile PY Up-Selling Information API.swagger/">Tigo Mobile PY Up Selling Information API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Money HN.swagger/">Tigo Money HN.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo OAuth 2.0 API.swagger/">Tigo OAuth 2.0 API</a>
+</li>
+                            
+<li >
+    <a href="../TigoMobileProductsFulfillmentAPI/">Tigo Mobile Products Fulfillment API</a>
+</li>
+                            
+<li >
+    <a href="../TigoMobileVASProductManagementAPI/">Tigo Mobile VAS Product Management API</a>
+</li>
+                            
+<li >
+    <a href="../UNE Accounts api.swagger/">UNE Accounts api</a>
+</li>
+                            
+<li >
+    <a href="../UberPOS.swagger/">UberPOS.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Virtual Appointemnts and Geolocation API.swagger/">Virtual Appointemnts and Geolocation API.swagger</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Mobile Self Care API</a>
+</li>
+                            
+<li >
+    <a href="../opentigosmartapps-tigoExchange/">opentigosmartapps tigoExchange</a>
+</li>
+                            
+<li >
+    <a href="../tigo-events-publisher-node.swagger/">Tigo events publisher node.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_bo_billing_v2.swagger/">Tigo b2b bo billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_bo_selfcare_crm_v2.swagger/">Tigo b2b bo selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_billing_v2.swagger/">Tigo b2b co billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_selfcare_crm_v2.swagger/">Tigo b2b co selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_selfcare_transactions_v2.swagger/">Tigo b2b co selfcare transactions v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_gt_selfcare_crm_v2.swagger/">Tigo b2b gt selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_hn_billing_v2.swagger/">Tigo b2b hn billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_co_customerSupport_v1.swagger/">tigo co customerSupport v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_co_selfcare_crm_v1.swagger/">Tigo co selfcare crm v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_crm_co_digitalDocuments_v2.swagger/">tigo crm co digitalDocuments v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_home_sv_billing_v1.swagger/">Tigo home sv billing v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_mobile_bo_crm_v1.swagger/">Tigo mobile bo crm v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_mobile_gt_roaming_v1.swagger/">Tigo mobile gt roaming v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_sv_selfcare_crm_v1.swagger/">Tigo sv selfcare crm v1.swagger</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Procesess <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../processes/devBestPractices/">How we work</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../Virtual Appointemnts and Geolocation API.swagger/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../opentigosmartapps-tigoExchange/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#mobile-self-care-api">Mobile Self Care API</a></li>
+            <li><a href="#planssubscribersmsisdnfavorites">/plans/subscribers/{MSISDN}/favorites/</a></li>
+            <li><a href="#planssubscribersmsisdnavailableoffers">/plans/subscribers/{MSISDN}/availableoffers/</a></li>
+            <li><a href="#planssubscribersmsisdnacquiredoffersofferid">/plans/subscribers/{MSISDN}/acquiredoffers/{offerId}</a></li>
+            <li><a href="#planssubscribersmsisdnphonelease">/plans/subscribers/{MSISDN}/phonelease/</a></li>
+            <li><a href="#planssubscribersmsisdncurrent">/plans/subscribers/{MSISDN}/current</a></li>
+            <li><a href="#planssubscribersmsisdnavailableplans">/plans/subscribers/{MSISDN}/availableplans/</a></li>
+            <li><a href="#planssubscribersmsisdnupgrades">/plans/subscribers/{MSISDN}/upgrades/</a></li>
+            <li><a href="#planssubscribersmsisdnupgraderequest">/plans/subscribers/{MSISDN}/upgraderequest</a></li>
+            <li><a href="#planssubscribersmsisdnsubscriptionrequests">/plans/subscribers/{MSISDN}/subscriptionrequests/</a></li>
+            <li><a href="#models">Models</a></li>
+            <li><a href="#statuschangerequest">StatusChangeRequest</a></li>
+            <li><a href="#favoritenumberlist">FavoriteNumberList</a></li>
+            <li><a href="#favoritenumber">FavoriteNumber</a></li>
+            <li><a href="#offerlist">OfferList</a></li>
+            <li><a href="#offer">Offer</a></li>
+            <li><a href="#acquisitionmethod">AcquisitionMethod</a></li>
+            <li><a href="#planlist">PlanList</a></li>
+            <li><a href="#plan">Plan</a></li>
+            <li><a href="#namevaluepair">NameValuePair</a></li>
+            <li><a href="#productoffering">ProductOffering</a></li>
+            <li><a href="#phoneleaseinfo">PhoneLeaseInfo</a></li>
+            <li><a href="#planupgrate">PlanUpgrate</a></li>
+            <li><a href="#planadditional">PlanAdditional</a></li>
+            <li><a href="#additionalsubscriptions">AdditionalSubscriptions</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="mobile-self-care-api">Mobile Self Care API</h1>
+<p>This is the standard API for Self Care functions related to Mobile Phones and all other Mobile Network services for Tigo. 
+We use swagger-2.0 specification</p>
+<p>This document is used mainly for new API design of new use cases. Traditional use cases have not been ported here yet.
+This is the reason we used v2</p>
+<p><strong>Version:</strong> 1.0.0</p>
+<p><strong>Terms of service:</strong><br />
+http://swagger.io/terms/</p>
+<p><strong>Contact information:</strong><br />
+Andres Cavallin<br />
+http://www.millicom.com<br />
+andres.cavallin@millicom.com  </p>
+<p><strong>License:</strong> <a href="http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT">MIT</a></p>
+<h3 id="planssubscribersmsisdnfavorites">/plans/subscribers/{MSISDN}/favorites/</h3>
+<hr />
+<h5 id="get"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> Get Favorite Numbers by MSISDN</p>
+<p><strong>Description:</strong> Retrieve a list of favorite numbers associated with the specified MSISDN</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Requested Favorites Information was found</td>
+<td><a href="#favoritenumberlist">FavoriteNumberList</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>Favorites Number List</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="post"><strong><em>POST</em></strong></h5>
+<p><strong>Summary:</strong> Add Favorite Number by MSISDN</p>
+<p><strong>Description:</strong> If slots are still available, the specified phone number will be added to the list of favorite numbers of the provided MSISDN</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td></td>
+<td>Yes</td>
+<td><a href="#favoritenumber">FavoriteNumber</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td>Favorite Number was successfully added</td>
+<td><a href="#successbody">successBody</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>contractId</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="delete"><strong><em>DELETE</em></strong></h5>
+<p><strong>Summary:</strong> Delete Favorite Numbers by MSISDN</p>
+<p><strong>Description:</strong> If found in the favorite number list of the specified MSISDN, the specified phone number will be deleted</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td></td>
+<td>Yes</td>
+<td><a href="#favoritenumber">FavoriteNumber</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Recurring Billing was successfully deleted</td>
+<td><a href="#successbody">successBody</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>contractId</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="planssubscribersmsisdnavailableoffers">/plans/subscribers/{MSISDN}/availableoffers/</h3>
+<hr />
+<h5 id="get_1"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> Get Available Offers by MSISDN</p>
+<p><strong>Description:</strong> Retrieve a list of offers available to the specified MSISDN</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>channelId</td>
+<td>query</td>
+<td>Channel used to present the offer. Default will be Self Care Web and App</td>
+<td>No</td>
+<td>integer</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Requested Offer Information was found</td>
+<td><a href="#offerlist">OfferList</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>Offers List</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="planssubscribersmsisdnacquiredoffersofferid">/plans/subscribers/{MSISDN}/acquiredoffers/{offerId}</h3>
+<hr />
+<h5 id="post_1"><strong><em>POST</em></strong></h5>
+<p><strong>Summary:</strong> Purchase Offer by MSISDN and OfferId</p>
+<p><strong>Description:</strong> The Subscriber specified by MSISDN will purchase the Offer specified by OfferId</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>offerId</td>
+<td>path</td>
+<td>The Offer Unique Identifier obtained from Get Available Offers by MSISDN</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td>Offer was successfully acquired</td>
+<td><a href="#successbody">successBody</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>Offer Id</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="delete_1"><strong><em>DELETE</em></strong></h5>
+<p><strong>Summary:</strong> Delete Offer by MSISDN and OfferId</p>
+<p><strong>Description:</strong> The subscriber specified by MSISDN will remove the Offer specified by OfferId previously purchased</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>offerId</td>
+<td>path</td>
+<td>The Offer Unique Identifier obtained from Get Available Offers by MSISDN</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td>Offer was successfully acquired</td>
+<td><a href="#successbody">successBody</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>Offer Id</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="planssubscribersmsisdnphonelease">/plans/subscribers/{MSISDN}/phonelease/</h3>
+<hr />
+<h5 id="get_2"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> Get Phone Lease Details by MSISDN</p>
+<p><strong>Description:</strong> Retrieve details of leased phone</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Requested phone lease Information was found</td>
+<td><a href="#phoneleaseinfo">PhoneLeaseInfo</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>phonelease</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="planssubscribersmsisdncurrent">/plans/subscribers/{MSISDN}/current</h3>
+<hr />
+<h5 id="get_3"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> Get Current Plan Details by MSISDN</p>
+<p><strong>Description:</strong> Retrieve Current Plan Details for the provided Customer</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Requested Current Plan Information was found</td>
+<td><a href="#plan">Plan</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>Favorites Number List</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="put"><strong><em>PUT</em></strong></h5>
+<p><strong>Summary:</strong> Update Current Plan by MSISDN</p>
+<p><strong>Description:</strong> Update the current plan for the MSISDN to the PlanId provided</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td></td>
+<td>Yes</td>
+<td><a href="#planupgrate">PlanUpgrate</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Offer was successfully acquired</td>
+<td><a href="#successbody">successBody</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>request plan upgrate</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="planssubscribersmsisdnavailableplans">/plans/subscribers/{MSISDN}/availableplans/</h3>
+<hr />
+<h5 id="get_4"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> Get Available Plans by MSISDN</p>
+<p><strong>Description:</strong> Obtain a Catalog of available plans by MSISDN that the client can select. Plans can be filtered by planType.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>planType</td>
+<td>query</td>
+<td>Apply a filter to returned plans, for example Upgrades, Downgrades, Retention, Additional. If ommited, all plans in the Catalog are returned.</td>
+<td>No</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Requested Upgrade Information was found</td>
+<td><a href="#planlist">PlanList</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>Available Plans</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="planssubscribersmsisdnupgrades">/plans/subscribers/{MSISDN}/upgrades/</h3>
+<hr />
+<h5 id="get_5"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> Get Available Plans Upgrades by MSISDN</p>
+<p><strong>Description:</strong> Retrieve Available Plans that the customer can upgrade to the specified MSISDN.
+This is specific use case of the "Get Available Plans by MSISDN" method.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Requested Upgrade Information was found</td>
+<td><a href="#planlist">PlanList</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>Available Plans</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="planssubscribersmsisdnupgraderequest">/plans/subscribers/{MSISDN}/upgraderequest</h3>
+<hr />
+<h5 id="get_6"><strong><em>GET</em></strong></h5>
+<p><strong>Summary:</strong> Get Upgrade Request Status by MSISDN</p>
+<p><strong>Description:</strong> Get information if the customer has initiated an upgrade or not for the provided Customer</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Requested status of plan update Information was found</td>
+<td><a href="#successbody">successBody</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>status of plan update</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h5 id="post_2"><strong><em>POST</em></strong></h5>
+<p><strong>Summary:</strong> Create Upgrade Request by MSISDN</p>
+<p><strong>Description:</strong> Register a request from the MSISDN to receive a plan upgrade</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td></td>
+<td>Yes</td>
+<td><a href="#planupgrate">PlanUpgrate</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Offer was successfully acquired</td>
+<td><a href="#successbody">successBody</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>request plan upgrate</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="planssubscribersmsisdnsubscriptionrequests">/plans/subscribers/{MSISDN}/subscriptionrequests/</h3>
+<hr />
+<h5 id="post_3"><strong><em>POST</em></strong></h5>
+<p><strong>Summary:</strong> Create Subscription Requests by MSISDN</p>
+<p><strong>Description:</strong> Register one or more requests made by the specified MSISDN to accquire Additional Subscriptions</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSISDN</td>
+<td>path</td>
+<td>International Identifiable mobile phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td></td>
+<td>Yes</td>
+<td><a href="#planadditional">PlanAdditional</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Responses</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Offer was successfully acquired</td>
+<td><a href="#successbody">successBody</a></td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden. Check <code>error.message</code> for details</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>404</td>
+<td>the specified <code>request plan upgrate</code> was not found</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+<tr>
+<td>default</td>
+<td>unexpected error</td>
+<td><a href="#errorbody">errorBody</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="models">Models</h3>
+<hr />
+<h3 id="statuschangerequest">StatusChangeRequest</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>string</td>
+<td>Status Code. May be alphanumeric</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>assetType</td>
+<td>string</td>
+<td>Asset which status is being updated</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>updateReason</td>
+<td>string</td>
+<td>Reson of status being updated</td>
+<td>No</td>
+</tr>
+<tr>
+<td>customerId</td>
+<td>string</td>
+<td>Customer unique identifier, usually national identification number or company tax payer number</td>
+<td>No</td>
+</tr>
+<tr>
+<td>documentType</td>
+<td>string</td>
+<td>Defines if customerId es a National Id, Tax Payer Number, Passport, etc.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>First Name, Comapny Name or Full Name of the Customer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>lastName</td>
+<td>string</td>
+<td>Last Name of the Custoemr</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="favoritenumberlist">FavoriteNumberList</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FavoriteNumberList</td>
+<td>array</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="favoritenumber">FavoriteNumber</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PhoneNumber</td>
+<td>string</td>
+<td>Phone Number that is considered a Favorite Number</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>ExpirationDate</td>
+<td>date</td>
+<td>Optional value if this number have an expiration date</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Label</td>
+<td>string</td>
+<td>Optional value if this number has a description or user defined label</td>
+<td>No</td>
+</tr>
+<tr>
+<td>PlanCode</td>
+<td>string</td>
+<td>Optional plan code or number to which this PhoneNumber is being added</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="offerlist">OfferList</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OfferList</td>
+<td>array</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="offer">Offer</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OfferId</td>
+<td>string</td>
+<td>Unique Id of the offering, needed to complete the order.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>OfferName</td>
+<td>string</td>
+<td>Short name for the offer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>string</td>
+<td>Explanation to the user.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Validity</td>
+<td>string</td>
+<td>The quantitative number or period for which the offer is valid.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>ValidityUnit</td>
+<td>string</td>
+<td>The period unit. Could be Hour, Day, Week, Month, Megabytes, Gigabytes, Slots</td>
+<td>No</td>
+</tr>
+<tr>
+<td>CategoryName</td>
+<td>string</td>
+<td>The name of main category of this offer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>SubCategoryName</td>
+<td>string</td>
+<td>The name of the secondary category of this offer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Rank</td>
+<td>number</td>
+<td>This value is used to present the offers in a sorted order.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>double</td>
+<td></td>
+<td>No</td>
+</tr>
+<tr>
+<td>currencyId</td>
+<td>string</td>
+<td>This is the ISO Id of the currency</td>
+<td>No</td>
+</tr>
+<tr>
+<td>AcquisitionMethodList</td>
+<td><a href="#acquisitionmethod">AcquisitionMethod</a></td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="acquisitionmethod">AcquisitionMethod</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AcquisitionMethodId</td>
+<td>number</td>
+<td>Unique Id of the Acquisition Method</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>AcquisitionMethodName</td>
+<td>string</td>
+<td>Short name for the Acquisition Method. Could be Next Invoice or Prepaid</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="planlist">PlanList</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PlanList</td>
+<td>array</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="plan">Plan</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>planId</td>
+<td>string</td>
+<td>Unique Id of the plan</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>planName</td>
+<td>string</td>
+<td>Short name for the plan</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>monthlyAmount</td>
+<td>number</td>
+<td>Monthly base amount that customer pays for this plan</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>planDataInMB</td>
+<td>number</td>
+<td>Monthly megabytes included in this plan.</td>
+<td></td>
+</tr>
+<tr>
+<td>This value is also included in the ProdutOffering array but must be reflected in this value so megabytes can be compared,</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>charted and better communicated to the customer.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>No</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>currencyId</td>
+<td>string</td>
+<td>This is the ISO Id of the currency</td>
+<td>No</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Status of this plan, may help build the UX</td>
+<td>No</td>
+</tr>
+<tr>
+<td>CategoryName</td>
+<td>string</td>
+<td>The name of main category of this plan</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Rank</td>
+<td>number</td>
+<td>This value is used to present the offers in a sorted order.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>productOfferingList</td>
+<td>[ <a href="#productoffering">ProductOffering</a> ]</td>
+<td>An array of offering details grouped by category</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="namevaluepair">NameValuePair</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>This is the name of the of data</td>
+<td>No</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>this is the value</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="productoffering">ProductOffering</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>offeringCategory</td>
+<td>string</td>
+<td>This is the category that defines the type of offering</td>
+<td>No</td>
+</tr>
+<tr>
+<td>offeringId</td>
+<td>string</td>
+<td>This is the id of that type of offering</td>
+<td>No</td>
+</tr>
+<tr>
+<td>offeringDetailList</td>
+<td>[ <a href="#namevaluepair">NameValuePair</a> ]</td>
+<td>An array of Name and Value pair for additional services</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phoneleaseinfo">PhoneLeaseInfo</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clauseId</td>
+<td>string</td>
+<td>Identifier that legacy uses for that permanency clause</td>
+<td>No</td>
+</tr>
+<tr>
+<td>lastBillingDate</td>
+<td>date</td>
+<td>Last billing of the contract with equipment</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>nextRenewalDate</td>
+<td>date</td>
+<td>Next renewal of the contract with equipment</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>typeClauseId</td>
+<td>string</td>
+<td>Type of permanency clause</td>
+<td>No</td>
+</tr>
+<tr>
+<td>imei</td>
+<td>string</td>
+<td>International Mobile Station Equipment Identity</td>
+<td>No</td>
+</tr>
+<tr>
+<td>gama</td>
+<td>string</td>
+<td>Equipment gama</td>
+<td>No</td>
+</tr>
+<tr>
+<td>brand</td>
+<td>string</td>
+<td>Equipment brand</td>
+<td>No</td>
+</tr>
+<tr>
+<td>model</td>
+<td>string</td>
+<td>Equipment model</td>
+<td>No</td>
+</tr>
+<tr>
+<td>insurance</td>
+<td>string</td>
+<td>Confirmation if the equipment is or is not insured</td>
+<td>No</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Status of the comodato</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="planupgrate">PlanUpgrate</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Full Name of the Customer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email of the Customer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>planId</td>
+<td>string</td>
+<td>Unique Id of the NEW plan</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>planName</td>
+<td>string</td>
+<td>Short name for the NEW plan</td>
+<td>No</td>
+</tr>
+<tr>
+<td>monthlyAmount</td>
+<td>number</td>
+<td>Monthly base amount that customer pays for the NEW plan</td>
+<td>No</td>
+</tr>
+<tr>
+<td>currencyId</td>
+<td>string</td>
+<td>This is the ISO Id of the currency</td>
+<td>No</td>
+</tr>
+<tr>
+<td>categoryName</td>
+<td>string</td>
+<td>The name of main category of the NEW plan</td>
+<td>No</td>
+</tr>
+<tr>
+<td>fromPlan</td>
+<td>string</td>
+<td>Source or Id of the OLD plan</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="planadditional">PlanAdditional</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fromPlan</td>
+<td>string</td>
+<td>Source of the plan</td>
+<td>No</td>
+</tr>
+<tr>
+<td>planId</td>
+<td>string</td>
+<td>Unique Id of the plan</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>planName</td>
+<td>string</td>
+<td>Short name for the plan</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>categoryName</td>
+<td>string</td>
+<td>The name of main category of this plan</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Full Name of the Customer</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email of the Customer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>AdditionalSubscriptionsList</td>
+<td>[ <a href="#additionalsubscriptions">AdditionalSubscriptions</a> ]</td>
+<td></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="additionalsubscriptions">AdditionalSubscriptions</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currencyId</td>
+<td>string</td>
+<td>This is the ISO Id of the currency</td>
+<td>No</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email of the Customer</td>
+<td>No</td>
+</tr>
+<tr>
+<td>planId</td>
+<td>string</td>
+<td>Unique Id of the plan</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>planName</td>
+<td>string</td>
+<td>Short name for the plan</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>categoryName</td>
+<td>string</td>
+<td>The name of main category of this plan</td>
+<td>No</td>
+</tr>
+<tr>
+<td>monthlyAmount</td>
+<td>number</td>
+<td>Monthly base amount that customer pays for this plan</td>
+<td>No</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

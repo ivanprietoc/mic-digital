@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Ivan Prieto">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Tigo Mobile VAS Product Management API - Millicom Digital</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Millicom Digital</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../catalog/">Catalogo</a>
+</li>
+                            
+<li >
+    <a href="../../amazon/">Amazon</a>
+</li>
+                            
+<li >
+    <a href="../../tigoshop/">Shop</a>
+</li>
+                            
+<li >
+    <a href="../../mitigo/">Mi Tigo</a>
+</li>
+                            
+<li >
+    <a href="../../bot/">Bot</a>
+</li>
+                            
+<li >
+    <a href="../../mfs/">MFS</a>
+</li>
+                            
+<li >
+    <a href="../../mitigo-agent/">Mi Tigo Agent</a>
+</li>
+                            
+<li >
+    <a href="../../pos/">Distribution</a>
+</li>
+                            
+<li >
+    <a href="../../tbo/">Mi tigo B2B</a>
+</li>
+                            
+<li >
+    <a href="../../usa/">Tigo USA</a>
+</li>
+                            
+<li >
+    <a href="../../sports/">Tigo Sports</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Enablers <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../..">Tigo ID</a>
+</li>
+                            
+<li >
+    <a href="../../payment-gtw/">Payment Gateway</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Apis <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../Mobile Money API - Accounts.swagger/">Mobile Money API   Accounts.swagger</a>
+</li>
+                            
+<li >
+    <a href="../AppCallbackPayment Gateway.swagger/">AppCallbackPayment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../AppLinks/">AppLinks</a>
+</li>
+                            
+<li >
+    <a href="../B2B Selfcare API.swagger/">B2B Selfcare API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../BSSPilot/">BSS Pilot</a>
+</li>
+                            
+<li >
+    <a href="../Balance Management Service Api.swagger/">Balance Management Service Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../CallUsageDetails.swagger/">CallUsageDetails.swagger</a>
+</li>
+                            
+<li >
+    <a href="../ConvergentPaymentAPI.swagger/">ConvergentPaymentAPI.swagger</a>
+</li>
+                            
+<li >
+    <a href="../DeezerTelco/">Deezer Telco</a>
+</li>
+                            
+<li >
+    <a href="../Exacaster Next Best Offer API.swagger/">Exacaster Next Best Offer API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Fulfillment Payment Gateway.swagger/">Fulfillment Payment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../GT Point Of Sale [PoS] API.swagger/">GT Point Of Sale [PoS] API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Home Self Care API.swagger/">Home Self Care API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Insurance API.swagger/">Insurance API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Internet Usage Data.swagger/">Internet Usage Data.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API - Accounts.swagger/">Mobile Money API   Accounts.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API - Transactions.swagger/">Mobile Money API   Transactions.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Money API.swagger/">Mobile Money API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Mobile Self Care API.swagger/">Mobile Self Care API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Modify Favorite Number Api.swagger/">Modify Favorite Number Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Music Freedom SV API.swagger/">Music Freedom SV API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Netflix partner/">Netflix partner</a>
+</li>
+                            
+<li >
+    <a href="../Next Best Action-Offers.swagger/">Next Best Action Offers.swagger</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Billing/">OpenTIGO - Billing</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - CRM/">OpenTIGO - CRM</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Common/">OpenTIGO - Common</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Favorites/">OpenTIGO   Favorites</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Lend/">OpenTIGO - Lend</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Push/">OpenTIGO - Push</a>
+</li>
+                            
+<li >
+    <a href="../OpenTIGO - Utils/">OpenTIGO - Utils</a>
+</li>
+                            
+<li >
+    <a href="../OpenTigo Balance Management/">OpenTigo Balance Management</a>
+</li>
+                            
+<li >
+    <a href="../Payment Gateway.swagger/">Payment Gateway.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Recharge Service Api.swagger/">Recharge Service Api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../SMS Usage Details.swagger/">SMS Usage Details.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Self Care API - DESIGN ONLY.swagger/">Self Care API   DESIGN ONLY.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API Billing.swagger/">Selfcare API Billing.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API CRM.swagger/">Selfcare API CRM.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Selfcare API Transactions.swagger/">Selfcare API Transactions.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Sim Swap Events.swagger/">Sim Swap Events</a>
+</li>
+                            
+<li >
+    <a href="../SimCard management API.swagger/">SimCard management API</a>
+</li>
+                            
+<li >
+    <a href="../Tigo - Activation API.swagger/">Tigo   Activation API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo - Profiling API.swagger/">Tigo   Profiling API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Churn.swagger/">Tigo Churn</a>
+</li>
+                            
+<li >
+    <a href="../Tigo MSISDN Identification API.swagger/">Tigo MSISDN Identification API</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Mobile PY Up-Selling Information API.swagger/">Tigo Mobile PY Up Selling Information API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo Money HN.swagger/">Tigo Money HN.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Tigo OAuth 2.0 API.swagger/">Tigo OAuth 2.0 API</a>
+</li>
+                            
+<li >
+    <a href="../TigoMobileProductsFulfillmentAPI/">Tigo Mobile Products Fulfillment API</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Tigo Mobile VAS Product Management API</a>
+</li>
+                            
+<li >
+    <a href="../UNE Accounts api.swagger/">UNE Accounts api.swagger</a>
+</li>
+                            
+<li >
+    <a href="../UberPOS.swagger/">UberPOS.swagger</a>
+</li>
+                            
+<li >
+    <a href="../Virtual Appointemnts and Geolocation API.swagger/">Virtual Appointemnts and Geolocation API.swagger</a>
+</li>
+                            
+<li >
+    <a href="../apiMobileSelfCare2.0/">apiMobileSelfCare2.0</a>
+</li>
+                            
+<li >
+    <a href="../opentigosmartapps-tigoExchange/">opentigosmartapps tigoExchange</a>
+</li>
+                            
+<li >
+    <a href="../tigo-events-publisher-node.swagger/">Tigo events publisher node.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_bo_billing_v2.swagger/">Tigo b2b bo billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_bo_selfcare_crm_v2.swagger/">Tigo b2b bo selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_billing_v2.swagger/">Tigo b2b co billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_selfcare_crm_v2.swagger/">Tigo b2b co selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_co_selfcare_transactions_v2.swagger/">Tigo b2b co selfcare transactions v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_gt_selfcare_crm_v2.swagger/">Tigo b2b gt selfcare crm v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_b2b_hn_billing_v2.swagger/">Tigo b2b hn billing v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_co_customerSupport_v1.swagger/">tigo co customerSupport v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_co_selfcare_crm_v1.swagger/">Tigo co selfcare crm v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_crm_co_digitalDocuments_v2.swagger/">tigo crm co digitalDocuments v2.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_home_sv_billing_v1.swagger/">Tigo home sv billing v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_mobile_bo_crm_v1.swagger/">Tigo mobile bo crm v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_mobile_gt_roaming_v1.swagger/">Tigo mobile gt roaming v1.swagger</a>
+</li>
+                            
+<li >
+    <a href="../tigo_sv_selfcare_crm_v1.swagger/">Tigo sv selfcare crm v1.swagger</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Procesess <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../processes/devBestPractices/">How we work</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../TigoMobileProductsFulfillmentAPI/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../UNE Accounts api.swagger/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#tigo-mobile-vas-product-management-api">Tigo Mobile VAS Product Management API</a></li>
+        <li class="main "><a href="#authentication">Authentication</a></li>
+        <li class="main "><a href="#market-availability">Market availability</a></li>
+        <li class="main "><a href="#group-product-catalog">Group Product Catalog</a></li>
+            <li><a href="#products-collection-subscribersmsisdnproductscategoryplantypedevicevendordevicemodeldeviceoperatingsystem">Products Collection [/subscribers/{msisdn}/products{?category,planType,deviceVendor,deviceModel,deviceOperatingSystem}]</a></li>
+            <li><a href="#query-available-products-for-subscriber-get">Query Available Products for Subscriber [GET]</a></li>
+        <li class="main "><a href="#group-subscribers-vas-products">Group Subscriber's VAS Products</a></li>
+            <li><a href="#subscriber-vas-products-subscribersmsisdnproductspackageid">Subscriber VAS Products [/subscribers/{msisdn}/products/{packageId}]</a></li>
+            <li><a href="#subscribe-a-product-post">Subscribe a Product [POST]</a></li>
+            <li><a href="#unsubscribe-a-product-delete">UnSubscribe a Product [DELETE]</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="tigo-mobile-vas-product-management-api">Tigo Mobile VAS Product Management API</h1>
+<p>Provides access to the Value Added Services (a.k.a. VAS) product catalog for Tigo Mobile customers, 
+allowing them to acquire or subscribe a specific product.</p>
+<h1 id="authentication">Authentication</h1>
+<ol>
+<li>Each Client application MUST register and request its client credentials from Tigo/Millicom.  </li>
+<li>With your client credentials, an <strong>access_token</strong> needs to be obtained.
+   Please see http://docs.tigooauth.apiary.io on how to obtain access tokens using your client credentials.</li>
+<li>In each request, you need to present the <strong>access_token</strong> in the HTTP <strong>Authorization</strong> header like this:<br />
+<code>Authorization: Bearer &lt;access_token goes here&gt;</code>  </li>
+<li>Beware of the <strong>access_token</strong> expiration, you should obtain a new one <em>before</em> it expires.</li>
+</ol>
+<h1 id="market-availability">Market availability</h1>
+<p>This API is avaialable in the following markets:
+<em> <strong>GT</strong> Tigo Guatemala
+</em> <strong>CO</strong> Tigo Colombia (Soon!)</p>
+<h1 id="group-product-catalog">Group Product Catalog</h1>
+<p>These are the resources related to the particular Products Tigo Mobile Subscribers can acquire
+or subscribe.</p>
+<h2 id="products-collection-subscribersmsisdnproductscategoryplantypedevicevendordevicemodeldeviceoperatingsystem">Products Collection [/subscribers/{msisdn}/products{?category,planType,deviceVendor,deviceModel,deviceOperatingSystem}]</h2>
+<p>Returns the Collection of <strong>products</strong> that may be acquired or subscribed by 
+a particular Tigo Mobile Subscriber identified by its <code>msisdn</code>
+filtered by a specific product <code>category</code></p>
+<h3 id="response-http-status">Response HTTP Status</h3>
+<table>
+<thead>
+<tr>
+<th>HTTP Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>Succesful query</td>
+</tr>
+<tr>
+<td>404 Not Found</td>
+<td>No product matches the requested inputs</td>
+</tr>
+<tr>
+<td>4XX</td>
+<td>Application level error, inspect JSON property <code>error</code> for details</td>
+</tr>
+<tr>
+<td>5XX</td>
+<td>Unexpected Error,  inspect JSON property <code>error</code> for details</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-payload">Response Payload</h3>
+<p>Expect a JSON serialized object <code>Content-Type: application/json</code> with the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>JSON Property</th>
+<th>Type</th>
+<th>Contents</th>
+<th>GT</th>
+<th>CO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td>string</td>
+<td>always <code>get</code></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>category</td>
+<td>string</td>
+<td>same <code>category</code> provided in the request</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>msisdn</td>
+<td>string</td>
+<td>same <code>msisdn</code> provided in the request</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>deviceModel</td>
+<td>string</td>
+<td>same <code>deviceModel</code> provided in the request or <code>*</code> if not specified</td>
+<td>x</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>deviceOperatingSystem</td>
+<td>string</td>
+<td>same <code>deviceOperatingSystem</code> provided in the request or <code>*</code> if not specified</td>
+<td>x</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>deviceVendor</td>
+<td>string</td>
+<td>same <code>deviceVendor</code> provided in the request or <code>*</code> if not specified</td>
+<td>x</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>planType</td>
+<td>string</td>
+<td>same <code>planType</code> provided in the request or <code>*</code> if not specified</td>
+<td>x</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>products</td>
+<td>array</td>
+<td>array of <em>products</em> or <code>null</code> if no products are elegible</td>
+<td>x</td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+<p>Each <strong>product</strong> has the following attributes:</p>
+<table>
+<thead>
+<tr>
+<th>JSON Property</th>
+<th>Type</th>
+<th>Contents</th>
+<th>GT</th>
+<th>CO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>packageId</strong></td>
+<td>string</td>
+<td>unique identifier of the product. ex: <code>18</code>, <code>face201&#124;pack40mb</code></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>string</td>
+<td>Name of the product. ex: <code>Paquetigo Roaming USA 199Q</code></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>description</strong></td>
+<td>string</td>
+<td>Verbose description of the product. ex: <code>Paquetigo Roaming USA 199Q</code></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>string</td>
+<td>Type of Product, has any of the following values:<ul><li><code>PACKAGE</code>: is a package with a fixed validity (i.e. it expires after some time)</li><li><code>SUBSCRIPTION</code>: is a product that has a recurrent benefit and recurrent charge (i.e. it is active until the customer unsubscribes)</li></ul></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>recurrencyType</strong></td>
+<td>string</td>
+<td>Indicates if there is a recurrent charge for the product, contains any of the values:<ul><li><code>ONESHOT</code></li><li><code>RECURRENT</code></li></ul></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>validityNumber</strong></td>
+<td>string</td>
+<td>Amount of time the product will be active after purchase, an integer, ex: <code>1</code></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>validityType</strong></td>
+<td>string</td>
+<td>units for the amount of time the product will be active after purchase, a localized string, ex: <code>Semana</code></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>purchaseDate</strong></td>
+<td>ISO Date string</td>
+<td>When the product was last purchased or subscribed by the customer. ex: null, <code>2014-09-04T10:32:00Z</code></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>activationDate</strong></td>
+<td>ISO date string</td>
+<td>When the product was activated by the customer. ex: null, <code>2014-09-04T10:33:00Z</code></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>expirationDate</strong></td>
+<td>ISO date string</td>
+<td>When the product will be expired from the customer. ex: null, <code>2014-09-04T10:32:00Z</code></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>priority</strong></td>
+<td>Number</td>
+<td>Consumption priority??? ex: <code>0</code></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>category</strong></td>
+<td>string</td>
+<td>Product Category, ex: <code>VOZ</code>, <code>SMS</code>, <code>INTERNET</code></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>subcategory</strong></td>
+<td>string</td>
+<td>Product Sub-Category, ex: <code>A Tigo</code>, <code>A otras redes</code>, <code>INTERNET</code></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>filter</strong></td>
+<td>string</td>
+<td>Filter???, ex: <code>TODOS</code></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>cost</strong></td>
+<td>Number</td>
+<td>Activation Price, in local currency, ex: <code>175.00</code></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>status</strong></td>
+<td>string</td>
+<td>Current subscription status, any of the followings:<ul><li><code>UNSUBSCRIBED</code>: Tigo Customer has not yet subscribed to this product.</li><li><code>SUBSCRIBED</code>: Tigo Customer is already subscribed to this product.</li></ul></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>consumptionPercentage</strong></td>
+<td>Number</td>
+<td>How much of the resources are already consumed, percentage number, ex: <code>0</code></td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>price</strong></td>
+<td>Number</td>
+<td>Total Price to be paid by customer, in local currency, ex: <code>200.00</code></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>keyword</strong></td>
+<td>String</td>
+<td>Keyword used to acquire the product over SMS, ex: <code>40MB</code></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>shortCode</strong></td>
+<td>String</td>
+<td>Short Code used to acquire the product over SMS, ex: <code>face201</code></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>price</strong></td>
+<td>Number</td>
+<td>Total Price to be paid by customer, in local currency, ex: <code>200.00</code></td>
+<td></td>
+<td>x</td>
+</tr>
+<tr>
+<td><strong>loan</strong></td>
+<td>JSON Object</td>
+<td>If present, this means the Product is a Loan. It contains the following properties specific to the Loan:<ul><li><strong>category</strong>: Lending Product category</li><li><strong>name</strong>: Lending Product Name</li><li><strong>cost</strong>: Base Price of the Lending product to be charged on next Top-Up</li><li><strong>fee</strong>: Lending Fee to be charged on next Top-Up</li><li><strong>shortCode</strong></li><li><strong>keyword</strong></li><li><strong>description</strong></li></ul></td>
+<td></td>
+<td>x</td>
+</tr>
+</tbody>
+</table>
+<p>Products are grouped in several <code>category</code>. Classification is country specific, as follows:</p>
+<h3 id="tigo-guatemala-category-values">Tigo Guatemala <code>category</code> values:</h3>
+<ul>
+<li><code>1</code> INTERNET</li>
+<li><code>2</code> VOZ</li>
+<li><code>3</code> SMS</li>
+<li><code>4</code> DIARIO</li>
+<li><code>5</code> SEMANAL</li>
+<li><code>6</code> MENSUAL</li>
+<li><code>7</code> DIAS</li>
+<li><code>8</code> HORA</li>
+<li><code>9</code> HOY</li>
+<li><code>10</code> BBI PREPAID</li>
+<li><code>11</code> SUGERIDOS 1</li>
+<li><code>12</code> SUGERIDOS 2</li>
+<li><code>13</code> SUGERIDOS 3</li>
+<li><code>14</code> COMBOS</li>
+</ul>
+<h3 id="tigo-colombia-category-values">Tigo Colombia <code>category</code> values:</h3>
+<p>In Colombia, the <code>category</code> is just a Regular Expression Filter, for example:
+- <code>.*</code> matches all products in <em>any</em> category
+- <code>INTERNET</code> will match any product with <code>category</code> contains <code>INTERNET</code> for example: <code>INTERNET y MUSICA</code>
+- <code>^LLAMADAS</code> will match any product with <code>category</code> starts with <code>LLAMADAS</code> for example: <code>LLAMADAS y SMS</code> but not <code>SMS y LLAMADAS</code></p>
+<h2 id="query-available-products-for-subscriber-get">Query Available Products for Subscriber [GET]</h2>
+<p>Returns an <code>application/json</code> object with all input parameters in the response in addition to the <strong>products</strong> array.
+Note, that <strong>products</strong> could be <code>null</code> in the cases where there are no elegible products for a particular <strong>msisdn</strong>, 
+this could mean, that the <strong>msisdn</strong> is already subscribed to a product in the same <code>category</code>.</p>
+<ul>
+<li>
+<p>Parameters</p>
+<ul>
+<li>msisdn (required, string, <code>50259050065</code>) ... Mobile number of tigo subscriber in international format.</li>
+<li>category (required, integer, <code>1</code>) ... Filter products by Category, specific for each country.<ul>
+<li>Values for Tigo Guatemala:<ul>
+<li><code>1</code> INTERNET</li>
+<li><code>2</code> VOZ</li>
+<li><code>3</code> SMS</li>
+<li><code>4</code> DIARIO</li>
+<li><code>5</code> SEMANAL</li>
+<li><code>6</code> MENSUAL</li>
+<li><code>7</code> DIAS</li>
+<li><code>8</code> HORA</li>
+<li><code>9</code> HOY</li>
+<li><code>10</code> BBI PREPAID</li>
+<li><code>11</code> SUGERIDOS 1</li>
+<li><code>12</code> SUGERIDOS 2</li>
+<li><code>13</code> SUGERIDOS 3</li>
+<li><code>14</code> COMBOS</li>
+</ul>
+</li>
+<li>Values for Tigo Colombia:<ul>
+<li>any valid regular expression. Example: <code>.*</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>planType (optional, string, <code>PREPAGO</code>) ... Filter products by Plan type.</li>
+<li>deviceVendor (optional, string, <code>Blackberry</code>) ... Filter products by Device Maker.</li>
+<li>deviceModel (optional, string, <code>Bold</code>) ... Filter products by Device Model.</li>
+<li>deviceOperatingSystem (optional, string, <code>BBOS10</code>) ... Filter products by Device Operating System.</li>
+</ul>
+</li>
+<li>
+<p>Request</p>
+<ul>
+<li>Headers<pre><code>Authorization: Bearer {access_token}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Response 200 (application/json)</p>
+<pre><code>{
+    "action": "get", 
+    "category": "2", 
+    "deviceModel": "*", 
+    "deviceOperatingSystem": "*", 
+    "deviceVendor": "*", 
+    "msisdn": "50245891846", 
+    "planType": "*", 
+    "products": [
+        {
+            "activationDate": null, 
+            "category": "VOZ", 
+            "consumptionPercentage": 0, 
+            "cost": 175, 
+            "description": "Paquetigo Roaming USA 199Q", 
+            "expirationDate": null, 
+            "filter": "TODOS", 
+            "name": "Paquetigo Roaming USA 199Q", 
+            "packageId": 18, 
+            "priority": 0, 
+            "purchaseDate": null, 
+            "recurrencyType": "ONESHOT", 
+            "status": "UNSUBSCRIBED", 
+            "subcategory": "VOZ", 
+            "type": "PACKAGE", 
+            "validityNumber": 1, 
+            "validityType": "Semana"
+        }, 
+        {
+            "activationDate": null, 
+            "category": "VOZ", 
+            "consumptionPercentage": 0, 
+            "cost": 125, 
+            "description": "Paquetigo Roaming USA 125Q", 
+            "expirationDate": null, 
+            "filter": "TODOS", 
+            "name": "Paquetigo Roaming USA 125Q", 
+            "packageId": 17, 
+            "priority": 0, 
+            "purchaseDate": null, 
+            "recurrencyType": "ONESHOT", 
+            "status": "UNSUBSCRIBED", 
+            "subcategory": "VOZ", 
+            "type": "PACKAGE", 
+            "validityNumber": 1, 
+            "validityType": "Semana"
+        }, 
+        {
+            "activationDate": null, 
+            "category": "VOZ", 
+            "consumptionPercentage": 0, 
+            "cost": 99, 
+            "description": "Paquetigo Roaming USA 99Q", 
+            "expirationDate": null, 
+            "filter": "TODOS", 
+            "name": "Paquetigo Roaming USA 99Q", 
+            "packageId": 16, 
+            "priority": 0, 
+            "purchaseDate": null, 
+            "recurrencyType": "ONESHOT", 
+            "status": "UNSUBSCRIBED", 
+            "subcategory": "VOZ", 
+            "type": "PACKAGE", 
+            "validityNumber": 1, 
+            "validityType": "Semana"
+        }
+    ]
+}
+</code></pre>
+</li>
+</ul>
+<h1 id="group-subscribers-vas-products">Group Subscriber's VAS Products</h1>
+<h2 id="subscriber-vas-products-subscribersmsisdnproductspackageid">Subscriber VAS Products [/subscribers/{msisdn}/products/{packageId}]</h2>
+<p>Represents a specific Product, identified by <code>packageId</code> that can be acquired or is already subscribed by a particular 
+Tigo Mobile subscriber identified by its <code>msisdn</code>.</p>
+<ul>
+<li>
+<p>Parameters</p>
+<ul>
+<li>msisdn (required, string, <code>50259050065</code>) ... Mobile number of tigo subscriber in international format.</li>
+<li>packageId (required, string, <code>2</code>) ... Product identifier to be acquired or unsubscribed.</li>
+</ul>
+</li>
+</ul>
+<h2 id="subscribe-a-product-post">Subscribe a Product [POST]</h2>
+<p>Acquire or Subscribe a Product identified by <code>packageId</code> for Subscriber identified by <code>msisdn</code></p>
+<p><strong>On Success</strong> reponse will be:
+- HTTP Response Status code: <code>201</code> Created
+- HTTP payload will be a <code>application/json</code> object with properties:
+    - <strong>action</strong>: always <code>post</code>,
+    - <strong>msisdn</strong>: requested <code>msisdn</code>
+    - <strong>productId</strong>: requested <code>packageId</code>
+    - <strong>transactionId</strong>: unique message ID generated at Apigee API layer
+    - <strong>correlationID</strong>: timestamp
+    - <strong>responseCode</strong>: 100 for succesful
+    - <strong>responseMessage</strong>: end User message</p>
+<p><strong>On Failure</strong> reponse will be:
+- HTTP Response Status code: <code>403</code> Forbidden 
+- HTTP payload will be a <code>application/json</code> object with properties:
+    - <strong>error</strong> which will contain:
+        - <strong>code</strong>: expect <code>999</code>
+        - <strong>codeType</strong>: expect <code>DES</code>
+        - <strong>message</strong>: end User Reason why the product cannot be subscribed</p>
+<ul>
+<li>
+<p>Request (application/x-www-form-urlencoded)</p>
+<ul>
+<li>Headers<pre><code>apikey: cAGOBtZREWM2SRXmP3JQZ8uhBDJQzA7Y
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Response 201 (application/json)</p>
+<pre><code>{
+  "action" : "post",
+  "msisdn" : "50259050065",
+  "productId" : "2",
+  "transactionId": "jahdf92hrh8wd1982",
+  "correlationID": "1234",
+  "responseCode" : "0",
+  "responseMessage" : "Gracias"
+}
+</code></pre>
+</li>
+<li>
+<p>Response 403 (application/json)</p>
+<pre><code>{
+    "error": {
+        "code": "999",
+        "codeType": "DES",
+        "message": "Tu numero no es valido para esta promocion, para ver promociones disponibles marca *123#"
+    }
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="unsubscribe-a-product-delete">UnSubscribe a Product [DELETE]</h2>
+<p>Un-Subscribe a Product identified by <code>packageId</code> for Subscriber identified by <code>msisdn</code></p>
+<p><strong>On Success</strong> reponse will be:
+- HTTP Response Status code: <code>200</code> OK
+- HTTP payload will be a <code>application/json</code> object with properties:
+    - <strong>action</strong>: always <code>delete</code>,
+    - <strong>msisdn</strong>: requested <code>msisdn</code>
+    - <strong>packageId</strong>: requested <code>packageId</code>
+    - <strong>transactionId</strong>: unique message ID generated at Apigee API layer
+    - <strong>correlationID</strong>: timestamp
+    - <strong>responseCode</strong>: 100 for succesful
+    - <strong>responseMessage</strong>: end User message</p>
+<p><strong>On Failure</strong> reponse will be:
+- HTTP Response Status code: <code>403</code> Forbidden 
+- HTTP payload will be a <code>application/json</code> object with properties:
+    - <strong>error</strong> which will contain:
+        - <strong>code</strong>: expect <code>999</code>
+        - <strong>codeType</strong>: expect <code>DES</code>
+        - <strong>message</strong>: end User Reason why the product cannot be unsubscribed</p>
+<ul>
+<li>
+<p>Request (application/x-www-form-urlencoded)</p>
+<ul>
+<li>Headers<pre><code>Authorization: Bearer {access_token}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Response 201 (application/json)</p>
+<pre><code>{
+  "action" : "delete",
+  "msisdn" : "50259050065",
+  "productId" : "2",
+  "transactionId": "jahdf92hrh8wd1982",
+  "correlationID": "442424242424",
+  "responseCode" : "0",
+  "responseMessage" : "Gracias"
+}
+</code></pre>
+</li>
+<li>
+<p>Response 403 (application/json)</p>
+<pre><code>{
+    "error": {
+        "code": "999",
+        "codeType": "DES",
+        "message": "Tu numero no es valido para esta promocion, para ver promociones disponibles marca *123#"
+    }
+}
+</code></pre>
+</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>
