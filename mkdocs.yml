@@ -10,11 +10,19 @@ pages:
     - 'Bot': 'bot.md'
     - 'MFS': 'mfs.md'
     - 'Mi Tigo Agent': 'mitigo-agent.md'
-    - 'Payment Gateway': 'payment-gtw.md'
     - 'Distribution': 'pos.md'
     - 'Mi tigo B2B': 'tbo.md'
     - 'Tigo USA': 'usa.md'
     - 'Tigo Sports': 'sports.md'
+- Enablers:
+    - 'Tigo ID': 'index.md'
+    - 'Payment Gateway': 'payment-gtw.md'
+- Apis:
+    - 'MOBILE Product fulfillment': 'apis/mobileFulfillment.md'
+    - 'MOBILE Product upselling': 'index.md'
+    - 'MOBILE lending': 'index.md'
 - Procesess:
     - 'How we work': 'processes/devBestPractices.md'
 dev_addr: 127.0.0.1:8001
+
+

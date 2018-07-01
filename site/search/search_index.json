@@ -516,46 +516,6 @@
             "title": "Data services"
         }, 
         {
-            "location": "/payment-gtw/", 
-            "text": "Payment Gateway\n\n\nJourney\n\n\nEnabler - Mobile + Home\naudience: developers\n\n\nDescription\n\n\nAllow payments with Credit / Debit Cards\nFulfillment\n\n\nGoals and KPIs\n\n\n\n\nCredit Card Payments (#)\n\n\nDebit Card Payments (#)\n\n\nTokenized Card (#)\n\n\nAccounts Paid\n\n\n\n\nFeatures\n\n\nPayments\n- Pay on Demand (no fulfilment)\n- Pay + fulfillment\n- Tokenization\n- Pre Authorizations\n- Use of html helpers\n- Autopay\n\n\nFulfillment\n- Pay Tigo Bills\n- Top-up Tigo (recharge)\n- Pay On Demand\n\n\nManagement\n- Transactions and reconciliation Reports\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Presentation\n    clientApp[Client Application]\n    trxReports[Transactions and Reconciliation]\nend\n\nsubgraph Digital Backend\n    paygtw[Payment Gateway]\n    backend[Apigee]\n    clientApp--\npaygtw\n    paygtw--\nbackend\n    trxReports--\npaygtw\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend--\nbss\n    bss--\nfixed\n    bss--\nmobile\nend\nsubgraph Mobile Domain\n    fulfillment[fulfillment]\n    cbs[invoices]\n    mobile--\ncbs\n    mobile--\nfulfillment\nend\n\nsubgraph fixed Domain\n    cbsFixed[invoices]\n    fixed--\ncbsFixed\n\nend\n\n\n\n\n\nImplementation Details", 
-            "title": "Payment Gateway"
-        }, 
-        {
-            "location": "/payment-gtw/#payment-gateway", 
-            "text": "", 
-            "title": "Payment Gateway"
-        }, 
-        {
-            "location": "/payment-gtw/#journey", 
-            "text": "Enabler - Mobile + Home\naudience: developers", 
-            "title": "Journey"
-        }, 
-        {
-            "location": "/payment-gtw/#description", 
-            "text": "Allow payments with Credit / Debit Cards\nFulfillment", 
-            "title": "Description"
-        }, 
-        {
-            "location": "/payment-gtw/#goals-and-kpis", 
-            "text": "Credit Card Payments (#)  Debit Card Payments (#)  Tokenized Card (#)  Accounts Paid", 
-            "title": "Goals and KPIs"
-        }, 
-        {
-            "location": "/payment-gtw/#features", 
-            "text": "Payments\n- Pay on Demand (no fulfilment)\n- Pay + fulfillment\n- Tokenization\n- Pre Authorizations\n- Use of html helpers\n- Autopay  Fulfillment\n- Pay Tigo Bills\n- Top-up Tigo (recharge)\n- Pay On Demand  Management\n- Transactions and reconciliation Reports", 
-            "title": "Features"
-        }, 
-        {
-            "location": "/payment-gtw/#basic-architecture", 
-            "text": "graph TD\n\nsubgraph Presentation\n    clientApp[Client Application]\n    trxReports[Transactions and Reconciliation]\nend\n\nsubgraph Digital Backend\n    paygtw[Payment Gateway]\n    backend[Apigee]\n    clientApp-- paygtw\n    paygtw-- backend\n    trxReports-- paygtw\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend-- bss\n    bss-- fixed\n    bss-- mobile\nend\nsubgraph Mobile Domain\n    fulfillment[fulfillment]\n    cbs[invoices]\n    mobile-- cbs\n    mobile-- fulfillment\nend\n\nsubgraph fixed Domain\n    cbsFixed[invoices]\n    fixed-- cbsFixed\n\nend", 
-            "title": "Basic architecture"
-        }, 
-        {
-            "location": "/payment-gtw/#implementation-details", 
-            "text": "", 
-            "title": "Implementation Details"
-        }, 
-        {
             "location": "/pos/", 
             "text": "Point of Sale App (Distribution)\n\n\nJourney\n\n\nJourney: Transactional - Mobile\nAudience: agents and retail\n\n\nDescription\n\nPoint of sale tool for agents/retail\nrecharge\nbuy pack\nactivate simcard\nreports\n\n\nGoals and KPIs\n\n- active users\n- transactors\n\n\nFeatures\n\n\n\n\nDiscovery\n\n\nBanner\n\n\nPush notifications\n\n\nProduct catalog\n\n\n\n\n\n\nUse \n Self-service\n\n\nBuy Pack\n\n\ncore balance\n\n\nmfs\n\n\n\n\n\n\nLoans\n\n\ncurrent debt \n credit limit\n\n\nloan balance\n\n\nloan packs\n\n\n\n\n\n\nTop-up\n\n\ncredit card\n\n\nmfs\n\n\n\n\n\n\nSee Balances\n\n\nSee Quota\n\n\nManage subscriptions\n\n\nInternet details\n\n\n\n\n\n\nCare \n Recommendation\n\n\nNPS\n\n\nHelp\n\n\nchat\n\n\nfaq\n\n\n\n\n\n\n\n\n\n\n\n\nPromos\nFeature products\nProduct Catalog\nCross links web app\nButton in Tigo En Linea (GT)\nLogin\nView Promotions\nTop-Ups\nCall Contact\nRecharge/Auto-recharge\nRecharge Acct Balance\nTop-up Others\nCalls\nCustomer Care Support\nFAQs\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Channel\n    android[Android]\n    web[web]\n    appbackend[App Backend]\n    fapi[API Proxy]\n    android---appbackend\n    web---appbackend\n    appbackend---fapi\nend\n\nsubgraph Digital Backend\n    backend[Apigee]\n    fapi---backend\n\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    bss---mobile\n    backend---bss\nend\n\nsubgraph Mobile Domain\n    customer[customer]\n    ePIN[ePIN]\n    mobile---customer\nend\n\n\n\n\n\nImplementation Details\n\n\nSOUTH ARCHITECTURE (COUNTRY)", 
             "title": "Distribution"
@@ -739,6 +699,161 @@
             "location": "/sports/#other-tools", 
             "text": "segment  new relic  tableau  dashboard tigo sports", 
             "title": "Other tools"
+        }, 
+        {
+            "location": "/", 
+            "text": "Welcome to Millicom\n\n\nThe Digital Team\n\n\n\n\nOur tools\n\n\n\n\nJIRA: https://jira.tigo.com.hn/\n\n\nSlack: micproddev.Slack.com\n\n\nGit:\n\n\nTo edit any of these pages contact: robert.ferrer@millicom.com\n\n\n\n\nWhere to start\n\n\nSome markdown editors that you may need:\n\n\n\n\nVS Code\n\n\neditor.md\n\n\nswagger to markdown\n\n\nPandoc - document converteer - markdown to pdf or html\n\n\n\n\nProject layout\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # this page\n    catalog.md    # product catalog\n    img/    #images\n    processes/  # our processes\n    apis/   # our swaggers", 
+            "title": "Tigo ID"
+        }, 
+        {
+            "location": "/#welcome-to-millicom", 
+            "text": "", 
+            "title": "Welcome to Millicom"
+        }, 
+        {
+            "location": "/#the-digital-team", 
+            "text": "", 
+            "title": "The Digital Team"
+        }, 
+        {
+            "location": "/#our-tools", 
+            "text": "JIRA: https://jira.tigo.com.hn/  Slack: micproddev.Slack.com  Git:  To edit any of these pages contact: robert.ferrer@millicom.com", 
+            "title": "Our tools"
+        }, 
+        {
+            "location": "/#where-to-start", 
+            "text": "Some markdown editors that you may need:   VS Code  editor.md  swagger to markdown  Pandoc - document converteer - markdown to pdf or html", 
+            "title": "Where to start"
+        }, 
+        {
+            "location": "/#project-layout", 
+            "text": "For full documentation visit  mkdocs.org .  mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # this page\n    catalog.md    # product catalog\n    img/    #images\n    processes/  # our processes\n    apis/   # our swaggers", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/payment-gtw/", 
+            "text": "Payment Gateway\n\n\nJourney\n\n\nEnabler - Mobile + Home\naudience: developers\n\n\nDescription\n\n\nAllow payments with Credit / Debit Cards\nFulfillment\n\n\nGoals and KPIs\n\n\n\n\nCredit Card Payments (#)\n\n\nDebit Card Payments (#)\n\n\nTokenized Card (#)\n\n\nAccounts Paid\n\n\n\n\nFeatures\n\n\nPayments\n- Pay on Demand (no fulfilment)\n- Pay + fulfillment\n- Tokenization\n- Pre Authorizations\n- Use of html helpers\n- Autopay\n\n\nFulfillment\n- Pay Tigo Bills\n- Top-up Tigo (recharge)\n- Pay On Demand\n\n\nManagement\n- Transactions and reconciliation Reports\n\n\nBasic architecture\n\n\ngraph TD\n\nsubgraph Presentation\n    clientApp[Client Application]\n    trxReports[Transactions and Reconciliation]\nend\n\nsubgraph Digital Backend\n    paygtw[Payment Gateway]\n    backend[Apigee]\n    clientApp--\npaygtw\n    paygtw--\nbackend\n    trxReports--\npaygtw\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend--\nbss\n    bss--\nfixed\n    bss--\nmobile\nend\nsubgraph Mobile Domain\n    fulfillment[fulfillment]\n    cbs[invoices]\n    mobile--\ncbs\n    mobile--\nfulfillment\nend\n\nsubgraph fixed Domain\n    cbsFixed[invoices]\n    fixed--\ncbsFixed\n\nend\n\n\n\n\n\nImplementation Details", 
+            "title": "Payment Gateway"
+        }, 
+        {
+            "location": "/payment-gtw/#payment-gateway", 
+            "text": "", 
+            "title": "Payment Gateway"
+        }, 
+        {
+            "location": "/payment-gtw/#journey", 
+            "text": "Enabler - Mobile + Home\naudience: developers", 
+            "title": "Journey"
+        }, 
+        {
+            "location": "/payment-gtw/#description", 
+            "text": "Allow payments with Credit / Debit Cards\nFulfillment", 
+            "title": "Description"
+        }, 
+        {
+            "location": "/payment-gtw/#goals-and-kpis", 
+            "text": "Credit Card Payments (#)  Debit Card Payments (#)  Tokenized Card (#)  Accounts Paid", 
+            "title": "Goals and KPIs"
+        }, 
+        {
+            "location": "/payment-gtw/#features", 
+            "text": "Payments\n- Pay on Demand (no fulfilment)\n- Pay + fulfillment\n- Tokenization\n- Pre Authorizations\n- Use of html helpers\n- Autopay  Fulfillment\n- Pay Tigo Bills\n- Top-up Tigo (recharge)\n- Pay On Demand  Management\n- Transactions and reconciliation Reports", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/payment-gtw/#basic-architecture", 
+            "text": "graph TD\n\nsubgraph Presentation\n    clientApp[Client Application]\n    trxReports[Transactions and Reconciliation]\nend\n\nsubgraph Digital Backend\n    paygtw[Payment Gateway]\n    backend[Apigee]\n    clientApp-- paygtw\n    paygtw-- backend\n    trxReports-- paygtw\nend\n\nsubgraph Country\n    bss[Core BSS - OSB]\n    mobile[Mobile]\n    fixed[Fixed]\n    backend-- bss\n    bss-- fixed\n    bss-- mobile\nend\nsubgraph Mobile Domain\n    fulfillment[fulfillment]\n    cbs[invoices]\n    mobile-- cbs\n    mobile-- fulfillment\nend\n\nsubgraph fixed Domain\n    cbsFixed[invoices]\n    fixed-- cbsFixed\n\nend", 
+            "title": "Basic architecture"
+        }, 
+        {
+            "location": "/payment-gtw/#implementation-details", 
+            "text": "", 
+            "title": "Implementation Details"
+        }, 
+        {
+            "location": "/apis/mobileFulfillment/", 
+            "text": "Tigo Mobile Product Fulfillment\n\n\n\n\nProduct catalog (GET)\n\n\nPurchase (POST)\n\n\nUnsubscribe a product (DELETE)\n\n\n\n\nApi proxies\n\n\n\n\ntigo_bo_fulfillment_v1\n\n\ntigo_fulfillment_sv_v1\n\n\ntigo_mobile_bo_vas_v1\n\n\ntigo_mobile_co_vas_v1\n\n\ntigo_mobile_co_vas_v2\n\n\ntigo_mobile_gt_vas_v1\n\n\ntigo_mobile_hn_vas_v1\n\n\ntigo_mobile_hn_vas_v2\n\n\ntigo_mobile_py_fulfillment_v1\n\n\ntigo_mobile_sv_fulfillment_v1\n\n\ntigo_mobile_sv_fulfillment_v2\n\n\ntigo_mobile_sv_upselling_v2\n\n\n\n\ntigo_sv_fulfillment_v1\n\n\n\n\n\n\ntigo_campaign_subscriber_management_v1\n\n\n\n\n\n\nDocumentation\n\n\nSwagger: \n\n\n\n\n\n\nFulfillment\n\n\n\n\n\n\nVAS\n\n\n\n\n\n\nExample request/response", 
+            "title": "MOBILE Product fulfillment"
+        }, 
+        {
+            "location": "/apis/mobileFulfillment/#tigo-mobile-product-fulfillment", 
+            "text": "Product catalog (GET)  Purchase (POST)  Unsubscribe a product (DELETE)", 
+            "title": "Tigo Mobile Product Fulfillment"
+        }, 
+        {
+            "location": "/apis/mobileFulfillment/#api-proxies", 
+            "text": "tigo_bo_fulfillment_v1  tigo_fulfillment_sv_v1  tigo_mobile_bo_vas_v1  tigo_mobile_co_vas_v1  tigo_mobile_co_vas_v2  tigo_mobile_gt_vas_v1  tigo_mobile_hn_vas_v1  tigo_mobile_hn_vas_v2  tigo_mobile_py_fulfillment_v1  tigo_mobile_sv_fulfillment_v1  tigo_mobile_sv_fulfillment_v2  tigo_mobile_sv_upselling_v2   tigo_sv_fulfillment_v1    tigo_campaign_subscriber_management_v1", 
+            "title": "Api proxies"
+        }, 
+        {
+            "location": "/apis/mobileFulfillment/#documentation", 
+            "text": "Swagger:     Fulfillment    VAS", 
+            "title": "Documentation"
+        }, 
+        {
+            "location": "/apis/mobileFulfillment/#example-requestresponse", 
+            "text": "", 
+            "title": "Example request/response"
+        }, 
+        {
+            "location": "/", 
+            "text": "Welcome to Millicom\n\n\nThe Digital Team\n\n\n\n\nOur tools\n\n\n\n\nJIRA: https://jira.tigo.com.hn/\n\n\nSlack: micproddev.Slack.com\n\n\nGit:\n\n\nTo edit any of these pages contact: robert.ferrer@millicom.com\n\n\n\n\nWhere to start\n\n\nSome markdown editors that you may need:\n\n\n\n\nVS Code\n\n\neditor.md\n\n\nswagger to markdown\n\n\nPandoc - document converteer - markdown to pdf or html\n\n\n\n\nProject layout\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # this page\n    catalog.md    # product catalog\n    img/    #images\n    processes/  # our processes\n    apis/   # our swaggers", 
+            "title": "MOBILE Product upselling"
+        }, 
+        {
+            "location": "/#welcome-to-millicom", 
+            "text": "", 
+            "title": "Welcome to Millicom"
+        }, 
+        {
+            "location": "/#the-digital-team", 
+            "text": "", 
+            "title": "The Digital Team"
+        }, 
+        {
+            "location": "/#our-tools", 
+            "text": "JIRA: https://jira.tigo.com.hn/  Slack: micproddev.Slack.com  Git:  To edit any of these pages contact: robert.ferrer@millicom.com", 
+            "title": "Our tools"
+        }, 
+        {
+            "location": "/#where-to-start", 
+            "text": "Some markdown editors that you may need:   VS Code  editor.md  swagger to markdown  Pandoc - document converteer - markdown to pdf or html", 
+            "title": "Where to start"
+        }, 
+        {
+            "location": "/#project-layout", 
+            "text": "For full documentation visit  mkdocs.org .  mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # this page\n    catalog.md    # product catalog\n    img/    #images\n    processes/  # our processes\n    apis/   # our swaggers", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/", 
+            "text": "Welcome to Millicom\n\n\nThe Digital Team\n\n\n\n\nOur tools\n\n\n\n\nJIRA: https://jira.tigo.com.hn/\n\n\nSlack: micproddev.Slack.com\n\n\nGit:\n\n\nTo edit any of these pages contact: robert.ferrer@millicom.com\n\n\n\n\nWhere to start\n\n\nSome markdown editors that you may need:\n\n\n\n\nVS Code\n\n\neditor.md\n\n\nswagger to markdown\n\n\nPandoc - document converteer - markdown to pdf or html\n\n\n\n\nProject layout\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # this page\n    catalog.md    # product catalog\n    img/    #images\n    processes/  # our processes\n    apis/   # our swaggers", 
+            "title": "MOBILE lending"
+        }, 
+        {
+            "location": "/#welcome-to-millicom", 
+            "text": "", 
+            "title": "Welcome to Millicom"
+        }, 
+        {
+            "location": "/#the-digital-team", 
+            "text": "", 
+            "title": "The Digital Team"
+        }, 
+        {
+            "location": "/#our-tools", 
+            "text": "JIRA: https://jira.tigo.com.hn/  Slack: micproddev.Slack.com  Git:  To edit any of these pages contact: robert.ferrer@millicom.com", 
+            "title": "Our tools"
+        }, 
+        {
+            "location": "/#where-to-start", 
+            "text": "Some markdown editors that you may need:   VS Code  editor.md  swagger to markdown  Pandoc - document converteer - markdown to pdf or html", 
+            "title": "Where to start"
+        }, 
+        {
+            "location": "/#project-layout", 
+            "text": "For full documentation visit  mkdocs.org .  mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # this page\n    catalog.md    # product catalog\n    img/    #images\n    processes/  # our processes\n    apis/   # our swaggers", 
+            "title": "Project layout"
         }, 
         {
             "location": "/processes/devBestPractices/", 
