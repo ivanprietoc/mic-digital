@@ -88,7 +88,8 @@ pages:
     - 'apis/tigo_mobile_gt_roaming_v1.swagger.md'
     - 'apis/tigo_sv_selfcare_crm_v1.swagger.md'
 - Procesess:
-    - 'How we work': 'processes/devBestPractices.md'
+    - 'How we work for Devs': 'processes/devBestPractices.md'
+    - 'Development life cycle': 'processes/devLifeCycle.md'
 dev_addr: 127.0.0.1:8001
 
 
