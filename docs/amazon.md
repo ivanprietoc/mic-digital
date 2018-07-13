@@ -269,9 +269,9 @@ Example:
 # Tasks and timeplan
 
 ## On country
-- Add-on creation (new SKUs) with different price point for hard-bundles and add-ons
-    - mobile 2 skus: cost 0, cost x$
-    - home 2 skus: cost 0, cost x$
+- Add-on creation (new SKUs) with different price point for hard-bundles and add-ons video + music
+    - mobile 4 skus: cost 0, cost x$
+    - home 4 skus: cost 0, cost x$
 - Plan mapping configurations using these SKUs
 - APIs for:
     - MOBILE Add-ons
