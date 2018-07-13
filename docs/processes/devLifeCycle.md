@@ -33,6 +33,7 @@ Notes: Some projects may have these additional milestones depending on the compl
 
 ## The checklist
 Artifacts:
+
 - PRD
     - objetives
     - kpis
@@ -54,6 +55,7 @@ Artifacts:
     - WWW and SEO
     - FAQ on zendesk
     - On apps: Store entry (logos, descriptions, tags, etc)
+
 
 Steps:
 IDEA  
