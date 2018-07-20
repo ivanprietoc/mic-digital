@@ -1,7 +1,7 @@
 
 # Digital Development Life Cycle
 
-In these sections we share all the best practices we have gathered over time, and should be followed by us to ensure the timely and effective management of the development our Digital Assets.
+In these sections we share the best practices we have gathered over time, and should be followed by us to ensure the timely and effective management of the development our Digital Assets.
 
 ## Development life cycle
 
@@ -21,6 +21,7 @@ To edit use [source file](https://drive.google.com/file/d/1TF3A6RhBbaPfOeIWik9BD
 - COUNTRY accepts Release candidate and publish the product/feature.
 
 ## The roadmap
+
 All projects will have at least 3 milestones
 - START DATE: DEV start development
 - TESTING DATE: DEV delivers a full beta and testing and bugfixing begins
@@ -31,13 +32,17 @@ Notes: Some projects may have these additional milestones depending on the compl
 - API DELIVERY DATE: date when api/requirements will be ready
 - SOFTLAUNCH / CANARIES: some rollouts will have a limited scope for only some users to discover early bugs
 
+All dates are included in our portfolio mgmt tool and discussed monthly
+
 ## The checklist
-Artifacts:
+
+### Artifacts:
 
 - PRD
     - objetives
     - kpis
     - use cases titles
+    - Mockups and digital assets
 - Security:
     - Thread model
     - Vulnerability assesment
@@ -47,7 +52,7 @@ Artifacts:
 - Engineering:
     - Postman collection
     - Swagger
-    - Mockups and digital assets
+    - architecture diagrams (when necessary)
 - Project:
     - JIRA project
     - Roadmap entry
@@ -57,7 +62,8 @@ Artifacts:
     - On apps: Store entry (logos, descriptions, tags, etc)
 
 
-Steps:
+### Steps 
+
 IDEA  
 - Define Goals 
 - Define Target 
@@ -70,12 +76,12 @@ IDEA
 - Obtain Digital Officer Approval  
 
 PLANNING  
-- Define Architecture   
-- Establish Jira Project   
-- Create mini business case   
-- Create Test Prototype/Flows   
-- Obtain quotation and time plan from vendor 
-- Obtain budget approval (CAR id or PO) Obtain BU Validation/Approval   
+- Define Architecture
+- Establish Jira Project
+- Create mini business case
+- Create Test Prototype/Flows
+- Obtain quotation and time plan from vendor
+- Obtain budget approval (CAR id or PO) Obtain BU Validation/Approval
 
 DEVELOPMENT  
 - Create environment setup   

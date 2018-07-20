@@ -144,7 +144,7 @@ MITIGO-->END_USER: redirect to landing
 MITIGO-->END_USER: sms or email to complete the flow later
 
 note over END_USER,AMZ: Association journey and Activation
-END_USER-->DOCOMO: click on ACTIVATE, go to redirectUrl
+END_USER-->AMZ: click on ACTIVATE, go to redirectUrl
 AMZ-->AMZ: sign in/sign up
 AMZ-->DOCOMO: activation successful
 DOCOMO-->TIGO_BCK: activation successful alias=123

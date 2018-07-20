@@ -63,7 +63,8 @@ For more info on our process see [our process](https://docs.google.com/document/
 
 ### 2 speed it
 
-Digital development requires usually different approach than traditional IT organizations. Figure 1 shows basic differences
+Digital development requires usually different approach than traditional IT organizations. Figure shows basic differences
+![](2speedIT.png)
 
 In MILLICOM for all digital properties we expect a lean governance and a rapid experimentation approach. 
 
@@ -71,8 +72,10 @@ In MILLICOM for all digital properties we expect a lean governance and a rapid e
 
 Roles at MILLICOM:
 
-- BUSINESS DEVELOPMENT/PRODUCT MANAGER  (WHAT, WHY): takes care of functional requirements, maximizing value and growth. Responsible for budget allocation and ROI 
-- PRODUCT DEVELOPMENT (HOW, WHEN): takes care of UX and TECH decisions to build the product. Discuss with PM about the goals, kpis and strategies to get them. Main point of contact with partner’s dev team and countries IT teams.
+![](product-manager.png)
+
+- PRODUCT MANAGER  (WHAT, WHY): takes care of functional requirements, maximizing value and growth. Responsible for budget allocation and ROI 
+- PRODUCT DEVELOPER (HOW, WHEN): takes care of UX and TECH decisions to build the product. Discuss with PM about the goals, kpis and strategies to get them. Main point of contact with partner’s dev team and countries IT teams.
 - INFRA, OPERATIONS AND MAINTENANCE (WHERE, AFTER-CARE): owner of enablers and responsible for cloud infrastructure and release management.
 - PMO: (when required) administratives, follow project milestones and budget execution. Info consolidation for other areas.
 
@@ -136,7 +139,9 @@ There are basically 3 layers. 
 
 - Country layer: includes middleware and all local legacy platforms (Billing, Rating, CRM, field services, etc.) - manage by IT from countries
 - Digital Cloud layer: includes enablers and digital infra to support rapid app development and shared resources. - manage by DIGITAL REGIONAL team
-- Partners & Apps layer: touchpoints with consumers in their digital journey. Developed with DEV PARTNERS and supported by DIGITAL NOC team 
+- Partners & Apps layer: touchpoints with consumers in their digital journey. Developed with DEV PARTNERS and supported by DIGITAL NOC team. Direct channels is for end-customers, indirect channels for our agents/retail, ott/partners are for other integrations and digital partnerships or subscriptions.
+
+![](digital-architecture.png)
 
 For more information see [catalog](../catalog.md)
 

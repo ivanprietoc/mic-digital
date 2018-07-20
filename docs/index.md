@@ -7,7 +7,7 @@
 ## Our tools
 - JIRA: https://jira.tigo.com.hn/
 - Slack: micproddev.Slack.com
-- Git:
+- Git: git clone https://github.com/ivanprietoc/mic-digital
 - To edit any of these pages contact: robert.ferrer@millicom.com
 
 ## Where to start
